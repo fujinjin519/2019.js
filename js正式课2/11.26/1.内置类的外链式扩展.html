@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--  -->
+
+    <script>
+
+        // function fun() {
+        //     this.a = 0;
+        //     this.b = function () {
+        //         alert(this.a);
+        //     }
+        // }
+        // fun.prototype = {
+        //     b: function () {
+        //         this.a = 20;
+        //         alert(this.a);
+        //     },
+        //     c: function () {
+        //         this.a = 30;
+        //         alert(this.a)
+        //     }
+        // } //重新定义赋值，原来的类销毁
+        // var my_fun = new fun();
+        // my_fun.b();  //0
+        // my_fun.c();  //30
+
+        // function C1(name) {
+        //     if (name) {
+        //         this.name = name;
+        //     }
+        // }
+        // function C2(name) {
+        //     this.name = name;
+        // }
+        // function C3(name) {
+        //     this.name = name || 'join';
+        // }
+        // C1.prototype.name = 'Tom';
+        // C2.prototype.name = 'Tom';
+        // C3.prototype.name = 'Tom';
+        // alert((new C1().name) + (new C2().name) + (new C3().name));
+
+        //tom undifined join
+        //空对象。
+
+        function Fn(num) {
+            this.x = this.y = num;
+        }
+        Fn.prototype = {
+            x: 20,
+            sum: function () {
+                console.log(this.x + this.y);
+            }
+        };
+        let f = new Fn(10);
+        console.log(f.sum === Fn.prototype.sum); //false 
+        f.sum();  //20
+        Fn.prototype.sum();  //  
+        console.log(f.constructor); // object
+        //构造函数解决了实例的私有属性
+        //原型模式，解决了实例的公有属性
+        //instanceof只要检测的类在实例的原型链上，那就是成立，true
+
+        //不能把类的原型重定向
+        //不能在私有属性上加constuctor
+        //     function fn() {
+
+        //     }
+
+
+        //     f.constructor = 6
+        //     console.log(f.constructor)
+        //     console.log(f.constructor === fn) //false
+
+
+        //    let ary=[1,2,3,4,2,3,1]
+        //     function unique(ary) {
+        //         let obj = {};
+        //         for (var i = 0; i < ary.length; i++) {
+        //             if (obj[ary[i]] !== undefined) {
+        //                 ary[i] = ary[ary.length - 1];
+        //                 ary.length--;
+        //                 i--;
+        //                 continue;
+        //             }
+        //             obj[ary[i]] = ary[i]
+        //         }
+        //     }
+        
+        //给实例的类封装公共方法需要注意的几点：
+        //1.你自己封装的方法不能与人家内置的方法同名
+        //2.给你自己的方法加前缀
+
+        function myPush() {
+            console.log('哈哈')
+        }
+        Array.prototype.myPush = myPush;
+        ary.push(12, 12)
+        console.log(ary)
+       //实例的私有属性或者公有属性里的this一般指向当前实例
+       //构造函数里的this是当前实例
+      
+       //如果你想用的链式调用，前提是你的方法的返回值必须是当前类的实例
+       //ary是Array的实例
+       //内置类的原型不能被重定向
+
+
+
+    </script>
+
+</body>
+
+</html>

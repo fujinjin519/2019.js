@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //继承方式的另一种
+        function fn(){
+            console.log(arguments instanceof Array)
+            arguments.__pro__=Array.prototype;
+            //arguments虽然不是arry的实例，但是我们可以手动把arguments.__pro__指向Array的原型，那这样arguments就可以使用Array原型上的方法，这就是中间类继承
+            console,log(arguments.push(23))
+            console.log(arguments)
+        }
+        fn(1,2,3,4,5)
+    
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>

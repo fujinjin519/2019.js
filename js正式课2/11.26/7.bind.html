@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!-- 2.apply:他和call方法一样，只不过第二个参数必须是数组或者类数组
+     3.bind:这个也是改变this指向的，但是它会提前改变实例的this指向，并不会让实例执行
+       它的返回值，是改变this之后的新函数-
+       
+       
+       bind:这个方法也是改变this指向的，但他会提前改变实例函数的this指向，并不会让实例函数执行,他的返回值是改变this之后的新函数->
+
+<body>
+    <div id="box">111</div>
+    <script>
+        
+        // function fn(n, m) {
+        //     console.log(this, n, m)
+        // }
+        // fn.apply(1, [20, 30])
+
+        
+        let box = document.getElementById('box');
+            let fn = function(){
+                console.log(this)
+            }
+            let obj = {}
+            box.onclick  = fn.bind(obj)
+
+            
+            
+            fn=fn.bind(obj)
+            fn()
+
+
+
+       
+
+
+
+    </script>
+</body>
+
+</html>

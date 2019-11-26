@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  
+    <script>
+      function a(){
+          this.getx=function(){
+              console.log('恭喜发财')
+
+          }
+      }
+      a.prototype.gety=function(){
+          console.log('嘻嘻')
+
+      }
+      function b(){}
+      b.prototype=new a
+      let f=new b
+      //原型继承：
+     
+     // 让类B的原型指向类A的实例，那么以后类B的实例既可以调取类A实例的私有属性，也可以调取类A实例的公有属性，那这种继承方式就是原型继承
+      
+    
+    
+    
+    
+    </script>
+</body>
+</html>

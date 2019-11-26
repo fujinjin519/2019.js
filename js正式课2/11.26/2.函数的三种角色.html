@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 函数数据类型：普通函数 构造函数
+     对象数据类型：普通对象， 数组，math, date实例，argumente类数字，正则，实例对象，原型，元素集合（类数组），函数
+    函数是对象
+    函数：1.普通函数： 
+                1.形参， 实参，arguments,箭头函数，return,
+                2.私有作用域，闭包（保存，保护）,this，变量提升，私有变量，
+                3.形成私有作用域-形参给实参赋值-变量提升-代码执行-作用域是否销毁
+                4.作用域链
+         2.构造函数：
+                1.形成私有作用域-形参给实参赋值-变量提升-默认生成一个空对象-让this指向当前对象-代码执行-默认return出去-作用域是否销毁
+                2.构造函数如果不传实参可以不加小括号
+                3.手动retur一个基本值，那构造函数的返回值不会改变，如果return引用值，那函数的返回值就会改变，那return的就不是当前类的实例
+                4.this,构造函数里的this指向当前的实例
+
+
+          3.普通对象：
+                 由0到多组键值对组成，属性名的类型是数字或 是字符串
+                 函数的主角色还是函数
+                
+
+        原型：1.function是所有函数的基类（包括自己）
+             2.object是所有对象的基类
+             3.object的原型，————pro --执行的是自己，js认为指向自己没有意义，就规定为null。
+             4.所有函数都是function的实例，那object类的-pro-指向function的原型
+             5.function也是函数，所以他的pro--指向自己的原型
+
+
+       1.每一个函数(普通函数，构造函数）都天生自带一个prototype属性，属性值是一个对象，它里面存储的是实例的公有属性（原型）
+       2.每一个原型都天生自带一个constructor属性，其属性值指向当前的类
+       3.每一个对象都天生自带一个__proto__属性，其属性值指向当前所属类的原型
+                 
+               
+                
+              -->
+    <script>
+        function Foo() {
+            getName = function () {
+                console.log(1);
+            };
+            return this;
+        }
+        Foo.getName = function () {
+            console.log(2);
+        };
+        Foo.prototype.getName = function () {
+            console.log(3);
+        };
+        var getName = function () {
+            console.log(4);
+        };
+
+        function getName() {
+            console.log(5);
+        }
+
+        Foo.getName(); //2
+        getName(); 4
+        Foo().getName(); 1
+        getName();   //1  
+        new Foo.getName(); //2
+        // 成员访问：对象.属性名(优先级是19)
+        // new (): new带参数列表(优先级是19)
+        // new  : new无参数列表(优先级是18)
+
+        // new Foo.getName();
+
+
+        new Foo().getName();//3
+        new new Foo().getName();//3
+        
+
+        
+
+
+
+
+
+
+
+
+        
+    </script>
+</body>
+
+</html>

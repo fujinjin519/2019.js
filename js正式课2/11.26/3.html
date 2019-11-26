@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 选项卡的新办法
+
+
+            // 第四种方法
+            //     //ES6中的let在for循环的大括号会形成块级作用域
+            //         for(let i = 0; i<navList.length;i++){
+            //             navList[i].onclick = function(){
+            //                 fn(i)
+            //             }
+            //         }
+ 
+            //  //  第三种方法：利用了闭包可以保存私有变量的特点，而且这个闭包是不销毁的变量
+            //         for(var i = 0;i<navList.length;i++){
+            //             navList[i].onclick =(function(index){
+            //                 return function(){
+            //                     fn(index)
+            //                 }
+            //             })(i)
+            //         } 
+
+            //    
+            // //第一种方法：利用往元素结构体上增加属性的方法
+                    //    for(var i = 0;i<navList.length;i++){
+            //             navList[i].setAttribute('axe',i)
+            //             navList[i].onclick = function()
+            //     {fn(this.getAttribute('axe'))
+            //     }  
+
+            // //第二种方法
+            //             navList[i].axe = i;
+            //             navList[i].onclick =function(){
+            //                 fn(this.axe)
+            //             }
+            //     }
+                    
+             
+            //  let ary=[1,2,3,4,1,2,1]
+            //  let obj={}
+            //  for(var i=0;i<ary.length;i++){
+            //      let item=ary[i];
+            //      if(obj[item]!==undefined){
+            //          ary.splice(i,1);
+            //          i--
+            //          continue
+                      
+            //      }
+            //      obj[item]=item
+         
+            //  }
+              
+            //    console.log(ary)
+
+
+               let ary=[1,2,3,4,1,2]
+               let obj={}
+               for(var i=0;i<ary.length;i++){
+                   let item=ary[i];
+                   if(obj[item]!==undefined){
+                           ary.splice(i,1);
+                           i--
+                           continue
+    
+                   }
+                   obj[item]=item
+               }
+                console.log(ary)
+
+
+
+
+        //   let list = document.getElementsByTagName('button');
+        // // for (let i = 0; i < list.length; i++) {
+        //    list[i].onclick = function(){
+        //        alert(i)
+        //    }
+        // }
+        
+        //    利用闭包保存变量机制
+        // for (var i = 0; i < list.length; i++) {
+        //    list[i].onclick = (function(index){
+        //     return function(){
+        //         alert(index)
+        //     }
+        //    })(i)
+        // }
+
+            //  利用往元素身上增加自定义属性
+        // for (var i = 0; i < list.length; i++) {
+        //     list[i].index = i
+        //    list[i].onclick = function(){
+        //     alert(this.index)
+        //    }
+        // }
+        
+        
+        // for (var i = 0; i < list.length; i++) {
+        //     list[i].setAttribute('index', i)
+        //     list[i].onclick = function () {
+        //         alert(this.getAttribute('index'))
+        //     }
+        // }
+                
+        
+        </script>
+</body>
+</html>
