@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //数组去重   2 
+      /*   1.循环数组的每一项
+        2.拿当前项和后面的数依次做比较，如果后面的数和当前项相等，那就在原数组里删除相等的数（splice）
+     */
+     let ary = [1,2,3,1,2,3,1,2,3]
+     function fn (ary){
+         //循环数组每一项
+        for(var i = 0;i<ary.length;i++){
+            let item = ary [i] ;//数组的每一项
+            for(var j = i+1;j<ary.length;j++){
+                //外面大循环每循环一次，这个小循环就会从头到尾循环一遍
+                let cur = ary[j]//当前项后面的每一项，存储变量每一次循环的值
+                console.log(cur)
+                //如果当前项和后面的某一项相等了，条件成立
+                if(item === cur){
+                    ary.splice(j,1)//从原数组中删除重复的那一项
+                    j--//为了防止数组塌陷，删除之后要把j--
+                }   //从数组中删除的某一项，后面的某一项索引都的往前一位（数组塌陷）
+            }       
+        }
+     }
+     console.log(fn(ary))   
+     console.log(ary)
+
+
+
+   
+
+    </script>                                                                       
+</body>
+</html>

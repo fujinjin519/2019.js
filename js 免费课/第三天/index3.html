@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    #box{
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+    //在html中叫标签，在JS叫元素,js中的元素都是对象类型的
+    //想要操作谁，就要先获取谁
+    //document.getElementById:在document文本下，通过id获取元素
+    //document:上下文文本
+    //get:获取
+    //Element：元素
+    //By:通过
+    //Id:id名
+    let div1 = document.getElementById("box");
+    // console.dir(div1);
+    div1.onclick =function(){
+        //这里代码不运行，当点击元素时候，这个函数会执行
+        if(div1.style.background=="black"){
+            div1.style.background="red" 
+           
+        }else{
+            div1.style.background="black"; 
+        }
+        if(div1.style.width=="300px"){
+            
+            div1.style.width="100px";
+        }else{
+            div1.style.width="300px" ;
+        }
+
+    }
+
+        //{style:{background:"red"}}
+    </script>
+</body>
+</html>

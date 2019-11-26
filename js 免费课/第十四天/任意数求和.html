@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // let num = fn(12,13,true,'NaN','12')
+    // function fn(){
+    //     let total = null;
+    //     for (var i = 0;i<arguments.length;i++){
+    //         let item = arguments[i];
+    //         item = Number(item)
+    //             if(!isNaN(item)){
+    //                 total =total +item
+    //             }
+    //         }
+    //         return total
+    //     }
+       
+    //     console.log(num)
+
+    let fn = (...ary)=>{
+        let total = null;
+        ary.forEach((item,index)=>{
+            if(!isNaN(Number(item))){
+                total += item;
+            }
+        })
+        return total
+    }
+    console.log(fn(1,true,2,NaN,3))
+    </script>
+</body>
+</html>

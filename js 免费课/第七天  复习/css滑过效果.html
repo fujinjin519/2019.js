@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标滑过详情</title>
+    <style>
+    *{
+        margin: 0;
+        padding :0;
+    }
+    #box{
+        /* 控制width和height是盒子最终的宽高 */
+        box-sizing: border-box;
+        width: 200px;
+        height: 40px;
+        line-height: 40px;
+        border: 1px solid blue;
+        margin: 20px auto;
+        text-align: center;
+        position: relative;
+    }
+    #box .detail{
+        box-sizing: border-box;
+        width: 500px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        border: 1px solid red;
+        position: absolute;
+        left:-1px;
+        top:38px;
+        display: none;
+        z-index: -1;
+    }
+    #box:hover{
+        border-bottom-color: white;
+    }
+    #box:hover .detail{
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <span>购物车</span>
+        <div class="detail">
+            购物车的相关属性
+        </div>
+    </div>
+    <script>    
+        let a = {n:1};
+        let b = a;
+        a.x = b;
+        console.log(b)//无限死循环{n: 1, x: {…}}
+        //只要俩个及以上typeof检测,最后结果必然是 'string'
+    </script>
+</body>
+</html>

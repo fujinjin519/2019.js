@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let ary = [12,55,6,99,3,54];
+    function  fn(ary){
+        let newAry = [];
+        newAry.push(ary[0]);
+        for(var i = 0;i<ary.length;i++){
+            let item = ary[i];
+            for(var j =newAry.length-1;  j>=0; j--){
+                let cur = newAry[j];
+                if(item>cur){
+                    newAry.splice(j+1,0,item);
+                    break;
+                }
+                if(j === 0){
+                    newAry.unshift(item);
+                }
+            }
+        }
+        return newAry
+    }
+    console.log(fn(ary));
+    
+    
+    </script>
+</body>
+</html>

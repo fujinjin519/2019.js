@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>开始跑</title>
+    <style>
+        *{
+            margin: 0;
+            padding :0;
+        }
+    #box{
+        width: 500px;
+        height: 500px;
+        background: blue;
+        margin: 0 auto;
+    }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>  
+        //操作谁获取谁  
+        let div=document.getElementById("box")
+        console.dir(div);
+        //给相应的元素绑定相应的事件
+        //在相应的事件做你想做的事
+        div.style.background='blue';
+        div.style.width='500px';
+        div.style.height='500px';
+        div.onclick = function(){
+            let color = div.style.background;//获取box元素的background样式
+            switch(color){
+                case 'blue': 
+                div.style.background = 'green';
+                break;
+                case 'green': 
+                div.style.background = 'orange';
+                break;
+                case 'orange' : 
+                div.style.background = 'black';
+                break;
+               default: 
+               div.style.background = 'blue'
+
+            }
+            let width = div.style.width;
+            switch(width){
+                case '500px': 
+                div.style.width = '300px';
+                break;
+                case '300px': 
+                div.style.width = '100px';
+                break;
+                case '100px' : 
+                div.style.width= '400px';
+                break;
+               default: 
+               div.style.width = '500px'
+
+            }
+            let height = div.style.height;
+            switch(height){
+                case '500px': 
+                div.style.height = '300px';
+                break;
+                case '300px': 
+                div.style.height = '100px';
+                break;
+                case '100px' : 
+                div.style.height= '400px';
+                break;
+               default: 
+               div.style.height = '500px'
+
+            }
+        }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+            //三个循环
+            //for   for in  while
+            //1.for循环
+            //四部曲
+           //1）初始化一个变量i=0；
+           //2）判断条件是否成立
+           //3)执行循环体
+           //4）执行i++
+           //1-->2-->3-->4-->2-->3-->4
+           //当条件不成立时，终止循环
+        let arr=[100,2,4,3,5];
+        for(let i=0;i<arr.length;i++){
+            console.log(arr[i])
+        }
+    //i++:在自身基础上+1；
+    //i++:先取值，在运算
+    //++i：先运算，再取值
+    let a=10;
+    a++
+    console.log(a)   //11
+    let b=++a;     
+    // let b=a++
+    console.log(b)     //12   如果a++  为11
+   //i--:在自身基础上-1；
+    //i--:先取值，在运算
+    //--i：先运算，再取值
+        let c=10;
+        c--
+        console.log(c) // 9
+        let d=--c
+        console.log(d) //8  如果c-- 为9
+
+    let i=1;
+    console.log((i++)+(++i));   4
+
+        
+//求1-1000的和
+        let total=0;
+        for(let i=1;i<1001;i++){
+         
+            //i=1 total=0    total=1
+            //i=2 total=1    total=3
+            //i=3 total=3    total=6
+            total+=i;
+        }
+        console.log(total);
+       // break;终止for整个循环
+        for(let i=0;i<6;i++){
+            console.log(100);
+        }
+        console.log(i)
+//continue:终止本轮循环，continue,下面代码不执行
+        for(let i=0;i<6;i++){
+            console.log(100);
+            continue;
+            console.log(200)
+        }
+
+//逻辑且：&&左右俩边都成立，这个条件成立
+//|| ：或  只有左右俩边有一个成立的，整体结果是true
+
+        let obj={name:"zhufeng",age:10};
+        for(let key in obj){
+            console.log(key);
+            console.log(obj[key])
+        }
+        //while
+
+    </script>
+</body> 
+</html>

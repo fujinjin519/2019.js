@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //变量提升：就是浏览器解析代码的一个过程
+    //在当前作用域中，代码执行之前，浏览器会对当前作用域里带var和function进行提前声明和定义；带var的会声明（创建变量）不定义，带function既声明（创建变量）又定义（进行赋值）
+
+
+   // SyntaxError(语法错误) 会使整个页面不运行 //引用错误ReferenceError 在当前代码之后的代码不运行
+    
+    // console.log(a);//undefined  
+    // var a = 12;
+    // console.log(a);//12
+    //声明变量a放在值存储区，但不进行赋值
+    
+    // console.log(window.a);//undefined //光有变量a，没有赋值
+    // console.log(b);//报错   //没有var 不会进行变量提升
+    // var a = 10;
+    // b = 12;
+
+    // console.log(a);//undefined
+    // console.log(b);//报错  //引用错误
+    // var a = b = c = 100;//var a = 100,b=100,c=100
+
+    // console.log(a)//undefined
+    // console.log(b)//undefined
+    // console.log(c)//undefined
+    // var a,b,c = 100;  //只给 c赋值 ； 
+    // console.log(a)//undefined
+    // console.log(b)//undefined
+    // console.log(c)//100
+
+    // function fn(){
+    //     console.log(num);//undefined  //没有值
+    //     var num = 12;  //给num 赋值
+    // }
+    // fn()
+    // console.log(num) //不可以从里边取值  //报错
+
+  
+    // var name = 'xxx';
+    // function fn(name){
+    //     console.log(name);//fn(){}  //进行函数提升
+    //     function name(){
+    //         console.log(name)//fn(){}
+    //     }
+    // }
+    // fn(name)
+
+
+    // ●当浏览器开辟出供代码执行的栈内存之后，代码并没有自上而下立即执行，而是继续做了一些事情:把当前作用域中所有带var/function关键字的进行提前的声明和定义=>变量提升机制
+
+    fn()
+    function fn(){(console.log(1))}//5
+    fn()
+    function fn(){(console.log(2))}//5
+    fn()
+    var fn = function(){(console.log(3))}//5
+    fn()
+    function fn(){(console.log(4))}//3
+    fn()
+    function fn(){(console.log(5))}//3
+    
+    </script>
+</body>
+</html>

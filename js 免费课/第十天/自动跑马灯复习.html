@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div{
+            width: 300px;
+            text-align: center;
+            margin: 200px auto;
+            line-height: 50px;
+            display: none;
+        }
+    </style>
+</head>
+<body style="background: red">
+    <div id = "div">时间到</div>
+    <script>
+    let body = document.body; //获取body
+    let div = document.getElementById('div')
+    let num = null;
+    function fn(){
+    num++;//存储每运行一次的值加起来
+    if(num === 30){
+        clearInterval(ary);
+        body.style.background = 'white';
+        div.style.display = 'block';
+        return;
+    }
+        
+
+    let color = body.style.background;
+    switch(color){
+        case 'red': 
+        body.style.background = 'orange';
+        break;
+        case 'orange' : 
+        body.style.background =  'yellow';
+        break;
+        case 'yellow' : 
+        body.style.background = 'blue';
+        break;
+        case 'blue' : 
+        body.style.background = 'green';
+        break;
+        default : 
+        body.style.background = 'red';
+    }
+}
+    let ary = setInterval(fn,500)
+    </script>
+</body>
+</html>

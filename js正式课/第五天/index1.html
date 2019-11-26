@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="box">sdasdas </div>
+    <script>
+        //面向对象：
+        // 标记语言：HTML / CSS3
+        // 编程语言：JavaScript，PHP，C....
+        // 面向过程：C
+        // 面向对象：
+
+
+        // 把抽象得对象按照特点进行分类（大类 / 小类），把类的公共特征进行提取和封装，放到对应的类别中
+        // 类就是对对象的一种细分，和公共部分的抽取
+        // 在类中具体派生出来的具体事物就是类的实例，而且实例拥有自己私有的特征，还拥有所属类上的特征
+        // 我们研究面向对象，其实就是研究对象、类、实例之间的关系和各自的知识点
+
+        //我们研究一个实例：（1）研究实例的私有属性（2）研究实例的所属类的共有属性（3）一层一层找类的属性和方法
+
+        // let box = document.getElementById('box')
+        // console.dir(box)//一层一层找类的属性和方法
+
+        //构造函数：构造自定义类
+        //new：是JS的关键字
+        function CreatePerson(name,age){
+            // 1.先默认生成一个空格对象{}
+            // 2.让函数里的this指向这个对象
+            // 3.代码执行
+            // 4.默认return这个对象
+            this.name = name;
+            this.age = age
+        }
+        new CreatePerson();//new 函数执行，叫做构造函数运行模式，此时的CreatePerson就是CreatePerson类（构造函数）,h函数执行之后的返回结果就是一个对象，叫做实例对象（f就是CreatePerson的实例）
+        let f =new CreatePerson();
+        let f1 = new CreatePerson('erya',18)
+        let f2 = new CreatePerson('jinyu',19)
+        let f3 = new CreatePerson
+
+        console.log(f,f1,f2,f3)//CreatePerson {name: undefined, age: undefined} CreatePerson {name: "erya", age: 18} CreatePerson {name: "jinyu", age: 18}CreatePerson {name: undefined, age: undefined}
+
+        new CreatePerson();//new 函数执行，叫做构造函数运行模式，此时的CreatePerson就是CreatePerson类（构造函数）,h函数执行之后的返回结果就是一个对象，叫做实例对象（f就是CreatePerson的实例 ，return默认会有
+        //所有类都是函数类型   实例是对象类型的   构造函数中的this指向当前的实例
+
+
+        //构造函数和普通函数的区别
+        // 1.运行上的不同
+        //     普通函数:->形成私有作用域->形参赋值->变量提升->代码执行->作用域是否被销毁
+        //     构造函数:->形成私有作用域->形参赋值->变量提升->默认生成一个对象->把this指向这对象->代码执行->默认把这个对象return出去->作用域是否被销毁
+        // 2.执行上的不同
+        //     构造函数如果不传实参，可以不加小括号，会输出这个函数的值
+        //     普通函数不传会输出这个函数本身
+        // 3.return的不同
+        //     构造函数如果手动return一个基本数据值，不能改变人家的返回值，但是手动return引用数据类型，可以改变构造函数的返回值，此时return的东西已经不是当前类的实例了，(所以不要轻易修改构造函数的返回值)
+
+
+
+        function Fn(n) {
+            let m = 10;
+            this.total = m + n;
+            this.say = function () {
+                console.log(this.total)
+            }
+        }
+        let f1 = new Fn(10);//{total:20 say:fun}  this 给当前对象加     
+        let f2 = new Fn(20);//{total:30 say:fun}
+        let f3 = Fn(10)
+        console.log(f3)//undefined
+        console.log(f1.n)//undefined
+        console.log(f2.m)//undefined
+        console.log(f1.total)//20
+        f2.say()///f2.total  30
+        console.log(f1 === f2)//false
+    </script>
+</body>
+
+</html>

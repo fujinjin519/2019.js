@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let ary = [1,55,6,3,5,5,66,45]
+    function fn(ary){
+        for(var i = 0;i<ary.length-1;i++){
+            for(var j = 0;j<ary.length-1-i;j++){
+                if(ary[j]>ary[j+1]){
+                    let temp = ary[j];
+                    ary[j] = ary[j+1];
+                    ary[j+1] = ary[j];
+                }
+            }
+        }
+        return ary
+    }
+    console.log(fn(ary))
+    
+    </script>
+</body>
+</html>

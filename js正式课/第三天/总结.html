@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//     堆栈内存的销毁
+// 堆栈内存 复习
+//     打开一个页面，浏览器会形成两个虚拟的内存：堆内存、栈内存
+//     栈内存存储了啥：变量、基本数据类型值、地址
+//     堆内存存储了啥：存储了引用数据类型的值
+//     咱们的全局作用域、私有作用域都是栈内存，为代码执行提供必要的环境，理论上来说，存储
+//     的东西越少，运行的越快
+
+// 堆内存的销毁
+// 谷歌浏览器：谷歌浏览器每隔一段时间就会在当前作用域从头到尾检查一遍，看看有没有没有被占用的空间地址，如果有，就立即对其进行回收
+// IE和火狐：浏览器采用计数的规则，如果空间地址被占用一次，那这个空间地址就默认+1，每空闲一次，空间地址就默认-1，如果浏览器发现有为0的空间地址，就把其回收
+// var obj = {};
+// obj = null;
+        // 栈内存的销毁
+        // 立即销毁
+        // 不销毁
+        // 不立即销毁
+  
+/* 作用域就是栈内存：全局作用域、私有作用域
+1、全局作用域的销毁: 一般情况情况不销毁，除非把当前页面关闭，整个作用域就销毁了
+2、私有作用域的销毁：立即销毁、不销毁 、不立即销毁 */
+          // 1、立即销毁：
+// function fn(){
+//     var name = 'jinYu',
+//     age = 18;  
+// }
+// fn();
+// fn();
+//            2、不销毁：
+// 函数要return一个引用数据类型值
+// return要被外界接收
+// （1）函数要return一个引用数据类型值;（2）return的值要被外界接收
+// function fn(){
+//     var name = 'jinYu',
+//     age= 16;
+//     return {
+//         name: name,
+//         age: age
+//     }
+// }
+           //3、不立即销毁
+// var res = fn()
+    //    function fn(){
+    //        var a = 12;
+    //        return function(){
+    //            console.log(a)
+    //        }
+    //    }
+    //    fn()()
+       // 当外层大函数执行完成之后不能立即销毁，他要继续等待里面的小函数执行完成销毁之后，大函数在销毁
+
+//经典案例
+            /* var i = 5;
+            function fn(i) {
+                return function (n) {
+                    console.log(n + (++i));
+                }
+            }
+            var f = fn(1);
+            f(2);//4
+            fn(3)(4);//8
+            fn(5)(6);//12
+            f(7);//10
+            console.log(i);//5 */
+        /* 2.
+        function fn(n) {
+                    return function (m) {
+                        console.log(m + ++n)//13,//15//4//8
+                    }
+                }
+                var f = fn(7);
+                f(5);
+                f(6);
+                fn(1)(2);
+                fn(3)(4); */
+/* 3.
+        var num = 1;
+        var obj = {
+            num: 10,
+            fn: (function (num) {
+                var num = 2;
+                return function (n) {
+                    console.log(n * (num++));//20//60//120//200
+                }
+            })(num)
+        }
+        var f = obj.fn;
+        f(10);
+        f(20);
+        obj.fn(30);
+        obj.fn(40); */
+/* 4.
+   var a = 9; //0 1 0 1 1 //2
+        function fn() {
+            a = 0;//从全局作用域找到a从新赋值//不是声明变量
+            return function (b) {
+                return b + a++;
+            }
+        }
+        var f = fn();//f
+        var m = f(5);
+        alert(m);//5
+        var n = fn()(5);//重新执行一遍   a = 0
+        alert(n);//5
+        var x = f(5);
+        alert(x);//6
+        alert(a);//2 */
+
+
+        // 堆内存的销毁
+        // let a = 12;
+        // let ary = [1,2}
+        // ary = []  此时[1,2]就被销毁了
+ 
+        // 栈内存的销毁
+        // // 堆栈内存的销毁
+        // // 堆内存的销毁
+        // let a  = 12;
+        // let ary = [1,2]; // 他就销毁了
+      
+        // ary = [];
+        // // 栈内存的销毁
+        // function fn(){
+        //     function f(){}
+        //     return f
+        //     // 不销毁
+        // }
+        // let s = fn();
+        // function fn(){
+        //     function f(){}
+        // }
+        // let s = fn();//不立即销毁
+            //当外层大函数执行完成后不能立即销毁，他要等待里面的小函数执行完成之后销毁，大函数在销毁
+
+// 选项卡的新办法
+
+//  //第四种方法
+//     //ES6中的let在for循环的大括号会形成块级作用域
+//     for(let i = 0; i<navList.length;i++){
+//         navList[i].onclick = function(){
+//             fn(i)
+//         }
+//     }
+
+
+//     //第三种方法：利用了闭包可以保存私有变量的特点，而且这个闭包是不销毁的变量
+//         /* for(var i = 0;i<navList.length;i++){
+//             navList[i].onclick =(function(index){
+//                 return function(){
+//                     fn(index)
+//                 }
+//             })(i)
+//         } */
+
+
+
+
+
+
+
+/* this
+他是JS中的关键字，有特殊的意义
+他是函数的执行主体，谁执行函数，this就是谁
+在全局作用域下，this就是window
+在函数执行时，看执行函数前有没有“.”，如果有，点前面是谁，this就是谁；如果没有“.”，那this就是window
+自执行函数里的this是window
+给元素事件行为绑定方法，方法里的this指向被绑定的元素本身
+回调函数里的this一般指向window */
+     
+// console.log(this)//window
+//      console.log(this === window)//true
+
+    //  window.a = 12;
+    // console.log(this.a)//12
+
+//  function fn(){
+//        console.log(this)  //window
+//    }
+//  fn()
+
+
+    //  let obj = {
+    //     name:function(){
+    //         console.log(this)//obj
+    //    }
+    //  }
+    //  obj.name()
+
+
+   /*  var age =  15;
+    var obc = {
+         age :13,
+        name:function(){
+             console.log(this.age)//15
+         }
+     }
+     var f =obc.name
+     f() //没点  所以为window  从window下找age */
+
+
+
+//      (function(){
+//         console.log(this)//window
+//    })()
+   
+
+    //  box.onclick = function(){
+    //      console.log(this)//本身
+    //  }
+
+
+    //  var ary = [1, 2];
+    //              ary.map((a,b)=>{
+    //                  console.log(this) //回调.window
+    //              })
+
+                // ary.sort((a,b)=>{
+                //      console.log(this);//排序.window
+                //     return a-b
+                // })
+
+
+
+        //   function fn(a){
+        //               a()
+        //       }
+        //       fn(function(){
+        //        console.log(this)//window
+        //     })
+
+
+            //     var num = 100;
+            //     var obj = {
+            //       num:2,
+            //         fn:function(){
+            //            var num = 1;
+            //             (function(num){//2
+            //               console.log(this.num+num);//102//自执行函数里的this就是window//100+2
+            //            })(this.num) //obj.name 2
+            //        }
+            //     } 
+            //     obj.fn()
+            //    //var f = obj.fn
+            //   //f()  取消了注释为200    没有点为window
+
+
+
+        // var num = 1; //1  //2
+        // var obj = {
+        //     num: 0,   //他不是变量 他是属性名：属性值
+        //     fn: function () {
+        //         num = 1; //找变量 所以找到外面的num   把它重新赋值1
+        //         (function (num) { //0    //形参必须是变量
+        //             ++this.num;//window 的//
+        //             num++;//1
+        //             console.log(num)//1
+        //         })(this.num)//obj.name
+        //     }
+        // }
+        // obj.fn();
+        // console.log(window.num, obj.num);//2,0
+    
+    
+    </script>
+</body>
+</html>

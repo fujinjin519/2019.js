@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        list-style: none;
+    }
+    #newBox{
+        box-sizing: border-box;
+        margin:20px auto;
+        width: 300px;
+        border:2px solid blue;
+    }
+    #newBox li{
+        line-height: 50px;
+        border-bottom:1px dashed orange;
+    }
+    #newBox li:nth-last-child(1){
+        /* 获取li中的倒数第一个 */
+        border-bottom:none；
+    }
+    </style>
+</head>
+<body>
+    <ul id="newBox">
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+        <li>我是第4个li</li>
+        <li>我是第5个li</li>
+    </ul>
+
+    <script>
+    let newBox = document.getElementById('newBox');
+    let newList = newBox.getElementsByTagName('li');
+    let color =null;
+    for(let i = 0; i<newList.length;i++){
+        let curLi = newList[i] ;
+        curLi.style.background = i%2 === 0?'orange':'blue';//简写
+        // if(i%2 === 0){
+        //     culLi.style.background = 'orange';
+
+        // }
+        // else{
+        //     culLi.style.background = 'blue';
+        // }
+        curLi.onmouseover = function(){
+            color =this.style.background
+            this.style.background = 'green';
+        }
+        curLi.onmouseout = function(){
+            this.style.background = color
+        }
+    }
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+      *{
+        margin:0;
+          padding:0;
+     }
+    ul{
+        list-style: none;
+        display: flex;
+     }
+    #box {
+            width: 530px;
+            margin: 20px auto;
+          
+        }
+
+        li {
+            width:105px;
+            font-size: 50px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            margin-right: 10px;
+            /* 鼠标变成小手 */
+            border: 1px solid black;
+            position: relative;
+            top:1px;
+            background: -webkit-linear-gradient(top right ,orange,aqua,yellow,green);
+            -webkit-background-clip: text;
+            color:transparent;
+        }
+
+        #box div {
+            width: 531px;
+            height: 300px;
+            border: 1px solid black;
+            display: none;
+            text-align: center;
+            font-size: 50px;
+            background: -webkit-linear-gradient(top right ,orange,aqua,yellow,green);
+            -webkit-background-clip: text;
+                color:transparent;
+          
+        }
+        #box div.active{
+            display: block;
+        }
+        li.active{
+            border-bottom-color:white;
+      
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul id="navList">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <div class="active">one</div>
+        <div>two</div>
+        <div>three</div>
+    </div>
+    <script>
+    let div = document.querySelectorAll('#box div');
+    let list = document.querySelectorAll('#navList li');
+    console.log(div,list)
+    for(var i =  0; i<list.length;i++){
+        list[i].axe = i;
+        list[i].onclick = function(){
+            fn(this.axe)
+        }
+    }
+    function fn(index){
+        for(var i = 0;i<list.length;i++){
+            list[i].className = '';
+            div[i].className = '';
+        }
+            list[index].className = 'active';
+            div[index].className = 'active';
+    }
+    
+    
+    </script>
+</body>
+</html>

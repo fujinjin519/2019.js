@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+//一，     // 数组转字符串
+        // toString()
+     /* join 把数组以特定的分隔符换为字符串 
+        方法的含义：把数组以特定的分隔符换为字符串 
+        方法的参数：字符串格式的分隔符
+        方法的返回值：字符串
+        原数组是否发生改变：否
+         */
+        //   let ary = [12,3,456,95];
+        // console.log(ary.join('$'));//12$3$456$95
+        // console.log(ary.join(' '));//空格也是字符串//12 3 456 95
+        // console.log(ary.join());//12,3,456,95//如果不传值，分隔符就是逗号
+        // console.log(ary)// [12, 3, 456, 95]
+
+
+//二    // 遍历数组
+        //     forEach
+        // 方法的含义：遍历数组
+        //     方法的参数：函数
+        //     方法的返回值：无
+        //     原数组是否发生改变：否
+    //    let ary  =[1,true,2,NaN,3];
+    //     ary.forEach((item, index)=>{
+    //         // item是数组的每一项
+    //         // index是每一项的索引
+    //         // 有多少项就循环多少轮
+    //         console.log(item, index)
+    //     })
+        //       // 任意数求和
+        // let fn = (...arg)=>{
+        //     let total = null;
+        //     arg.forEach((item,index)=>{
+        //         // item是数组的每一项
+        //         // index是数组的每一项的索引
+        //         // 数组有多少项就会循环多少轮
+        //         if(!isNaN(Number(item))){
+        //             total+=item
+        //         }
+        //     })
+        //     return total
+        // }
+        // console.log(fn(1,true,2,NaN,3))//7
+
+
+//三 遍历数组
+/* map
+    方法的含义：遍历数组
+    方法参数：函数
+    方法的返回值：改变后的新数组
+    原数组是否发生改变：否 */ 
+        
+    //``:反引号（模板字符串）${}     
+    //     ``:反引号（模板字符串）${}里可以识别变量
+    //    let ary = [1,2,3,4,5]
+    // //    修改数组的值
+
+    //    let num = ary.map((item, index)=>{
+    //     // item是数组的每一项
+    //     // index是每一项的索引
+    //         //数组有多少项就循环多少次
+    //     return `我是第${item}个li`
+    //    })
+    //    console.log(num)
+    //    console.log(ary)
+
+
+//四  字符串
+          // 字符串的方法
+        // let str = 'asdfgh';
+        // //字符串有length代表字符串的长度
+        // str[0] // 'a'
+        // console.log(str[str.length-1])//'h'
+        // console.log(str)//'asdfgh'
+        // 字符串的所有方法都不改变原字符串
+        // 返回值都是你处理之后的字符串
+        // ======= 字符串的获取
+
+        // 1、charAt(n):通过索引或对应的字符串
+
+        // let str = 'absdfgh';
+        // console.log(str.charAt(3)) // 'd'
+        // console.log(str[0])//'a'
+        // console.log(str.charAt(100))// ''
+        // console.log(str[100]) // undefined
+
+        // 2、charCodeAt():通过索引找到对应的ASCLL码（unicode）
+       //String.fromCharCode(98);//把ASCLL转换为对应的字符
+        // console.log(str.charCodeAt(1))
+
+
+
+
+        // 字符串的截取
+
+        // // 3、substr(n,m)：从索引n开始，截取m个
+         // let str = 'absdfgh';
+        // console.log(str.substr(1,3)) //'bsd'
+        // console.log(str.substr(0)) // 克隆 截取到末尾
+        // console.log(str.substr()) // 克隆 截取到末尾
+
+
+        // 4、substring(n,m):从索引n开始，截取到索引m（不包括m对应的那一项）
+        // let str = 'absdfgh';
+        // console.log(str.substring(1,3)) // 'bs'
+        // console.log(str.substring(0)) // 克隆 截取到末尾
+        // console.log(str.substring()) // 克隆 截取到末尾
+
+
+        // 5、slice(n,m)从索引n开始，截取到索引m（不包括m对应的那一项）[支持负数:把参数加上length]
+        // console.log(str.slice(-5,-1)) //（2，6）// 'sdfg'
+
+        //6.split():把字符串以特定的分隔符转数组
+        // let str = 'as|da|sd|as|da|sd'
+        // console.log(str.split('|'))//   ["as", "da", "sd", "as", "da", "sd"]
+        // console.log(str.split(''))// ["a", "s", "|", "d", "a", "|", "s", "d", "|", "a", "s", "|", "d", "a", "|", "s", "d"]
+        // console.log(str.split('a').join(''))//s|d|sd|s|d|sd//去掉a，去掉 ''// join 把数组以特定的分隔符换为字符串 
+
+
+        //7.replace(n,m):把字符串中的n替换为m(只替换第一个)
+        // let str = 'asdasdasd'
+        // console.log(str.replace('s','$'))//a$dasdasd
+        // console.log(str.replace(/s/g,'$'))//a$da$da$d  正则全局选取进行切换
+        // console.log(str.replace('s','$').replace('s','$'))//a$da$dasd  替换2个
+        // console.log(str.replace('z','x'))//asdasdasd//如果替换不成功，返回原字符串
+
+        // let str = '2019-11-12 17:46'
+        // console.log(str.replace('-','年').replace('-','月').replace(' ','日 ').replace(':','时')+'分') // '2019年11月12日 17时46分'
+
+
+
+         /* 这是不足十，补零的方法
+        // function addZero(val){
+        //     if(val.length === 1){
+        //         return '0'+ val
+        //     }
+        //     else {
+        //         return val
+        //     }
+        // }
+        *///如果var为1 字符串长度和1绝对比较为true，进行字符串拼接   '0'+'1' //'01' 
+        //如果长度不为1直接输出
+        // let addZero = val => val.length === 1 ? '0' + val : val;//简写 函数
+
+        // let str = '2019-1-2 17:46'
+        // let y = str.indexOf('-');
+        // let m = str.lastIndexOf('-');
+        // let d = str.indexOf(' ');
+        // let year = str.substring(0, y);2019
+        // let month = str.substring(y+ 1,m);1
+        // let day = str.substring(m + 1,d);2
+        // console.log(year,month,day)//2019 1 2
+        
+        // let res = addZero(year) + '年' + addZero(month) + '月' + addZero(day) + '日'
+        // console.log(res) //2019年01月02日
+
+        // 8、toUpperCase: 转大写
+        // 9、toLowerCase：转小写
+        // 10、trim去空格（trimLeft、trimRight）
+    </script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    console.log('hello world');
+    console.log(1==2);//false
+    console.log('aa'==NaN);//false
+    console.log(10==NaN);//false
+    console.log(NaN == NaN );//false
+    console.log(1 == 1)//true
+    //NaN !== NaN   都不相等
+    
+
+
+    //isNaN 检测一个值是否为非有效数字，不是有效数字返回true， 是为false
+    //isNaN  在使用isNaN是会检测是否为数字类型，不是基于Number()这个方法，把值换为数组类型，在检测
+        console.log(isNaN(10));//false
+        console.log(isNaN('aa'));//true
+        console.log(isNaN('10'));//false     isNaN(Number('10')) 转为有效数字，是有效数字 ，为false
+
+//把字符串转换为数字，只要字符串包含任意一个非有效数字，结果都是NaN(第一个小数点除外)
+
+   console.log(Number('12.5'));//12.5
+   console.log(Number('12.5px'));//NaN
+   console.log(Number('12.5.5'));//NaN
+   console.log(Number(''));//0
+
+   console.log(Number(true));//1
+   console.log(Number(false));//0
+   console.log(isNaN(true));//false  //有效数字转换为false
+   console.log(isNaN(false));//false
+   console.log(Number(null));//0
+   console.log(Number(null));//NaN
+
+   console.log(Number({name:'10'}));//NaN
+   console.log(Number({})); //NaN
+   //{}/{xxx:'xxx'}.toString()=>"[object Object]"=>NaN
+   console.log(Number([])); //0
+   console.log(Number([12])); //12
+   console.log(Number([12,23])); //NaN
+   //[12,23].toString()=>'12,23'
+
+/* parseFloat/parseInt也是转换数字的方法，对于字符串来说，它是从左到右依次查找有效数字字符，直到遇到非有效数字，停止查找(不管后面是否有数字，都不在查找)，吧找到数字返回 */
+   let str='12.5px';
+   console.log(Number(str))//NaN  非有效数字
+   console.log(parseInt(str))//12
+   console.log(parseFloat(str))//12.5
+   console.log(parseFloat('width:12.5px'))//NaN    先开始没找到有效数字，直接返回
+
+
+
+
+
+ //字符串数据类型
+ //所有用单引号，双引号，反引号包起来的都是字符串
+//把其他类型值转换为字符串
+  //  toString()
+        let a = 12;
+        console.log(a.toString());//'12'
+        console.log((NaN).toString());//'NaN'
+        console.log((true).toString());// 'true'
+        console.log((false).toString());// 'false'
+         //(null).toString()//报错
+        console.log([].toString())//''
+        console.log([12].toString())// '12'
+        console.log([12,23].toString())// '12,23'
+        console.log(/^$/.toString())// '/^$/'
+       console.log({}.toString())// '[object Object]'
+//null和undefined是禁止直接toString的
+//但是和undefined一样转换为字符串的结果就是 'null'/'undefined'
+
+
+
+  //  字符串拼接
+  //四则运算法则中，除加法之外，其余都是数学计算，只有加法可能存在字符串拼接(一旦遇到字符串，则不是数学运算，而是字符串拼接)
+        console.log('10'+10)//'1010'
+        console.log( '10' - 10) // 0
+        console.log( '10px' - 10) // NaN   //NaN-10
+        
+
+        let c=10+null+true+[]+undefined+'珠峰'+null+[]+10+false//10+0+1+''+undefined'珠峰'+null+''+10+false//'11undefined珠峰null10false'
+
+
+//boolean 布尔数据类型
+//只有俩个值  true/false      把其他类型转换为布尔类型
+//只有0，NaN,'',null,undefined五个值转换为false,其余都转换为true(没有任何特殊情况)
+
+//Boolean
+           console.log(Boolean(0))//false
+           console.log(Boolean(''))//false
+           console.log(Boolean('  '))//true   //有空格
+           console.log(Boolean(null))//false
+           console.log(Boolean(undefined))//false
+           console.log(Boolean([]))//true
+           console.log(Boolean([12]))//true
+           console.log(Boolean(-1))//true         
+
+
+//!/!!取反（!先转布尔，然后取反）（!!取反再取反，相当于转换布尔）
+        console.log(!1);//取反为false
+        console.log(!!1);//取反在取反true
+
+
+//条件判断 如果条件只是一个值，不是==/===/！=/>= 等这些比较，要先把这个值转化为布尔类型，然后验证真假
+        if(1){
+            console.log('哈哈')//1为true条件成立   
+        }
+     
+        if('3px'+3){
+            //字符串拼接//'3px3'
+            console.log('呵呵')//3px3为true条件成立   
+        }
+        if('3px'-3){
+            //3px=NaN//NaN-3  //NaN
+            console.log('嘻嘻')//NaN为false条件不成立   
+        }
+     
+
+
+//null/undefined    null和undefined都代表的是没有
+//null:意料之中(一般都是开始不知道值，我们手动先设置为null，后期再给予赋值操作)
+        let num = null;//let num = 0;区别是null没空间，0会占一点空间，一般最好用null作为初始的空值，因为零不是空值，在栈内存中有自己的存储空间(占了位置吧)
+        num = 12;
+
+ // undefined 意料之外(不是我能决定的)
+    let num1;//创建一个变量没有赋值，默认是undefined
+
+    num1=12; //也可以后面赋值 
+
+
+//引用数据类型
+//object对象数据类型-普通对象
+        //{[key]:[value],.....}任何一个对象都是由零到多组键值对（属性名：属性值）组成的（并且属性名不能重复）
+let person={
+    name: '王王王',
+    age:40,
+    height:'185CM',
+    weight:'80KG',
+    1:100
+} 
+
+//设置属性值
+//属性名不能重复，如果属性名已经存在，不属于新增属于修改属性值
+person.GF= '圆圆'
+person.name = '李易峰'
+console.log(person['GF']);//圆圆
+console.log(person['name'])//李易峰
+console.log(person)//输出person
+
+//获取属性名对应的属性值
+//对象：属性名  属性名是数字或字符串格式的
+//如果属性名是数字，则不能使用点的方式获取属性值
+    console.log(person.name);//王王王
+    console.log(person['age']);//40
+    console.log(person.sex);//undefined  没有这个属性名，默认属性值为undefined
+    console.log(person[1]);//100
+//console.log(person.1);SyntaxError:语法错误，不可以这么写
+
+//删除属性
+//真删除：吧属性彻底干掉
+delete person[1];//删除person中的第一个属性名和属性值
+//假删除：属性还在。值为空
+person.weight = null;//width变为null
+console.log(person);
+
+//数组是特殊的对象数据类型  1.我们中括号设置的是属性值，它的属性名是默认生成的数字，从零开始递增，而且这个数字代表每一项的位置，我们把其称为“索引”   从零开始，连续递增，代表每一项位置的数字属性名  2.天生默认一个属性名 length  ，存储数组的长度
+
+    let ary = [12,'呦呦',true,13];
+    console.log(ary);//输出ary
+    console.log(ary['length']);//输出长度为4
+    console.log(ary[1]);//输出 '呦呦'
+    console.log(ary[ary.length-1]);//获取最后一项 13
+    ary[ary.length]=100;//新加一项
+    console.log(ary)//输出ary
+
+
+
+   let e=12;
+   let b=e;
+   b=13;
+   console.log(e); //12
+
+
+
+   let n = {
+       name: '珠峰'
+   };
+   let m =n;        //m现在为珠峰
+   m.name = '培训'; //因为有名字,所以m改为培训  而不是新增培训
+   console.log(n.name);//培训
+
+
+
+   let o = [10,20];
+   let p = o;//p=[10,20]
+   let x = p;//z=[10,20]
+  p[0] = 100;//p=[100,20]
+   x = [30,40];//x=[30,40]//x创建新变量，产生新的值 ，不和上边关联
+   x[0] = 200;//x=[200,40]
+   p = x;//给了m新的x的值  所以p=[200,40]
+  p[1] =300;//更该  p=[200,300]
+   o[2] = 400;//没有这个索引，所以为增加，此时o=[100,20,400]
+   console.log(o,p,x)
+//o=[100,20,400]  p=[200,300]   x=[200,300]
+
+
+
+//JS中的操作语句：判断，循环
+//判断
+//1.if/else     只要条件成立就输出     条件可以多样性：等于，大小，取反或比较都是要计算出是true或者false
+ /*   if(条件){
+       条件成立执行
+   }else if(条件2){
+    条件2成立执行
+   }else{
+       条件不成立执行
+   } */
+
+
+
+
+
+  // 2.；三元运算符 简单的if/else特殊处理方式
+  //语法：条件？条件成立处理的事情：不成立处理的事情
+    //a>=10?console.log(''):console.log('');
+  //如果处理事情教多，用括号包起来，每一件事用逗号隔开；如果不需要处理事情，可以用null/undefined占位
+  //a>=10?(a++,console.log('')):null;//如果a>=10,a++,然后输出，否则输出：无  可以ull/undefined占位
+
+
+  // 3.switch case y一个变量在不同情况下的不同操作
+  //每一种case情况后最好加上break
+  //不加break,当前面条件执行成立后，后面条件不论是否成立都要执行，直到遇到break为止（不加可以实现变量在某些值情况下做相同的事情）
+  //default等于else，以上都不成立干的事情
+  //每一中case的情况比较用的都是=== 绝对比较（类型不一样，绝对不相等，不会默认转换数据类型）
+   switch(a){
+       case 1 :
+       console.log('xx');
+       break;
+       case 2 :
+       console.log('xxx');
+       break;
+       case 3 :
+       console.log('xxxx');
+       break;
+       default:
+       console.log('xxxxx');
+   }
+
+
+
+    </script>
+</body>
+</html>

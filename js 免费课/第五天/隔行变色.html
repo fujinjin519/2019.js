@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隔行变色</title>
+    <style>
+    *{
+        margin: 0；
+        padding：0；
+    }
+    ul{
+        list-style: none;
+    }
+    #box{
+        width:500px;
+        margin: 20px auto;
+        text-align: center;
+    }
+    li{
+        font-size: 20px;
+        color: chartreuse;
+        line-height: 30px;
+        border: 1px solid blue;
+     
+    }
+    /* li:nth-child(odd){
+        background: red;
+    }
+    li:nth-child(even){
+        background: blue;
+    } css隔行变色*/
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul id = "list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ul>
+    </div>
+    
+    <script>
+        let ul =document.getElementById('list')
+
+        let list = ul.getElementsByTagName('li')
+        let color = null;
+        //通过元素名获取一组元素,得到的是一个类数组
+        console.log(list)
+        //循环每一个li
+        for(var i=0;i<list.length;i++){
+            console.log(list[i])//代表每一个li//%取余
+            if(i%2 ===0){
+                //i条件成立对应为奇数行，因为i（i是偶数）从0开始 
+                //把当前li的颜色改变
+                list[i].style.background = 'black';
+            }else{
+                //如果上边的条件不成立i，那就是偶数行
+                //把当前li的颜色改变
+                list[i].style.background = 'yellow';
+            }
+            list[i].onmouseenter = function(){
+                //this//当前你操作的元素是谁，this就是谁
+                //在你划入元素之后，改变元素之前，先把人家原来的颜色保存下来，存到color变量里
+                color =  this.style.background;
+                this.style.background='blue'
+            }
+            list[i].onmouseout =function(){
+                //当你划出这个元素时，再把人家之前的颜色赋值给人家
+                this.style.background=color;
+            }
+        }
+    
+    </script>
+</body>
+</html>

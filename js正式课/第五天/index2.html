@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/* 
+数据类型检测
+typeof
+检测数据类型
+特点
+返回值是一个字符串
+字符串里放的是他的数据类型
+typeof检测数组、普通对象、null  返回值都是'object'，所以typeof检测数据类型，无法将null、数组、普通对象细分
+typeof null    返回值是'object'
+typeof []        返回值是'object'
+typeof ({})     返回值是'object'
+console.log(typeof 11)//'number'
+console.log(typeof '121')//'string'
+console.log(typeof undefined)//'undefined'
+console.log(typeof true)//'boolean'
+console.log(typeof null)//'object'
+console.log(typeof [])//'object'
+console.log(typeof ({}))//'object'
+console.log(typeof typeof typeof 12)//'string'
+instanceof
+检测当前实例是否属于某个类
+constructor
+基于构造函数检测数据类型
+Object.prototype.toString.call()
+检测数据类型最好的方式 */
+    // instanceof；检测当前实例是否属于某个类
+    // 实例 instanceof 类，如果实例是属于这个类，那就返回true，反之false
+    //[局限性]:instanceof 不能检测基本数据类型,只能坚持引用数据类型的值  ，如果想检测 ，只能用构造函数创建在检测
+
+    let ary = [];
+    let obj = {name:1}
+    console.log(ary instanceof Array)//true
+    console.log(obj instanceof Object)//true
+    console.log(ary instanceof Object)//true
+    console.log(ary instanceof RegExp)//false  数组不属于正则
+    console.log(/ ^$/ instanceof RegExp)//true
+   
+    
+    function Fn(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    let f1 = new Fn;
+    console.log(f1 instanceof Fn)//true
+    console.log(1 instanceof Fn)//false
+    console.log('22'.substr)//true
+    console.log((1).substr)//undefined
+
+    //1.字面量创建实例的方式
+    let num = 1;
+    let str = 'w';
+    //2。构造函数创建实例的方法
+    let ss = new Number(1)
+    console.log(ss)//
+    console.log((1).toFixed(2))//'1.00'  把数字转换为字符串，保留指定位小数
+    console.log(ss.toFixed(2))//1.00
+    let w = new String(3)//创建一个字符串的实例
+    console.log(w)//string
+    console.log(w.substr)//f substr{}
+    console.log(w instanceof String)//true
+    </script>
+</body>
+</html>

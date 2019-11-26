@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ //一，   //单例模式  把描述同一个事物特征的信息进行分组归类。放到同一个命名空间下(减少全局变量的污染)
+        
+        // let person1 = {
+        //     name:'jinyu',
+        //     age:18
+        // }
+        // let person2 = {
+        //     name : 'erya',
+        //     age : 22
+        // }
+        // console.log(person1)//{name: "jinyu", age: 18}
+    //高级单例模式
+          // let person1 = (function(){
+        //     let fn = function(){};
+        //     let name = 'erya';
+        //     return{
+        //         name:name,
+        //         age:18,
+        //         fn:fn
+        //     }
+        // })()
+        // console.log(person1)//{name: "erya", age: 18, fn: ƒ}
+
+        //工厂模式
+            //特点：批量生产 把实现相同功能的代码封装到函数里，以后想运行这个方法，直接执行函数就好
+            //高内聚：提高代码的复用率 
+            //低耦合：减速页面的重复代码
+                 // function createPerson(name,age){
+            //     var name = name;
+            //     var age = age;
+            //     var sex = 'girl'
+            //     return{
+            //         name,
+            //         age,
+            //         sex
+            //     }
+            // }
+            // let person1 = createPerson('erya',18)
+            // let person2 = createPerson('jinyu',18)
+            // console.log(person1,person2)//{name: "erya", age: 18, sex: "girl"} {name: "jinyu", age: 18, sex: "girl"}
+
+//构造函数：
+
+        // 把抽象得对象按照特点进行分类（大类 / 小类），把类的公共特征进行提取和封装，放到对应的类别中
+        // 类就是对对象的一种细分，和公共部分的抽取
+        // 在类中具体派生出来的具体事物就是类的实例，而且实例拥有自己私有的特征，还拥有所属类上的特征
+        // 我们研究面向对象，其实就是研究对象、类、实例之间的关系和各自的知识点
+
+        //我们研究一个实例：（1）研究实例的私有属性（2）研究实例的所属类的共有属性（3）一层一层找类的属性和方法
+
+        // let box = document.getElementById('box')
+        // console.dir(box)//一层一层找类的属性和方法
+
+        //构造函数：构造自定义类
+        //new：是JS的关键字
+        function CreatePerson(name,age){
+            // 1.先默认生成一个空格对象{}
+            // 2.让函数里的this指向这个对象
+            // 3.代码执行
+            // 4.默认return这个对象
+            this.name = name;
+            this.age = age
+        }
+        new CreatePerson();//new 函数执行，叫做构造函数运行模式，此时的CreatePerson就是CreatePerson类（构造函数）,h函数执行之后的返回结果就是一个对象，叫做实例对象（f就是CreatePerson的实例）
+        let f =new CreatePerson();
+        let f1 = new CreatePerson('erya',18)
+        let f2 = new CreatePerson('jinyu',19)
+        let f3 = new CreatePerson
+
+        console.log(f,f1,f2,f3)//CreatePerson {name: undefined, age: undefined} CreatePerson {name: "erya", age: 18} CreatePerson {name: "jinyu", age: 18}CreatePerson {name: undefined, age: undefined}
+
+        new CreatePerson();//new 函数执行，叫做构造函数运行模式，此时的CreatePerson就是CreatePerson类（构造函数）,h函数执行之后的返回结果就是一个对象，叫做实例对象（f就是CreatePerson的实例 ，return默认会有
+        //所有类都是函数类型   实例是对象类型的   构造函数中的this指向当前的实例
+
+
+        //构造函数和普通函数的区别
+        // 1.运行上的不同
+        //     普通函数:->形成私有作用域->形参赋值->变量提升->代码执行->作用域是否被销毁
+        //     构造函数:->形成私有作用域->形参赋值->变量提升->默认生成一个对象->把this指向这对象->代码执行->默认把这个对象return出去->作用域是否被销毁
+        // 2.执行上的不同
+        //     构造函数如果不传实参，可以不加小括号，会输出这个函数的值
+        //     普通函数不传会输出这个函数本身
+        // 3.return的不同
+        //     构造函数如果手动return一个基本数据值，不能改变人家的返回值，但是手动return引用数据类型，可以改变构造函数的返回值，此时return的东西已经不是当前类的实例了，(所以不要轻易修改构造函数的返回值)
+
+
+//二。 数据类型检测
+   /*  1.typeof 特点：返回值是一个字符串，字符串里放着它的数据类型，
+    缺点：检测普通对象，数组，null返回值都是object,所以typeof检测数据类型，无法将null.数组，普通对象细分
+    2.instanceof:检测当前实例是否属于某个类
+    特点：  
+     实例 instanceof 类，如果实例是属于这个类，那就返回true，反之false
+    [局限性]:instanceof 不能检测基本数据类型,只能坚持引用数据类型的值  ，如果想检测 ，只能用构造函数创建在检测
+    3.constructor:基于构造函数检测数据类型
+    4.Object.prototype.toString.call()检测数据类型最好的方式 */
+
+    // let ary = [];
+    // let obj = {name:1}
+    // console.log(ary instanceof Array)//true
+    // console.log(obj instanceof Object)//true
+    // console.log(ary instanceof Object)//true
+    // console.log(ary instanceof RegExp)//false  数组不属于正则
+    // console.log(/ ^$/ instanceof RegExp)//true
+
+   /*   //1.字面量创建实例的方式
+     let num = 1;
+    let str = 'w';
+    //2。构造函数创建实例的方法
+    let ss = new Number(1)
+    console.log(ss)//
+    console.log((1).toFixed(2))//'1.00'  把数字转换为字符串，保留指定位小数
+    console.log(ss.toFixed(2))//1.00
+    let w = new String(3)//创建一个字符串的实例
+    console.log(w)//string
+    console.log(w.substr)//f substr{}
+    console.log(w instanceof String)//true
+ */
+//三  原型
+    //作用：构造函数解决了实例的私有属性问题
+    //三条规定：
+    //（1）每一个函数都天生自带一个prototype属性，属性值是一个对象，里面存储的是实例公有属性（原型）；
+    //（2）每一个原型都天生自带一个constructor属性，其属性值指向当前类
+    //（3）每一个对象(实例，原型)天生自带一个__proto__属性，其属性值指向当前所属类的原型
+
+    //原型链：在对象里查找一个属性，先看自己私有的有没有，如果自己没有。就通过__proto__属性找到当前所属类的原型上，如果原型上有，就直接用，如果没有，通过原型的__proto__继续往Object类的原型上找，如果还没有，就是undefined，这种一级一级向上查找就会形成原型链
+    
+
+//四  列子：
+function Fn(x, y) {
+            this.x = x;
+            this.y = y;
+            this.getX = function () {
+                 console.log(this.x);//100
+             }
+        }
+        //this .a  = 300
+        Fn.prototype.getX = function () {
+            console.log(this.x);
+        }
+        Fn.prototype.getY = function () {
+            console.log(this.y);
+        }
+        var f1 = new Fn(100, 200);
+        f1.__proto__.a = 300;
+        var f2 = new Fn(100, 200);
+        console.log(f1.getX == f2.getX);//false
+        console.log(f1.getY == f2.getY);//true
+        console.log(f1.x == f2.x);//true
+        console.log(Fn.prototype.getX === f1.getX);//false
+        console.log(Fn.prototype.getX === f1.__proto__.getX);//true
+        f1.getX()//100
+        Fn.prototype.getX();//undefined
+        f2.__proto__.getX();//undefined
+        Fn.prototype.getY();//undefined
+        console.log(f1.a);//300
+        console.log(f1.toString);//tostring(){}
+</script>
+</body>
+</html>

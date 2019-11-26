@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body style="background: red">
+        <script>
+            let body = document.body;
+            let num = null
+    
+            function fn() {
+                num++
+                if(num === 30){
+                    clearInterval(ss);
+                    console.log(22)
+                    body.style.background = 'white';
+                    return;
+                }
+                let color = body.style.background;
+                switch (color) {
+                    case 'red':
+                    body.style.background = 'yellow';
+                        break;
+                    case 'yellow':
+                        body.style.background = 'pink';
+                        break;
+                    case 'pink':
+                        body.style.background = 'green';
+                        break;
+                    case 'green':
+                        body.style.background = 'orange';
+                        break;
+                    default:
+                     body.style.background = 'red';
+    
+                }
+            }
+    
+            let ss = setInterval(fn, 500)
+        </script>
+    </body>
+    
+</html>

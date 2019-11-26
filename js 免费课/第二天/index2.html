@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 把number,boolean(true,false) 转字符串都是直接加引号
+        // null和undefined不能使用toString方法
+        // 把普通对象转字符串：'[object Object]'
+        // 把数组对象转字符串：把中括号去掉，加引号即可
+        console.log((1).toString())//'1'
+        console.log((-3.1415926).toString())//-3.1415926
+        console.log((true).toString())//true
+        console.log((false).toString())//false
+        // console.log((null).toString())//报错
+        // console.log((undefined).toString())//报错
+        console.log('' + null)//null
+        console.log([].toString())//无
+        console.log(({}).toString())//[object Object]
+
+        // 四则运算：在四则运算中，除了加法，其余都是正常运行
+        // 在运算过程中，如果相运算的值不是数字类型,先转换为数字类型，在运算
+        // 在运算过程中，结果是NaN,那结果就是NaN
+
+        // 在加法中有两种情况：
+        // 正常运算
+        // 字符串拼接：如果加号一旦跟引号相遇，那他就是字符串拼接，不再是正常运算
+        console.log(true + true)//2
+        console.log(undefined + true)//NaN
+        console.log(undefined + true + null + 1 + 35 + null)//NaN
+        console.log(1 + 'wer')//1wer
+        console.log(true + '1')//true1
+        console.log(1 + true + null + undefined
+            + 'eaba' + true)//NaNeabatrue
+        console.log(1 + true + null + undefined + 'eaba' + [] + {})//NaNeaba[object Object]
+
+        console.log([] + {})//[object Object]
+        console.log({} + NaN)//[object Object]NaN
+        console.log(true + 10 / true - undefined)//NaN
+        console.log(true + 10 / true - ({}))//NaN
+        console.log(true - [12 - 1])//-10
+        console.log(Number(isNaN(2)))//0
+
+        //把true转换数字用四则运算转
+        console.log(true * 1)  // 1
+        // 把null转换为数字   
+        console.log(null * 1)//0
+        console.log([] - 0)//0
+
+        console.log(Number(isNaN(2)))//0
+        console.log([null,undefined].toString())//,
+    </script>
+</body>
+
+</html>

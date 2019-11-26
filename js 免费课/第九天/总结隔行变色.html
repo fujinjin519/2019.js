@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+            width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            border: 1px solid sienna;
+        }
+        li {
+            font-size: 20px;
+            line-height: 30px;
+            /* color: white; */
+
+        }
+        li:nth-child(odd) {
+            background: green;
+        }
+
+        li:nth-child(even) {
+            background: red;
+        }
+
+        .box {
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <ul id="box"></ul>
+    <script>
+        let box = document.getElementById('box');
+        // 获取ul元素
+        let abb = [1,2,3,4,5];
+        // 遍历数组，把数组处理成我们想要的标签结构
+        let axx = abb.map((item) => {
+                return '<li class="box">我是第'+item+'个li</li>';
+            }//给每一个项输出item // ["<li class="box">我是第1个li</li>", "<li class="box">我是第2个li</li>", "<li class="box">我是第3个li</li>", "<li class="box">我是第4个li</li>", "<li class="box">我是第5个li</li>"]
+        )
+    
+        console.log(axx);
+        let str =axx.join('');//变成字符串
+        console.log(str);   
+        box.innerHTML = str;//识别标签到str里
+    </script>
+</body>
+</html>

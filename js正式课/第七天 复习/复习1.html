@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   /*  一.基本数据类型操作的是值，引用操作的是空间地址
+    -基本数据类型
+        +number 数字类型 2 ，1， 2，-2，
+        +string 字符串"", '',``
+        +boolean 布尔 true  false
+        +null空对象指针
+        +undefined 未定义
+        Symbol  唯一值
+    -引用数据类型
+        +object对象
+            +普通对象{name:'xxxx'}
+            +数组 []
+            +Math 数学对象
+            +Date 日期对象
+            +/^$/正则
+        +function函数
+    
+
+    二.number数字类型
+            组成：
+                有效数字
+                NaN（not a number）不是一个数，但是它是number数据类型的
+                NaN和谁都不相等，包括它自己
+            把其它数据类型转数字类型
+            Number(val)
+            把字符串转数字
+                    只要字符串中出现了非有效数字，那结果就是NaN(第一个小数点不算，第一个-，+不算)
+                    如果左右有空格会自动去掉，中间有空格会是NaN
+                    空字符串转数字是0
+            把布尔转数字
+                    true转数字是1
+                    false转数字是0
+            把null和undefined转数字
+                    null转数字是0
+                    undefined转数字是NaN
+            把普通对象转数字，先把数据转换为字符串，再转换为数字
+                    Number({})
+                    浏览器会自动把普通对象转换为字符串({}).toString()
+                    所有的普通对象转字符串都是    '[object Object]'
+                    Number('[object Object]')
+                    所有的普通对象转数字都是NaN
+            把数组转数字，先把值转换为字符串，再转换为数字
+                    把数组转字符串是把左右两边的中括号去掉，替换为引号，然后里面每项做toString处理，然后拼接到一起，','不能丢
+                    Number([true,'1']) 
+                    Number([true,'1'].toString())
+                    Number('true,1')
+            parseInt和parseFloat
+            把字符串转换为数字
+                从左到右依次查找有效数字，一旦发现非有效数字，立即停止查找，把找到的数字返回出去（paeseInt不可以识别小数点，parseFloat可以识别小数点）
+                如果你要转换的值不是字符串类型的，先转换为字符串，类型再查找
+                true、false、null、undefined、{}、NaN转都是NaN
+                如果从一开始就是非有效数字，那结果就是NaN
+            isNaN(val)
+                检测一个值是否是一个非有效数字，如果是就是true,反之就是false
+                (这个值如果是有效数字，那结果就是false，反之就是true
+                如果你要检测的值不是数字类型的，先转换为数字类型再检测
+            string字符串
+                所有单引号，双引号，反引号（ES6的模板字符串）包起来的都是字符串
+                天生自带一个length属性，代表字符串的长度或者个数
+                val.toString( )   
+                把number、boolean转字符串都是直接加引号
+                null 和undefined不能使用.toString方法
+                把普通对象转字符串    =>    { }=>'[object Object]'
+                把数组转换为字符串    =>    [ ]=>''
+                字符串拼接
+                四则运算：在四则运算中，除了加法，其余的都是正常运算
+                在运算过程中，如果相运算的值不是数字类型的，先转为数字类型再运算
+                在运算过程中，如果出现了NaN，那结果就是NaN
+                在加法中有两种情况：从左到右依次计算——————————括号里面如果是值就不会计算
+                    正常运算
+                    字符串拼接：如果加号一旦跟引号相遇了，那就是字符串拼接，不再是正常的运算
+                    如果拼接的过程当中，引用数据类型要转数字（转数字的过程中先转字符串，然后就变成基本字符串拼接，不会再继续转为数字）
+                    把true转换数字用四则运算转
+                        console.log(true-0/true+0/true*1/true/1)        // 1
+                        同理把null转换为数字    0
+                        boolean布尔（true  false）
+                把其他数据类型转布尔 
+                Boolean（val）
+                        把其他数据类型转布尔有且只有NaN、null、undefined、0、''、这五种是false,其余的都是true
+                        把布尔转布尔还是本身
+                        Boolean(true)       //  true
+                        Boolean(false)  //  false
+                        Boolean(NaN)        //  false
+                        Boolean(null)       //  false
+                        Boolean(undefined)      //  false
+                        Boolean(0)      //  false
+                        Boolean('')     //  false
+                        Boolean('     ')        //  true
+                        !：把其它数据类型转布尔，然后取反
+                        !!：把其它数据类型转布尔，然后取反再取反（相当于Boolean()）
+                null和undefined
+                        它俩都代表空
+                        null：它一般都是意料之中的（一开始我们不知道值，但是以后知道了，再给它重新赋值）
+                        undefined：它也是空，但是一般都是浏览器的默认机制定义的（意料之外的）
+              三  引用数据类型（{},[]）
+                普通对象{ }
+                        每一个对象都由大括号包裹，里面是0到多个键值对组成，用逗号隔开
+                        每个键值对由属性名和属性值组成（中间用冒号连接）
+                        属性名是由字符串和数字组成（''可以省略）
+                        属性值是js数据类型一种
+                        let monkey = {
+                            name: 'sunWuKong',
+                            age: null,
+                            speed: 10000,
+                            3:[]
+                        }
+                            对象的增删改查
+                            查：
+                            对象名.属性值/对象名['属性名']
+                            如果属性名是数字，不能用对象名.属性名的方式去获取对应的值
+                            console.log(monkey.name)        //  'sunwukong'
+                            console.log(monkey['name']) //  'sunwukong'
+                            console.log(monkey[3])          //  []
+                            增：
+                            对象名.属性名= 'xxx'
+                            改：
+                            对象名.属性名 = 'xxx'
+                            如果属性名存在，就是修改属性值，如果没有就是新增
+                            删：
+                            假删除
+                            对象名.属性名 = null;
+                            真删除
+                            delete 对象名.属性名
+                数组  [ ]
+                数组由中括号包裹，里面存放的是每一个属性值
+                        属性名是浏览器内定的，从0开始依次递增，它代表属性值的位置=>索引
+                        天生自带一个length属性，属性值是数组的长度
+                        不要用delete删除数组，因为会改变数组从0开始依次递增的顺序
+                                         */
+    </script>
+</body>
+</html>

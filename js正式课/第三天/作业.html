@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        1.
+        var i = 5;
+        function fn(i) { //3/4/5
+            return function (n) {
+                console.log(n + (++i));
+            }
+        }
+        var f = fn(3);
+        f(4);//8
+        fn(3)(6); //10
+        fn(2)(6);//9
+        f(2);//7
+        console.log(i);//5
+
+
+        2.
+        var i = 2;//4-1//3-1//2   2+2//4-1//3  3+2//-1//4   4-1//3
+        function fn() {
+            i += 2;
+            return function (n) {
+                console.log(n + (--i))              
+            }
+        }
+        var f = fn();
+        f();//NaN
+        f(3);//5
+        fn()(2);//5
+        fn()(3);//7
+        f(4);//7
+
+
+        3.
+        var num = 1;   //1*2 2 2+2 //4
+        var obj = {
+            num: 2,  //4  
+            fn: (function () {//1 3+1 4 +2  //6 +1 //7
+                this.num *= 2;//自执行函数 window
+                num += 3;   //NaN
+                var num = 1;//1
+                return function () {
+                    num += 2;
+                    this.num += 2  
+                    console.log(++num); 
+                }
+            })()
+        };
+        var f = obj.fn;
+        f();//4
+        obj.fn();//7
+        console.log(window.num, obj.num); //4  4
+
+
+
+
+        4.
+        var num = 10; //10+10 //20 +10 //30
+        var obj = { num: 15 };//15+15 //30
+        obj.fn = (function (num) {//15 *2 //30 -1 //29
+            this.num += 10;//window
+            num *= 2; 
+            return function (n) {  //10  //15
+                this.num += n;  
+                console.log(n + (--num));//10+29  //15+29-1
+            }                                                                                         
+        })(obj.num);
+        var fn = obj.fn;
+        fn(10);//39
+        obj.fn(15);//43
+        console.log(window.num, obj.num);//30  30
+
+  
+
+
+        5.
+
+        var a = 1;  //3
+        var obj1 = {
+            a: 0,//0=2
+            fn1: (function (a) {//键值对  不取 从全局找 1++//2+1//3+1 //4
+                this.a = a; //1=1
+                a++;
+                return function () {
+                    this.a = a++; 
+                    console.log(a)//3  //4
+                }
+            })(a)
+        };
+        obj1.fn1();//3
+        var fn1 = obj1.fn1;
+        fn1();//4
+        console.log(a); //3
+        console.log(obj1.a);//2
+
+
+        6.
+
+        var number = 2; //2*2  4*2  8
+        var obj = {
+            number: 4, //*2  8
+            fn1: (function () {//3 3*3  9 *3 27
+                this.number *= 2;
+                number = number * 2;//NaN
+                var number = 3;
+                return function () {
+                    this.number *= 2;
+                    number *= 3;
+                    alert(number);//9 //27
+                }
+            })()
+        };
+        var fn1 = obj.fn1;
+        alert(number); //4
+        fn1();//9
+        obj.fn1();//27
+        alert(window.number);//8
+        alert(obj.number);//8
+
+
+        7.
+
+        function g1() {
+            this.g = "gg"
+            //相当于obg4.g = ''gg
+        };
+        var obj4 = {
+            //g = 'gg'
+            g1: g1, 
+            gg: function () {
+
+                g1();
+            }
+        };
+        obj4.g1();//g = 'gg'
+        obj4.gg();//g = 'gg'//给window下增加键值对
+        console.log(obj4);//{g:gg,g1:g1,gg:{}}
+        console.log("g" in window);//true//gg里边的 g1  为全局
+
+
+        8.
+
+        var name = 'erYa';
+        var age = 9;  //'xiaoha'
+        age = (function (name, age) { //'xiaohua' 9
+            name = 'xiaoHua'; 
+            age = age || this.age;//后边2个比较 前边true 就把值付给前面age //9
+            this.age = arguments[0];//把等号右边付给右边//window  age =9   = xiaohua
+            console.log(name, age)//xiaohua 9
+            return this.age;// xiaohua
+        })(name, age);
+        console.log(name, age);//erya xiaohua
+
+
+        9.
+
+        var num = 1;  //2*2 4  14
+        var obj = {
+            num: 2    //22
+        };
+        obj.fn = (function (num) {//2++  3  4  5
+            this.num = num * 2;
+            num++;
+            return function (n) {//10  //20
+                this.num += n;
+                num++;
+                console.log(num)//5
+            }
+        })(obj.num);
+        var fn = obj.fn;
+        fn(10);//4
+        obj.fn(20);//5
+        console.log(num, obj.num);//14  22
+
+
+        10
+
+        var n = 20; //21 22  24
+
+        function outer() {
+            ++n;// 21
+            function inner() {
+                console.log(n++);//21
+                function center() {
+                    n += 2;   //
+                    console.log(n);//24
+                }
+                center();
+            }
+            inner();
+        };
+        outer();
+        console.log(n)//24
+    </script>
+</body>
+
+</html>
+<script>
+    11
+  
+    var ary = [1,2,3,4];
+    function fn(ary) {
+     ary[0]=0  //[0,2,3,4]
+     ary=[0]    //[0]
+     ary[0]=100//[100]
+     return ary   
+    }
+    var res=fn(ary)
+    console.log(ary);[0,2,3,4]
+    console.log(ary);[100]
+    console.log(res);[100]
+
+   
+</script>

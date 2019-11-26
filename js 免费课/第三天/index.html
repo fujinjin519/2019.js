@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num = 10;
+        let str = '10';
+        let bol = true;//null undefined
+        let y = {
+            a: {}//对象的属性名对应的属性值一定是数据类型的一种
+        }
+        //每个数组成员都会有一个与之对应的索引，这个索引从0开始，依次递增
+        let str1 = "zhufengpeixun";
+        console.log(str1.length);//length 代表字符串中字符的个数
+        console.log(str1[3]);
+
+
+
+
+
+        //判断
+        if (1 == 1) {
+            //如果小括号中的值是true，那么执行这个大括号中的代码，如果false,直接执行下面那行代码
+            console.log(100)
+        } else {
+            console.log(200)
+        }
+
+
+        // ==：是俩个数值进行比较，会默认进行数据类型之间的转换在比较,比较的结果是布尔值
+        //基本数据类型：Number string  boolean null undefined Symbol
+        //引用数据类型分为对象类型和函数对象类型
+        //对象数据类型：普通对象 数组 正则 
+        //1.数字==字符串  字符串转换成数字，然后和数字进行比较；
+        console.log(1 == "1")//true
+        console.log(1 == "")//false
+        console.log(1 == "1px")//false
+        console.log(1 == "[1]")//false
+
+        //2.数字==布尔      布尔转数字，然后进行比较
+        //true 1    false  0
+        console.log(2 == true)  //false
+        console.log(0 == false)//true
+
+        //3.数字==对象(对象数据类型)对象先转字符串，然后转数字
+        console.log(0 == {})//false
+        console.log(NaN == {})//false
+
+        //4.对象==对象
+        //在JS中，只要遇到{}，都会开辟一个新的空间地址
+        //当浏览器解析代码时，会形成俩个虚拟的内存，分别是栈内存和堆内存
+        //栈内存：
+        //堆内存
+
+        let a = {}
+        let b = {}
+        console.log(a==b)//false
+        let c =[]
+        let d = {}
+        console.log(c==d)//false
+        
+
+        // 5.对象==字符串：对象转成字符串，进行比较
+        console.log("" == " ");//false  直接比较  不用转数字
+
+        //6.对象==布尔  对象转字符串，字符串转数字，布尔直接转数字，然后进行比较
+        //!先将后面的值转化为布尔值，然后再取反
+        console.log([]==false);//true
+        console.log(![]==false);//true
+
+        console.log([] == ![])//true
+        console.log([] !== [])//true
+
+
+        // 7.布尔==字符串 布尔值转数字 ，字符转数字
+        console.log(false == "")//true
+        console.log(true == "1px")//false
+                    // 1 == NaN
+
+        //8.null == undefined  :true
+        //9.NaN == NaN   false
+
+
+ </script>
+</body>
+
+</html>

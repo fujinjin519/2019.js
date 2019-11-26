@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 原型模式
+    // 构造函数解决了实例的私有属性问题
+    
+    // 1.每一个函数都天生再带一个prototype属性，属性值是一个对象，里面存储的是实例的公有属性（原型）
+    // 2.每一个原型都天生自带一个constructor属性，其属性值指向当前类
+    // 3.每一对象都天生自带一个 _ _proto_ _属性，其属性值指向当前所属类的原型
+        //在对象里查找一个属性，先看自己私有的有没有，如果自己没有，就通过_ _proto_ _属性找到当前所属类的原型上，如果原型上有，就直接用，如果没有，通过原型的_ _proto_ _继续往Object类的原型上找，如果还没有，就是undefined，这种一级一级向上查找就会形成原型链
+
+    function Fn(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    Fn.prototype.say = function(){
+        console.log(this)
+    }
+    let f1 = new Fn('erya',18)
+    let f2 = new Fn('jinyu ',18)
+    console.log(f1)
+    
+    </script>
+</body>
+</html>

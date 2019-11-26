@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let ary = [1,2,3,4,5,1,2,4,5,1,2]
+    function fn(ary){
+        let newAry = {};
+        for( var i = 0;i<ary.length;i++){
+            if(newAry[ary[i]] !== undefined){
+                ary.splice(i,1);
+                i--
+            }
+            else{
+                newAry[ary[i]] = ary[i]
+            }
+        }
+        console.log(newAry)
+    }
+   fn(ary)//执行函数
+    console.log(ary)
+    
+    </script>
+</body>
+</html>

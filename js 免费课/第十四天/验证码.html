@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn(){
+            let str = '123456789asc'
+            let value = '';
+            for(var i =0;i<4;i++){
+                let index = Math.round(Math.random()*(str.length-1));
+                let ss = str[index];
+                value += ss;
+            }
+        return value
+        }
+    console.log(fn())
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+    *{
+        margin: 0;
+        padding:0;
+    }
+    
+    div{
+        width: 500px;
+        margin: 100px auto;
+        position: relative;
+        opacity: 0;
+        transition: all 1s;
+    }
+    img{
+        display: block; 
+        width: 100%;
+  
+    }
+    span{
+        cursor: pointer;
+        position: absolute;
+        top:0;
+        right: 0;
+        font-size: 30px;
+        color: aqua;
+    }
+    </style>
+</head>
+<body>
+    <div id = "box">
+        <span id="btn">关闭</span>
+        <img src="3.jpg" alt="">
+    </div>
+    <script>
+        let box = document.getElementById('box');
+        let btn = document.getElementById('btn');
+        // 给btn绑定点击事件，当点击的时候让整个div消失（控制的是透明度）
+        btn.onclick = function(){
+            box.style.opacity = '0';
+        }
+       // 页面展示5秒钟之后定时器执行，让div显示（控制的是透明度）
+        setTimeout(()=>{
+            box.style.opacity = '1';
+        },3000);
+    
+    
+    
+    </script>
+
+</body>
+</html>

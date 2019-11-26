@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 1000px;
+            height: 300px;
+            background:-webkit-linear-gradient(top right,orange,aqua,yellow,green);
+            line-height: 300px;
+            text-align: center;
+            font-size: 60px;
+            font-weight: bolder;
+            margin: 100px auto;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+    
+    </style>
+</head>
+<body>
+        <div id="box">2019年11月13日 星期三 15：53</div>
+</body>
+    <script>
+        let box = document.getElementById('box');
+        let endTime = new Date('2019-11-14 18:00')
+        let num = null;
+        let zero = val => val<10? '0'+val:val;
+
+        setTime();//页面初次渲染时，为了防止页面闪，执行一次setTime方法
+        function setTime(){
+            let time = new Date();
+            let diffTime = endTime - time;
+            if(diffTime<=0){
+                clearInterval(num);
+                box.innerText = '时间到';
+                return;
+            }
+            let hour = Math.floor(diffTime/1000/60/60);
+            let min = Math.floor((diffTime-hour*60*60*1000)/1000/60);
+            let sec = Math.floor((diffTime-hour*60*60*1000-min*60*1000)/1000);
+            let value = zero(hour)+'时'+zero(min)+'分'+zero(sec)+'秒';
+            box.innerText = value;
+        }
+        num = setInterval(setTime,1000);
+    </script>
+
+</html>

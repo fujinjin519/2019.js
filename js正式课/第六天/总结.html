@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //一       //函数的三种角色
+        /*     1.普通对象
+            2.构造函数
+            3.普通函数 */
+        //所有函数都是function类的实例，那function也是函数，那他的__proto__指向的是自己的原型
+        //function是所有函数的基类
+        //object是所有对象的基类
+        //object的原型的__proto__指向自己，js认为指向自己没有意义，规定为null
+        //如果一个对象你不知道谁构出来的，那他的__proto__就指向object的原型（所有原型都指向object的原型）
+        Function.__proto__ === Function.prototype
+        Object.__proto__.__proto__ === Object.prototype
+
+        //类的特点： 多态  封装   继承
+        // in 检测一个属性是否属于某个对象
+        // hasOwnProperty:检测一个属性是否是自己的属性，如果是就返回true，反之就返回false
+        // 实例.hasOwnProperty(被检测的值)
+
+          // let会形成块级作用域
+        // let和{}结合就会形成块级作用域
+
+        // let ary = [1, 2, 3];
+        // console.log(ary.hasOwnProperty(0)) // true 0是ary实例的私有属性//检测的索引
+        // console.log(ary.hasOwnProperty('push')) // fasle push是ary实例的公有属性
+
+
+        //二  检测一个属性是否是对象的公有属性
+        //方法：先用in看一下是不是他的属性，如果是在用hasOwnProerty检测一下是不是自己的私有属性，那剩下的就是公有属性了
+        let ary = [1, 2, 3];
+        Object.hasPubProperty = function (value) {
+            let ary = ['number', 'string'];
+            // 这里存放的是符合规范的属性名的数据类型
+            // typeof value的返回结果是字符串类型的数据类型，看这个数据类型在ary数组里有没有，如果有用includes检测就是true，反之就是false
+            if (!ary.includes(typeof value)) {
+                return false
+            }
+            //谁执行这个方法this就是谁
+            let n = value in this;//检测是否是对象的属性
+            let m = this.hasOwnProperty(value);//检测是否是对象的私有属性
+            return n && !m;
+
+            //如果是自己的属性而且还不是私有属性，那就是公有属性
+            if (n === true && m === false) {
+                return true
+            } else {
+                return false
+            }
+        }
+        console.log(ary.hasPubProperty('push'))//true
+        console.log(ary.hasPubProperty(0))//false
+        console.log(ary.hasPubProperty([]))//false
+        console.log(Array.prototype.hasPubProperty('push'))
+
+        // console.log(Object.hasPubProperty('hasOwnProperty')); // false
+        // console.log(Object.hasOwnProperty('hasOwnProperty')); // true
+
+        //练习：
+        function Fn() {
+            let a = 1;
+            this.a = a;
+        }
+        Fn.prototype.say = function () {
+            this.a = 2;
+        }
+        Fn.prototype = new Fn;
+        let f1 = new Fn;
+
+        Fn.prototype.b = function () {
+            this.a = 3;
+        };
+        console.log(f1.a);//1
+        console.log(f1.prototype);//undefined
+        console.log(f1.b);//fun
+        console.log(f1.hasOwnProperty('b'));//false
+        console.log('b' in f1);//true
+        console.log(f1.constructor == Fn);//false  ?
+
+
+
+        
+
+        function fun() {
+            this.a = 0;
+            this.b = function () {
+                alert(this.a);
+            }
+        }
+        fun.prototype = {
+            b: function () {
+                this.a = 20;
+                alert(this.a);
+            },
+            c: function () {
+                this.a = 30;
+                alert(this.a)
+            }
+        }
+        var my_fun = new fun();
+        my_fun.b();//0
+        my_fun.c();//30
+
+
+
+
+    function C1(name) {
+        if (name) {
+            this.name = name;
+        }
+    }
+    function C2(name) {
+        this.name = name;
+    }
+    function C3(name) {
+        this.name = name || 'join';//前面的值取false就取后面的 
+    }
+    C1.prototype.name = 'Tom';
+    C2.prototype.name = 'Tom';
+    C3.prototype.name = 'Tom';
+    alert((new C1().name) + (new C2().name) + (new C3().name));//'Tomundefinedjoin'
+
+
+
+    function Fn(num) {
+   	this.x = this.y = num;
+   }
+   Fn.prototype = {
+   	x: 20,
+   	sum: function () {
+   		console.log(this.x + this.y);
+   	}
+   };
+   let f = new Fn(10);
+   console.log(f.sum === Fn.prototype.sum);//true
+   f.sum();//20
+   Fn.prototype.sum();//NaN+NaN =NaN
+   console.log(f.constructor);//object
+    </script>
+</body>
+
+</html>

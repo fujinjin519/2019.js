@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            position: relative;
+            top:1px
+        }
+        li{
+            width: 150px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 30px;
+            color: chartreuse;
+            border: 1px solid blue;
+            margin-right: 15px;
+        cursor: pointer; /* 鼠标变成小手 */
+    
+
+
+        }
+        #box div{
+            text-align: center;
+            width: 500px;
+            border: 1px solid blue;
+            height: 300px;
+            line-height: 300px;
+            font-size: 30px;
+            display: none;
+       
+        }
+        #box{
+            width: 502px;
+            margin: 20px auto;
+        }
+        #box div.active{
+            display: block;
+            background: orangered;
+        }
+        li.active{
+            border-bottom-color: orangered;
+            background: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul id="navList">
+            <li class="active">空之律者 </li>
+            <li>理之律者</li>
+            <li>死之律者</li>
+            <li>xxxx</li>
+            <li>死eeeeee律者</li>
+        </ul>
+        <div class="active">图片1</div>
+        <div>图片2</div>
+        <div>图片3</div>
+        <div>图片4</div>
+        <div>图片5</div>
+    </div>
+
+
+    <script>
+
+        //获取 
+        let box = document.getElementById('box');
+        let nav =document.getElementById('navList');
+        let navList = nav.getElementsByTagName('li');
+        let tabList = box.getElementsByTagName('div');
+        console.log(navList,tabList);
+        //给相应的元素绑定相应的事件
+        for(var i = 0 ;i<navList.length;i++){
+            //当循环时，把对应的i存储到自己身上
+            navList[i].myiIndex= i ;
+            navList[i].onclick = function(){
+               
+                //点击谁，this就是谁(当前操作得元素)
+                console.log(this.myiIndex)
+                fn(this.myiIndex)
+            }
+        }
+
+        //当用户点击事件的时候，for循环早已结束，此时i已经成为3
+        function fn(index){
+            console.dir()
+            //吧三个li和三个div的class清除
+            for(var i=0; i<navList.length;i++){
+                navList[i].className='';
+                tabList[i].className='';
+            }
+            //给点击的元素增加class名
+                navList[index].className= 'active';
+                tabList[index].className= 'active';    
+        }
+    </script>
+</body>
+
+</html>

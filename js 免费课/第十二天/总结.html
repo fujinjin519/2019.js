@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+        <div id="bex">
+                <ul id="navList">
+                    <li class="aaa">我是第1个li</li>
+                    <li>我是第2个li</li>
+                    <li>我是第3个li</li>
+                </ul>
+                <div>
+                    <b>111</b>
+                </div>
+                <div>
+                    <span>222</span>
+                </div>
+                <div>
+                    <p>333</p>
+                </div>
+                <li class="aaa">我是第4个li</li>
+            </div>
+            <div id="one">1111</div>
+            <div  class="box"><span>111</span></div>
+     <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <script>
+//   一,获取dom的方式及节点的操作
+    //获取dom的方式
+   /*  1.document.documentElement   获取HTML
+    2.document.head              获取head
+    3.document.body              获取body
+    4.document.getElementById()    在document上下文获取元素（通过ID获取的一个元素对象，获取不到位null）
+    5.context.getElementByTagName('标签名')在指定的标签中（此处指定的标签为，context代表的标签）通过标签名获取元素，获取的是一个元素集合，如果没有获取到元素,那就是空元素集合
+    6.context.getElementByClassName('类名')在指定的上下文中通过class名获取元素，获取的是一个元素集合，如果没有获取到元素,那就是空元素集合【在IE6~8下不兼容】
+    7.context.querySelector()在指定上下文中通过选择器获取第一个元素, 获取不到就是null【在IE6~8下不兼容】
+    8.context.querySelectorAll()在指定上下文中通过选择器获取一组元素集合，获取不到就是空元素集合【在IE6~8下不兼容】 */
+     // 获取元素
+        // let nav = document.getElementById('navList');
+        // 1、let box = document.getElementById('box');
+        // 通过Id获取的元素是一个元素对象，获取不到就是null
+
+        // let lists = nav.getElementsByTagName('i');
+                    // context.getElementsByTagName('标签名')// 通过指定的上下文获取指定的标签，获取的是一个元素集合，如果没有获取到元素,那就是空元素集合
+        // console.log(lists)
+
+        // 2、context.getElementsByClassName()
+        // let box = document.getElementById('navList');
+        // let list = document.getElementsByClassName('a');
+        // console.log(list)
+
+        // 3、document.body/document.head/document.documentElement
+        // console.log(document.body) // 获取body
+        // console.log(document.head) // 获取头部
+        // console.log(document.documentElement) // 获取html
+
+        // 5、context.querySelector
+        // let box = document.getElementById('box')
+        //    let ss =  box.querySelector('#navList .a');
+           // 在指定上下文中通过选择器获取第一个元素, 获取不到就是null
+        //    console.log(ss)
+
+        // 6、context.querySelectorAll()
+        // 在指定上下文中通过选择器获取一组元素集合，获取不到就是空元素集合
+        // let list = document.querySelectorAll('#navList li:nth-child(2)'); // 获取的是一个元素集合，获取不到就是空元素集合
+        // console.log(list)
+
+        // console.log(box)
+
+
+//二。 节点
+        /* 
+        节点（node）：页面中所有的东西都是节点，所有的节点都是对象
+
+        节点名      nodeType     nodeName        nodeValue
+        元素节点       1       大写的标签名          null
+        文本节点       3         '#text'         文本的内容
+        注释节点       8         '#comment'       注释的内容
+        文档节点       9         '#document'        null
+    */
+        // 元素节点就是页面中的标签
+        // 文本节点包括内容、空格、回车（换行）
+        // 注释节点就是你写的注释
+        // 文档节点就是整个大文档（页面）
+      /*   var box = document.getElementById('box');
+        var navList = document.getElementById('navList')
+        var list = navList.getElementsByTagName('li')
+        var aaa = navList.getElementsByClassName('aaa')
+        console.log(box.childNodes)//NodeList(11) [text, ul#navList, text, div, text, div, text, div, text, li.aaa, text]
+        console.log(box.children)//HTMLCollection(5) [ul#navList, div, div, div, li.aaa, navList: ul#navList]
+        console.log(box.firstChild)//#text
+        console.log(box.firstElementChild)//<ul id = "navList">...</ul>
+        console.log(box.lastChild)//#text
+        console.log(box.lastElementChild)//<li class="aaa">我是第4个li</li>
+        console.log(aaa.previousElementSibling)
+        console.log(aaa.perviousSibling)
+        console.log(box.parentNode) */
+        //childNodes:获取的所有的子节点
+
+   //  三 操作节点的属性
+    /* 
+         childNodes:获取的所有的子节点
+         children:获取所有的元素子节点【在IE6~8下不兼容】
+         firstChild: 获取第一个子节点
+         firstElementChild: 获取第一个元素子节点【在IE6~8下不兼容】
+         lastChild:获取最后一个子节点
+         lastElementChild：获取最后一个元素子节点【在IE6~8下不兼容】
+         previousSibling: 获取上一个哥哥节点
+         previousElementSibling:获取上一个哥哥元素节点【在IE6~8下不兼容】
+         parentNode获取指定元素的父节点
+    */
+        // childNodes:获取的所有的子节点
+        // children:获取所有的元素子节点
+        // console.log(box.childNodes.length);
+        // console.log(box.children.length); // [在IE6~8下不兼容]
+
+
+
+ /* 四 js节点的动态增删改 
+        createElement:创建元素节点
+        createTextNode:创建文本节点
+        容器.appendChild(节点)：把节点插入到容器的末尾
+        容器.insertBefore(新节点, 老节点)：把节点插入到老节点的前面
+        容器.removeChild(节点)：移除容器中的节点 */
+      /*   let box = document.createElement('div'); // 动态创建一个元素节点
+        let one = document.getElementById('one')
+        box.style.width = '200px';
+        box.style.height = '200px';
+        box.id="box";
+        box.style.background = 'orange';
+        box.className = 'box';
+        let text = document.createTextNode('123455');// 动态创建一个文本节点
+        box.appendChild(text); // 把文本节点插入到元素节的末尾
+        document.body.appendChild(box)//把box插入到元素的末尾
+        document.body.insertBefore(box,one)//把box插入到one前面
+        document.body.removeChild(one)//移除节点 
+        console.dir(text)
+        console.log(box) */
+
+         /* 
+        节点.cloneNode(true/false);克隆节点，如果传参是true就是深克隆，如果不传参或者传false就是浅克隆（只复制外层元素，不复制里边的内容）
+        */
+        // let one = document.getElementsByClassName('box')[0];
+        // let clone1 = one.cloneNode(); // 如果不传参，就是浅克隆
+        // let clone2 = one.cloneNode(true); // 深克隆
+        // let clone3 = one.cloneNode(false); // 如果不传参，就是浅克隆
+        // clone1.innerHTML = '<span>222</span>'; // 修改clone1的内容
+        // clone2.children[0].innerText = '333'; // 修改clone2里的span元素的内容
+        // document.body.appendChild(clone1); // 把clone1插入到body的末尾
+        // document.body.appendChild(clone2)// 把clone2插入到body的末尾
+        // console.log(clone1, clone2, clone3)
+
+
+//    五     JS节点的动态增删改
+// 增：createElement()
+// 创建元素节点
+// 增：createTextNode()
+// 创建文本节点
+// 增：容器.appendChild(节点)
+// 把节点插入到容器的末尾
+// 增：容器.insertBefore(新节点, 老节点)
+// 把节点插入到老节点的前面
+// 删：容器.removeChild(节点)
+// 移除容器中的节点
+// 克隆：容器.cloneNode()
+// 容器.cloneNode(true)
+// 深克隆，完美复刻。
+// 容器.cloneNode(false)        容器.cloneNode()
+// 浅克隆，只克隆标签
+
+// 六   JS创建、获取、移除属性
+// setAttribute('属性名',属性值)； 在元素结构中设置属性
+//         getAttribute('属性名') 在元素结构中获取属性
+//         removeAttribute('属性名'); 在元素结构中移除属性
+// let btns = document.querySelectorAll('button');
+// for (var i = 0; i < btns.length; i++) {
+//             // 把属性存储到元素的结构中，在元素的行内可以看到
+//             btns[i].setAttribute('data-index',i);
+//             btns[i].removeAttribute('data-index');
+//             console.log('data-index')
+//             btns[i].onclick = function(){
+//                 // 获取结构中的属性
+//                 alert(this.getAttribute('data-index'))
+//             }
+//         }
+//         console.log(btns)
+
+
+
+
+         /* 
+    七    递归：就是函数自己调用自己，直到满足某些条件就停止递归
+    */  
+
+    // 实现1到5之间的偶数的和
+    function sum(num){
+        if(num>5){
+            return 0
+        }
+        if(num%2 === 0){
+            return num + sum(num+1)
+        }
+        return sum(num+1)
+    }
+    console.log(sum(1)) // 6
+
+    // function sum(1){
+    //     return sum(1+1) // 6
+    // }
+
+    // function sum(2){
+    //  return 2 + sum(2+1) // 4
+    // }
+
+    // function sum(3){
+    //     return sum(4) // 4
+    // }
+
+    // function sum(4){
+    //  return 4 + sum(5) // 0
+    // }
+
+    // function sum(5){
+    //     return sum(6) // 0
+    // }
+
+
+    // function sum(6){
+    //         return 0
+    // }
+
+
+    快速排序
+let ary = [3, 4, 2, 1];
+       function quick(ary) {
+           // 4、如果数组中的length小于等于1，那就结束递归，把原数组return出去
+           if (ary.length <= 1) {
+               return ary
+           }
+           // 1、获取中间的一项作为基准（并且把原数组中的那一项删除）
+           let middleIndex = Math.floor(ary.length / 2) // 拿到中间项的索引
+           let middleValue = ary.splice(middleIndex, 1)[0];
+           // 2、创建两个数组，循环数组的每一项和基准做比较，如果每一项小于基准，就放到左边数组，反之放右边
+           let leftAry = [];
+           let rightAry = [];
+           for (var i = 0; i < ary.length; i++) {
+               if (ary[i] < middleValue) {
+                   leftAry.push(ary[i])
+               } else {
+                   rightAry.push(ary[i])
+               }
+           }
+           // 3、不断重复1和2步骤（递归）
+           return quick(leftAry).concat(middleValue, quick(rightAry))
+       }
+       console.log(quick(ary))
+       // return  [1].concat(2, [3,4])
+       //       return  [1]             return  [3].concat(4, [])
+       //                                      return  [3]            return  []
+    </script>
+</body>
+</html>

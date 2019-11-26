@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        函数创建：  形成一个堆内存
+                把函数里的代码以字符串的格式存储进去
+        函数执行：   函数的运行原理
+                    形成一个私有栈内存
+                    形参赋值
+                    代码执行
+
+        arguments 函数的实参集合（箭头函数没有）
+        形参变量
+
+        arguments.callee:代表函数本身
+
+        */
+
+        //    function fn(n=0,m=0){ // 形参赋默认值
+        //        console.log(n,m)
+        //         // arguments.callee()
+        //    }
+        //    fn(2,3)
+        //    function sum(){
+        //         let total = null;
+        //         for (var i = 0; i < arguments.length; i++) {
+        //            let item = arguments[i];
+        //            if(!isNaN(Number(item))){
+        //                total+=item
+        //            }
+        //         }
+        //         return total
+        //    }
+        //   let num =  sum(true, NaN,1,8,9);
+        //   console.log(num)
+
+        // function fn() {
+
+        // }
+        // let fn = function(m){
+        // return 3
+        // };
+
+        // let fn = m => 3;
+
+        // let sum = (...a) => { // ...是es6
+        //     let total = null;
+        //     for (var i = 0; i < a.length; i++) {
+        //         let item = a[i];
+        //         if (!isNaN(Number(item))) {
+        //             total += item
+        //         }
+        //     }
+        //     return total
+        // }
+        // let num =  sum(true, NaN,1,8,9);
+
+            
+        /* 
+        1、push、unshift、pop、shift、splice
+        splice(n,m)
+        
+        */
+    //    let ary = [12,243,45,4];
+    //    ary.pop()
+    //    ary.length--
+    //    ary.splice(ary.length-1,1)
+
+    //    shift
+    //    splice(0,1)
+
+    //    push
+    //    splice(ary.length,0,x)
+    //    ary[ary.length] = 'xxx'
+
+    //    unshift
+    //    splice(0,0,x)
+
+    //    reverse倒叙
+    //    sort()排序
+    //    sort((a,b)=>{
+    //     return a-b
+    //    })
+
+
+    //    slice(n,m)
+    //    concat
+    // let ary = [12,34,12,12,34,12];
+    // // console.log(ary.concat(34))
+    // ary.push(34)
+    // console.log(ary)
+
+    // indexOf(n,m)
+        // // let index = ary.indexOf(34,2)
+        // let index = ary.lastIndexOf(94,2)
+        // let flag = ary.includes(344)
+        // console.log(flag)
+        // console.log(ary.slice(0))
+        // console.log(ary.splice(0))
+
+        // let str =  ary.join('')
+        // console.log(str)
+        // let num = ary.forEach((item, index)=>{
+        //     console.log(item, index)
+        // })
+        // console.log(num)
+        // let ary = [12,34,12,12,34,12];
+        // let num =ary.map((item, index)=>{
+        //     console.log(item, index)
+        //     return `我是第${item}li`
+        // })
+        // console.log(num)
+        //let str = '  as&dWERRf&gh  ';
+        // console.log(str.charAt(20))
+        // console.log(str[20])
+        // console.log(str.charCodeAt(2))
+
+        // console.log(str.substr(1,2))
+        // console.log(str.substring(1,2))
+        // console.log(str.slice(-5,-2))
+
+        // console.log(str.split('&').join(''))
+        // console.log(str.replace('&','$').replace('&','$'))
+        // console.log(2,str.trim().replace(/ /g, ''), 3)
+        // console.log(str.toLowerCase().toUpperCase())
+        // console.log(str.toUpperCase())
+        let ary = [1,2,3,4,5,6];
+            
+        console.log(ary.eval(join('+')))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>    
+        let a = 12;   //a=12
+        let b = a ;   //b=12
+        let c = {name:'xiaohua'};//c= {name:"xiaohua"}
+        b = 13;         //b=13  抵消上面
+        console.log(a,c) //12，{name:"xiaohua"}
+
+    
+
+    // let n = {name: 'hongchen'};// n = {name: 'hongchen'}
+    // let m = n;//// m = {name: 'hongchen'}
+    // m.name = 'liaoque';//因为有name这个，所以为修改 m = {name: 'liaoque'}
+    // console.log(n.name)//liaoque
+
+
+
+    // let d = {z:1};
+    // let f = d;//z:1
+    // d = d.x ={z : 2};//详情参考笔记
+    // console.log(d.x,f)//undefined,{z:1,x:{z:2}}
+
+
+    </script>
+</body>
+
+</html>

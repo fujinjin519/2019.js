@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box{
+        width: 1000px;
+        height: 300px;
+        background: -webkit-linear-gradient(top right ,orange,aqua,yellow,green);
+        line-height: 300px;
+        text-align: center;
+        font-size: 60px;
+        font-weight: bolder;
+        margin: 100px auto;
+        -webkit-background-clip: text;
+        color:transparent;
+    }
+</style>
+</head>
+<body>
+        <div id="box">987654321</div>
+        <script>
+        let box = document.getElementById('box');
+        let endTime = new Date('2019-11-13 18:00');
+        let num =null;
+     
+
+          //不足十位补零
+        // function addZero(val){
+        //     //如果传进来小于10  补0
+        //     if(val<10){
+        //         return '0'+val
+        //     }
+        //     else{
+        //         return val
+        //     }
+        // }
+        let addZero = val=>val<10? '0'+val:val;
+
+
+        setTime();//页面初次渲染时，为了防止页面闪，执行一次setTime方法     
+        function setTime(){
+            let time = new Date();//创建现在时间
+            let diffTime = endTime-time;//获得现在时间和结束时间的时间差（单位是毫秒）
+           // console.log(diffTime);//输出时间差
+
+            if(diffTime<=0){
+                clearInterval(num);//清空定时器
+                box.innerText = '时间到';//把div内容改为时间到
+                return;
+            }
+
+
+            let hour = Math.floor(diffTime/1000/60/60);//获取小时  除以1000为秒  除以60为分  在除以60为小时
+            let min = Math.floor((diffTime-hour*60*60*1000)/1000/60);//获取分钟//转换为毫秒单位把时间差算出来   再进行转换分钟
+            let sec = Math.floor((diffTime-hour*60*60*1000-min*60*1000)/1000);//获取秒
+            let value =addZero(hour)+'时'+addZero(min)+'分'+addZero(sec)+'秒';
+            box.innerText = value
+        }
+        num = setInterval(setTime,1000);
+        </script>
+</body>
+</html>

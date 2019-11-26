@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let num = 12;
+            function fn (n,m){
+                console.log(num);//12
+                var names = 'xxx';
+                let total = n+m;
+                total = total/2;
+                return total;
+            }
+            let res = fn(12,13);
+            console.log(res);//12.5
+            console.log(names);//报错  //return输出了12.5
+            //先创建变量res，然后执行函数，把函数回字形的结果拿过来
+            //函数每执行一次就会形成私有栈内存，把堆内存中的字符串拿过来转换为代码执行
+            //有变量没有值，输出为undefined，没有变量没有值 ，会报错
+            //图片详解在文件夹
+            
+    
+    </script>
+</body>
+</html>

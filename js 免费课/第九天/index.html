@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //数组转字符串  //toString()
+    // join 把数组以特定的分隔符转换为字符串
+    // 方法的含义 把数组以特定的分隔符转换为字符串
+    // 方法的参数 字符串格式的分隔符
+    // 方法的返回值 字符串
+    // 原数组是否发生改变 否
+        // let ary = [12,3,456,95];
+        // console.log(ary.join('$'));//12$3$456$95
+        // console.log(ary.join(' '));//空格也是字符串//12 3 456 95
+        // console.log(ary.join());//12,3,456,95//如果不传值，分隔符就是逗号
+        // console.log(ary)// [12, 3, 456, 95]
+
+
+   /*  forEach 
+    方法的含义：遍历数组
+    方法参数：函数
+    方法的返回值：无
+    原数组是否发生改变：否 */
+         //let ary = [12,3,456,95];
+        //  ary.forEach((item,index)=>{
+        //      console.log(item,index)//12，0；3，1；456，2；95，3
+        //      //item是数组每项
+        //      //index是每一项的索引
+        //      //有多少项就循环多少轮
+        //  })
+        let ary = [12,3,4,18,true,false,8,NaN];
+         let fn = (...ary)=>{
+             let total = null;
+             ary.forEach((item,index)=>{
+                 if(!isNaN(Number(item))){
+                     total+=item
+                 }
+             })
+             return total
+         }
+         console.log(fn(...ary))// 46
+
+
+
+         
+    </script>
+</body>
+</html>

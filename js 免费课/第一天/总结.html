@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+/* 浏览器
+    打开控制台 F12
+    Elements:显示页面结构和样式
+    Console:可以运行代码，可以打印页面中代码内容
+    Sources：存放页面的静态资源文件
+    Network：里边所有数据的请求
+
+浏览器分类
+    -webkit (v8引擎)
+        -Chrome
+        -safari
+        国产浏览器
+   -Gecko
+        -FireFox
+    -Prosto
+        -Opera
+    -Trident
+        --IE
+JS
+    -js作为一门客户端开发语言，不仅要操作浏览器的某些功能，还要操作页面中的dom元素
+    -ECMAScript3/5(老版本)（6/7）（新版本）：规定了js的语法，变量，操作语句等
+    -DOM:(document object model) 提供一些js的属性和方法，用来操作页面中的dom元素
+    -BOM （browser object model） 提供一些js的属性和方法，用来操作浏览器    */
+
+
+//JS创建变量的几种形式  -*
+/* 注释  单行注释ctrl+/  多行注释shift+alt+A
+    -1.var 创建一个变量（ES5）
+    -2.let 创建一个变量（ES6）
+    -3.const 创建一个常量  (不允许修改)（ES6）
+    -4.function 创建函数变量（ES5）
+    -5.import导入变量（ES6）
+    -6.class创建类（ES6）
+    -7.Symbol创建唯一值
+
+js的命名规范   -*
+    -严格区分大小
+    -变量名由数字，字母，$,_,组成，不能以数字开头
+    -遵循驼峰命名法（变量名的第一个单词首字母小写，以后每一个有意义的单词首字母大写）  起名要有意义
+    -不能以关键字或者保留字作为变量名
+
+
+js的数据类型  =号后边使用
+    -基本数据类型  (简单数据类型))
+        +number 数字类型 2 ，1， 2，-2，
+        +string 字符串"", '',``
+        +boolean 布尔 true  false
+        +null空对象指针
+        +undefined 未定义
+        Symbol  唯一值
+    -引用数据类型
+        +object对象
+            +普通对象{name:'xxxx'}
+            +数组 []
+            +Math 数学对象
+            +Date 日期对象
+            +/^$/正则
+        +function函数 
+            +普通函数
+            +类*/
+            
+
+/* number 由有效数字和NaN组成
+NaN：(not a number ):它是number数据类型的一种
+        NaN和谁都不相等，包括自己
+把其他数据类型转化为数字类型 Number(val)
+
+    -把字符串转数字
+        只要字符串中出现了非有效数字，那结果是NaN(第一个小数点不算，第一个-，+不算)
+        如果左右有空格，会自动去掉
+        空字符串转数字是0
+
+    -把布尔转数字
+        true转数字为1
+        false转数字为0
+
+    -把null和undefined转数字
+        null转数字为0
+        undefined转数字为NaN */
+
+
+
+
+      //1. var创建变量(ES5)
+        // var a = 12;
+        // a = 200;
+        // console.log(a)
+
+
+        //2.let创建变量（ES6）
+        let c = 15;
+        c = 600;
+        console.log(c)
+
+
+        //3.const 创建常量(不允许修改)(ES6)
+        const e = 12;
+             e = 15;//报错
+        console.log(e)
+
+
+        //4.function 创建函数变量(ES5)
+        function fn() {
+            console.log(222)
+        }
+        console.log(fn)
+
+
+        //5.import 导入变量(ES6)
+        // import r from './1.js';
+
+
+        //6.class创建类（ES6）
+        class F { }
+
+
+
+        //7.Symbol 创建唯一值 但值都不相等
+        let a = Symbol(10);
+        let b = Symbol(10);
+        console.log(a)
+        console.log(b)
+        console.log(a == b)
+
+
+         // 严格区分大小写
+    let number = 10;
+    console.log(number)
+    
+    //变量名由数字，字母，$,_,组成，不能以数字开头
+    let _1$ = 45;
+    console.log(_1$);
+
+    //遵循驼峰命名法（变量名的第一个单词首字母小写，以后每一个有意义的单词首字母大写）
+        var studentInfo='xiaoHua';
+        console.log(studentInfo)
+
+        var backgroundColor='red';
+        console.log(backgroundColor)
+    //变量名需要有意义
+
+    //不能以关键字或者保留字作为变量名
+    // let let=  10;
+    // console.log(let) //错误写法
+        let backgroundMange='yellowBlue'
+        console.log(backgroundMange)
+
+        let name='中国';
+        console.log(name);
+        
+     
+       var name1='adas';
+        console.log(name1);
+
+
+        let ss=10;
+        let w='10';
+        let x=true;
+        let z=null;
+        let d=false;
+        let f='245'
+        console.log(ss,w,x,z,d,f)
+
+
+
+        let num=11;
+        let copy=num;
+        console.log(copy)
+
+
+        let a =1;
+        let b =a;
+        console.log(b)
+
+        let obj='{sss}';
+        console.log(obj)
+
+       
+   
+    // -把字符串转数字
+    //     只要字符串中出现了非有效数字，那结果是NaN(第一个小数点不算，第一个-，+不算)
+    //     如果左右有空格，会自动去掉
+    //     空字符串转数字是0
+        console.log(Number('24'));//24
+        console.log(Number('-24'));//-24
+        console.log(Number('+24'));//24
+        console.log(Number('-24.4.3'));//NaN
+        console.log(Number('              55         '))//55
+        console.log(Number('  3  4  '))//NaN
+        console.log(Number('13px'))//NaN
+
+
+        // -把布尔转数字
+        // true转数字为1
+        // false转数字为0
+
+        console.log(Number(true))//1
+        console.log(Number(false))//0
+
+        // -把null和undefined转数字
+        // null转数字为0
+        // undefined转数字为NaN
+
+        console.log(Number(null))//0
+        console.log(Number(undefined))//NaN
+
+
+        // -把普通数据类型转数字，先把值转换为字符串，再把字符串转换为数字
+        //    所有的普通对象转字符串都是'[[object Object]'
+        //    所有的普通对象转数字都是NaN
+        console.log(Number({}))
+        console.log(({}).toString())//[object Object]
+        console.log(Number('[object Object]'))//NaN
+
+
+
+        console.log(Number({name:'xxx'}))//NaN
+
+        // -把数组转数字，先把值转化为字符串，再把字符串转换为数字
+        // 把数组转字符串是吧左右俩边的括号去掉，替换为引号即可   
+        console.log(Number([true,'1']))//NaN
+        console.log([true,'1'].toString())//'true,1'
+        console.log(Number('[true,1]'))//NaN
+
+        console.log(Number([]))//0
+        console.log(Number(''))//0
+
+         console.log(Number([12]))//12
+
+
+        //  NaN和谁都不相等(包括自己)
+        console.log(NaN==NaN)
+
+        
+        console.log(1/3)
+        console.log(Number(NaN == NaN))
+        console.log( Number( Number('NaN') ) )
+        console.log(Number('-15.7'));
+        console.log(Number({}));  
+    
+    
+    </script>
+</body>
+</html>

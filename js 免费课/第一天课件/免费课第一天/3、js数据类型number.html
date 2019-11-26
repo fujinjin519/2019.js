@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script >
+       // 1、把字符串转换为数字类型
+        //只要字符串中出现了非有效数字，那结果就是NaN（第一个小数点不算，第一个-、+不算）
+        //如果左右有空格，会自动去掉
+        // 空字符串转数字是0
+    console.log(Number('24')); // 24
+    console.log(Number('-24')); // -24
+    console.log(Number('+24')) // 24
+    console.log(Number('2.4')) // 2.4
+    console.log(Number('-24.4.3')) // NaN
+    console.log(Number('       34      ')) // 34
+    console.log(Number(''))  // 0
+    console.log(Number('   3   4  ')) // NaN
+    console.log(Number('13px')) // NaN 
+    console.log(Number('NaN')) //  NaN
+
+
+    // 2、把布尔转数字
+    console.log(Number(true))
+    console.log(Number(false))
+
+    //3、 把null和undefined转数字
+    console.log(Number(null));
+    console.log(Number(undefined))
+
+    // 4、 引用数据类型转数字
+    // 把引用数据类型转数字，先把值转换为字符串，在把字符串转换为数字
+    // 所有的普通对象转字符串都是 '[object Object]'
+    // console.log(Number({})) // NaN
+    // //  console.log(({}).toString()) // '[object Object]'
+    // // Number('[object Object]')
+
+    // console.log(Number({name: 'xxx'})) // NaN
+
+    // 把数组转数字先，把值转换为字符串，在把字符串转换为数字
+    //  把数组转字符串是把左右两边的中括号去掉，替换为引号即可
+    // console.log(Number([true, '1']))
+    // console.log([true, '1'].toString()) // 'true,1'
+    // Number('true,1') // NaN
+    
+    console.log(Number([])) // 0
+    // [].toString() // ''
+   //  Number('') // 0
+
+
+
+
+    
+    </script>
+    
+</body>
+</html>

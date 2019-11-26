@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #box{
+                width: 1000px;
+                height: 300px;
+                background: -webkit-linear-gradient(top right ,orange,aqua,yellow,green);
+                /* 渐变 */
+                line-height: 300px;
+                text-align: center;
+                font-size: 30px;
+                font-weight: bolder;
+                margin: 100px auto;
+                -webkit-background-clip: text;
+                color:transparent;
+            }
+        </style>
+</head>
+<body>
+        <div id="box">2019年11月13日 星期三 22：13 </div>
+        <script>
+            let box = document.getElementById('box');
+
+            //不足十位补零
+            // function zero(val){
+            //     if(val<10){
+            //         return '0'+val;
+            //     }
+            //     else{
+            //         return val;
+            //     }
+            // }
+       let zero = val=> val<10?'0'+val:val;//简写
+
+         //把阿拉伯数字的星期转化为中国汉字的星期
+         function trans(val){
+              // 星期映射表
+            let obj ={
+                0:'日',
+                1:'一',
+                2:'二',
+                3:'三',
+                4:'四',
+                5:'五',
+                6:'六'
+            }
+            return obj[val]
+        }
+
+
+         //获取时间方法
+         function newTime(){
+             let time = new Date();
+             let year = time.getFullYear();//获取年
+             let month = time.getMonth()+1;//获取月（从0到11，所以要给它加1）
+             let date = time.getDate();//获取日
+             let day = time.getDay();//获取星期几(0是星期日)
+             let hour =time.getHours();//获取小时
+             let min = time.getMinutes();//获取分钟
+             let sec = time.getSeconds();//获取秒
+             let value = year+'年'+zero(month)+'月'+zero(date)+'日 星期'+trans(day)+zero(hour)+'时'+zero(min)+'分'+zero(sec)+'秒'
+             box.innerText = value;
+         }
+         setInterval(newTime,1000)
+          // 让定时器每间隔一秒就执行一次setTime这个方法（这是实现时钟的核心）
+        </script>
+</body>
+</html>

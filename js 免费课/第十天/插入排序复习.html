@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ary = [12,23,45,66,10,23,10,12];
+        function axe(ary){
+            let bop = [];
+            bop.push(ary[0]);
+            for(var i = 1 ; i<ary.length;i++){
+                let item = ary [i];
+                for(var x = bop.length - 1 ;x >= 0;x--){
+                    let cur = bop[x];
+                    if(item>cur){
+                        bop.splice(x + 1,0,item);
+                        break;
+                    }
+                    if(x === 0) {
+                        bop.unshift(item);
+                    }
+                }
+            }
+            return bop
+        }
+        console.log(axe(ary))
+    
+    
+    </script>
+</body>
+</html>

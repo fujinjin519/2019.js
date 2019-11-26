@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //    数组由中括号包裹，里面放着是每一个属性值，属性名是浏览器内定的，从0开始，依次递增。他代表属性值的位置=>索引
+        //天生自带一个length属性，属性值是数组的长度
+        let book=['2',2,true,false,null,undefined,{},[]]
+        console.log(book)
+        console.log(book.length)
+        console.log(book[0])//数组的第一项
+        console.log(book[2])//数组的第三项
+        console.log[book[book.length-1]]//获取数组的最后一项
+       
+       
+        console.log(book[book.length]='2019')
+        console.log(book)                   //给数组新增一项
+
+
+         book.length=6              //给数组删除项
+         book.length=book.length-1  //删除一项
+         book.length=0              //删除全部
+         console.log(book)
+    </script>
+</body>
+</html>

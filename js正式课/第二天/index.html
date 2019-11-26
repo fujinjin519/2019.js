@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //作用域： 全局作用域     私有作用域 【为代码执行提供环境】
+//一，全局作用域：  当你打开一个页面，浏览器就会形成全局作用域为代码执行提供环境，在全局作用域下会生成一个全局的大对象叫window
+    //全局作用域一般不销毁，直到页面关闭，作用域才会销毁
+    //console.log(window)//可以显示全局作用域的所有名
+
+    //全局变量：在全局作用下声明的变量就是全局变量
+    // let a = 12;
+    // var b = 13;
+    // const c = 13;
+    // function fn(){}
+
+    //1.用var和function声明的变量会在全局作用域下声明一个变量，而且也会给window增加属性，属性名是变量名，属性值是变量名存储的值（let const 不支持）
+    // console.log(window.a)//undefined
+    // console.log(window.b)//13
+    // console.log(window.c)//undefined
+    // console.log(window.fn)//fn(){}
+
+    //2.var和function可以重复创建同一个变量名（let不可以）
+    // var a = 12;
+    // var a = 13;
+    // console.log(a)//13
+    // let a = 12;//报错 SyntaxError(语法错误)
+    // let a = 13;
+
+    //3.var和function有变量提升（let没有）
+    // b=12 //等价于window.b = 12 因为window.可以省略
+    // var b = 12;//(有变量提升)
+    // console.log(b)
+    //    var a = b = c =12;//等价于var a = 12;b=12,c=12;
+    //    var a,b,c = 12;//undefined,undefined,12
+    //    console.log(a,b,c)//创建变量a,b,c，但是只给c赋值
+    //    var a = 12,b = 13, c = 14;//创建3个变量，给每一个变量都进行赋值
+
+//二，私有作用域：函数执行会形成一个私有的栈内存（私有作用域），全局作用域生成之后才会有私有作用域，私有作用域是属于全局作用域的
+        function fn(){
+            //函数定义：   
+                        // 1.首先开辟一个堆内存生成一个16进制的空间地址
+                        // 2.把函数体里的代码以字符串的格式存储进去
+                        // 3.把16进制的地址赋值给函数名
+        }
+        fn()
+            //函数执行： 
+                        //1.首先开辟一个私有作用域
+                        //2.形参赋值
+                        //3.变量提升
+                        //4.代码从上往下执行
+                        //5.作用域是否被销毁 
+                     
+            //私有变量
+            //在私有作用域定义的变量就是私有变量（let,var,function,const）
+            //形参也是私有变量
+            //在私有作用域里使用一个变量，如果自己私有作用域有，就用自己的，没有使用上一级作用域的
+            //函数外边不能拿到函数里边的变量
+
+            // var a = 12;
+            // function fn(a){
+            //     console.log(a)//13
+            // }
+            // fn(13)
+
+            // var name = 'erya';
+            // function fn(name){ //erya
+            //     function name(){
+
+            //     }
+            //     name = 7;
+            //     console.log(name);//7
+            // }
+            // fn(name)
+
+            // let y = 12;
+            // function fn(){
+            //     function y(){}
+            //     y = 100;
+            //     console.log(y)//100
+            // }
+            // fn();
+            // console.log(y)//12
+
+            // var num = 12;
+            // function fn(){
+            //     num++   //没有获取外面
+            // }
+            // fn();
+            // console.log(num);//13
+    </script>
+</body>
+</html>

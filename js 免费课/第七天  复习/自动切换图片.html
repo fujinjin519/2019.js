@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 600px;
+            height: 300px;
+            margin: 150px auto;
+        }
+        #time {
+            width: 600px;
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            color: orange;
+            background: rgba(0, 255, 179, 0.63);
+            font-size: 50px;
+            position: relative;
+            display: none;
+            transition: all 1s;
+        }
+        #box img {
+            width: 600px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="time">时间到</div>
+        <div id="aa"><img src="1.jpg" alt=""></div>
+    </div>
+    <script>
+        let box = document.getElementById('box')
+        let aa = document.getElementById('aa')
+        let img = aa.getElementsByTagName('img')//类数组，只有数组才会有length
+        let time = document.getElementById('time')
+        console.log(box,aa,time);
+        console.log(img[0].src)
+        let flag = 1;
+        function fn() {
+
+            switch (img[0].src) {
+                case 'file:///D:/%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/js/%E7%AC%AC%E4%B8%83%E5%A4%A9%20%20%E5%A4%8D%E4%B9%A0/1.jpg':
+                    img[0].src = 'file:///D:/%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/js/%E7%AC%AC%E4%B8%83%E5%A4%A9%20%20%E5%A4%8D%E4%B9%A0/3.jpg';
+                    break;
+                case 'file:///D:/%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/js/%E7%AC%AC%E4%B8%83%E5%A4%A9%20%20%E5%A4%8D%E4%B9%A0/3.jpg':
+                    img[0].src = 'file:///D:/%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/js/%E7%AC%AC%E4%B8%83%E5%A4%A9%20%20%E5%A4%8D%E4%B9%A0/5.jpg';
+                    break;
+                case 'file:///D:/%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/js/%E7%AC%AC%E4%B8%83%E5%A4%A9%20%20%E5%A4%8D%E4%B9%A0/5.jpg':
+                    img[0].src = 'file:///D:/%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/js/%E7%AC%AC%E4%B8%83%E5%A4%A9%20%20%E5%A4%8D%E4%B9%A0/8.jpg';
+                    break;
+                case 'file:///D:/%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/js/%E7%AC%AC%E4%B8%83%E5%A4%A9%20%20%E5%A4%8D%E4%B9%A0/8.jpg':
+                    img[0].src = 'file:///D:/%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/js/%E7%AC%AC%E4%B8%83%E5%A4%A9%20%20%E5%A4%8D%E4%B9%A0/9.jpg';
+                    break;
+                default:
+                    img[0].src = 'file:///D:/%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/js/%E7%AC%AC%E4%B8%83%E5%A4%A9%20%20%E5%A4%8D%E4%B9%A0/1.jpg';
+            }
+            flag++;
+            if(flag>20){
+                clearInterval(int);
+                img[0].src ="";
+                time.style.display="block";
+                //给flag进行判断，大于20，图片显示为空。time快进行显示
+
+            }
+
+        }
+        let int = setInterval(fn, 2000)
+        //设置图片自动切换速度毫秒
+        //一定写在函数外
+    </script>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+        }
+        li{
+            width: 100px;
+            margin-right:10px;
+            text-align: center;
+            font-size: 30px;
+            line-height: 20px;
+            border: 1px solid black;
+            position: relative;
+            top:1px;
+            cursor: pointer;
+        }
+        #box div{
+            width: 350px;
+            height: 300px;
+            text-align: center;
+            font-size: 30px;
+            line-height: 20px;
+            border: 1px solid black;
+            display: none;
+        }
+        #box div.active{
+            display: block;
+        }
+        li.active{
+            border-bottom-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul id="navList">
+            <li class="
+            active">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <div class="active">one</div>
+        <div>two</div>
+        <div>three</div>
+    </div>
+    <script>
+        let  box =document.getElementById('box');
+        let navList = document.getElementById('navList');
+        let div = box.getElementsByTagName('div');
+        let list =navList.getElementsByTagName('li');
+        for(var i = 0;i<list.length;i++){
+            list[i].axe = i;
+            list[i].onclick = function(){
+                fn(this.axe)
+            }
+        }
+        function fn(index){
+            for(var i = 0;i<list.length;i++){
+                list[i].className = '';
+                div[i].className = '';
+            }
+                list[index].className = 'active';
+                div[index].className = 'active';
+        }
+        
+    </script>
+</body>
+</html>

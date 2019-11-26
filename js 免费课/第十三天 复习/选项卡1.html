@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 500px;
+            margin: 30px auto;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+        li {
+            width: 90px;
+            text-align: center;
+            background: -webkit-linear-gradient(top right, orange, aqua, yellow, green);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 50px;
+            margin-right: 10px;
+            position: relative;
+            top: 1px;
+            cursor: pointer;
+        }
+
+        #box div {
+            display: none;
+        }
+
+        #box div img {
+            width: 500px;
+            height: 300px;
+        }
+
+        #box div.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul id="navList">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <div class="active">
+            <img src="1.jpg" alt="">
+        </div>
+        <div>
+            <img src="1.jpg" alt="">
+        </div>
+        <div>
+            <img src="1.jpg" alt="">
+        </div>
+        <div>
+            <img src="1.jpg" alt="">
+        </div>
+        <div>
+            <img src="1.jpg" alt="">
+        </div>
+    </div>
+
+    <script>
+        let box = document.getElementById('box');
+        let navList = document.getElementById('navList');
+        let div = box.getElementsByTagName('div');
+        let list = navList.getElementsByTagName('li');
+        let img = box.querySelectorAll('div img')
+        // console.log(img)
+        let flag = 1;
+        let n = 0
+        for (let i = 0; i < list.length; i++) {
+            list[i].lias = i;
+            list[i].onclick = function () {
+                fn(this.lias);
+                
+            }
+        }
+        function fn(index) {
+            for (var i = 0; i < div.length; i++) {
+
+                div[i].className = '';
+            }
+            n=index;
+            console.log(n)
+            div[index].className = 'active';
+        }
+
+
+        console.log(n)
+        flag++;
+        if (flag > 10) {
+            clearInterval(ont)
+        }
+        console.log(img[n].src)
+        let ont = setInterval(() => {
+            switch (img[n].src) {
+                case 'file:///D:/%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/js%20%E5%85%8D%E8%B4%B9%E8%AF%BE/%E7%AC%AC%E5%8D%81%E4%B8%89%E5%A4%A9%20%E5%A4%8D%E4%B9%A0/1.jpg':
+                    img[n].src = 'file:///D:/%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/js%20%E5%85%8D%E8%B4%B9%E8%AF%BE/%E7%AC%AC%E5%8D%81%E4%B8%89%E5%A4%A9%20%E5%A4%8D%E4%B9%A0/3.jpg';
+                    break;
+                case 'file:///D:/%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/js%20%E5%85%8D%E8%B4%B9%E8%AF%BE/%E7%AC%AC%E5%8D%81%E4%B8%89%E5%A4%A9%20%E5%A4%8D%E4%B9%A0/3.jpg':
+                    img[n].src = 'file:///D:/%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/js%20%E5%85%8D%E8%B4%B9%E8%AF%BE/%E7%AC%AC%E5%8D%81%E4%B8%89%E5%A4%A9%20%E5%A4%8D%E4%B9%A0/5.jpg';
+                    break;
+                case 'file:///D:/%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/js%20%E5%85%8D%E8%B4%B9%E8%AF%BE/%E7%AC%AC%E5%8D%81%E4%B8%89%E5%A4%A9%20%E5%A4%8D%E4%B9%A0/5.jpg':
+                    img[n].src = 'file:///D:/%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/js%20%E5%85%8D%E8%B4%B9%E8%AF%BE/%E7%AC%AC%E5%8D%81%E4%B8%89%E5%A4%A9%20%E5%A4%8D%E4%B9%A0/8.jpg';
+                    break;
+                case 'file:///D:/%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/js%20%E5%85%8D%E8%B4%B9%E8%AF%BE/%E7%AC%AC%E5%8D%81%E4%B8%89%E5%A4%A9%20%E5%A4%8D%E4%B9%A0/8.jpg':
+                    img[n].src = 'file:///D:/%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/js%20%E5%85%8D%E8%B4%B9%E8%AF%BE/%E7%AC%AC%E5%8D%81%E4%B8%89%E5%A4%A9%20%E5%A4%8D%E4%B9%A0/9.jpg';
+                    break;
+                default:
+                    img[n].src = 'file:///D:/%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/js%20%E5%85%8D%E8%B4%B9%E8%AF%BE/%E7%AC%AC%E5%8D%81%E4%B8%89%E5%A4%A9%20%E5%A4%8D%E4%B9%A0/1.jpg';
+            }
+        }, 1000)
+    </script>
+</body>
+
+</html>

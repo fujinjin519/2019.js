@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    一 ，
+        1.基本数据类型和引用数据类型
+        2.typeof 返回一个字符串,放着他的数据类型
+         instanceof  检测当前实例是否属于某个类
+         constructor 基于构造函数检测数据类型
+         Object.prototype.toString.call() 检测最好方式
+        3.区别；基本数据类型存的值，引用数据类型存的空间地址
+        4.(1)给函数一个形参 (2)arguments
+        5.(1)setInterval  (2)setTimeout
+    二，
+        1.(1)let box = document.getElementById('div1')
+          (2)let box1 = document.getElementsByClassName('box')[0]
+        2.let  p = document.creatElement('p')
+          document.body.appendChild(p)
+        3.previousSibling
+        4.substr substring slice
+        5.replece()
+    三,
+        1.str.push(x);str.splice(str.length-1,0,x)
+        2.str.pop();str.length--
+        3.forEach();map
+        4.ary.sort((a,b)=>a-b)
+        5.slice(n,m+1)
+    四，
+        1.Math.round(Math.random()*(m-n)+n)
+        2.max;min 
+        3.true
+        4.true
+        5.'ok'
+        
+    五 .任意数求和
+    function sum(){
+        let item = null;
+        for( var i= 0; i<arguments.length;i++){
+            let iom = Number(arguments[i])
+            if(!isNaN(iom)){
+                item += iom ;
+            }
+        }
+
+        return item
+    }
+    console.log(sum(1,2,'34',true,false))
+
+    六  .100里被3整除，被15整除的
+    function sum(){
+        if(num>100){
+            return 0
+        }
+        //num%3 === 0 && num%5 === 0
+        if(num%15 === 0){
+            return num=sum(num+1)
+        }
+        return sum(num+1)
+    }
+    console.log(sum(1))
+
+
+
+    七  .获奖码
+    <span id="show"></span>
+  
+    let shou = document.getElementById('show')
+    let int = null;
+    let ss = null;
+    function createCode(){
+        if(ss>9){
+            clearInterval(int);
+            return
+        };
+        ss++
+        let value = '';
+        for(var i = 0;i<4;i++){
+            let num = Math.round(Math.random()*9);
+            value+=num
+        }
+      
+        show.innerText = value;
+    }
+    createCode()
+    int = setInterval(createCode,1000)
+
+
+    八 .隔行变色点击
+    <ul id = "ul1">
+        <li>我是第一个li</li>
+        <li>我是第二个li</li>
+        <li>我是第三个li</li>
+        <li>我是第四个li</li>
+        <li>我是第五个li</li>
+    <ul>
+
+    let lists = document.getElementsByTagName('li');
+    let ss =null
+    for(var i = 0;i<lists.length;i++){
+        if(i%2 ===0){
+            lists[i].style.background = 'red';
+            lists[i].color = 'red';
+        }
+        else{
+            lists[i].style.background = 'green';
+            lists[i].color = 'green';
+        }
+        lists[i].myIndex = i+1;
+        lists[i].onmousenter = function(){
+            ss = this.style.background;
+            this.style.background = 'pink';
+        }
+        lists[i].onmouseout = function(){
+            this.style.background = this.color;
+            //this.style.background = ss
+        }
+        lists[i].onclick = function(){
+                alert(`我是第${this.myIndex}个li`)
+            }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//  1.    
+         var i = 5;
+        function fn(i) { //1   2    3
+            return function (n) {// 2   7  
+                console.log(n + (++i));//输出值4，8，12，10，5
+            }
+
+        }
+        var f = fn(1);
+        f(2);       //执行完后销毁  没有return
+        fn(3)(4);   //不立即函数销毁 //（4）为小函数执行
+        fn(5)(6);   //不立即函数销毁 // (6) 为小函数执行
+        f(7);
+        console.log(i);//5
+
+    // let f = function(n){
+    //     console.log(n+(++1))
+    // }
+    // let f(2) = function(2){
+    //     console.log(2+(++1))//4
+    // }
+    // function (n){
+    //     console.log(n+(++3))
+    // }(4)
+    // function(4){
+    //     console.log(4(++3))//8
+    // }
+    // function (n){
+    //     console.log(n+(++5))
+    // }(6)
+    // function (6){
+    //     console.log(6+(++5))//12
+    // }
+    // let f(7) = function(7){
+    //     console.log(7+(++2))//10 //上面为2 所以 ++2
+    // }
+
+
+// 2.
+    var ary = [12, 23];
+
+    function fn(ary) {
+    console.log(ary);//[12,23]
+    ary[0] = 100;   //[100,23]//通过地址找到第一项
+    ary = [100];    // [100]  //新创建私有作用域  //重新开辟地址
+    ary[0] = 0;     //[0]
+    console.log(ary);//[0]
+    }
+    fn(ary);
+    console.log(ary);//[100,23]连接全局作用域下面
+
+
+// 3.
+    console.log(a)  //undefined
+    if(!('a' in window)){   //false  取反为false
+        var a = 13
+    }
+
+    console.log(a) //undefined
+
+
+//4.
+    var s = 5;
+    function fn() {
+        var n = 0;
+        function f() {
+            n++;
+            console.log(n); // 1   //2
+        }
+        f();
+        return f;
+    }
+    var r = fn();
+    r();
+    console.log(s); //5
+
+
+//5.
+    var a = 4;
+    var f = 3;
+    function b(x,y,a) {  // x,y,a = 1,2,f   a = f =3
+        alert(a);        //a=3
+        // 形参和arguments存在映射关系；
+        arguments[2]=10;  //1,2,10
+        alert(a);          //a=10
+    }
+    a=b(1,2,f);
+    alert(a);   //undefined        //a = b(1,2,10) //b这个函数没有return  所以undefined
+    console.log(f);//3
+
+
+//6.
+    var foo='hello';
+    (function(foo){
+        console.log(foo); //hello
+        var foo=foo||'world';  //如果前面转布尔为false，取后面的值 ，反之取前面的值    'hello'字符串转布尔为true
+        console.log(foo); //hello
+    })(foo);
+    console.log(foo); //hello
+
+
+//7.
+f = function(){return true}//true   //不进行变量提升  //执行的时候给window加属性名f  属性值为function这个函数
+g = function(){return false}//false
+~function(){ 
+    if(g() && [] == ![]){   //false && 0 == 0   //[] == ![]//false ==false 
+        f = function(){return false} //不进行变量提升
+        // function g(){return true}  //会进行变量提升,只声明不定义  g为 undefined 不能执行 直接报错 。。如果注释掉会从外面取值 
+    }
+}();
+
+console.log(f()) //true
+console.log(g()) //false
+    </script>
+</body>
+</html>

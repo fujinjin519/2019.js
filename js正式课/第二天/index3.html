@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //函数的作用域查找
+        //函数的上一级作用域是谁，在函数定义时候已经确定了，函数在哪创建的，他的上一级作用域就是谁，跟在哪执行没有关系
+
+        //作用域链查找机制
+        //在私有作用域中，函数执行，如果使用一个变量。自己作用要是有，就使用自己的，要是没有就向上一级作用域查找，上一级还没有，查到找到全局作用域，如果还没有就报错，  这种一级一级向上查找的机制就是【作用域链查找机制】
+
+        //闭包：函数执行形成的私有作用域就是闭包，可以保护里边私有变量不受外界干扰；还可以保存变量
+     /*    n  = 1
+        fn:fn
+        x =  f */
+
+             /*   n = 2
+              f */
+
+                /*  n -1   1  n-1 */
+
+                 /* //1  //0 */
+
+        // var n = 1;
+        // function fn(){
+         
+        //     var n = 2;
+        //     function f(){
+        //         n--;
+        //         console.log(n)//1//0
+        //     }   
+        //     f();   //1  //0
+        //     return f // f = var x = fn();  
+        // }
+        // var x = fn()();
+        // //x();  //0
+        // //也可以 var x = fn()()
+        // console.log(n)//1
+    
+
+
+//四种特殊情况
+    //1.变量提升发生在等号左边
+    // var a = function(){}
+
+    //2.不管if条件是否成立，都要进行变量提升
+    // console.log(num)  //var   么有值为undefined
+    // if(false){
+    //     var num = 12;
+    // }
+    // console.log(num) // undefined
+    
+
+      //在老版本浏览器里，if条件里的function既声明又定义
+        //在新版本浏览器里，if条件里的函数只声明不定义
+    // console.log(fn);//undefined
+    // if(false){
+    //     //条件一旦成立，第一件事就是给函数名赋值
+    //     function fn(){
+
+    //     }
+    // }
+    // console.log(fn)
+
+
+
+    // console.log(fn);//undefined
+    // if(true){
+    //     //条件一旦成立，第一件事就是给函数名赋值
+    //     fn()
+    //     function fn(){
+
+    //     }
+    // }
+    // console.log(fn)//fn(){}
+
+    //in 属性，检测一个对象当中有么有某个属性名，有就返回true，没有为false
+    // let obj = {
+    //     name:22,
+    //     age:33,
+    // }
+    // console.log('age' in obj)//true
+    // console.log('asx' in obj)//false
+
+    // console.log(fn);//undefined
+    // if('fn' in window){//检测有fn这个属性 直接赋值
+    //     fn();
+    //     function fn(){
+    //         console.log('eer')//eer   eer
+    //     }
+    // }
+    // fn()
+
+    //3. 函数里虽然return下面的代码不执行，但要进行变量提升
+    // function fn(){
+    //     console.log(ss);//undefined
+    //     return;
+    //     var ss =34;
+    // }
+    // fn()
+
+    //4.匿名函数不进行变量提升
+    // (function(){
+
+    // })()
+    
+
+
+    /*  a = 12
+        b = 12  改为13
+        fn:f */
+    console.log(a) //undefined
+    var a =12,b = 12;
+    function fn(){
+        // a = 13 
+        console.log(a,b) // un 12  //自己有a没有值 为undefined b从外面找
+        var a = b = 13;
+        //var a = 13  ;b = 13   b给window加个值为13
+        console.log(a,b)//13 13   //b给var 重新赋值   13
+    }
+    fn()
+    console.log(a,b)//12 13  //全局 var a = 12  b 改为13
+    </script>
+</body>
+</html>

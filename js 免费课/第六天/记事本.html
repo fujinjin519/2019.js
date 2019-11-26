@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul{
+            list-style: none;
+            border: 1px solid black;
+            height: 200px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+        li {
+            line-height: 30px;
+        }
+        #box {
+            width: 500px;
+            height: 50px;
+            margin: 0 auto;  
+        }
+        #text {
+            margin-left: 100px;
+            height: 30px;
+            width: 280px;
+        }
+        #btn {
+            height: 30px;
+            width: 40px;
+            
+        }
+    </style>
+</head>
+<body>
+        <div id="box">
+            <ul id="list">
+                <li></li>
+            </ul>
+            <input type="text" id="text" value=""><button id="btn">输入</button>
+        </div>
+        <script>    
+            let list = document.getElementById('list');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            console.log(list,text,btn)
+            btn.onclick = function(){
+                let value = text.value;
+                //获取input里的value属性
+                let note = list.innerHTML;
+                //识别ul里边的标签  
+                list.innerHTML = note + '<li>'+ value + '</li>';
+                //ul里的新内容等于它的旧内容加新标签里的新内容，提交不会覆盖已经提交的内容
+                text.value = '';
+                //设置文本框提交后，清空文本框
+            }
+        
+        </script>
+</body>
+</html>

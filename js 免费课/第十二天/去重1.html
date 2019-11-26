@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ary = [12,23,55,6,12,36,55,12]
+        function fn(){
+            let newAry = [];
+            for(var i = 0;i<ary.length;i++){
+                let item = ary[i];
+                if(!newAry.includes(item)){
+                    newAry.push(item);
+                }
+            }
+            return newAry;
+        }
+    console.log(fn(ary))
+    
+    
+    
+    
+    </script>
+</body>
+</html>

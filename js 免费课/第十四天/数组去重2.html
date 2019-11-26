@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let ary = [1,2,3,4,5,1,2,3,4,5]
+    function fn(ary){
+        for(var i = 0; i<ary.length;i++){
+            let item = ary[i];
+            for(var j=i+1;j<ary.length;j++){
+                let cur =ary[j];
+                if(item === cur){
+                    ary.splice(j,1);
+                    j--;
+                }
+            }
+        }
+        return ary
+    }
+   
+    console.log(fn(ary))
+    </script>
+</body>
+</html>

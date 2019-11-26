@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>    
+    
+        /* 方法的定义
+        方法的参数
+        方法的返回值
+        原有数组是否发生改变 */
+        //数组的增删改查
+
+
+//数组的增删改（(原数组都会发生改变)）
+       /*  1.push
+        方法的定义：向数组末尾增加内容
+        方法的参数：传递多个值
+        方法的返回值：新数组的length
+        原有数组是否发生改变 :是
+     */
+
+
+    //  let ary = [12,23,34];
+    //     console.log(ary.push(12,66,'erya'));//6  //新增3项//6为长度
+    //     console.log(ary)//[12,23,45,12,66,'erya']//输出
+    //     ary[ary.length] = 'xxx'  //新增一项
+    //     ary=[...ary,23,'erya']//也是数组增加，不过地址发生变化
+    //     console.log(ary)//12, 23, 34, 12, 66, "erya", "xxx", 23, "erya"]
+    
+
+
+           
+       /*  2.unshift
+        方法的定义：向数组开头增加内容
+        方法的参数：传递多个值
+        方法的返回值：新数组的length
+        原有数组是否发生改变 :是
+     */
+    //  let ary = [12,23,34];
+    //  console.log(ary.unshift(23,45))//5,//开头增加2项//长度为5
+    //  console.log(ary)//[23,45,12,23,34]
+    //  ary = [23,34,...ary]
+    //  console.log(ary)[23, 34, 23, 45, 12, 23, 34]
+
+
+     /*  3.pop
+        方法的定义：向数组末尾删除一项
+        方法的参数：无
+        方法的返回值：删除的那一项
+        原有数组是否发生改变 :是
+     */
+        // let ary = [12,23,45];
+        // console.log(ary.pop())//45//删除最后一项
+        // ary.length--//删除数组一项
+        // ary.length = 0;//清空数组
+        // console.log(ary)//[]
+
+
+    /*  4.shift
+        方法的定义：向数组开头删除一项
+        方法的参数：无
+        方法的返回值：删除的那一项
+        原有数组是否发生改变 :是
+     */
+    //  let ary = [12,23,45];
+    //  console.log(ary.shift())//12//删除开头一项
+    // console.log(ary)
+
+
+      /*  5.splice
+        方法的定义：实现数组增删改
+        方法的参数：不定
+        方法的返回值：是一个新数组，数组里存储的是删除的内容
+        原有数组是否发生改变 :是
+    */
+    //(n.m):从索引n开始，删除m个
+    //(n)如果只传一个参数，那就是从索引n开始，删除到末尾
+        let ary = [12,23,45,'erya'];
+        console.log(ary.splice(1,2));//[23,45]//删除索引1，2//包括自己
+        console.log(ary.splice(0));//删除开头一项//索引0 
+        console.log(ary.splice(length-1,1));//删除数组最后一项//'erya'
+        //console.log(ary.splice(0));//清空数组
+        console.log(ary.splice());//什么也不做
+        console.log(ary.splice(3,0));//什么也不做
+    //(n,m,x,e,r):从索引n开始，删除m个，用x替换
+    //(n,0,x):从索引n开始，删除0个，把x放到索引n对应的值得前面
+        console.log(ary.splice(1,2,'aar', 'eees'));//[23,45]//从索引1开始删除2个，包括自己，用后面属性替换
+        console.log(ary.splice(0,0, 'dagong'));//[] 向数组开头，增加一项
+        console.log(ary.splice(ary.length,0,'sdsds'))//向数组末尾增加一项
+        console.log(ary)//["dagong", "aar", "eees", "sdsds"]
+
+
+    //删除数组末尾一项
+    //ary.length--,pop,splice(ary.length-1)
+    //删除数字开头一项
+    //shift,splice(0,1)
+    //向数组开头增加
+    //unshift,splice(0,0,x),[x,...ary]
+    //向数组末尾增加
+    //push,ary[ary.length] = 'xxx',splice(ary.length,0,x)
+
+    
+    </script>
+</body>
+</html>

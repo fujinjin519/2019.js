@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  Boolean 
+        // 把其他数据类型转布尔有且只有NaN,null,undefined,0,'',这五种是false,其余都是true
+        // 把布尔转布尔还是本身
+        console.log(Boolean(true));//true
+        console.log(Boolean(false));//false
+
+        console.log(Boolean(null));//false
+        console.log(Boolean(NaN));//false
+        console.log(Boolean(undefined));//false
+        console.log(Boolean(0));//false
+        console.log(Boolean(''));//false
+        console.log(Boolean('    '));//true
+        console.log(Boolean([]));//true
+        console.log(Boolean({}));//true
+
+
+        // !/!!
+        // !把其他数据类型转布尔，然后取反
+        // !!把其他数据类型转布尔，然后取反在取反
+        console.log(!null)//true
+        console.log(!0)//true
+        console.log(!11)//false
+
+        console.log(!!null)//false
+        console.log(!!11)//true
+
+
+        // null：他一般都是意料之中的(一开始我们不知到值，但以后知道了，再给他重新赋值)
+        //开始book为0，但以后它一定会涨，后来它涨了，给它赋值1000
+        let book = null;
+        book = 1000;
+        // undefined:他也是空，但是一般都是浏览器的默认机制定义的(意料之外的)
+        //获取属性名所对应的属性值获取不到就是undefined
+          //如果属性名重复，那下面的会覆盖上面的
+        //星星有几颗不知道，一定要去知道属于意料之外
+        let star = null;
+        star = 1000
+
+
+
+        let star1 = {
+            amount: 999,
+            many:null,
+            background: 'yellow',
+            3:'xxx'
+        }
+        console.log(star1)
+        //对对象进行增删改查
+        //1.查：对象名.属性名/对象名['属性名']，如果属性名是数字，不能用对象名，属性名的方式去获取对应的值
+        console.log(star1.background)
+        console.log(star1['many'])
+        console.log(star1[3])
+        console.log(star1['3'])
+        //新增和修改 对象名。属性名='xxx'
+        //新增
+        star1.name='xxxx';
+        console.log(star1)
+        star1.name='app';
+        console.log(star1)
+
+        // 删除
+        // 假删除 对象名.属性名=null;
+        star1.name=null;
+        console.log(star1)
+        //真删除 delete 对象名.属性名
+        delete star1.name
+        console.log(star1)
+
+
+    </script>
+</body>
+
+</html>

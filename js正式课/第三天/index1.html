@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     function fn(n) {
+            return function (m) {
+                console.log(m + ++n)//13,//15//4//8
+            }
+        }
+        var f = fn(7);
+        f(5);
+        f(6);
+        fn(1)(2);
+        fn(3)(4);
+    
+    
+
+        var num = 1;
+        var obj = {
+            num: 10,
+            fn: (function (num) {
+                var num = 2;
+                return function (n) {
+                    console.log(n * (num++));//20//60//120//200
+                }
+            })(num)
+        }
+        var f = obj.fn;
+        f(10);
+        f(20);
+        obj.fn(30);
+        obj.fn(40);
+
+
+        var a = 9; //0 1 0 1 1 //2
+        function fn() {
+            a = 0;//从全局作用域找到a从新赋值//不是声明变量
+            return function (b) {
+                return b + a++;
+            }
+        }
+        var f = fn();//f
+        var m = f(5);
+        alert(m);//5
+        var n = fn()(5);//重新执行一遍   a = 0
+        alert(n);//5
+        var x = f(5);
+        alert(x);//6
+        alert(a);//2
+
+    </script>
+</body>
+</html>

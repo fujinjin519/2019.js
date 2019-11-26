@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隔行变色</title>
+    <style>
+    *{
+        margin: 0；
+        padding：0；
+    }
+    ul{
+        list-style: none;
+    }
+    #box{
+        width:500px;
+        margin: 20px auto;
+        text-align: center;
+    }
+    li{
+        font-size: 20px;
+        color: chartreuse;
+        line-height: 30px;
+        border: 1px solid blue;
+     
+    }
+    </style>
+    <!-- 设置基本样式 -->
+</head>
+<body>
+    <div id ="box">
+        <ul id ="list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+
+    <script>    
+     let ul = document.getElementById('list')
+     //获取上面的ul
+     let list = ul.getElementsByTagName('li')
+     //获取ul 里的 li,用数组表现出来
+     let color = null;
+     //新建一个变量，使它值为空，方便后面给它加函数，进行修改颜色
+    console.log(list);
+    //循环每一个li
+    for(var i=0;i<list.length;i++){
+        console.log(list[i])//输出每一个li
+        if(i%2 === 0){
+            //%取余
+            //i条件成立对应为奇数行，因为i（i是偶数）从0开始 ,而li从1开始
+            //把当前li的颜色改变
+            list[i].style.background = 'black';
+        }else{
+            list[i].style.background = 'yellow';
+            //如果上边的条件不成立i，那就是偶数行
+            //把当前li的颜色改变
+        }
+         list[i].onmouseenter = function(){
+            //this//当前你操作的元素是谁，this就是谁
+            //在你划入元素之后，改变元素之前，先把人家原来的颜色保存下来，存到color变量里
+            //让color把li自身颜色保存
+            color = this.style.background;
+            this.style.background = 'blue';
+            //设置鼠标移入时所显示的颜色
+        }
+          list[i].onmouseout = function(){
+               //当你划出这个元素时，再把人家之前的颜色赋值给人家
+              this.style.background = color;
+          }
+    }
+
+    //onmouseenter 鼠标移入   onmouseout  鼠标移出
+    </script>
+</body>
+</html>

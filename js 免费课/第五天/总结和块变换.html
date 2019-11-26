@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+     #box{               
+        width: 200px;
+        height: 200px;
+        background: black;
+        margin: 0 auto;
+    }
+/* 上边为一的 下边为四的题 */
+
+
+    #box1{
+        font-size: 30px;
+        width: 200px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .sss {
+        color: orange;
+    }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <div id  = "box1" style="background:green" class="xxx"> 123</div>
+    <script>
+//一，做一个随着大小变化颜色的块
+    //获取上边的块 ,以(div)这个名字代表它
+    let div = document.getElementById("box");
+    console.dir(div);//详细查询结果，看获取成功没有
+    div.style.background='black';//给div绑定颜色
+    div.style.width='200px';    //绑定宽高
+    div.style.height='200px';
+    //在上方给相应的元素绑定相应的事件，在下方相应的事件做你想做的事
+    //鼠标事件
+    div.onclick = function(){
+        let color = div.style.background;
+        //获取box元素的background样式 用color表示
+        switch(color){
+            case 'black': 
+            div.style.background = 'orange';
+            break;
+        //进行比较 颜色一样进行输出orange，并break结束；否则循环一值继续
+            case 'orange': 
+            div.style.background = 'green';
+            break;
+            case 'green': 
+            div.style.background = 'red';
+            break;
+            default:
+            div.style.background = 'black'
+            //default 如果上边条件不成立，就输出这个值
+        }
+        let width = div.style.width;
+        //获取box元素的width样式 用width表示
+        switch(width){
+            case '200px':
+            div.style.width = '150px';
+            break;
+            //进行比较，宽度一样输出150px，并break结束循环
+            case '150px':
+            div.style.width = '100px';
+            break;
+            case '100px':
+            div.style.width = '160px';
+            break;
+            //这里不能设置一样的值，因为会导致直接跳到上面的值，下面的值无法用到，
+            default: 
+            div.style.width = '200px';
+             //default 如果上边条件不成立，就输出这个值
+        }
+        let height = div.style.height;
+        //获取box元素的height样式 用height表示
+        switch(height){
+                case '200px': 
+                div.style.height = '150px';
+                break;
+                //进行比较，高度一样输出150px，并break结束循环
+                case '150px': 
+                div.style.height = '100px';
+                break;
+                case '100px' : 
+                div.style.height= '160px';
+                break;
+               default: 
+               div.style.height = '200px'
+               //default 如果上边条件不成立，就输出这个值
+            }
+         }
+         console.log(div);
+
+//二  堆栈内存
+//图片详解 文件夹内
+            let a = 12;   //a=12
+            let b = a;    //b=12
+            let c = {name:'xiaohua'} ;//c={name:"xiaohua"}
+            b=13;         //b=13 抵消上面
+            console.log(a,c)//12，{name:"xiaohua"}
+        
+            let n = {name: 'hongchen'};
+            let m = n;//m={name: 'hongchen'}}
+            m.name = 'liaoque'//因为有name这个属性名，所以为修改 为m = {name: 'liaoque'}，而不是增加
+            console.log(n.name)//liaoque
+
+            let d = {z:1};
+            let f = d;//f={z:1}
+            d = d.x = {z:2};
+            console.log(d.x,f)//因为d已经=z:2,所以d.x找不到，输出为undefined f为{z:1,x:{z:2}}//undefined,{z:1,x:{z:2}}
+
+//三，数据类型检测  
+         //四种方法
+         /* typeof  检测数据类型的属性
+        instanceof   检测当前实例是否属于某个类
+        constructor  基于构造函数检测数据类型
+        .object.prototype.tostring.call():
+ */     
+         //typeof 他的返回值是一个字符串
+         //字符串里存放的是其他的数据类型
+         //特殊的一个  console.log(typeof null)  // 输出为 'object'
+         //typeof检测数组，普通对象，null返回的都是 'object'，所以用typeof检测数据类型，无法细分出是普通对象，是数组，是null
+            console.log(typeof NaN)//'number'
+            console.log(typeof 12)  // 'number'//数字类型
+            console.log(typeof 'NaN')//'string'
+            console.log(typeof '12')  // 'string'//字符串
+            console.log(typeof undefined)  // 'undefined'//它本身
+            console.log(typeof null)  // 'object'
+            console.log(typeof true)  // boolean
+            console.log(typeof false)  // boolean
+            //布尔类型
+
+            console.log(typeof [])  // 'object'
+            console.log(typeof ({}))  // 'object'
+            //转化为类型 ，[]数组里的object数据类型  {}转化为object
+
+            console.log(typeof typeof typeof 12)//'string'//俩个typeof转都为string
+            console.log(typeof typeof typeof [])
+            console.log(typeof typeof typeof {})
+
+//四 元素也是对象 
+     //1.style 控制元素的行内样式
+     //2.className:获取元素的class名
+     //3.innerHTML :获取元素的内容  （可以识别标签）
+     //4.innerText :获取元素的内容  （不可以识别标签） 
+            let box = document.getElementById('box1');
+            console.dir(box)
+            //获取box1，进行命名，然后查看
+            box.className = 'sss';
+            //获取名为SSS的class
+            console.log(box.innerHTML)  ;//进行输出
+            console.log(box.innerText)  ;  
+            box.innerText = '<span>666</span>'//(不可以识别标签）
+            box.innerHTML = '<span>666</span>'//（可以识别标签）
+            box.innerHTML = '<b>666</b>'//引用b
+            //可以发现innerHTML引用的样式可以识别标签，而innerText无法识别 会把标签显示出来
+
+
+//五 函数 
+        /*  定义： 函数就是一个方法，把实现某些功能的代码封装到一起，以后执行这个方法，直接运行函数就好了，它可以减少页面重复的代码，提高代码的复用率（高内聚低藕合） */
+        //可以比作一台榨汁机
+        /* 生产一台榨汁机(创建函数)，把榨汁这个功能集成到榨汁机里(把实现某些功能的代码封装到一起)，榨汁机有一个入口(在函数里叫形参变量)，有一个出口，把果汁倒出来(在函数里叫return)
+        让榨汁机运行(函数执行)，在榨汁机运行前把水果放进去(在函数运行时放的变量就是实参) */
+           /*  let sum =  10+10;
+            sum = sum/2;
+            console.log(sum)
+
+            let sum1 = 12+13;
+            sum1 = sum/2;
+            console.log(sum1)  */
+         //把上边这个列子用函数表现
+            function sum(n,m){
+            //函数创建时的小括号放的就是形参
+             console.log(n,m)    //输出n,m //12，13
+            //如果实参没有给形参赋值，那形参就是undefined  实参跟形参一一对应
+            let num = n+m;
+            num=num/2;
+            console.log(num)   //输出现在的num// 12.5
+             return num
+            //return输出的一定是一个值
+            //谁执行的值i，return的值就给谁
+            //如果函数中没有return，那函数的返回值就是undefined
+             }
+            //函数名加括号就是函数执行 ,函数执行时，传的是实参
+            let ss= sum(12,13)
+            console.log(ss);//如果上边没有return 会输出undefined
+            let xx=  sum(20,30)
+            console.log(xx);
+            let aa=sum(68,76)
+            console.log(aa);
+            //这几个都可以套用上边的函数进行运算
+            alert(8888);//可以阻断代码运行，当点击确定时候，代码才会继续运行
+             //只有函数才可以执行  console.log()也是函数
+            /*  let a= '22'
+            a() *///报错  a is not a function
+
+             //函数表达式
+             let fn = function(n,m){
+                 console.log(n,m)//undefined undefined
+                }
+                console.log(fn())//undefined
+            //因为值为空所以 fn直接输出undefined
+
+            //自执行函数
+            // (function(p){
+            //    console.log(p)
+            // })(1)
+            //直接输出1，写多少输出多少 
+
+
+            function dn(n,m){
+            let num=m+n;//200+undefined//NaN
+            return n
+            }
+            let s = dn(200)
+            console.log(s)//200 
+
+
+            function an(){
+                return function(){
+                    console.log(111)//111
+                }
+            }
+            let x = an()
+            console.log(x)//function(){console.log(111)}
+            console.log(x())//undefined   因为这个里面么有return，所以输出为undefined
+            //函数里如果没有变量，可以拿函数外边变量。但是外边不可以取里面的
+
+
+            //出现undefined的情况
+          /*   1.创建变量不赋值，获取变量是undefined
+            2.获取对象里属性名对应的属性值获取不到，是undefined
+            3.函数里,实参没给形参变量赋值，那就是undefined
+            4.函数里，没有return(没有返回值)，函数执行结果是undefined,如果有return但不赋值，一样为undefined
+
+
+            出现null的情况
+            1.手动赋值null;
+            2.通过id去获取元素获取不到，那就是null
+ */
+             /*  ----//作业 
+             let n=[10, 20];
+             let m = n;
+             let x = m;
+             n[0] = 100;
+             n = [20, 30]
+             x = n
+             n[0] = 300
+             x[0] = 400
+    console.log(m,n,x)// [100, 20]  [400, 30]  [400, 30] */
+    </script>
+</body>
+</html>

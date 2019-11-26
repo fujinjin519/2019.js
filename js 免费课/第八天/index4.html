@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>    
+  //数组的拼接和截取  (原数组都不会发生改变)
+   /*  slice    
+        方法的定义：实现数组的截取
+        方法的参数：不定
+        方法的返回值：是一个新数组，数组里存储的是截取的内容
+        原有数组是否发生改变 :否 */
+    // let ary = ['simao','erya','sadas',12,23,45];
+    // //(n,m):从索引n开始，截取到索引m（索引m对应的值不算）
+    //     console.log(ary.slice(1,2))//['erya']
+    //     console.log(ary.slice(2,5))//['sadas,12,23']
+    //     console.log(ary.slice(0,ary.length))//克隆数组["simao", "erya", "sadas", 12, 23, 45]
+    //     console.log(ary.slice(0))//克隆数组["simao", "erya", "sadas", 12, 23, 45]
+    //     console.log(ary)//["simao", "erya", "sadas", 12, 23, 45]
+    //     console.log(ary.slice(0,0))//[] 
+    //从索引n截取到索引m
+    // console.log(ary.slice(n,m+1))//想要截取到m这个值，需要给它加1
+
+    //concat(拼接)
+        // 方法的定义：实现数组的拼接
+        // 方法的参数：可以是多个值
+        // 方法的返回值：是一个拼接的新数组
+        // 原有数组是否发生改变 :否
+    // let ary = [12,23,45,67,89]
+    // console.log(ary.concat([12,23]))// [12, 23, 45, 67, 89, 12, 23]
+    // console.log(ary.concat([12,23],[66],true))// [12, 23, 45, 67, 89, 12, 23, 66, true]
+    // console.log(ary.concat())//克隆数组//[12, 23, 45, 67, 89]
+    // console.log(ary)//[12, 23, 45, 67, 89]
+
+
+
+    //数组的排序
+    //1.reverse
+        // 方法的定义：实现数组的倒叙
+        // 方法的参数：无
+        // 方法的返回值：排序之后的数组
+        // 原有数组是否发生改变 :是
+        // let ary = [12,23,45,54,13];
+        // console.log(ary.reverse());//[13, 54, 45, 23, 12]]//倒叙
+        // console.log(ary)//[13, 54, 45, 23, 12]//倒叙
+        //let num = ary.reverse()
+        //console.log(num == ary)//true，虽说数组改变，但地址不变
+
+    //2.sort(排序)
+        // 方法的定义：实现数组的排序
+        // 方法的参数：无，可以传一个函数
+        // 方法的返回值：排序之后的数组
+        // 原有数组是否发生改变 :是
+        //如果不传参，只能排列一位数的数组（按照左边第一位从小到大排列）
+
+
+        // let ary = [5,6,2,4,8];
+        // console.log(ary.sort());// [2, 4, 5, 6, 8]//排序
+        // console.log(ary)// [2, 4, 5, 6, 8]//排序
+
+        // let ary = [52,55,8,9,113]
+        // console.log(ary.sort())// [113, 52, 55, 8, 9]
+
+        // 传一个函数
+        // let ary = [52,55,8,9,113]
+        // console.log(ary.sort((a,b)=>{
+        //         // 如果a-b那就是从小到大排列，反之(b-a)就是从大到小排列
+        //     return a-b
+        // }))
+
+
+ //检测数组中是否包含某一项
+        //indexOF和lastIndexOF
+        // 方法的定义：检测数组中是否包含某一项
+        // 方法的参数：检测到的那一项
+        // 方法的返回值：如果检测是有，那就是这一项第一次出现的索引，如果没有是-1
+        // 原有数组是否发生改变 :否
+        //indexOF是找的检测的值第一次出现的位置
+        //(n,m):n是被检测的值，m是开始检测的值
+        //（n）:从头开始检测
+        let ary =[12,23,45,23,45]
+        console.log(ary.indexOf(23))//1     //索引为1
+        console.log(ary.indexOf(23,2))//3    //从索引2找23 ，0-3为23，所以为23
+        console.log(ary.indexOf(89))//-1
+
+       //lastIndexOF:是找的检测的值最后一次出现的位置
+       //（n,m）:n是被检测的值，m是检测到的位置
+         //（n）:检测到末尾
+      console.log(ary.lastIndexOf(23,2)) // 1 //从头开始检测  23索引为1
+       console.log(ary.lastIndexOf(23)) // 3 //检测末尾这个值 为索引3
+
+
+        //includes
+         // 方法的定义：检测数组中是否包含某一项
+        // 方法的参数：检测的值
+        // 方法的返回值：有返回true,没有返回false
+        // 原有数组是否发生改变 :否
+//         let ary = [12,55,6,8];
+//         console.log(ary.includes(12));//true  //有就为 true
+//         console.log(ary.includes(99));//false
+//         console.log(ary.includes());//按没有找到处理
+
+
+
+// //数组去重的第一种方式
+//             let ary = [12,23,45,12,23];
+//             function fn(ary){
+//                 let newAry = []//创建一个新数组
+//                 for(var i = 0; i<ary.length;i++){
+//                     let item = ary [i]//代表数组的每一项
+//                     //检测新数组中是否包含每一项，如果包含了，就不让条件成立
+//                     if(!newAry.includes(item)){//如果有这个数字则为true,取反为false
+//                          newAry.push(item);//如果没有这个数字false,取反true,执行这个条件
+//                      }                  
+//                 }    
+//                  return newAry
+//                 }
+
+//     console.log(fn(ary))
+    </script>
+</body>
+</html>

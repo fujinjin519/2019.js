@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+            let ary = [12,33,66,18,9,56];
+            function axe(ary){
+                for( var i = 0; i<ary.length-1;i++){
+                    //比较了5次-已经执行过的轮数
+
+                    for( var x = 0; x<ary.length-1-i;x++){
+                        if(ary[x]>ary[x+1]){
+                            let temp = ary[x];
+                            ary[x] = ary[x+1];
+                            ary[x+1] = temp;
+                        }
+                    }
+                }
+                return ary;
+            }
+        console.log(axe(ary));
+        
+        </script>
+</body>
+</html>

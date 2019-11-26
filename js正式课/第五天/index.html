@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //单例模式   把描述同一个事物特征的信息进行分组归类，放到同一个命名空间下(减少全局变量的污染)
+        // var name  = 'erya';
+        // var age = 18;
+
+        // var name = 'jinyu';
+        // var age = 23;
+        // console.log(name)//jinyu
+    
+        // let person1 = {
+        //     name:'jinyu',
+        //     age:18
+        // }
+        // let person2 = {
+        //     name : 'erya',
+        //     age : 22
+        // }
+        // console.log(person1)//{name: "jinyu", age: 18}
+
+
+        //高级单列模式
+        // let person1 = (function(){
+        //     let fn = function(){};
+        //     let name = 'erya';
+        //     return{
+        //         name:name,
+        //         age:18,
+        //         fn:fn
+        //     }
+        // })()
+        // console.log(person1)//{name: "erya", age: 18, fn: ƒ}
+
+        // let person2 = (function(){
+        //     let fn = function(){};
+        //     let name = 'jinyu'
+        //     let age = 23
+        //     return{
+        //         name:name,
+        //         age:age,
+        //         fn:fn
+        //     }
+        // })()
+        // console.log(person2)//{name: "jinyu", age: 23, fn: ƒ}
+
+
+        //工厂模式
+            //如果用单例模式去写很多个person就会变得很麻烦，就有了工厂模式
+            //特点：批量生产  把实现相同功能的代码封装到函数里，以后想运行这个方法，就直接执行这个函数就好了
+            //高内聚：提高代码的复用率
+            //低藕合：减少页面的重复代码
+        
+            // function createPerson(name,age){
+            //     var name = name;
+            //     var age = age;
+            //     var sex = 'girl'
+            //     return{
+            //         name,
+            //         age,
+            //         sex
+            //     }
+            // }
+            // let person1 = createPerson('erya',18)
+            // let person2 = createPerson('jinyu',18)
+            // console.log(person1,person2)//{name: "erya", age: 18, sex: "girl"} {name: "jinyu", age: 18, sex: "girl"}
+    </script>
+</body>
+</html>

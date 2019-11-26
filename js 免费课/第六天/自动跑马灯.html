@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        body{
+            background: azure;
+        }
+        div{
+            width:500px;
+            height:300px;
+            text-align: center;
+            line-height: 300px;
+            color: aqua;
+            background: rgba(255, 166, 0, 0.151);
+            font-size: 50px;
+            margin: 0 auto;
+            position: relative;
+            top: -300px;
+            transition: all 1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="time">时间到</div>
+    <script>
+        let box = document.body;
+        let time  =  document.getElementById('time')
+        let flag = 1;
+        //添加一个变量，为它设置定时停止功能
+        console.log(box,time);
+       function fn (){
+           let color = box.style.background;
+           switch(color){
+               case 'azure' : 
+               box.style.background = 'green';
+               break;
+               case 'green' : 
+               box.style.background = 'blue';
+               break;
+               case 'blue' : 
+               box.style.background = 'orange'
+               break;
+               default : 
+               box.style.background = 'azure'
+           }
+           flag++;
+           if(flag>50){
+               clearInterval(int);
+               box.style.background =  'white';
+               time.style.top = '0';
+           }
+         
+       }
+       let int=setInterval(fn,50);
+    </script>
+</body>
+</html>

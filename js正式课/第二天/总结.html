@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //作用域： 全局作用域   私有作用域（为代码提供执行环境）
+        //一,全局作用域 ： 当你打开一个页面，浏览器就会形成全局作用域为代码提供执行环境，在全局作用域下会生成一个全局的大对象叫window
+     /*        全局作用域一般不销毁，直到页面关闭，作用域才会被销毁
+            console.log(window)//显示全局作用域的所有名
+
+            全局变量：在全局作用下声明的变量就是全局变量 */
+/* 
+            let a = 12;
+            var b = 13;
+            const c = 13;
+            function fn(){}
+            console.log(window.a)//undefined
+            console.log(window.b)//13
+            console.log(window.c)//undefined
+            console.log(window.fn)//fn(){} */
+
+          /* 1.  用var和function声明的变量会在全局作用域下声明一个变量 ，而且也会给window增加属性，属性名是变量名，属性值是变量名存储的值（let const 不支持） */
+
+         /*  2.var和function可以重复创建同一个变量名（let不可以） */
+        /*  var a = 12;
+         var a = 13;
+         console.log(a)//13
+         let a =  12;//报错，  语法错误  SyntaxError
+         let a = 13; */
+
+       /*   3.var和function有变量提升 */
+      /*   b = 12 //相当于window.b = 12，因为window.可以省略
+        var b =12;//有变量提升
+        console.log(b)
+        var a= b=c = 12;//相当于var a = 12;b=12,c=12
+        var a,b,c=12;//undefined,undefined,12//因为只给了c赋值
+        var a=12,b=13,c=14;//创建3个变量，给每一个变量都进行赋值 */
+
+
+        //二，私有作用域：函数执行会形成一个私有的栈内存（私有作用域），全局作用域生成之后才会有私有作用域，私有作用域是属于全局作用域的
+        // function fn(){
+        //     //函数定义：
+        //     1.首先开辟一个堆内存生成一个16进制的空间地址
+        //     2.把函数体里的代码以字符串的格式存储进去
+        //     3.把16进制的地址赋值给函数名
+        // }
+        // fn()
+        //函数执行：
+         /*    1.首先开辟一个私有作用域
+            2.形参赋值
+            3.变量提升
+            4.代码从上往下执行
+            5.作用域是否被销毁 */
+
+                 
+            //私有变量
+            //在私有作用域定义的变量就是私有变量（let,var,function,const）
+            //形参也是私有变量
+            //在私有作用域里使用一个变量，如果自己私有作用域有，就用自己的，没有使用上一级作用域的
+             //函数外边不能拿到函数里边的变量
+        /*     var a = 12;
+            function fn(a){
+                console.log(a)//13
+            }
+            fn(13) */
+
+             // var name = 'erya';
+            // function fn(name){ //erya
+            //     function name(){
+
+            //     }
+            //     name = 7;
+            //     console.log(name);//7
+            // }
+            // fn(name)
+
+             // let y = 12;
+            // function fn(){
+            //     function y(){}
+            //     y = 100;
+            //     console.log(y)//100
+            // }
+            // fn();
+            // console.log(y)//12
+
+          /*   
+            var num = 12;
+            function fn(){
+                num++   //没有获取外面
+            }
+            fn();
+            console.log(num);//13 */
+        
+    //变量提升：就是浏览器解析代码的一个过程
+    //在当前作用域中，代码执行之前，浏览器会对当前作用域里带var和function进行提前声明和定义；带var的会声明（创建变量）不定义，带function既声明（创建变量）又定义（进行赋值）
+    
+   // SyntaxError(语法错误) 会使整个页面不运行 //引用错误ReferenceError 在当前代码之后的代码不运行d
+    
+    // console.log(a);//undefined  
+    // var a = 12;
+    // console.log(a);//12
+    //声明变量a放在值存储区，但不进行赋值
+    
+    // console.log(window.a);//undefined //光有变量a，没有赋值
+    // console.log(b);//报错   //没有var 不会进行变量提升
+    // var a = 10;
+    // b = 12;
+
+    
+    // console.log(a);//undefined
+    // console.log(b);//报错  //引用错误
+    // var a = b = c = 100;//var a = 100,b=100,c=100
+
+    // console.log(a)//undefined
+    // console.log(b)//undefined
+    // console.log(c)//undefined
+    // var a,b,c = 100;  //只给 c赋值 ； 
+    // console.log(a)//undefined
+    // console.log(b)//undefined
+    // console.log(c)//100
+
+     // function fn(){
+    //     console.log(num);//undefined  //没有值
+    //     var num = 12;  //给num 赋值
+    // }
+    // fn()
+    // console.log(num) //不可以从里边取值  //报错
+
+    // var name = 'xxx';
+    // function fn(name){
+    //     console.log(name);//fn(){}  //进行函数提升
+    //     function name(){
+    //         console.log(name)//fn(){}
+    //     }
+    // }
+    // fn(name)
+
+
+      // ●当浏览器开辟出供代码执行的栈内存之后，代码并没有自上而下立即执行，而是继续做了一些事情:把当前作用域中所有带var/function关键字的进行提前的声明和定义=>变量提升机制
+
+   /*    fn()
+    function fn(){(console.log(1))}//5
+    fn()
+    function fn(){(console.log(2))}//5
+    fn()
+    var fn = function(){(console.log(3))}//5
+    fn()
+    function fn(){(console.log(4))}//3
+    fn()
+    function fn(){(console.log(5))}//3 */
+    
+     //函数的作用域查找
+        //函数的上一级作用域是谁，在函数定义时候已经确定了，函数在哪创建的，他的上一级作用域就是谁，跟在哪执行没有关系
+
+        //作用域链查找机制
+        //在私有作用域中，函数执行，如果使用一个变量。自己作用要是有，就使用自己的，要是没有就向上一级作用域查找，上一级还没有，查到找到全局作用域，如果还没有就报错，  这种一级一级向上查找的机制就是【作用域链查找机制】
+
+        //闭包：函数执行形成的私有作用域就是闭包，可以保护里边私有变量不受外界干扰；还可以保存变量
+
+         // var n = 1;
+        // function fn(){
+         
+        //     var n = 2;
+        //     function f(){
+        //         n--;
+        //         console.log(n)//1//0
+        //     }   
+        //     f();   //1  //0
+        //     return f // f = var x = fn();  
+        // }
+        // var x = fn()();
+        // //x();  //0
+        // //也可以 var x = fn()()
+        // console.log(n)//1
+
+    //四种特殊情况
+    //1.变量提升发生在等号左边
+    // var a = function(){}
+
+    //2.不管if条件是否成立，都要进行变量提升  if条件里的function只声明不定义
+    // console.log(num)  //var   么有值为undefined
+    // if(false){
+    //     var num = 12;
+    // }
+    // console.log(num) // undefined
+    
+
+      //在老版本浏览器里，if条件里的function既声明又定义
+        //在新版本浏览器里，if条件里的函数只声明不定义
+    // console.log(fn);//undefined
+    // if(false){
+    //     //条件一旦成立，第一件事就是给函数名赋值
+    //     function fn(){
+
+    //     }
+    // }
+    // console.log(fn)//undefined
+
+
+
+    // console.log(fn);//undefined
+    // if(true){
+    //     //条件一旦成立，第一件事就是给函数名赋值
+    //     fn()
+    //     function fn(){
+
+    //     }
+    // }
+    // console.log(fn)//fn(){}
+
+    //in 属性，检测一个对象当中有么有某个属性名，有就返回true，没有为false
+    // let obj = {
+    //     name:22,
+    //     age:33,
+    // }
+    // console.log('age' in obj)//true
+    // console.log('asx' in obj)//false
+
+    // console.log(fn);//undefined
+    // if('fn' in window){//检测有fn这个属性 直接赋值
+    //     fn();
+    //     function fn(){
+    //         console.log('eer')//eer   eer
+    //     }
+    // }
+    // fn()
+
+    //3. 函数里虽然return下面的代码不执行，但要进行变量提升
+    // function fn(){
+    //     console.log(ss);//undefined
+    //     return;
+    //     var ss =34;
+    // }
+    // fn()
+
+    //4.匿名函数不进行变量提升
+    // (function(){
+
+    // })()
+    
+    
+    /*  a = 12
+        b = 12  改为13
+        fn:f */
+     /*    console.log(a) //undefined
+    var a =12,b = 12;
+    function fn(){
+        // a = 13 
+        console.log(a,b) // un 12  //自己有a没有值 为undefined b从外面找
+        var a = b = 13;
+        //var a = 13  ;b = 13   b给window加个值为13
+        console.log(a,b)//13 13   //b给var 重新赋值   13
+    }
+    fn()
+    console.log(a,b)//12 13  //全局 var a = 12  b 改为13 */
+
+
+
+      //堆栈内存的销毁
+
+    //堆内存的销毁   引用数据类型为
+    // let a = 12;
+    // let ary = [1,2];
+    // ary = [];  //销毁了
+
+    //栈内存的销毁
+    // function fn(){
+    //     function f(){
+    //         return f//它的值s用着  肯定不销毁
+    //     }
+    // }
+    // let s = fn();
+
+    // function fn(){
+    //     function f(){
+
+    //     }
+    // }
+    // let s = fn();//销毁
+    </script>
+</body>
+</html>

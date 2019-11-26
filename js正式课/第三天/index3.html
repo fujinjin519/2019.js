@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">a5da5sd5as5d </div>
+    <script>
+   /*  this ：是js中的关键字，有特殊的特殊的意义
+    this ：是函数的执行主体，谁执行函数this就是谁 */
+
+  /*   1.在全局作用域下，this就是window
+    2.函数执行时，看执行函数有没有 '.'，如果有点，那点前面是谁，this就是谁，如果没有点，this就是window
+    3.自执行函数里的this就是window
+    4.给元素事件行为绑定方法，方法里的this指向被绑定的元素本身
+    5.回调函数里的this，一般指向window
+     */
+    
+    // console.log(this)//window
+    // console.log(this === window)//true
+    // window.a = 12;
+    // console.log(this.a)//12
+
+
+
+    // function fn(){
+    //     console.log(this)  //window
+    // }
+    // fn()
+
+
+    // let obj = {
+    //     name:function(){
+    //         console.log(this)//obj
+    //     }
+    // }
+    // obj.name()
+
+    // var age =  15;
+    // var obc = {
+    //     age :13,
+    //     name:function(){
+    //         console.log(this.age)//15
+    //     }
+    // }
+    // var f =obc.name
+    // f() //没点  所以为window  从window下找age
+
+
+    // (function(){
+    //     console.log(this)//window
+    // })()
+
+   
+    // box.onclick = function(){
+    //     console.log(this)//本身
+    // }
+
+
+    // var ary = [1, 2];
+    //             ary.map((a,b)=>{
+    //                 console.log(this) //回调.window
+    //             })
+    //             ary.sort((a,b)=>{
+    //                 console.log(this);//排序.window
+    //                 return a-b
+    //             })
+
+    //       function fn(a){
+    //                  a()
+    //          }
+    //          fn(function(){
+    //            console.log(this)//window
+    //         })
+
+
+
+            //    var num = 100;
+            //    var obj = {
+            //        num:2,
+            //        fn:function(){
+            //            var num = 1;
+            //            (function(num){//2
+            //                console.log(this.num+num);//102//自执行函数里的this就是window//100+2
+            //            })(this.num) //obj.name 2
+            //        }
+            //    } 
+            //    obj.fn()
+               //var f = obj.fn
+              //f()  取消了注释为200    没有点为window
+
+
+        var num = 1; //1  //2
+        var obj = {
+            num: 0,   //他不是变量 他是属性名：属性值
+            fn: function () {
+                num = 1; //找变量 所以找到外面的num   把它重新赋值1
+                (function (num) { //0    //形参必须是变量
+                    ++this.num;//window 的//
+                    num++;//1
+                    console.log(num)//1
+                })(this.num)//obj.name
+            }
+        }
+        obj.fn();
+        console.log(window.num, obj.num);//2,0
+
+            
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //   //数组去重   2 
+    //   /*  1.循环数组的每一项
+    //     2.拿当前项和后面的数依次做比较，如果后面的数和当前项相等，那就在原数组里删除相等的数（splice）
+    //  */
+    // let ary = [1,2,3,1,2,3,4,5,6]
+    //     function fn (ary){
+    //          //循环数组每一项
+    //          for(var i = 0;i<ary.length;i++){
+    //             let item = ary[i];
+    //             for(var a = i+1;a<ary.length;a++){
+    //                  //外面大循环每循环一次，这个小循环就会从头到尾循环一遍
+    //                  let itemOne = ary[a];//当前项后面的每一项，存储变量每一次循环的值
+    //                  console.log(itemOne)
+    //                   //如果当前项和后面的某一项相等了，条件成立
+    //                   if(item === itemOne){
+    //                       ary.splice(a,1)//从原数组中删除重复的那一项
+    //                       a--//为了防止数组塌陷，删除之后要把a--
+    //                   }//从数组中删除的某一项，后面的某一项索引都的往前一位（数组塌陷）
+    //             }
+    //          }
+    //     }    
+    //     console.log(fn(ary))
+    //     console.log(ary)
+
+
+
+     //数组去重 3
+     let ary = [1,1,2,3,1,2,3]
+        // 循环数组的每一项，然后把数组的每一项都放进对象里（让键值对的key和value都等于那一项）
+      function fn(ary) {
+            let newObj = {} // 创建一个新对象用来存储键值对
+            
+            // 循环数组的每一项
+            for (var i = 0; i < ary.length; i++) {
+                // 检测一下当前项在对象里有没有，如果有，那以下条件就成立
+                // 也就是说以前就存储过这一项（证明已经是重复项）
+                if (newObj[ary[i]] !== undefined) {  //检测这个newObj这个值有没有属性名 ;
+                    ary.splice(i, 1); // 删除重复项
+                    i--; // 防止数组塌陷
+                    // ary[i] = ary[ary.length-1];//用数组最后一项替换重复的那一项
+                    // ary.length--;//删除数组最后一项
+                    // i--;//把替换的值检测一遍 
+                    //没有这个数组判断条件为false，新建  有这个数组判断为true  删除
+                } else {
+                    // 如果对象中没有这个属性名对应的属性值，那就新增这个键值对
+                    newObj[ary[i]] = ary[i]
+                    //console.log(ary[i])
+                }
+            }
+        }
+        fn(ary) //执行函数
+        console.log(ary)
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin:0;
+        padding:0}
+        ul{
+            list-style: none;
+        }
+        #tabBox{
+            box-sizing: border-box;
+            margin: 20px auto;
+            width:500px;
+        }
+        #navBox{
+            display: flex;
+            /* 弹性盒子   默认使容器主轴水平靠左排列 */
+            position: relative;
+            top:1px;
+        }
+        #navBox li{
+            box-sizing: border-box;
+            margin-right: 10px;
+            padding: 0 10px;
+            line-height: 35px;
+            border: 1px solid #999;
+           
+        }
+        #navBox li.active{
+            border-bottom-color: #fff;
+        }
+        #tabBox>div{
+            box-sizing: border-box;
+            padding: 10px;
+            height: 150px;
+            border: 1px solid #999;
+            text-align: center;
+            display: none;
+        }
+        #tabBox>div.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="tabBox">
+        <ul id="navBox">
+            <li class="active">敲代码</li>
+            <li>学代码</li>
+            <li>背代码</li>
+        </ul>
+        <div class="active">敲敲敲</div>
+        <div>学学学</div>
+        <div>背背背</div>
+    </div>
+
+
+    <script>
+        var tabBox = document.getElementById('tabBox');
+        var navBox = document.getElementById('navBox');
+        var navList = navBox.getElementsByTagName('li');
+        var tabList = tabBox.getElementsByTagName('div');
+        for(var i=0;i<navList.length;i++){
+            //循环我们要操作的那个li(存储的值为我们要制定元素的索引)
+            navList[i].myIndex = i;
+            navList[i].onclick = function(){
+              changeTab(this.myIndex)
+            }
+        }
+
+//二,  var 改成let就可以
+        // for(let i=0;i<navList.length;i++){
+        //     //循环我们要操作的那个li(存储的值为我们要制定元素的索引)
+        //     navList[i].onclick = function(){
+        //       changeTab(i)
+        //     }
+        // }
+//三  闭包解决方法     
+    //          for(var i=0;i<navList.length;i++){
+    //         //循环我们要操作的那个li(存储的值为我们要制定元素的索引)
+    //         navList[i].onclick = (function(i){
+    //             return function(){
+    //           changeTab(i)
+    //         }
+    //     })(i);
+    //  }
+
+        function changeTab(clickIndex){
+            //clickIndex:创建函数不知道点击的谁，所以定义一个入口clickIndex
+            for(var i=0;i<navList.length;i++){
+                navList[i].className = '';
+                tabList[i].className= '';
+            }
+            navList[clickIndex].className = 'active';
+            tabList[clickIndex].className = 'active';
+        } 
+    </script>
+</body>
+</html>

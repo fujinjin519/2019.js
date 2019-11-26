@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        
+    <meta charset="UTF-8">
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>隔行变色</title>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 600px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        #text {
+            list-style: none;
+            border: 1px solid gold;
+        }
+
+        li {
+            line-height: 40px;
+            border-bottom: 1px solid rgb(255, 17, 0);
+            box-sizing: border-box;
+        }
+
+        .lii {
+            background: orange !important;
+        }
+    </style>
+</head>
+
+<body>
+        <div id="box">
+                <ul id="text">
+                        <li>15</li>
+                        <li>24</li>
+                        <li>33</li>
+                        <li>42</li>
+                        <li>51</li>
+                    </ul>
+            </div>
+        
+    <script>
+        let ul = document.getElementById('text');
+        let li = ul.getElementsByTagName('li');
+        let color = null;
+
+        for (var i = 0; i < li.length; i++) {
+            if (i % 2 == 0) {
+                li[i].style.background = 'blue';
+            } else {
+                li[i].style.background = 'cyan';
+            }
+            li[i].myIndex = li[i].innerText;
+            li[i].onclick = function () {
+                if (this.className == 'lii') {
+                    this.className = '';
+                    alert(this.myIndex)
+                } else {
+                    this.className = 'lii'
+                    alert(this.myIndex)
+
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

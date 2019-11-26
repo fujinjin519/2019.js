@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let url = 'https://www.baidu.com?wd=自行车&name=333&age=18#index';
+       let index = url.indexOf('?');//21
+       console.log(index);
+       let index1 = url.indexOf('#');//44
+       console.log(index1);
+       let params = url.substring(index+1,index1);//"name=erYa&age=18&sex=girl"
+       let params1 = url.substring(index1+1);//'index'
+       console.log(params,params1);
+       let ary = params.split('&');
+       console.log(ary)//) ["wd=自行车", "name=333", "age=18"]
+       let obj = {};
+       for (var i=0;i<ary.length;i++){
+           let ary1 = ary[i].split('=');
+           obj[ary1[0]]= ary1[1]
+       }
+       obj['route'] = params1;//增加一个属性名，属性值 index
+       console.log(obj)
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    #box{
+        width: 500px;
+        margin: 0 auto;
+        text-align: center;
+        background: chartreuse;
+    }
+    #box p{
+        font-size: 50px;
+        color: orange;
+        cursor: pointer; /* 鼠标变成小手 */
+       
+    }
+    #box img{
+        display: block;
+        width: 500px;
+    }
+    #box .aabb{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p id="btn">隐藏</p>
+        <img id="people" src="404.jpg" alt="">
+    </div>
+
+
+    <script>
+    
+    
+    let btn = document.getElementById('btn');
+    let people = document.getElementById('people');
+    btn.onclick=function(){
+        let value = btn.innerText;//获取元素中内容
+        //如果获取的内容是隐藏，那就把它改为显示，反之给为隐藏
+        if(value === '隐藏'){
+            btn.innerText = '显示'
+           // people.style.display='none'  
+           //给元素增加class名 
+           people.className = 'aabb'   
+
+        }else{
+            btn.innerText = '隐藏'
+            //people.style.display='block'
+            people.className = ''   
+ 
+        }
+    }
+   
+    </script>
+</body>
+</html>

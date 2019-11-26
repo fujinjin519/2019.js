@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #box{
+            width:100px;
+            height:100px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+        <div id="box" style="background: red"></div>
+    <script>
+        //一，   //代码会在浏览器中从上到下执行一遍，浏览器给代码提供了运行环境；
+        // 基本数据类型和引用数据类型
+        // 基本数据类型： Number  string  boolean  null undefined symbol
+        // 引数据类型分为对象数据类型和函数数据类型
+        // 对象数据类型： 普通对象  数组  正则  Math  Date的实例 ...
+        // 函数数据类型: 函数  类；
+        // 每一个数组成员都会有一个与之对应的索引，这个索引从0开始，依次递增1；
+        let arr = ["a", "b", "c"];
+        console.log(arr);
+
+        let str = "123hufengpeixun";
+        console.log(str.length);// length 代表字符串中字符的个数；//15
+        console.log(str[0] + str[1]);//[1]+[2]//12
+
+
+        let obj = { name: "hello" };
+        console.log(obj.name);//hello
+        // 1. 对象名.属性名
+        // 2. 对象名["属性名"]
+        console.log([obj.name])//["hello"]
+
+
+        //二，
+        // 判断
+        if (1 == 2) {
+            // 如果这个小括号中值转布尔是true，那么执行这个大括号中的代码；如果false，直接执行下面那行代码；
+            console.log(100)
+        } else {
+            console.log(200);  //200
+        }
+        // == ： 是两个值进行比较,会默认进行数据类型之间的转换再比较；比较的结果是一个布尔值
+
+       /*  逻辑且：&& 左右两边都成立，这个条件成立,如果前边的值转布尔是true,就取后边的值，反之取前边的
+        let num = 1&&2  console.log(num)   //2//1转布尔是true
+        
+        逻辑或：||  左右两边有一个成立的，整体就是true，如果前面转布尔是false,那就取后面的,反正取前面的
+          let num = 1||2  console.log(num)   //1//1转化为true
+
+          %取余
+
+ */
+        //   重点
+        // 1. 数字 ==字符串 字符串调用Number转换成数字，然后和数字进行比较；
+        console.log(1 == "1") //1=1  //true
+        console.log(0 == "")  //0=0  //true
+        console.log(1 == "1px")//1 = NaN  //false
+        console.log(1 == "[1]")//1= NaN  //false
+        //"[1]"引号里边为非有效数字  直接为NaN
+        console.log(1 == [1])//1 = "1"  //true
+
+
+         // 2. 数字 ==布尔  布尔转数字，然后进行比较
+         //true=1 false=0
+        console.log(1 == true);//true
+        console.log(0 == false);//true
+        console.log(true == false)//false
+
+
+        // 3. 数字 == 对象（对象数据类型） 对象先转成字符串，然后再转成数字；
+        //NaN 和自己不相等
+        console.log(NaN == {})//NaN = NaN//false
+        console.log(1 == [])//1=0//false
+        console.log(1 == '[]')//1-NaN//false
+
+
+        // 4. 对象==对象 比较的是空间地址，空间地址不同，就false；基本数据类型操作的是值，引用操作的是空间地址
+        console.log([] == {})//false
+        console.log({} == {})//false
+        console.log(({}) == ({}))//false
+        let a = {};
+        let b = {};
+        console.log(a == b);//false
+
+
+        // 5. 对象==字符串 :对象转成字符串，然后进行比较
+        console.log("" == "   ")//""=空格//false
+        console.log([] == "")//""=""//true
+        // 6. 对象==布尔 : 对象转字符串，字符串转数字，布尔直接转数字，然后进行比较；
+        // ! : 先将后面的值转成布尔值，然后再取反；
+        console.log([] == false);// 0=0//true
+        console.log(![] == false);//!true==false// true
+        console.log([] == ![]);// 0==!true//true
+        //!==   //不等于 空间地址，空间地址不同，就false；
+        console.log([] !== []); // true
+        
+
+
+        // 7. 布尔==字符串  : 布尔值转数字 字符串转数字
+        console.log(false == "");//0=0 // true
+        console.log(true == "1px");//1=NaN// false
+        // 8. null == undefined  : true
+
+        // 9. NaN ==NaN  false
+
+        //10.null == null  : true
+        //null和undefined和其他值都不等
+//三，// function  判断语句 循环语句；
+      // 三个判断 ： 1. if else 2. 三元运算符 3. switch case
+      //1. if else 如果括号中只有一个值，是默认转布尔值；
+    let obj1 = {age:10};
+    // 如果在对象中，属性名不存在，那么获取的属性值永远是undefined；
+    if(obj1.name){     
+        console.log(100);
+    }else{
+        console.log(200);
+    }//200
+    //2.==
+    if(({})=={}){
+        //NaN=NaN
+        console.log(100);
+    }else{
+        console.log(200);
+    }//200
+    //3.if(){}else if(){}else
+    if(Number()){
+        console.log(100);
+    }else if(NaN==NaN){
+        console.log(200);
+    }else if(![]==[]){
+        console.log(300);
+    }else{
+        console.log(400);
+    }
+     // 2. 三元运算符: 适合简单的if else;
+
+     if(1==1){
+         console.log(100)
+     }else{
+         console.log(200)
+     }  //100
+
+     1==1?console.log(100):console.log(200)//100
+
+    if([]==false){
+        if([]==[]){
+            console.log(100);
+        }else{
+            console.log(200);
+        }
+    }else{
+        console.log(300);
+    } //200
+
+    []==false?([]==[]?console.log(100):console.log(200)): console.log(300)//200
+
+    // = : 赋值
+    // == : 会进行比较，返回一个布尔值；会默认进行数据类型之间的转换
+    // === : 绝对比较；不进行数据类型转换，只要数据类型不一样，返回false
+    console.log(1 === true)  //false
+
+
+    //3.switch  case
+    let num=100
+    switch(num){
+          // num 和case 后面的值会进行绝对比较
+        case 100: 
+        console.log(300)// 该条件成立时执行的代码；
+        break;          //中断代码执行，不向下进行
+        case "100":
+        console.log(200)
+        case "100": 
+        console.log(300)
+    }
+
+    let num1 = 80;
+    switch (num){
+       case "80":
+       console.log(200)
+       case 200:
+           console.log(999)
+       default: //如果上边条件不成立输出
+         console.log(300)
+    }
+//四//  在html中叫标签，在JS叫元素；JS中的元素都是对象数据类型的；
+    // 1. 要想操作谁，就要先获取谁；
+    // 1. document.getElementById ： 在document文本下，通过id获取元素
+    // document: 上下文文本
+    // get : 获取
+    // Element : 元素
+    // By : 通过
+    // Id: id名；
+
+
+    let div1=document.getElementById("box")//获取div box  ,给他命名div1
+    console.dir(div1)//查看获取情况
+    div1.onclick =function () {
+        // 这里面代码不运行；当点击元素的时候，这个函数就会执行；//点击事件    
+       if(div1.style.background==="red"){
+            div1.style.background="black";
+        }else{
+            div1.style.background="red";
+        }
+        if(div1.style.width=="300px"){
+            
+            div1.style.width="100px";
+        }else{
+            div1.style.width="300px" ;
+        }
+        console.log(div1.style.background);
+    }
+
+    //div1.style.background//引入所需要属性 进行修改
+
+
+//五//三个循环 1. for  2.for in   3. while
+    //1.for循环  1）初始化一个变量i=0；2）判断条件是否成立；3）执行循环体；4）执行i++      当条件不成立是，终止循环
+    let arr1=[100,2,7,8,3,4,5];
+    for(let i=0;i<arr1.length;i++){
+        console.log(arr1[i]);
+    }
+    //依次判断输出每一个值，直到不成立
+    //i++:在自身基础上+1；
+    //i++:先取值，在运算
+    //++i：先运算，再取值
+    let f=10;
+    f++
+    console.log(f)   //11
+    let g=++f;     
+    // let b=a++
+    console.log(g)     //12   如果a++  为11
+
+    let i=1; // 先取值，在运算
+    console.log((i++)+(++i));   4
+            //1+3 = 4
+
+
+    //求1-100的和
+    let total=0;
+        for(let i=1;i<101;i++){
+         
+            //i=1 total=0    total=1
+            //i=2 total=1    total=3
+            //i=3 total=3    total=6
+            total+=i;
+        }
+        console.log(total);  
+    // break;终止for整个循环
+           for(let i=0;i<6;i++){
+            console.log(100);
+            break;
+        }//输出一次直接终止
+
+        for(var z=0;z<6;z++){
+        if(z>4){
+            break;
+        }
+        console.log(100);}//5  //输出5次
+    //continue:终止本轮循环，continue,下面代码不执行
+         for(let i=0;i<6;i++){
+            console.log(300);
+            continue;
+            console.log(200)
+        }
+ 
+
+    //题
+        for(var x=0;x<11;x++){
+        if(x<5){
+            x+=1;
+            continue;
+        }
+        if(x>8){
+            x+=2;
+            break;
+        }
+        x+=1;
+    }
+    console.log(x);// 12
+
+
+        for(var y=0;y<10;y++){
+        if(y>6){
+            continue;  //9到此不往下算 回去y++   为10 10不小于10  输出10
+            y++;
+        }
+        if(y>8){
+            y+=2;
+            break;
+        }
+        y+=2
+    }
+    console.log(y);//10
+
+     // 逻辑且： && 左右两边都成立，这个条件成立
+     // 只有左右两边一个是false，整体结果就是false
+     if(1=="1"&&2=="2"){
+        console.log(100);
+     }//100
+    // ||  : 或  只有左右两边有一个成立的，整体结果就是true；
+    if(1==true||2===3){
+        console.log(200);
+    }//200
+
+
+     // 2.  for in  循环；
+      let aee = {name:"zhufeng",age:10,6:9,1:8};
+    for(let  key in aee){
+        //console.log(typeof key);// key 代表的是属性名 key本身就是一个字符串
+        // 第一次循环：key 是"name"
+        // 会把对象中属性名是数字的先输出，并且按照从小到大的顺序输出
+        console.log(key);//输出属性名
+        console.log(aee[key])//输出每一个属性名，对应的属性值
+    }
+    console.log(aee);//输出aee
+
+
+    let  u = 100;
+    let t = "u";
+    console.log(t);//u
+
+    let obj2 = {a:1};
+    console.log(obj2["a"]);//1
+    //它就是一个属性名：属性值   查找a里的属性值
+   
+
+ // 3.while
+    // 1. 当不知道循环多少次时，会使用到while；
+    // 2. while 阻塞线程；
+    // let num = 10;
+    // while(num>5){
+    //     console.log('s');//s
+    //     // num--
+    // }
+
+
+    </script>
+</body>
+
+</html>

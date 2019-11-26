@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>    
+    //函数     函数就是一个方法，吧实现某些功能的代码封装到一起，以后执行这个方法，直接运行函数就好了，它可以减少页面重复的代码，提高代码的复用率（高内聚低藕合）
+
+
+    /* 生产一台榨汁机(创建函数)，把榨汁这个功能集成到榨汁机里(把实现某些功能的代码封装到一起)，榨汁机有一个入口(在函数里叫形参变量)，有一个出口，把果汁倒出来(在函数里叫return)
+
+    让榨汁机运行(函数执行)，在榨汁机运行前把水果放进去(在函数运行时放的变量就是实参)
+ */
+//     let sum =  10+10;
+//     sum = sum/2;
+//     console.log(sum)
+
+//     let sum1 = 12+13;
+//    sum1 = sum/2;
+//    console.log(sum1) 
+
+
+    function sum(n,m){
+        //函数创建时的小括号放的就是形参
+        // console.log(n,m)    //输出n,m
+        //如果实参没有给形参赋值，那形参就是undefined  实参跟形参一一对应
+        let num = n+m;
+        num=num/2;
+        // console.log(num)   //输出现在的num
+        return num
+        //return输出的一定是一个值
+        //谁执行的值i，return的值就给谁
+        //如果函数中没有return，那函数的返回值就是undefined
+
+    }
+//函数名加括号就是函数执行 ,函数执行时，传的是实参
+   let ss= sum(12,13)
+
+   console.log(ss);
+   let xx=  sum(20,30)
+   console.log(xx);
+    let aa=sum(68,76)
+    console.log(aa);
+    alert(8888);//可以阻断代码运行，当点击确定时候，代码才会继续运行
+    //只有函数才可以执行  console.log()也是函数
+   /*  let a= '22'
+    a() *///报错  a is not a function
+
+
+//函数表达式
+    let fn = function(n,m){
+        console.log(n,m)//undefined undefined
+    }
+    console.log(fn())//undefined
+
+
+//自执行函数
+    (function(p){
+        console.log(p)
+    })(1)
+
+
+function fn(n,m){
+    let num=m+n;//200+undefined//NaN
+    return n
+}
+let s = fn(200)
+console.log(s)//200
+    </script>
+
+
+</body>
+</html>
