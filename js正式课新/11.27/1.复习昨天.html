@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--  -->
+    <script>
+        //原型继承
+        b.protype=new a
+        let b=new b
+        //b的原型指向a的实例，那么b的实例可以继承a的私有属性，也可以继承a的公有属性
+
+        
+        //  中间类继承，手动添加     实例是对象，对象就有--pro--属性
+        arguments.__pro__=array.protype
+        //我想使用数组的push但是argument不属于array的实例，但是我想用push的方法，可以手动，继承
+        //通过把--pro--找到array原型上的方法，手动添加（手动改线）弊端，自己原型上的就不可以用
+
+        //获取最大值，
+        //  math max  1.ary.sort((a,b)=>a-b)[0]
+                    //2.比较  
+                    //3.apply  console.log(Math.max.apply('', ary)) 第一个数this的指向
+    
+       //所有的函数都是function的实例，
+       //apply  bind  call 改变this的指向
+    //    context.$fn = this  
+    //         res = context.$fn(...arg);
+
+
+
+
+
+       // call的封装
+       //在call方法执行的同时，让fn执行，并且把fn的this指向了传的第一个参数
+       function myCall(context, ...arg) {
+            // arg接收的是传递的从第二个开始的实参
+            // this->fn  context->obj
+            context = context || window;
+            // 处理传参的特殊情况，如果传的是空、null和undefined，按context的值就是window
+            let res = null; // 创建一个变量，准备接收this执行之后的返回值
+            context.$fn = this; // 给context增加键值对
+            res = context.$fn(...arg); // 让this执行
+            delete context.$fn // 从obj中删除this
+            return res // 把this执行之后的返回值return 出去
+
+        }
+        Function.prototype.myCall = myCall;
+
+        function fn() {
+            console.log(this)
+            console.log(arguments);
+            // return 1
+        }
+        fn()
+        let obj = {
+            name: 3
+        }
+        console.log(fn.myCall(obj, 10, 20, 30))
+
+ </script>
+</body>
+</html>

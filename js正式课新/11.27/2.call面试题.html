@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+   //call  1.fn通过__pro__属性找到当前所属类的原型（Function的原型）上的call方法
+    //     2.让call方法执行，并且给call传递实参
+    //     3.在call方法执行的同时，让fn执行，并且把fn的this指向了传的第一个参数
+         
+         //如果出现两个及以上的call,那最后运行的就是传进去的函数
+
+
+        function fn1(){console.log(1)}
+        function fn2(){console.log(2)}
+        fn1.call(fn2); // 1
+        fn1.call.call(fn2);//2      不管前边有多少call，超过两个call,他执行的是最后一个call方法
+        Function.prototype.call(fn1); //不输出      function函数的匿名函数是小f
+        Function.prototype.call.call(fn1); // 1
+        
+        // 2.// fn1.call.call(fn2);
+        // // context -> fn2   this -> fn1.call
+        // context.$fn = this -> fn2.$fn = fn1.call -> call
+        // context.$fn() -> call()
+        // 第二次执行
+        // context -> window  this -> fn2
+        // context.$fn = this -> window.$fn = fn2
+        // context.$fn() -> fn2()
+        //     * /
+
+        // context.$fn = this;
+        // context.$fn()
+        
+        
+         //有多个call.套用公式
+        // context.$fn = this：新增一个键值对，属性名：fn,属性值，this，this指向.前面的
+        // context.$fn()      this让函数执行
+
+
+      
+           
+            /* 3.
+             Function.prototype.call(fn1);
+             context->fn1  this-> Function.prototype 【用f代替】
+             context.$fn = this ->fn1.$fn = f
+             context.$fn->fn1.$fn()->f()
+            */
+           /* 4.
+            Function.prototype.call.call(fn1);
+            context->fn1   this->Function.prototype.call
+            context.$fn = this ->fn1.$fn = call
+            context.$fn()->fn1.$fn()->call()
+            第二次执行
+            context->window  this ->fn1
+            context.$fn = this ->window.$fn = fn1;
+            context.$fn() ->window.$fn()->fn1()
+           */
+        
+           
+    //    5. fn1.call(fn2).call(fn3)//fn1点call没有返回值  为undefined
+
+      
+
+    </script>
+
+</body>
+
+</html>

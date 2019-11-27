@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 结合call既能拿到别人的公有属性，叫寄生组合继承，，call继承只能拿到私有属性 ，
+        寄生组合继承；
+    
+    
+    -->
+    <script>
+        // // Object.create(context): // 创建一个空对象，让对象的__proto__指向你传的第一个参数
+        // let obj = { name: 3, getX: function () { console.log(11) } }
+        // let o = Object.create(obj) //创建一个空对象
+        // console.log(o)
+        // console.log(o.__pro__===obj)
+
+        // Object.create(context): // 创建一个空对象，让对象的__proto__指向你传的第一个参数
+        // let obj = {
+        //     name: 3,
+        //     getX: function () {
+        //         console.log(11)
+        //     }
+        // }
+        // let o = Object.create(obj)
+        // console.log(o);
+        // console.log(o.__proto__ === obj) // true
+        // 创建一个空对象，让空对象的__proto__指向你传递的第一个参数(obj)
+
+
+
+
+       //
+       
+        function A() {
+            this.a = 10
+        }
+        A.prototype.getX = function () {
+            console.log('恭喜发财')
+        }
+
+        function B() {
+            /* 
+            函数B以构造函数的身份运行
+            那类B中的this指向当前实例
+            */
+            this.x = 20;
+            A.call(this) // 让函数A以普通函数身份运行，而且把函数A中的this指向了类B的实例
+        }
+        B.prototype = Object.create(A.prototype);
+        // 创建一个空对象，让空对象的__proto__指向类A的原型，在把这个空对象赋值给类B的原型
+        let f = new B;
+        f.__proto__.getY = function () {
+            console.log(333)
+        };
+        let m = new A;
+        // m.getY()
+        console.log(f)
+        //call继承让类B继承了类A的私有属性，然是不能继承类A的公有属性
+        // console.log(f)
+        // f.getX() // 报错
+        // f.a // 可以取到
+
+      
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

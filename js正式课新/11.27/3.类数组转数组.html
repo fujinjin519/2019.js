@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+      <!-- 类数组转数组：利用call的机制。可以封装 -->
+<body>
+    <script src="utils.js"></script>
+     
+    <script>
+    //   let ary=Array.prototype.slice.call(arguments);
+    //   //利用call的机制把slice中的this指向改为当前作用域中的arguments，那slice中的this就是arguments，最后把arguments克隆了一份返回一个新数组
+
+    //   console.log(ary);
+     
+    // //    [1,2,3].slice()// 数组找当前所属类的当前方法，slice的this是1，2，3，
+
+     
+         function fn(){
+             let ary=utils.toArray(arguments)
+             console.log(ary)
+         }
+         fn(21,2,3,5,6,) 
+
+        
+        
+        
+        
+        
+        </script>
+</body>
+</html>

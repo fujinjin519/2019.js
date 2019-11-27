@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="utils.js"></script>
+
+    <script>
+
+        function fn() {
+            let ary = utils.toArray(arguments)
+
+            ary.sort((a, b) => a - b)//排序 从小到大
+            ary.pop()  //删除末尾项
+            ary.shift() //删除开头一项
+            console.log(ary)
+            // let total = null;
+            // for (var i = 0; i < ary.length; i++) {
+            //    total+=ary[i]
+            // }
+            // console.log((total/ary.length).toFixed(2))
+            console.log(ary.join('+'))//数组转字符串，用加号替换
+            console.log(eval(ary.join('+')) / ary.length)
+        } //求平均数，相加的和除以它的总长度就是平均数
+        console.log(fn(1, 2, 3, 4, 6, 3, 21, 1, 2, 33, 45))
+        
+        
+        
+        
+        
+        // eval他是把字符串转化成js代码执行
+        function f() {
+            console.log('妮')
+        }
+
+        eval('f()')
+
+    </script>
+
+</body>
+
+</html>
