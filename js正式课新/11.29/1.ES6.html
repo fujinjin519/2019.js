@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1.复习sort的排序原理：a-b大于0，交换位置，小于0（倒序）
+         2.es6的语法：1.let和const
+                     let和const没有变量提升，var有变量提升
+                     let和const不能重复声明
+                     let可以解决暂时性死区
+                     let可以形成块级作用域（大括号结合）
+                     var在全局作用域下声明变量会给window增加键值对，let不会
+                     const定义的常量必须赋值
+                     2.箭头函数
+                      箭头函数没有this
+                      没有argumens
+                      如果在箭头函数里使用this,那它就会往上一级作用域找this
+                      如果只有一个形参，可以去掉小括号
+                      如果只有return一行代码，可以省略return和大括号
+                      如果return的是一个空对象，你要是省略的花，就给空对象加小括号
+                      给函数的形参赋默认值
+                      3.   ...运算符
+                       收缩运算符（一般用在函数的形参里）
+                       展开运算符（一般用在函数的实参）
+                       拓展运算符（前提是等号的左边和右边的结构一样）
+                      4.class自定义类
+                      5.模版字符串：（``）
+
+                        
+                        
+    -->
+    <script>
+
+        // et fn = () => {
+        //     console.log(this)
+        // }
+        // fn()
+        // let obj = {
+        //     name:3,
+        //     fn:function(){
+        //         // this->obj
+        //         return ()=>{
+        //             console.log(this)
+        //         }
+        //     }
+        // }
+        // obj.fn()()
+        // let fn = (w)=>{
+        //     return {name:3}
+        // }
+        // let fn1 = w=>({name:3})
+        // console.log(fn1())
+
+        // ...运算符
+        // function fn(...g){
+        //     console.log(g)
+        // }
+        // fn(...[12,34,46,67,78,132,32,34])
+        // let ary = [12,23,45,66];
+        // // let n = ary[0]
+        // // let m  =[]
+        // // 前提是等号的左边和右边结构的一样（都是数组），用逗号代表隔开
+        // let [m,...a] = ary;
+        // console.log(m,a) // 12 , [23, 45, 66]
+
+        // // 我想拿到数组的第一项和最后一项
+        // // let [x,,,s] = ary;
+        // console.log(x,s)
+        let ary = [12, 234, 45, [23, 435]];
+        console.log(ary[3][1])
+        let [m, , , [, x]] = ary
+        console.log(m, x)
+
+        // 普通对象的解构赋值：
+        // let obj = {
+        //     name:2,
+        //     age:3
+        // }
+        // let obj1 = {...obj}
+        // console.log(obj1) // 克隆obj
+        // 在左边的对象里定义变量名，如果这个变量名在右边的对象里有对应的属性名，那就把对应的属性值赋值给左边的变量名
+        // 如果右边没有这个属性名就是undefined
+        // 还可以给左边的变量赋默认值
+        // let {name,age,we = 9} = obj;
+        // console.log(name, age,we);
+        // let ary = [1,2,3];
+        // let  [m, , , r = 6] = ary
+        // console.log(m,r)
+
+        // let obj = {
+        //     name:3,
+        //     age:4
+        // }
+
+        // // name:haha  
+        // // 创建一个haha变量名，把name对应的值赋值给他
+        // let {
+        //     name:haha
+        // } = obj
+        // console.log(haha)
+
+        let obj = {
+            name: 'erYa',
+            age: 18,
+            friends: ['xioaHua', 'gouDan']
+        }
+        let { friends: [, s] } = obj
+        console.log(s) // 'gouDan'
+
+        
+        //自定义类
+        class Fn{
+            //这里边放的实例的私有属性
+            constructor(n,m){
+                this.s=n //给实例增加私有属性
+ 
+
+            }
+            //直接在外边写就是添加公有属性，公有属性（函数）就是它的方法
+            getx(){
+                console.log(111)
+            }
+             r=4// 直接就放到它的私有属性了（如果赋的值不是一个方法，那就是给实例增加私有属性
+             static m=10//把fn当作对象，增加键值对
+        }
+        let f=new Fn(3)
+        Fn() //报错
+        console.log(f) 
+
+    
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

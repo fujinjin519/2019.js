@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--   json数据格式：它不是数据类型，它是一种数据格式 
+    一般我们从后台请求来的数据都是json格式的
+    json数据格式：
+              json格式的对象
+              json格式的字符串
+            json.parse：把json格式的字符串转换为json格式的对象
+            json.stringfy：把json格式的对象转为json格式的字符串-->
+    <script>
+     let obj={"name":3} //json格式的对象 （跟普通对象的区别就是给属性名加一个双引号）
+     let obj= '{"name":3}' //json格式的字符串
+     obj=JSON.parse(obj);
+     console.log(obj.name) // 3 
+      
+
+
+
+    
+    
+    
+    
+    </script>
+</body>
+</html>
