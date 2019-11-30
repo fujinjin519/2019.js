@@ -38,8 +38,6 @@ function renderHtml() {
         <span>${item.time}</span>
         <span>${item.hot}</span>
         <span>${item.price}</span>
-
-
     </li>
     `
 

@@ -1,0 +1,70 @@
+html,body{
+    width: 100%;
+   background: #f4f4f4;
+    height: 100%;
+  }
+  #content .header{
+      width: 1200px;
+      margin: 30px auto;
+      height: 40px;
+      line-height: 40px;
+      font-size: 20px;
+      padding: 5px;
+      background:rgb(253, 157, 133);}
+      
+  #content .header a{
+      color:white;
+      position: relative;
+      margin-right: 15px;
+      
+  }
+  #content .header a:hover{
+      color: orangered
+  
+  }
+  #content .header a i{
+      width: 0;
+      height: 0;
+      border: 4px solid transparent;
+      position: absolute;
+  }
+  #content .header a i.up{
+      
+      border-bottom: 4px solid rgba(0, 0, 0, 0.699);
+      top: 5px;
+  }
+  #content .header a i.up.bg {
+      border-bottom:4px solid orangered
+  }
+  #content .header a i.down{
+      
+      border-top: 4px solid rgba(0, 0, 0, 0.699);
+      top: 15px;
+  }
+  #content .header a i.down.bg {
+  
+      border-top:4px solid orangered
+  }
+  /* 商品样式 */
+  #cardbox{
+      width: 1200px;
+      margin: 10px auto;
+      display: flex;
+      flex-wrap: wrap;
+  }
+  #cardbox li{
+      width: 24%;
+      box-sizing:border-box;
+      padding:5px;
+      background: rgb(241, 85, 85);
+      margin: 5px 0.2%;
+  }
+  #cardbox li img{
+      width: 100%;
+  }
+  #cardbox li span{
+      display: block;
+      font-size: 20px;
+      margin: 2px 1px;
+      color: white;
+  }

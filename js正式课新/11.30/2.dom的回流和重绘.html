@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!-- dom的回流和重绘：
+     1.dom的回流，当页面的dom产生变化（增加，删除，改变位置，改变大小 ）都会引发dom的回流，所谓回流，就是把dom重新排列进行渲染；它会非常消耗性能的
+    2. 重绘：当某一个dom元素的样式发生改变(比如改变dom的颜色)，不会引起dom的回流，但是会重新绘制
+         */-->
+
+<body>
+    <script>
+
+        let box = document.getElementById('box');
+        // console.time()
+        // for (var i = 0; i < 10; i++) {
+        //     var cur = document.createElement('li');
+        //     cur.innerHTML = 111;
+        //     box.appendChild(cur);
+        // }
+        // console.timeEnd()
+
+        // console.time()
+        let frg = document.createDocumentFragment(); // 创建一个文档碎片；
+        // 创建一个空容器，用来存储dom元素
+        console.log(frg)
+        for (var i = 0; i < 10; i++) {
+            var cur = document.createElement('li');
+            cur.innerHTML = 111;
+            frg.appendChild(cur)
+        }
+        console.log(frg)
+        box.appendChild(frg);
+        // console.timeEnd()
+
+
+
+
+    </script>
+</body>
+
+</html>
