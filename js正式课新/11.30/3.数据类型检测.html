@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        1、typeof
+        2、instanceof
+        3、Object.prototype.toString.call
+        4、constructor
+        */
+
+        // typeof
+        // 1、返回的是字符串
+        // 2、不能区分对象，数组，null，他们转换的结果是  'object'
+        // instanceof
+        // 1、检测当前实例是否属于某个类，是就返回true，反之就返回false
+        // 2、不能检测基本数据类型
+        // Object.prototype.toString.call
+        // 返回值是字符串  '[object  当前实例所属的类]'
+        // 只能检测内置类
+        // constructor
+        // 基于构造函数检测
+        // 不能把原型重定向
+        // 不能在实例的私有属性上加constructor属性
+        // 3.constructor ==== Number
+        // function Fn() {};
+        // let f = new Fn;
+        // console.log(Object.prototype.toString.call(1))
+
+       
+        // console.log(3.constructor ==== Number) // true
+        // function Fn() {};
+        // let f = new Fn;
+        // console.log(Object.prototype.toString.call(f)) // '[object Objtce]'  不能够检测自定义类
+        // console.log(Object.prototype.toString.call(1)) // '[object Number]'
+
+
+
+        // console.log((typeof  typeof  null).constructor === Object) //false
+        // console.log((typeof  typeof  null).constructor) //string
+        // console.log(Object.prototype.toString.call(23) .constructor.__proto__.constructor === Object)//false
+        // let f = new Number('35'); 
+        // console.log((typeof f.constructor).constructor.prototype.__proto__ === Object.prototype) //true
+        let num = new Number(11);
+        console.log(num.toFixed(2)) //'11.00'
+        console.log((1).toFixed(2)) //'1.00'
+        console.log(num instanceof Number) //true
+        console.dir(Number.prototype)
+        // console.log((1).toString.call('22'))// 报错，因为只有obj原型上的tostring才能检测数据类型
+        //数字不能用tostring,它找到的还是自己身上的。
+
+
+        console.log(({}).toString.call('12'))//['object string']
+        console.log(Object.prototype.toString.call('12')) //['object string']
+        //这两个是一样的，但是只有object可以用tostring,
+
+    </script>
+
+
+</body>
+
+</html>

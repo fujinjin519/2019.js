@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--  -->
+    <script>
+        //    一. // //暂时性死区let比var更严谨）
+        // 1.// console.log(a) //报错
+        // 2.console.log(typeof a) //undifined 浏览器的bg  暂时性死区
+
+        // console.log(typeof a) //undifined 浏览器的bg
+        // let a //词法解析，let解决了这个问题 报错
+        //    二.//let 和var的区别：变量提升
+        // 创建变量的方法有6中：1.只有var和function有变量提升，let class，import都不存在
+        // 变量提升，没有变量提升比较严谨，
+        //  2.var 允许重复声明而let不能重复声明
+        //  3.（let比var更严谨）解决了暂时性死区问题
+           //4.带var和function的在全局作用域下，相当于给全局增加了一个var属性，还是变量
+           //5.let会产生块级作用域
+
+        //带var与不带var的区别
+        //a=13，a不是变量，是window的一个属性名，等同于window.a=13
+        // alert：弹匡
+
+        //  var b=14
+        //  console.log(b) //14
+        //  console.log(Window.b) //undifined
+
+        //  三。1.变量提升遇到if的时候，不管条件是否成立，都要进行变量提升,还有
+        //2.在全局作用域下，创建一个全局变量，也相当于给widow加了一个属性
+
+        console.log(a) //undifined
+        if (!('a' in window)) { //true取反 
+            var a = 13
+        }
+        console.log(a) //undifined
+        //3.if条件遇到function 的时候，无论条件是否成立，只声明，不定义
+        // 如果条件成立了，就给fn赋值
+        
+        console.log(fn) //undifined
+        fn() //第一次只声明，不定义
+        if( 'fn'in window){
+            function fn(){
+                console.log('哈哈')
+            }
+
+        }
+        fn()//undifined不是函数不能执行，报错
+       
+        //4.匿名函数，（自执行函数：创建一个无名函数，加小括号执行，把前面的括号包起来，或者加波浪线也可以,让语法符合，自执行函数不进行变量提升，没名
+         ~function(n){}(10)
+         !function(n){}(10)
+
+         //私有作用域中：变量提升的处理：函数执行会形成私有作用域，如果遇到一个变量看自己有没有有，有就用，没有向上一级找，找不到报错，这就是作用链查找机制
+         //创建一个函数只会开辟一个堆，函数执行才会形成私有栈内存，变量提升-代码执行（遇到变量看是不是自己私有的，看变量存储区有没有，是自己私有的这就是闭包，遇到变量不是自己私有的，就往上一级找，一直找到全局，沿着找的机制，叫作用域链
+
+         // 私有变量：1.在私有作用域中，变量存储区存储的变量，一定是私有变量，
+         //          2.形参是私有变量
+
+         console.log(a,b)//undifined*2
+         var a=12,
+             b=12;
+        function fn(){
+            console.log(a.b) //undifiend  12(向上一级找，b属于全局下的不是私有的)
+            var a=b=13
+            console.log(a,b) // 13  13
+          }
+    
+         fn()  
+         console.log(a,b) //12，13
+         //闭包：保护和保存。函数执行，形成私有栈内存，私有的变量和外界没有联系，用闭包的形式包起来，保护里面的私有变量不受外界干扰，保存不销毁，也保护里面的私有变量
+         //函数的返回值，只看有没有return，没有就默认undifined
+
+         //函数执行的返回结果看它有没有return ，没有就是undifined
+
+        var ary=[12,23]
+        function fn(){
+
+        } //练习题
+           //堆栈内存的释放问题：堆内存释放问题：用（null)就可以
+                     // 栈内存释放问题：打开浏览器形成栈内存
+                                    //  手动执行函数形成的栈内存
+                                    //基于ES6中的let/const形成的块作用域要是栈内存
+    //  全局栈内存（作用域）：关闭页面，全局栈内存就会被销毁
+
+    //  私有占内存：函数执行完成，形成的私有栈内存就会被销毁
+
+    //let 的块级作用域： 只对let const,等有用—（是私有块下的作用域）
+                         
+                                     
+    
+
+
+
+    </script>
+</body>
+
+</html>

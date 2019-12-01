@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fn(ary, cur) {
+            let newAry = []
+            for (var i = 0; i < ary.length; i++) {
+
+                if (ary[i] !== cur) {
+
+                    newAry.push(ary[i])
+                }
+            }
+            return newAry
+        }
+
+
+        let ary = [1, 2, 3, 1, 2, 3, 1]
+        let f = fn(ary, 1)
+        console.log(f) //
+
+
+        // function fn(){
+        //     return
+        // }
+        //function是每一个函数的基类
+        // object是每一个对象的基类
+        //object的原型-proto-指向自己没有意义，那就是null
+        //每一个函数都是function的实例，（包括它自己，它的-pro-执行自己的原型
+        //object是类，类是函数，按它的-pro-指向function的原型
+        //所有的原型（都是对象）都指向object的原型
+        //function的原型是个匿名函数
+
+
+        function A() {
+            this.a = 10
+        }
+        A.prototype.getX = function () {
+            console.log('jingjing')
+        }
+
+        function B() {
+            // this是当前实例
+            this.x = 20;
+            this.y = A.call(this)
+        }
+        B.prototype = Object.create(A.prototype);
+        // 创建一个空对象，让空对象的__proto__指向A.prototype，然后把这个空对象赋值给B.prototype
+        // f->{getY:f}->{A.prototype; getX:f}->{Object.prototype}
+        let f = new B();
+        f.__proto__.getY = function () {
+            console.log('哈哈哈哈')
+        }
+        let f1 = new A;
+        // f1->{A.prototype; getX:f}->{Object.prototype}
+        // console.log(f);
+        f.getX() //   'jingjing'
+        f1.getY() // 报错
+        let s = f.getY(); // '哈哈哈哈'
+        console.log(s) // undefined */
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -47,7 +47,7 @@ function renderHtml() {
 
 }
 // 点击相应的按钮进行排序，按照时间，热度，价格进行排序
-//1.想操作谁，就获取谁
+//   1.想操作谁，就获取谁
 //   2.给相应的元素绑定相应的事件
 //   3.在事件中做你想做的事情
 
@@ -65,7 +65,7 @@ for (var i = 0; i < navlist.length; i++) {
         this.flag *= -1//每点击一次就把当前元素身上的falg乘等于-1
         sortlist.call(this)
         clearArrow.call(this)
-        addArrow.call(this)
+        addArrow.call(this) 
 
 
     }
@@ -109,7 +109,7 @@ function clearArrow() {
     //这里的this就是当前点击的元素a标签
     //元素.classlist.当前元素的cals名列表
     //元素.classlist.remove('class'名)：移除指定的class名
-    console.log(navlist)
+    console.log(navlist) 
     for (var i = 0; i < navlist.length; i++) {
         if (this != navlist[i]) {
             //如果条件成立，那就是剩下的那两个a标签，把这两个fla设置为默认值-1
