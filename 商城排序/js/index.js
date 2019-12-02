@@ -29,7 +29,7 @@ function renderHtml() {
     let htmlStr = ``; //创建一个变量，准备接受拼接好的字符串
     data.forEach((item) => {
         //有多少项就循环多少次，就会往htmlstr里拼接多少个li
-        // console.log(item)
+        // console.log(item)    
         //把每一个li的时间，热度，价格等属性自定义到结构体上
         htmlStr += `
         <li data-time="${item.time}" data-hot = "${item.hot}" data-price="${item.price}">

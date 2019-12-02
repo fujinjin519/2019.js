@@ -1,0 +1,70 @@
+html body{
+    width:100% ;
+    height: 100%;
+    background:white
+ }
+ #content .header{
+     width: 1200px;
+     height: 40px;
+     line-height: 40px;
+     margin: 40px auto;
+     font-size: 30px;
+     padding:30px;
+     background:pink
+}
+ #content .header a{
+     color: white;
+     position: relative;
+     margin-right: 20px;
+
+ }
+ #content .header a:hover{
+     color: tomato;
+ }
+ #content .header a i{
+
+    position: absolute;
+    border: 5px solid transparent;
+  
+   
+ 
+   }
+    #content .header a i.down{
+        border-top: 5px solid red;
+        top:20px;
+        position: absolute;
+     
+        }
+            
+    #content .header a i.up{
+          position: absolute;
+          border-bottom: 5px solid red;
+            top:5px
+            }
+   #cardbox {
+       width:1200px;
+       flex-wrap: wrap;
+       display: flex;
+       margin: 5px auto;
+ 
+       }
+   #cardbox li{
+    width: 24%;
+    box-sizing:border-box;
+    padding:5px;
+    background: rgb(241, 85, 85);
+    margin: 5px 0.2%;
+       
+
+}
+#cardbox  li img{
+    width: 100%;
+}
+#cardbox  li span{
+
+    display: block;
+    font-size: 10px;
+    margin: 2px 1px;
+    color: white;
+}
+ 

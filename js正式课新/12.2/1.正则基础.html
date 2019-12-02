@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 正则：
+     正则是JS的内置类的一种     RegExp(正则) 大写
+     正则就是处理字符串的，跟字符串配合使用， 检验字符串的规则 
+     test:匹配一个字符串是否满足这个规则，满足true,反之false
+     exect:捕获：把获取的内容捕获到-->
+    <script>
+        let reg=/^3$/ //规则是：3开头3结尾
+        console.log(reg.test('3')) //true  
+        console.loh(reg.test('32')) //false 
+        console.log(reg.exec('3')) //规则符合，捕获
+        //
+        
+       let reg=/^3$/
+       console.log(reg.test('3'))
+      
+
+
+          
+           
+        
+        
+
+        </script>
+</body>
+</html>

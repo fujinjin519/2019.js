@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!-- 
+    test:匹配一个字符串是否满足这个规则，满足true,反之false
+    匹配成功进行捕获 ：
+    exec:捕获：把获取的内容捕获到--   加括号就是分组捕获>-->
+<body>
+    <script>
+        //        正则的捕获
+        // exec：他是正则实例的一个公有属性，替他是用来捕获符合规则的字符串的
+        // 返回值：是一个数组，如果捕获不到就是null
+        // 如果是数组
+        //     1、第一项是最大的捕获内容
+        //     2、以后数组的每一项就是分组捕获的内容
+        //     3、index是第一次捕获位置的索引
+        //     4、input是原字符串
+        // 如果你只匹配不捕获，就在小括号里加?:
+        // 在正则捕获时，如果第一次捕获到内容，就不会再继续捕获(这叫正则的懒惰性)
+        
+        // let reg1 = /^(\d{6})(\d{4})(\d{2})(\d{2})\d{2}(\d)(\d|X)$/;
+        // let str = '13073020020528421X';
+        // console.log(reg1.exec(str))
+        let reg = /\d{2}/g;  //0-9的数字出现两次
+        let str = 'w33w33ww';
+        console.dir(reg)
+        // /* 加/g与不加的区别,解决懒惰型
+        // 如果正则不加/g,那每一次去捕获，捕获到的都是第一次符合规则的内容lastIndex的值不会变，都是0  从头到尾捕获一遍
+
+        // 如果正则加上g，那每捕获一次，正则的lastIndex就会记录当前捕获到的内容的最后一项索引，下次再捕获的时候从记录的索引的基础上+1，继续捕获      
+        // */
+        // console.log(reg.exec(str))
+        // console.log(reg.lastIndex)
+        // console.log(reg.exec(str))
+        // console.log(reg.lastIndex)
+        // console.log(reg.exec(str))
+        
+        function myExec(str){
+            // 如果正则不加g，那正则的私有属性global的值就是false，
+            // 就给他捕获一次直接return就好了
+            // if(!this.global){  //不加g是false陷入死循环,gloabl自己的属性，取反true,
+            //     return this.exec(str) //返回的结果是捕获一次，
+            // };
+            let ary = [];
+            let res = this.exec(str)
+            while(res){  //不知道循环多少次用while
+                // 每捕获一次就往ary里push一次捕获到的内容
+                ary.push(res[0])
+                // 然后在继续捕获
+                res = this.exec(str)
+            }
+            // 如果正则第一次就捕获不到，while就不会执行，那ary是空数组，直接给他return null就好了
+            return ary.length === 0?null:ary;
+        };
+        RegExp.prototype.myExec = myExec;
+        console.log(reg.myExec(str))
+          
+        
+        </script>
+    
+</body>
+</html>
