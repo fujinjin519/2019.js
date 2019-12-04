@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--1.正则的贪婪性：
+         +：出现1到多次
+         ?：出现0到1次 
+         \d：0-9之间的数字
+          正则在匹配的时候能多匹配一个就多匹配一个，这就是正则的贪婪性
+          在量词元字符的右边出现?,那就是取消正则的贪婪性   
+          2.replace也是自带捕获：，字符串的一个方法，用来替换某个字符串
+          捕获的内容传递给实参了
+       -->
+
+
+    <script>//1.
+        let str = 'zhufeng2019zhufeng2020';
+        let reg1 = /\d+/g
+        let reg = /\d+?/g
+        console.log(str.match(reg)) // ["2", "0", "1", "9", "2", "0", "2", "0"]每一项
+        console.log(str.match(reg1)) // ["2019", "2020"]  
+        //2.
+        let str = 'zhufeng33zhufeng33'
+        // 我想把 'zhufeng'替换为 'zhufengpeixun'
+        //    str = str.replace('zhufeng', 'zhufengpeixun').replace('zhufeng', 'zhufengpeixun')
+        // str = str.replace(/zhufeng/g , 'zhufengpeixun')//把全局的珠峰，替换成珠峰培训字符串
+
+
+
+        str = str.replace(/zhufeng/g, function () {
+            console.log(arguments) //接受的实参的集合
+            /* 
+            1、正则匹配几次，这个回调函数就执行几次   //匹配2次，珠峰珠峰，换成珠峰培训，
+            2、回调函数的返回值会把每一次捕获的内容替换
+            3、回调函数执行时，会把每一次捕获的内容当做实参传递给回调函数里
+            */
+            return 'zhufengpeixun'  //return写什么，会把捕获的内容替换，成什么，
+        })
+        console.log(str)
+
+        //3.案例： \b：单词边界，
+        let str = 'good good study day day up';
+        // 效果：把每一个单词的首字母大写
+
+        let reg = /\b([a-z])[a-z]*\b/g;
+        //分组捕获。加小括号，可以捕获第一个单词的的首字母。a-z捕获0到多次（可以捕获，也可以不捕获）
+
+        //首先捕获的是第一个单词，然后又把第一个字母g捕获到，
+        // console.log(str.match(reg))
+        str = str.replace(reg, function () {
+
+            // console.log(arguments)
+            let [word, firstWord] = arguments // 把每一次捕获的单词和分组捕获的单词首个字母解构出来（解构赋值）
+            firstWord = firstWord.toUpperCase() // 把首字母转大写
+            word = word.slice(1) // 把单词从第二项开始截取（从索引1开始截取）  ood
+            return `${firstWord}${word}` // 最后把转大写的开头字母和截取的字母组合到一起对捕获的内容进行替换 .
+
+        })
+        console.log(str) //Good Good Study Day Day Up(首字母大写)
+
+
+
+
+       
+       
+       //方法封装    -首字母变成大写(跟上面的一样）)
+        function toFirstUppercase() {
+            let reg = /\b([a-z])[a-z]*\b/g;
+            // console.log(str.match(reg))
+            let newStr = this.replace(reg, function () {
+                // console.log(big, small)
+                // console.log(arguments)
+                let [word, firstWord] = arguments // 把每一次捕获的单词和分组捕获的单词首个字母解构出来
+                firstWord = firstWord.toUpperCase() // 把首字母转大写
+                word = word.slice(1) // 把单词从第二项开始截取
+                return `${firstWord}${word}` // 最后把转大写的开头字母和截取的字母组合到一起对捕获的内容进行替换
+
+            })
+            return newStr
+
+
+        }
+
+        String.prototype.toFirstUppercase = toFirstUppercase
+        let str = 'good good study day day up'
+        console.log(str.toFirstUpperCase())
+
+
+        
+
+
+
+
+
+    </script>
+</body>
+
+</html>

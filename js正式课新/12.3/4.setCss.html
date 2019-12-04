@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        //封装一个行内的css样式用setcss
+
+
+        function setCss(curEle, attr, val) {
+            let reg = /^(width|height|top|bottom|left|right|padding|margin|fontSize)$/
+            if (reg.test(attr)) {
+                if (typeof val === 'number') {
+                    val = val + 'px'
+                }
+            }
+            curEle.style[attr] = val
+        }
+
+
+        // setCss(box, 'width', 200)
+        // setCss(box, 'height', '200px')
+        // setCss(box, 'backgroundColor', 'green')
+
+       
+        //封装一个setcssgroupcss，获取好多个属性名
+
+        function setGroupCss(curEle, obj) { //想获取好多个属性名属性之
+            for (key in obj) {
+                // key，属性名
+                setCss(curEle, key, obj[key])
+            }
+        }
+        setGroupCss(box, { width: 200, height: 300, backgroundColor: 'pink' })
+
+
+       
+       
+        
+        //封装一个方法，既能获取样式，也可以单个设置样式，也可以成组设置样式
+        function css() {
+            let curEle = arguments[0];
+            let attr = arguments[1];
+            let val = arguments[2]; //假设传3个参数
+            // 如果arguments的legnth是2，那说明你不是想获取样式，就是想成组设置样式
+            if (arguments.length === 2) {
+
+                if (typeof attr === 'string') {   
+                    //获取的获取的属性值
+                    // 如果此条件成立，那就说明第二个参数就是字符串，就是想获取参数
+                    return getCss(curEle, attr)   
+                }
+                else {
+                    setGroupCss(curEle, attr)   //成组设置样式
+                }
+            }
+            // 如果arguments的legnth是3，那说明你是想单个设置样式
+            else if (arguments.length === 3) {
+                setCss(curEle, attr, val)
+            }
+        }
+        console.log(css(box, 'width'))        //属性名属值，单位去掉了。字符串样式的
+        css(box, {width:800})                  //元素，对象
+        css(box, 'backgroundColor', 'black')   //成组设置样式
+     
+
+    </script>
+</body>
+
+</html>

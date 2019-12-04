@@ -12,7 +12,7 @@
     exec:捕获：把获取的内容捕获到--   加括号就是分组捕获>-->
 <body>
     <script>
-        //        正则的捕获
+        //  正则的捕获
         // exec：他是正则实例的一个公有属性，替他是用来捕获符合规则的字符串的
         // 返回值：是一个数组，如果捕获不到就是null
         // 如果是数组
@@ -27,12 +27,14 @@
         // let str = '13073020020528421X';
         // console.log(reg1.exec(str))
         let reg = /\d{2}/g;  //0-9的数字出现两次
-        let str = 'w33w33ww';
-        console.dir(reg)
-        // /* 加/g与不加的区别,解决懒惰型
-        // 如果正则不加/g,那每一次去捕获，捕获到的都是第一次符合规则的内容lastIndex的值不会变，都是0  从头到尾捕获一遍
+        let str = 'w33w11ww';
+        console.log(reg.exec(str))//不加g,只会捕获到33，不会捕获到11，往后走。懒惰性,
+        console.dir(reg.exec(str))//加g,会送上一次的33开始加1从w开始捕获，手动
 
-        // 如果正则加上g，那每捕获一次，正则的lastIndex就会记录当前捕获到的内容的最后一项索引，下次再捕获的时候从记录的索引的基础上+1，继续捕获      
+       /* 加/g与不加的区别,解决懒惰型
+        如果正则不加/g,那每一次去捕获，捕获到的都是第一次符合规则的内容，因为又lastIndex（记录的位置）这个属性，它的值不会变，都是0  （永远捕获的都是第一个）
+
+        如果正则加上g，那每捕获一次，正则的lastIndex就会记录当前捕获到的内容的最后一项索引，下次再捕获的时候从记录的索引的基础上+1，继续捕获，  
         // */
         // console.log(reg.exec(str))
         // console.log(reg.lastIndex)
@@ -59,6 +61,8 @@
         };
         RegExp.prototype.myExec = myExec;
         console.log(reg.myExec(str))
+
+
           
         
         </script>

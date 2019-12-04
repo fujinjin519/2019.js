@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //用url封装一个方法：只要{name: "erYa", age: "18", hash: "index"}
+        let url = 'http://www.baidu.com?name=erYa&age=18#index'
+        function queryUrlParams() {
+            let reg = /([^?=&#]+)=([^?=&#]+)/g;
+            let obj = {}; // 创建一个空对象，用来存储一会处理的键值对
+            this.replace(reg, (content, key, value) => {
+                // content是每一次全局捕获的内容，
+                // key是每一次第一个分组捕获的内容(作为属性名)
+                // value是每一次第二个分组捕获的内容(作为属性值)
+                obj[key] = value
+            })
+            // 把url里的参数捕获出来，以键值对的形式赋值给obj对象
+            this.replace(/#([^?=&#]+)/, (content, value) => {
+                // value是每一次分组捕获的内容(作为属性值)
+                obj['hash'] = value
+            })
+            // 把url里的hash值捕获出来，以键值对的格式赋值给obj对象
+            return obj
+            // 最后把obj对象return 出去
+        }
+        String.prototype.queryUrlParams = queryUrlParams;
+        console.log(url.queryUrlParams())  //{name: "erYa", age: "18", hash: "index"}
+
+
+    </script>
+</body>
+
+</html>

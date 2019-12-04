@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    // 1.字面量创建方式：
+    let reg=/^$/
+    //2.构造函数的创建方式：
+    //传递的参数是一个字符串，利用字符串可以拼接的特点，能够实现正则的传递变量
+    let reg=new RegExp('')
+    let reg=new RegExp('/^$/')//构造函数里可以放变量，用字符串的方式放进去
+
+    let reg='moon'
+    let reg = new RegExp('^'+m+'/d$')
+
+
+    let str = '\\d'; //这两个比较特殊
+   let str1 = '\D'
+   console.log(str) // '\d'
+    console.log(str1) // 'D'
+    
+    
+    </script>
+</body>
+</html>

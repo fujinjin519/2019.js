@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 封装一个方法，如果传一个参数就是获取浏览器的某个属性，如果传2个参数，就是设置 获取浏览器的某个属性-->
+    <script>
+        function win(attr, val) {
+            if (val === undefined) {
+                return document.documentElement[attr] || document.body[attr]
+            }
+            else {
+                document.documentElement[attr] = val;
+                document.body[attr] = val;
+            }
+        }
+        win('scrollTop', 500);
+        console.log(win('scrollTop'));
+        console.log(win('clientHeight'))
+
+
+        // <!-- window.onscroll = function(){
+        //     // 监听滚动条滚动事件，滚动条一旦滚动，这个函数就触发
+        //     console.log(1)
+        // } -->
+    </script>
+</body>
+
+</html>

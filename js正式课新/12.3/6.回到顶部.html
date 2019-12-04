@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #goBack {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            font-size: 30px;
+            text-align: center;
+            color: white;
+            line-height: 200px;
+            font-weight: 400;
+            background: orange;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: none;
+          
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <img src="./1.png" alt="">
+        <img src="./1.png" alt="">
+        <img src="./1.png" alt="">
+        <img src="./1.png" alt="">
+        <img src="./1.png" alt="">
+        <div id="goBack">
+            返回顶部
+        </div>
+
+    </div>
+     <script src="utils(1).js"></script>
+    
+     <script>
+   
+         let back=document.getElementById('goBack')
+         back.onclick=function(){
+             let winT=utils.win('scrollTop') //    scolltop:纵向卷起来  
+             let dis=winT/50;     
+             var timer=setInterval(()=>{
+                 winT-=dis;
+                 if(winT<=0){
+                     clearInterval(timer)
+                 }
+                   utils.win('scrollTop',winT)
+
+             },20)
+
+            }
+        
+         window.onscroll=function(){
+         // 这个方法你一滑动滚动条，他就会触发
+            
+            // 当浏览器滚动条滚动的距离(卷去的高度)大于等于当前屏幕(可视窗口)一屏的高度时，在让再让回到顶部杨素显示
+
+
+
+
+             let winH=utils.win('clientHeight'); //可视区高度
+             let winT=utils.win('scrollTop'); //卷起来的高度
+             if(winT>winH){//卷区高度大于一平的高度
+                utils.css(back,'display','block')
+                //就让它显示出来
+
+             }else{
+                utils.css(back,'display','none')
+
+             }
+
+             }
+
+
+
+    </script>
+
+</body>
+
+</html>

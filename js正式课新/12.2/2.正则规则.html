@@ -8,14 +8,14 @@
 </head>
  <!-- 正则有两部分组成：元字符和修饰符     
 修饰符：就是把正则额外修饰下
- i:不区分大小写
- m:多行匹配
+ i:不区分大小写  
+ m:多行匹配   
  g:全局匹配，
 元字符：普通，特殊，量词，元字符
   量词元字符：代表出现的次数
-         *：代表0到多次
+         *：代表0到多次yy p
          +：出现1到多次
-         ？：出现0到1次
+         ?：出现0到1次 
          {n}:出现n次
          {n,}:至少出现n次
          {n,m}:出现n到m次
@@ -54,26 +54,31 @@
        //    let reg = /^18|29$/
      
         //    let reg = /^18|29$/
-        //    console.log(reg.test('18')) // true
+        //    console.log(reg.test('18')) // true //18开头或者29结尾 满足条件一个就可以
         //    console.log(reg.test('29')) // true
-        //    console.log(reg.test('189')) // true
-        //    console.log(reg.test('129')) // true
+        //    console.log(reg.test('189')) // true 以1开头，2或8取一个，9结尾
+        //    console.log(reg.test('129')) // true 
         //    console.log(reg.test('28')) // false
 
-        // let reg = /^(18|29)$/
-        // console.log(reg.test('18')) // true
+        // let reg = /^(18|29)$/ //加上小括号，改变优先级 ，只能是18或者29，其他都不行看作一个整体
+        // console.log(reg.test('18')) // true 
         // console.log(reg.test('29')) // true
-        // console.log(reg.test('189')) // true
-        // console.log(reg.test('129')) // true
+        // console.log(reg.test('189')) // false
+        // console.log(reg.test('129')) // false
         // console.log(reg.test('28')) // false
 
-        //  2. 分组引用
+        //  2.小括号的第二个作用： 分组引用
          // let str = 'moon'
         // let reg = /^[a-z]{4}$/
         // console.log(reg.test('asdf')) // true
 
-          let reg = /^[a-z]([a-z])\1\1[a-z]$/  //   /1 代表克隆了一个
+          let reg = /^[a-z]([a-z])\1\1[a-z]$/  //   /1 代表克隆了一个又克隆了一个
          console.log(reg.test('foood')) // true
+
+          let reg=/^([a-z])([a-z])\1\2$/  //加小括号
+          //第一个  第二个   .\1代表和第一个一样，\2代表和第二个一样
+
+          console.log(reg.test('axax'))
          //3.分组捕获 正则的转义
 
 
@@ -92,11 +97,12 @@
 
         //3.转义： \. 
          // let reg = /^2.3$/   //开头 ，结尾  .除了换行符以外的字符  结尾 
+         //中间的点可以匹配换行符以外的任意字符
         // console.log(reg.test('2.3')) // true 
         // console.log(reg.test('2@3')) // true
         // console.log(reg.test('2f3')) // true   只要加符号都可以
 
-        // let reg = /^2\.3$/
+        // let reg = /^2\.3$/    只想匹配数组2.3
         // console.log(reg.test('2.3')) // true       只能是.这个符号，才是true.其他都是false    转义字符
         // console.log(reg.test('2@3')) // fasle    
         // console.log(reg.test('2f3')) // false
@@ -108,12 +114,12 @@
         console.log(str) // '中\国'
 
        //4. []:中括号里一般都是普遍意义的元字符
-          // 1、中括号里放的一般都是普通字符
-        // let reg = /^[@+]$/
+        //   1、中括号里放的一般都是普通字符
+        // let reg = /^[@+]$/  
         // console.log(reg.test('+')) // true
         // console.log(reg.test('@')) // true
 
-        // let reg = /^[\\d]$/
+        // let reg = /^[\\d]$/        这个比较特殊，\d在中括号是又特殊意义的
         // console.log(reg.test('d')) // true
         // console.log(reg.test('\\')) // true
 

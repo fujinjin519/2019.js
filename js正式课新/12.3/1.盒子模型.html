@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+ 
+    <!-- JS的盒子模型：
+          1. cilent系列
+            
+            clientWidth：当前元素可视区域的宽度   宽度+左右padding
+            clientHeight：当前元素可视区域的高度  高度+上下padding
+            clientLeft:获取当前元素左边框的宽度
+            clientTop: 获取当前元素上边框的宽度
+             
+             1、获取的是数字，而且没有单位
+             2、他的值必须是整数，四舍五入
+             3.是可视区域的宽度和高度  
+             4.溢出对它没影响，
+         
+          2.offset系列：
+           
+            offsetWidth:当前元素的总宽度  clientWidth + 左右border
+            offsetHeight:当前元素的总高度  clientHeight + 上下border
+            offerleft  ：左偏移
+            offertop   ：上偏移
+            offerparent：参照父级元素
+          3、scroll系列
+            scrollHeight ：如果当前元素的文本不溢出，那就等于clientHeight，
+            如果当前元素溢出了，那就是当前的高度（内容溢出的所有）+上下padding（就是真实内容的宽高）
+            scrollWidth ：如果当前元素的文本不溢出，那就等于clientWidth，
+            如果当前元素溢出了，那就是当前的宽度+左padding
+            
+            scrollleft:横向卷起来 ，可以手动值
+            scolltop:纵向卷起来   
+            
+            4.offset偏移量：
+         offsetParent:父级参照物(position定位的，没有往body上找)
+        offsetLeft：左偏移量 :从当前元素的左外边框到父级参照物的左内边框
+        offsetTop：上偏移量 ： 从当前元素的上外边框到父级参照物的上内边框
+
+         body的父级参照物是null
+         */
+
+        //   一般情况下所有的父级参照物都是body，如果给元素加上position属性(relative，absolute、fixed)，会让他的所有子孙元素的父级参照物都指向当前这个元素
+
+
+  
+
+
+    
+        
+          
+    
+   
+          -->
+    <script>
+        //1.
+        console.log(box.clientWidth) //220
+        console.log(box.clientHeight) //220
+        console.log(box.clientWidth)
+        // 获取当前浏览器可视窗口的宽度和高度
+        // document.documentElement是获取当前的html
+        let w = document.documentElement.clientWidth || document.body.clientWidth
+        let h = document.documentElement.clientHeight || document.body.clientHeight
+
+       //2.
+         console.log(box.offsetWidth)//260
+         console.log(box.offsetHeight) //260
+        //3.
+         console.log(box.clientHeight)
+         console.log(box.scrollHeight)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--  match ：它是字符串的一个方法，在string类的原型上，这个方法传递一个正则，返回的是一个数组。
+        如果正则不加g,跟exec返回值一样
+        如果加上g,会把每一次捕获到的内容放到一个数组里返回
+        如果要进行分组捕获，
+      -->
+    <script>
+        //  正则的捕获：exec
+        // 返回值是一个数组，如果捕获不到是null
+        //     1、数组的第一项是第一次捕获到的内容
+        //     2、以后数组的每一项是每一次分组捕获的内容
+        //     3、index：第一次捕获开始位置的索引
+        //     4、input：原字符串
+        // 如果不加g，那你每一次执行正则的捕获，获取的都是第一次匹配位置的内容(这就是正则的懒惰性)
+        // 如果加上g，那每捕获一次，正则的lastIndex属性就会被置为捕获到的内容的最后位置的索引，让下次继续捕获的时候会默认给lastIndex+1，继续捕获
+
+        // match: 他是字符串的一个方法，在String类的原型上，这个方法传递一个正则，
+        // 返回是是一个数组
+        // 如果正则不加g，跟exec返回值一样
+        // 如果加上g会把每一次捕获到的内容放到一个数组里返回
+        // 如果要进行分组捕获，那他就拿不到分组捕获的内容了
+
+        
+    //    let str =  'ww33ww11'
+    //    let reg = /([a-z]{2})(\d{2})/g
+    //    console.log(reg.exec(str));
+    //    console.log(reg.exec(str));
+    // let str = 'ww33ww33'
+    // let reg = /\d{2}/g;
+    // console.log(str.match(reg))
+
+    let str = '{3}ww{1}ww'
+    let reg = /\{(\d+)\}/g
+    console.log(str.match(reg))
+    console.log(reg.exec(str))
+    console.log(reg.exec(str))
+    console.log(str.match(reg))
+    // // 封装一个方法，当正则进行捕获的时候要拿到每一次全局捕获的内容，还要拿每一次分组捕获的内容
+    //     function execAll(str){
+    //         // 如果正则不加g，那正则实例身上的私有属性global就是false，反之就是true
+    //         if(!this.global){
+    //             // 直接给他捕获一次return 出去
+    //             return this.exec(str)
+    //         }
+    //         let big = [], // 创建一个大数组用来存储全局捕获的内容
+    //         small = [],  // 创建一个小数组用来存储分组捕获的内容
+    //         res = this.exec(str) // 创建一个变量，用来存储每一次捕获的内容
+    //         while(res){
+    //             big.push(res[0])
+    //             small.push(res[1])
+    //             // 重复执行正则捕获这个动作
+    //             res = this.exec(str)
+    //         }
+
+    //         return big.length === 0?null: {big,small}
+    //         // 把捕获到的内容return出去
+    //         // console.log(res)
+    //     }
+    //     RegExp.prototype.execAll = execAll;
+    //     console.log(reg.execAll(str))
+    // // {
+    // //     big:['{3}', '{1}'],
+    // //     small:['3', '1']
+    // // }
+              
+    </script>
+</body>
+</html>

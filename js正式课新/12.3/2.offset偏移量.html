@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+       <script>
+           
+        //  let str = 'good day';
+        // let reg = /\b([a-z])[a-z]+\b/g
+        // str = str.replace(reg, (word, firstWord)=>{
+        //     console.log(word, firstWord)
+        //     firstWord=firstWord.toUppercase()
+        //     word=word.slice(1)
+        //     return '${firstword}${word}'
+            
+        // })
+
+      //获取元素距离body的偏移量
+        function offset(cur){
+            let l = cur.offsetLeft;//左偏移量
+            let t =cur.offsetTop;
+            let parent = cur.offsetParent;  // 参照父级元素
+
+            while(parent !== document.body){
+                l+=parent.clientLeft + parent.offsetLeft;//父级元素左边框
+                t+=parent.clientTop + parent.offsetTop;
+                parent = parent.offsetParent;
+            }
+            return {
+                left:l,
+                top:t
+            }
+       
+        
+        
+        
+        </script>
+</body>
+</html>

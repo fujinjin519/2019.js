@@ -1,0 +1,4 @@
+function rederhtml(){
+    let htmstr=``
+    
+}

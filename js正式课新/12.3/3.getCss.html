@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding:0;
+            margin: 0;
+        }
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+         
+        }
+    
+    
+    
+    </style>
+</head>
+<body> 
+        <div id="box" style="width:800px"></div>
+     <!-- 获取元素的css样式 //js全部用驼峰命名
+      1.元素：.style .width 这是获取行内样式
+         console.log(box.style.width) //获取不到
+         
+      2.getcomputerstyle
+      //兼容性，ie6-8不兼容
+      //
+
+     console.log('getcomputerstyle(box'in window) //true 它属于window的属性
+     console.log(getcomputerstyle(box).width) //100px
+     console.log(getcomputerstyle(box).['width'])  //100px
+     console.log(getcomputerstyle(box).['bacgroudcolor']) // //rgba()
+      
+      3.currentstyle   
+      //解决兼容性，这个属性值只在ie才有
+      //元素 currentstyle.属性名
+      console.log(box.currentstyle.width)
+   
+
+    
+
+       -->
+    <script>
+    //    let box = document.getElementById('box');
+    //    获取css的样式
+        
+       
+       
+       //封装的一个获取css的方法，外面的
+       function getCss(curEle,attr){//curEle元素box等  atter:属性名 width都属于
+            if('getComputedStyle' in window){
+                return getComputedStyle(curEle)[attr]
+
+            }else{
+                return curEle.currentStyle[attr]
+            }
+
+        }
+   
+
+         //封装一个获取css的方法，并且把带数字带单位的去掉，直接变成数字
+         function getCss(curEle, attr) { // curEle元素  attr属性名
+            let val = null
+            if ('getComputedStyle' in window) {
+                val = getComputedStyle(curEle)[attr]
+            } else {
+                val = curEle.currentStyle[attr]
+            }
+
+            /* 
+            我想把带单位的属性值的单位去掉，并且转换为数字
+            */
+            let reg = /^(width|height|top|bottom|left|right|padding|margin|fontSize)$/
+            if (reg.test(attr)) {
+                val = parseFloat(val)
+                //识别是不是小数，变成普通数字
+            }
+            return val
+        }
+
+  
+        </script>
+</body>
+</html>
