@@ -29,18 +29,26 @@ html body{
    
  
    }
-    #content .header a i.down{
+    #content .header a i.down {
         border-top: 5px solid red;
         top:20px;
         position: absolute;
      
         }
+   #content .header a i.down.bg{
+            border-top: 5px solid orange
+          
+            }
             
     #content .header a i.up{
           position: absolute;
           border-bottom: 5px solid red;
             top:5px
             }
+ #content .header a i.up.bg{
+           
+          border-bottom: 5px solid orange
+                  }
    #cardbox {
        width:1200px;
        flex-wrap: wrap;

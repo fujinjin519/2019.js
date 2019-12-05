@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        margin: 500px auto;
+        width: 300px;
+
+    }
+    img{
+        display: block;
+        width: 300px;
+        height: 200px;
+        margin-bottom: 10px;
+    }
+    
+    </style>
+</head>
+<body>
+    <div> 
+        <img src="../../img/default.jpg" trueImg="../../img/1.jpg" alt="">
+        <img src="../../img/default.jpg" trueImg="../../img/2.jpg" alt="">
+        <img src="../../img/default.jpg" trueImg="../../img/3.jpg" alt="">
+        <img src="../../img/default.jpg" trueImg="../../img/4.jpg" alt="">
+        <img src="../../img/default.jpg" trueImg="../../img/5.jpg" alt="">
+        <img src="../../img/default.jpg" trueImg="../../img/6.jpg" alt="">
+
+
+    </div>
+    <script src="utils(1).js"></script>
+    <script>
+         let imgs=document.getElementsByTagName('img');
+         let winH=utils.win('clientHeight')
+          
+         function dealy(){
+         
+              for(var i=0;i<imgs.length;i++){
+                dealyImg(imgs[i]) //函数触发，循环拿到每一张，判断每一张图片
+
+
+              }
+          }
+
+        function dealyImg(img){ //再这个方法里判断是都该显示
+            if(img.flag){
+                return
+            }
+             let curH=img.offsetHeight //图片的自身高度
+             let curT=utils.offset(img).top;//图片相对于body的上偏移量
+             let winH=utils.win('clientHeight');//当前屏幕的可视化高度
+             let winT=utils.win('scrollTop')
+          
+             if(winH+winT>curH+curT){
+                  let address=img.getAttribute('trueImg');
+                  let newImg=new Image
+                  newImg.src=address
+                  newImg.onload=function(){
+                      img.src=address
+                      img.flag=true
+                       fadeIn(img)
+                  }
+                  
+             }
+           function  fadeIn(img){
+                 utils.setCss(img,'opacity',0.05)
+                 let cur=Number(utils.getCss(img,'opacity'));
+                 var timer=setInterval(()=>{
+                     cur+=0.3;
+                     if(cur>=1){
+                         clearInterval(timer)
+
+                     }
+                     utils.setCss(img,'opacity',cur)
+
+                 },50)
+
+             }
+        }
+         dealy() //页面初始的时候，要把第一屏的图片显示出来
+         window.onscroll=dealy //滚轮一动就执行，函数触发（耗性能）
+
+    
+    
+    </script>
+</body>
+</html>

@@ -1,38 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-          * {
-            padding:0;
+        * {
+            padding: 0;
             margin: 0;
         }
+
         div {
             width: 300px;
             height: 200px;
             margin: 800px auto;
         }
+
         img {
             width: 100%;
             height: 100%;
         }
-    
-    
     </style>
 </head>
+
 <body>
     <div>
-       
+        <img src="../../img/default.jpg" trueImg="../../img/1.jpg" alt="">
+
 
     </div>
+    <script src="utils(1).js"></script>
     <script>
-        
-        
-        
-        </script>
-    
+        let div = document.getElementsByTagName('div')[0];
+        let img = document.getElementsByTagName('img')[0];
+
+        /* 
+        确定图片加载的临界条件：
+        让图片的下边框和可视窗口的下边框重合时，就该让图片的真实路径显示了(图片该加载了)
+        转化为代码：滚动条卷去的高度+当前可视窗口的高度 === 图片的下边框到body顶部的距离(图片自身的高度+图片的上偏移量)
+        */
+        let winH = utils.win('clientHeight')// 当前可视窗口的高度
+        let curH = img.offsetHeight; // 图片的总高度
+        let cutT = utils.offset(img).top // 图片的上偏移量
+
+        window.onscroll = function () {
+            if(img.flag){
+                return
+            }
+            let winT = utils.win('scrollTop');
+            console.log(winT + winH, curH + cutT);
+            if (winT + winH > curH + cutT) {
+                let address = img.getAttribute('trueImg');
+                // 拿到图片身上的真实路径
+                // img.src = address
+                //  把图片的真实路径赋值给img
+
+ 
+                // 当我给图片赋值真实路径的时候，先校验一下这个路径是否正确，如果正确，你在给人家赋值路径
+          
+
+                // 动态创建一个img元素，把真实的路径赋值给他，如果这个路径是正确的，那这个图片就会被读取，那onload属性绑定的方法就会被执行
+                let newImg = new Image;
+                newImg.src = address;
+                newImg.onload = function () {
+                    // 这个方法执行，说明路径是正确的，在把真实路径赋值给咱们的图片
+                    img.src = address;
+                    fadeIn(img);//图片渐渐显示
+                    img.flag=true //图片一旦加载成功，就给当前图片元素增加一个自定义属性，属性值是true,防止图片再次被加载
+                }
+            }
+        }
+        function fadeIn(img){
+            //图片如果直接出来，会很突兀，利用透明度opacity，让图片慢慢出来
+            utils.setCss(img,'opacity',0.1);//设置透明度默认是1
+            let cur=Number(utils.getCss(img,'opacity'))
+            //这个数值是要被累加的，为了防止字符串拼接，直接给它转数字
+
+            //获取元素的透明度，利用定时器不短累加
+            //定时器执行一次，透明度就会被重新被赋值一次
+            var timer=setInterval(()=>{
+
+                cur+=0.2
+                if(cur>=1){
+                    clearInterval(timer)
+
+                }
+                  utils.setCss(img,'opacity',cur)
+
+            },200)
+        }
+
+
+
+    </script>
+
 </body>
+
 </html>
