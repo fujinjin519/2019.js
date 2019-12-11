@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 作用域销毁： 全局作用域  私有作用域  块级作用域  
+     全局作用域：不销毁，页面关闭销毁
+     私有作用域：在全局作用域下形成的，函数每执行一次就开辟一个新的栈内存（作用域） -->
+    <script>
+     //1.立即销毁 
+    //   function fn (){
+    //      var  num=100
+    //   }
+    //   fn()//每执行一次就会开辟一个新的栈内存
+       //闭包：函数执行的瞬间形成一个闭包，保护里面的变量不受外界的干扰，这就是闭包现象，
+     
+    //2.不销毁
+    //1.返回的值被外界接受，2.返回的是一个引用数据类型值
+    //栈内存回收，那么栈内存中所有的存储值都会随着回收
+    // //闭包；在函数执行体中返回一个小函数 ，这个小函数可以访问小函数外面的变量，这种现象就是闭包，  （闭包保存值的作用）
+    // function sum(){
+    //     var t=100 //t存在sum执行形成的栈内存
+    //     return function(){
+    //         console.log(t) //100 
+    //     }
+    // }
+    // var f=sum()
+    // f()
+
+    
+    
+    // function fn(){
+    //     var a=1
+    //     //在函数中，空间地址被dom元素的事件占用，这个作用域不销毁
+    //     first.onclick=function(){
+
+    //     }
+    // }
+    
+    // fn()
+ 
+    //3.不立即销毁
+    
+    
+    </script>
+</body>
+</html>

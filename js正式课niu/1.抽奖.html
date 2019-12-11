@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #text{
+            width: 200px;
+            height: 80px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 80px;
+            border: 1px solid red;
+        }
+    
+    
+    </style>
+</head>
+<body>
+     <div id="text">191919</div>
+     <button id="start">开始</button>
+     <script>
+         var text=document.getElementById('text')
+         var start=document.getElementById('start')
+         
+         function code(){//code生成随机数，并且放入text元素中
+            var str=""
+            for(var i=0;i<4;i++){
+                str+=Math.round(Math.random()*9)
+            
+           }
+             text.innerHTML=str
+
+         }
+         
+        
+           start.onclick=function(){
+             if(start.innerHTML==="开始"){
+                timer=setInterval(code,10)
+                start.innerHTML="暂停"
+
+             }else{
+                clearInterval(timer)
+                start.innerHTML="开始"
+
+             }
+          }
+
+
+     
+     </script>
+       
+</body>
+</html>
