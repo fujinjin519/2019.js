@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="box" class="box">
+        <li></li>
+        <li></li>
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+    </div>
+    <script>
+
+        // <!--1. 获取dom的方式
+        //     $('选择器')   jq选择器-
+        //     eq(索引）找到索引对应的元素
+        //     gt(索引）找到大于索引的元素
+        //     lt(索引）找到小于索引的元素
+        //     find('选择器') 找到对应的后代元素
+        //     filter('选择器') 把符合条件的过滤出来-
+
+        //      -->
+        // 如果你是用jq获取的东西，那变量接收时，那这个变量名前一般加上$,这时大家约定俗称的规范，别人一看就知道你是用jq获取的
+        //1.
+        let $box = $('#box')
+        $('.box li').eq(0)
+        $('.box li').gt(2)
+        $('.box li').lt(2)
+        $('.box').find('li').filter('.active')
+
+
+
+        //2.节点之间的属性：
+        // prev() 获取上一个哥哥元素
+        // prev('span') 获取标签名为span的哥哥元素
+        // prevAll()  获取所有的哥哥元素
+        // parent() 获取父亲元素
+        // parents() 获取所有的祖先元素
+
+        $('.box').prev() // 获取上一个哥哥元素
+        $('.box').prev('span') // 获取上一个标签名为span的哥哥元素
+        $('.box').prevAll() // 获取所有的哥哥元素
+
+
+        $('.box').next() // 获取下一个兄弟元素
+        $('.box').next('span') // 获取下一个标签名为span的兄弟元素
+        $('.box').nextAll()// 获取所有的兄弟元素
+        $('.box').siblings() // 获取所有的哥哥兄弟元素
+
+        $('.box').parent()
+        $('.box').parents() // 获取所有的祖先元素，直到document
+
+
+
+       //3.dom的增删改
+
+
+
+    </script>
+
+</body>
+
+</html>
