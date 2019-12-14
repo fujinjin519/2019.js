@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--  -->
+    <script>
+
+        遇到报错自动忽略
+
+        //1.
+        console.log(getA);             //undifined
+        if ("a" in window) {
+            var a = "1";
+            function getA(a) {
+                a = a || this.a;
+                console.log(a);    // 1
+            }
+            getA(a);
+        }
+    
+
+
+        //2.
+        var a = 2;         
+        var obj1 = {
+            a: 1,  
+            fn1: (function (a) {  //2  3 
+                 //不销毁的作用域，该函数在存储键值对的时候执行一次  
+                this.a = a;      
+                a++;           
+                return function () {
+                    this.a = a++;   
+                    console.log(a);    //4     5
+                }
+            })(a)
+        };
+        obj1.fn1();
+        var fn1 = obj1.fn1;
+        fn1();
+
+
+
+        //3.
+        var b = "b";
+        var obj2 = {
+            b: "B",
+            getB: function (b) {
+                this.b = b + this.b;
+                return this.b
+            }
+        };
+        console.log(obj2.getB("是"));//  是b
+
+
+
+        //4.
+        var c = 3;    //4
+        function getC() {
+            this.c++; 
+            return function (c) {
+                c = this.c * 2;
+                console.log(c);     
+            }
+        }
+        var obj3 = {
+            c: 2,
+            getC: (function () {
+                this.c -= 1;
+                return this.getC
+            })()
+        };
+        getC();
+        obj3.getC();
+        var f3 = obj3.getC;
+        f3();
+        console.log(window.c);    //   4
+        console.log(obj3.c);      //   3
+
+        
+
+            //5.
+            function g1() {
+                this.g = "gg"
+            }
+        var obj4 = {
+            g1: g1,     
+            gg: function () {
+                g1();
+            }
+        };
+        obj4.g1();
+        obj4.gg();
+        console.log(obj4);    //{g: "gg", g1: ƒ, gg: ƒ}
+        console.log("g" in window);//true
+
+        // 6
+        f = function () { return true; };
+        g = function () { return false; };
+        (function () {
+                //g是undifined
+            if (g() && [] == ![]) {
+                f = function () {
+                    return false;
+                };
+                function g() {
+                    return true;
+                };
+            }
+        })();
+        f();
+        g();  //报错
+
+
+        //7
+        var number = 2;   //4     8
+        var obj = {
+            number: 4,     //8
+            fn1: (function () {
+                this.number *= 2;
+                number = number * 2;       
+                var number = 3;   
+                return function () {
+                    this.number *= 2;   
+                    number *= 3;
+                    alert(number);    //   9   27
+                }
+            })()
+        };
+        var fn1 = obj.fn1;
+        alert(number);
+        fn1();     
+        obj.fn1();   
+        alert(window.number); //8
+        alert(obj.number);   //8
+
+
+
+        function fn(){
+           console.log(arguments);
+            
+        }
+   
+        
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
