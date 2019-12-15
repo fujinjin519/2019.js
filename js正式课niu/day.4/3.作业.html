@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--  一. git:  工作区  暂存区   历史区
+              本地初始化git仓库：   git init
+              工作-暂存    git add .
+              暂存-历史   git commit -m注释'
+              查看版本信息： git log
+              远程仓库：中央服务器
+              远程仓库本地仓库关联：git remote add origin
+              本地到远程：git push
+              远程到本地：git pull origin master(主干)
+              gitHub:开源网站
+        二.全局作用域.全局变量 
+           私有作用域：私有变量不会给全局增加简直对
+           变量提升：
+           函数执行：
+           堆栈内存的销毁：
+           this:
+         三：面向对象:
+        / 1. 某个公司采用公用电话传递数据， 数据是四位的整数， 在传递过程中是加密的， 加密规则如下：
+        // 每位数字都加上5, 然后用除以10的余数代替该数字， 再将第一位和第四位交换， 第二位和第三位交换，
+        // 请编写一个函数， 传入原文， 输出密文  -->
+
+    <script>
+        function fn(...a) {
+            let b = []
+            a.forEach((item) => {
+                item += 5;
+                item = item % 10;
+                b.push(item);
+            });
+            for (let i = 0; i < b.length - 1; i++) {
+                for (let m = 0; m < b.length - 1 - i; m++) {
+                    if (m < m + 1) {
+                        let n = b[m];
+                        b[m] = b[m + 1];
+                        b[m + 1] = n;
+                      }
+                 }
+            }
+            let z = b.join(',')
+            return z
+
+        }
+        console.log(fn(2, 3, 5, 6))
+        
+
+
+    </script>
+</body>
+
+</html>

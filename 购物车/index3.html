@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+    <style>
+        body,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="price.css" />
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box">
+            <ul class="list">
+                <li>
+                    <i></i>
+                    <em>0</em>
+                    <i></i>
+                    <span>
+                        单价：<strong>12.5元 </strong> 小计：<strong>0元</strong>
+                    </span>
+                </li>
+                <li>
+                    <i></i>
+                    <em>0</em>
+                    <i></i>
+                    <span>
+                        单价：<strong>10.5元 </strong> 小计：<strong>0元</strong>
+                    </span>
+                </li>
+                <li>
+                    <i></i>
+                    <em>0</em>
+                    <i></i>
+                    <span>
+                        单价：<strong>8.5元 </strong> 小计：<strong>0元</strong>
+                    </span>
+                </li>
+                <li>
+                    <i></i>
+                    <em>0</em>
+                    <i></i>
+                    <span>
+                        单价：<strong>8元 </strong> 小计：<strong>0元</strong>
+                    </span>
+                </li>
+                <li>
+                    <i></i>
+                    <em>0</em>
+                    <i></i>
+                    <span>
+                        单价：<strong>14.5元 </strong> 小计：<strong>0元</strong>
+                    </span>
+                </li>
+            </ul>
+            <div class="info">
+                <span>商品公合计：<em>0</em>件</span>
+                <span>共花费了：<em>0</em>元</span>
+                <br />
+                <br />
+                <span>其中最贵的商品单价是：<em>0</em>元</span>
+            </div>
+        </div>
+    </div>
+    <script src="./jquery-1.11.3.js"></script>
+    <script>
+        /* 
+        1、获取所有的i
+        2、给每一个i绑定点击事件
+         */
+         let $btns = $('.list i'); // 获取页面中所有的i(按钮)
+         let $counts = $('.list em'); // 获取所有的商品数量元素
+         let $info = $('.info em'); // 获取所有的总计信息元素
+         let $strongs = $('.list strong'); // 获取所有的strong
+
+         $btns.click(function(){
+             // index是在当前所有的哥哥、兄弟里的位置的索引
+            let index = $(this).index(); // 当前点击元素的索引
+            let $count = $(this).siblings('em'); // 获取显示数量的元素
+            let num = parseFloat($count.html()); // 每一次都要重新获取页面中最新的数量
+            let $strong = $count.siblings('span').find('strong'); // 获取每一个li里的strong元素(第一个strong是单价，第二个strong是小计)
+            let price = parseFloat($strong.eq(0).html()); // 获取当前单价
+
+             // 如果点击的元素的做引是0，那就是减号，是2，那就是加号
+             if(index === 0){
+                // 点击的减号
+                num--
+                num<0?num=0:null
+             }
+             else {
+                // 点击的加号
+                num++
+                num>10?num=10:null
+             }
+             $count.html(num) // 把最新的数量设置到页面中
+             $strong.eq(1).html(num*price +'元')// 把最新的小计设置到页面中
+             computed();
+         })
+
+         // 计算总信息
+         function computed(){
+            let allCount = 0; // 初始化一个总数量
+            let allTotal = 0; // 初始化一个总计值
+            let priceAry = [0]; // 初始化一个存放单价的数组
+
+            // 循环每一个em，把每一个商品的数量进行累加
+            $counts.each(function(index, item){
+                allCount+=parseFloat($(item).html())
+            })
+            $info.eq(0).html(allCount)// 页面每点击一次就把总数量插入到页面一次
+
+            $strongs.each(function(index, item){
+                // 如果索引是偶数，那就是单价，如果索引是奇数，那就是小计
+                if(index%2 === 1){
+                    // 把每一个商品的小计累加到一起
+                    allTotal+=parseFloat($(item).html())
+                }
+                else {
+                    // 如果商品的小计不是0才会把当前商品的单价push到数组中
+                   if(parseFloat($(item).next('strong').html()) !== 0){
+                       priceAry.push(parseFloat($(item).html()))
+                   }   
+                }
+            })
+
+            $info.eq(1).html(allTotal)// 页面每点击一次就把总计插入到页面一次
+            $info.eq(2).html(Math.max(...priceAry))// 页面每点击一次就把总计插入到页面一次
+         }
+    </script>
+</body>
+
+</html>

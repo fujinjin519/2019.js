@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let tabbox = document.getElementById('tabbox')
+        let navbox = document.getElementById('navbox')
+        let navlist = navbox.getElementsByTagName('li')
+        let tablist = tabbox.getElementsByTagName('div')
+
+
+        for (var i = 0; i < navlist.length; i++) {
+
+            navlist[i].myIndex = i
+
+            navlist[i].onclick = function () {
+                changTab(this.myIndex)
+            }
+        }
+
+
+        function changTab(index) {
+            for (var i = 0; i < navlist.length; i++) {
+
+                navlist[i].className = ''
+                tablist[i].className = ''
+            }
+
+
+            navlist[index].className = 'active'
+            tablist[index].className = 'active'
+        }
+
+
+
+    </script>
+</body>
+
+</html>

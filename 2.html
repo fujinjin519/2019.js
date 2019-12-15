@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let list=document.getElementById('li')
+
+            let ss=null
+            for(var i=0;i<list.length;i++){
+                if(i%2===0){
+                    list[i].style.backgroud='red'
+                    list[i].color='red'
+
+                }
+                else{
+                    list[i].style.backgroud='green'
+                    list[i].color='green'
+
+                }
+                   list[i].myIndex=i+1
+                   list[i].onmouseenter=function(){
+                    ss=this.style.backgroud
+                    this.style.backgroud='pink'
+                   }
+                   list[i].onmouseenter=function(){
+                       this.style.backgroud=this.color
+                   }
+                   list[i].onclick=function(){
+                       alert('我是第${this.myindex}ge
+                       ')
+                   }
+                   
+
+            }
+
+        
+        </script>
+   
+</body>
+</html>
