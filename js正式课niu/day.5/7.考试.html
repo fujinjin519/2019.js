@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 普通函数函数：执行上下文Ec 
+    arguments：实参集合
+    new Erro:创建一个Erro的一个实例，返回结果是创建当前类的实例（对象数据类型）-->
+    <div></div>
+    <!--  -->
+    <div id="a"></div>
+    <script>
+    
+    //  类一定是函数，函数不一定是类。
+    
+
+    //  function _new(Fn,...args){
+    //      let obj=Object.create(Fn)
+         
+
+
+
+    //  }
+    //  function prev(context){
+    //             var pre = context.previousSibling;
+    //             // if(pre === null){
+    //             //     return pre
+    //             // }
+    //             while(pre.nodeType !==1){
+    //                 pre = pre.previousSibling
+    //             }
+    //             return pre
+    //         }
+    //         console.log(prev(three)) 
+    //     function pre(context){
+    //          var child=context.previousSibling
+    //          while(pre.nodeType!==1){
+    //              pre=pre.previousElenmentSibling
+    //          }
+    //     }
+         function getBro(curEle){
+             var pre=curEle.previousSibiling
+             while(pre){
+                 if(pre.nodeType===1){
+                     return pre
+                 }
+                 pre=pre.previousSibiling
+             }
+
+         }
+         getBro(a)
+
+       var newDiv=document.getElementById('div')
+       document.body.appendChild(newdiv)
+       var newDiv1=newdiv.cloneNode()
+       document.body.insertBefore(newDiv1.newDiv)
+
+      var newdiv=document.getElementById('div')
+      document.body.appendChild(newdiv)
+       var newDiv1=newdiv.cloneNode()
+       document.body.inserbefor(newDiv1.newDiv)
+       
+    </script>
+</body>
+</html>

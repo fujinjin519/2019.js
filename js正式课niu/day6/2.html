@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1.封装一个类数组转数组的方法 -->
+    <script>
+        1.// var divs=document.getElementsByTagName('div')
+        // function toArray(likeAry){
+        //     var ary=[]
+        //     //在ie8下不兼容
+        //     ary=Array.prototype.slice.call(likeAry)
+        //     return ary
+
+        // }
+        //  console.log(toArray(divs)); //实参
+        // //  var newAry=toArray(divs)     //这两种写法一样
+     
+       
+       
+       
+    //    封装一个类数组转数组的方法 :try. catch
+        var divs=document.getElementsByTagName('div')
+        function toArray(likeAry){
+            var ary=[]
+              //在ie8下不兼容 
+              //用try. catch
+            try{
+              //如果try中的代报错，那么立即执行catch中的代码，不会影响下面的代码运行，一般 情况，代码遇到报错就立即停止
+              //如果不报错，那么就不再走catch
+                ary=Array.prototype.slice.call(likeAry)
+
+            }catch(e){
+                console.dir(e) //代表是try中代码的错误信息
+                for(var i=0;i<likeAry.length;i++){
+                    ary.push(likeAry[i])
+                }
+
+
+            }
+            return ary
+        }
+
+       
+    
+    
+    
+    
+    </script>
+</body>
+</html>

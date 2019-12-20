@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 可枚举属性 -->
+    <script>
+        // var ary = [3,2,1]
+        // ary.pop() 
+        // Array.prototype.pop = function (){
+        //     console.log(100)
+        // }
+
+
+        function Fn() {
+            this.a = 100;
+            this.b = 200;
+        }
+        Fn.prototype.getX = function () {
+        }
+        Fn.prototype.y = function () {
+        }
+        var f = new Fn;
+        // 判断该属性是否是公有属性；如果是返回true，不是返回false；
+        function hasPublicProperty(obj, attr) {
+            // if (obj.hasOwnProperty(attr)) {
+            //     return false
+            // } else {
+            //     return true
+            // // }
+
+
+
+            // if(attr in f.__proto__){
+            //     return true
+            // }else{
+            //     return false
+            // }
+
+
+
+            // 
+            if (attr in obj) {  //属于它的属性
+                if (!obj.hasOwnProperty(attr)) {  //保证不是私有属性
+                    return true
+
+                } else {
+                    return false
+                }
+            } else {
+                return false
+
+            }
+        }
+        console.log(hasPublicProperty(f, "y"));
+
+
+
+
+
+
+        // function fn(){
+
+        // }
+        // fn()
+        // fn.name=1
+        // var f=new fn
+        // fn.num  //小f找不到fn
+        // console.log(fn.num);
+        // console.log();
+
+
+        var num = 0;     //20
+        function Fn(num) {
+            //num 0  -->  10 
+            arguments[0] = 10; 
+            this.num = 20;
+            return num;    //基本数据类型，不能覆盖默认返回的值
+        }
+        Fn.num = 40;   //对象
+        Fn.prototype.num = 30;
+        Fn.prototype.getNum = function () {
+            console.log(this.num);
+        };
+        var f = new Fn(num);      //0    {num:20}
+        console.log(f.num); //20 
+        f.getNum();   // 20
+        Fn.prototype.getNum();//30   找自己的
+        console.log(num);//  0         全局的
+        var n = Fn(num);  //普通函数执行
+        console.log(n); // 10 
+        console.log(num);  //20  全局的
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //pop 删除数组末尾最后一项   方法的返回值：删除的那一项
+       
+        let ary=[1,2,34,45,12]
+       
+        // console.log(ary.pop()); //12
+        // console.log(ary); //[1,2,34,45]
+        
+        
+         Array.prototype.Mypop=function() {
+                 
+                let a=this[this.length-1] 
+                this.length--
+                 return a
+                  
+       }       
+       console.log(ary.Mypop()); //12
+        console.log(ary); // [1,2,34,45]
+        
+        
+        </script>
+</body>
+</html>

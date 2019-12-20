@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- apply 也是大function上的方法
+    1.改变this指向，传参不同，第二个参数必须是一个数组
+    2.传入数组，但是fn实际接收到的仍然是一个一个接受 -->
+    <script>
+        //    function fn(a,b){
+        //        console.log(a,b); //3，2 还是一个一个接受虽然是一个数组
+        //        console.log(this);  // number{1} 
+        //  }
+        // //   fn.apply(1,[3,2])
+        //      fn.apply(null,[3,2]) //占位，this-window
+
+
+
+
+        //bind :预处理this;在ie8下不兼容
+        //在bind函数中将fn进行了包装处理，改变了fn的this指向，并且返回一个改变this之后的新函数
+
+        function fn(a, b) {
+            console.log(a, b);
+            console.log(this);
+        }
+        // var f = fn.bind([1, 2], 100,200)
+          fn.bind([1,2],100,200)()
+        // f()
+    //  f(100,200)  //小f和上面的传的都可以接收到
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let ary = [1, 23, 45, 56, 34]
+        // console.log(...ary);
+        // console.log(Math.min(...ary));
+        // console.log(Math.max(...ary));
+        // console.log(Math.max.apply(null, ary));
+        // console.log(Math.max.apply('', ary));
+
+
+        // let obj = { a: 1 }
+        // console.log(...obj);
+        // let ary = [{ a: 1 }, 1, 2]
+
+
+        //  function sum(){
+        //       var ary=[]
+        //      for(var i=0;i<arguments.length;i++){
+        //          ary.push(arguments[i])
+        //      }
+        //      console.log(ary);
+
+        //  }
+
+        //  sum(1,2,3,4)
+
+        //     function sum(){
+        //          var nary=Array.prototype.slice.call(arguments)
+        //          return ary
+        //     }
+
+
+
+        //  console.log(sum(1,2,3,4));
+
+        //  var div=document.getElementsByName('divs')
+
+        //   function toArray(likeAry){
+        //       var ary=[]
+        //   }try{
+        //       ary=Array.prototype.slice.call(lickAry)
+
+        //   }catch(e){
+        //       for(var i=0;i<likeAry.length;i++){
+        //           ary.push(likeAry[i])
+        //       }
+        //       return ary
+
+        //   }
+
+        // function average() {
+        //     var ary = Array.prototype.slice.call(arguments)
+        //     ary.sort((a, b) => a - b)
+        //     ary.pop()
+        //     ary.shift()
+        //     var total = 0
+        //     for (let i = 0; i < ary.length; i++) {
+        //         total += ary[i]
+        //     }
+        //     return Number((total/ary.length).toFixed(2)) 
+
+
+        //     // }
+        //     // average(1, 2, 3, 4, 5)
+        //   JSON
+        // //   var obj={name:"hello",str:"word"}
+
+        // //   var obj={"name":"hello","str":"word"}
+        // //   console.log(JSON.stringify(obj));
+        //   var str='{"name":"hello","str":"word"}'
+        // //   console.log(JSON.parse(str));
+        //    console.log(JSON.parse(str));
+
+
+        //    console.log(JSON.stringify(obj));
+
+
+
+
+        //    parse
+        //    stringify
+
+
+        //   var ary=[12,34,56,13,67,89]
+        //   ary.sort(function(a,b){
+        //     console.log(a,b);
+        //        return a-b
+
+
+        //   })
+
+
+//         var arr = [{ age: 1 }, { age: 2 }, { age: 3 }]
+//         arr.sort(function (a, b) {
+//             return a- b
+//         })
+//         console.log(arr);
+
+//      ary.sort(function(a,b){return b-a})
+//      ary.sort(function(a,b){return a-b})
+   
+//  var olis=document.getElementsByTagName('li')
+//  var info=document.getElementsByClassName(info)[0]
+//  var ems=info.getElementsByTagName('em')
+
+// for(var i=0;i<olis.length;i++){
+//     addclick(olis[i])
+// }
+//  function addclick(curli){
+//      var culi=document.getElementsByName  ('li')
+//      var em=curli.getElementsByTagName('em')[0]
+    
+//      tag[0].onclick=function(){
+
+
+//      }
+//      tag[1].onclick=function(){
+//           em.innerhtml=Number(em.innerhtml)+1
+
+//      }
+
+
+//  }
+//    var age='12'
+//    var name='erya'
+   
+//    var age='13'
+//    var name='xiaohua '
+//   console.log(name ,age);
+//  let ary=[12,2,23,12,34,2,1]
+//  let obj={}
+//  for(let i=0;i<ary.length;i++){
+//      let item=ary[i]
+//      if(obj[item]!==undifined){
+//          ary.splice(i,1)
+//          i--;
+//          continue
+//      }
+//     obj[item]=item
+//  }
+//    console.log(ary);
+//    {
+//        let item=ary[i]
+//        if(obj(item)!==undifined){
+//            ary.splice()
+//        }
+//    }
+
+   
+  let ary=[1,2,12,56,36]
+  function buble(ary){
+      for(var  i=0;i<ary.length-1;i++){
+          for(var j=0;j<ary.length-1-i;j++){
+              if(ary[j]>ary[j+1]){
+                  let item=ary[j]
+                  ary[j]=ary[j+1]
+                   item=ary[j+1]
+
+              }
+
+
+          }
+
+      }
+      return ary
+
+  }
+  console.log(buble(ary));
+
+
+//   let ary = [12,23,11,34,10,9];
+
+// function buble(ary){
+//     // 控制的比较的轮数
+//     for (var i = 0; i < ary.length-1; i++) {
+//         // 控制的是每一轮比较的次数
+//         for (var j = 0; j < ary.length-1-i; j++) {
+//             // 如果前一项大于后一项就两两交换位置
+//            if(ary[j]>ary[j+1]){
+//                let temp = ary[j];
+//                ary[j] = ary[j+1];
+//                ary[j+1] = temp;
+//            }
+//         }
+//     }
+//     return ary
+// }
+// console.log(buble(ary))
+  
+
+  
+   
+
+
+    </script>
+</body>
+
+</html>

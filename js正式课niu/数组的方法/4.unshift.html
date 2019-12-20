@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //unshift：向数组开始增加内容
+        let ary = [1, 2, 34, 45, 12]
+        //  console.log(ary.unshift(3,4)); //7
+        //  console.log(ary); // 
+
+        Array.prototype.Myunshift = function () {
+            for (let i = 1; i < arguments.length + 1; i++) {
+                this[this.length] = arguments[arguments.length - i]
+                for (let j = this.length - 1; j > 0; j--) {
+                    let item = this[j - 1]
+                    this[j - 1] = this[j]
+                    this[j] = item
+
+                }
+            }
+            return this.length
+            
+       }
+
+        console.log(ary.Myunshift(3, 4)); // 7
+        console.log(ary);//  (3,4,1,2,34,45,12)
+
+
+
+
+    </script>
+
+</body>
+
+</html>

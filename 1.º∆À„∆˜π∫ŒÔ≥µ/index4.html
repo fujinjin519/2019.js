@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="price.css" />
+</head>
+
+<body onselectstart="return false;">
+    <div class="wrap">
+        <div class="box">
+            <ul class="list">
+                <li>
+                    <i></i>
+                    <em>0</em>
+                    <i></i>
+                    <span>
+                        单价：<strong>12.5元 </strong> 小计：<strong>0元</strong>
+                    </span>
+                </li>
+                <li>
+                    <i></i>
+                    <em>0</em>
+                    <i></i>
+                    <span>
+                        单价：<strong>10.5元 </strong> 小计：<strong>0元</strong>
+                    </span>
+                </li>
+                <li>
+                    <i></i>
+                    <em>0</em>
+                    <i></i>
+                    <span>
+                        单价：<strong>8.5元 </strong> 小计：<strong>0元</strong>
+                    </span>
+                </li>
+                <li>
+                    <i></i>
+                    <em>0</em>
+                    <i></i>
+                    <span>
+                        单价：<strong>8元 </strong> 小计：<strong>0元</strong>
+                    </span>
+                </li>
+                <li>
+                    <i></i>
+                    <em>0</em>
+                    <i></i>
+                    <span>
+                        单价：<strong>14.5元 </strong> 小计：<strong>0元</strong>
+                    </span>
+                </li>
+            </ul>
+            <div class="info">
+                <span>商品公合计：<em>0</em>件</span>
+                <span>共花费了：<em>0</em>元</span>
+                <br />
+                <br />
+                <span>其中最贵的商品单价是：<em>0</em>元</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        //在js中标签都是对象数据类型，元素对象
+        // 1.获取到所有的li;并且给当前li下面的第每一个i绑定点击事件
+        // 2.当点击+或-时，需要修改数量、总价、商品个数、总花费、最贵的；
+        // var olis = document.getElementsByTagName('li') //获取所有li
+        // var info = document.getElementsByClassName('info')[0] //获取最下面的部分
+        // var ems = info.getElementsByTagName('em')//获取下面部分的em
+
+        // for (var i = 0; i < olis.length; i++) {
+        //     addClick(olis[i])
+   
+        // }
+        // //把代码都写到下面
+        // function addClick(curli) {
+        //     var tags=culi.getElementsByTagName('i') //获取第一个li
+        //     var em=culi.getElementsByTagName
+        //      ('em')[0] //获取数字0
+        //      var strongs=curli.getElementsByTagName('strong') //获取strong
+        //      tags[0].onclick=function(){
+        //          //给第一个减号设置绑定时间
+        //          var value=Number(em.innerHtml)-1
+        //          if(val<=0){
+        //              //判断减号遇到的情况
+        //              em.innerHtml=0
+        //          }else{
+        //              em.innerHtml=value
+
+        //          }
+        //          strong[1].innerHtml=parseFloart(strongs[0].innerHtml*em.innerHtml)+元
+
+        //      }
+        //      tags[1].onclick=function(){
+        //          //给加号设置绑定事件
+        //          em.innerHtml=Number(em.innerHtml)+1//点击加号  就0加1
+        //          strong[1].innerHtml=parseFloart(strongs[0].innerHtml*em.innerHtml)+元
+        //          //小计=点击加号的1的数量*单价的+元
+
+        //      }
+              
+        // }
+
+
+        // //更改计算器下面的部分的值重新写一个函数里
+        // function coumput(){ 
+        //     var val1=0
+        //     var val2=0
+        //     var ary=[]
+        //     for(var i=0;i<olis.length;i++){
+        //         var em=olist[i].getElementsByTagName('i')[0] 
+        //         var strong=olist[i].getElementsByTagName('strong')
+        //         val1+=Number(em.innerHtml)
+        //         val2+=parseFloat(strong.innerHtml)
+        //         if(em.innerHtml>0){
+        //             ary.push(parseFloat(strong[0].innerHtml))
+
+        //         }
+                
+                
+        //     }
+        //     ary.sort(function(a,b){return a-b})
+        //        em[0].innerHtml=val1
+        //        em[1].innerHtml=val2
+        //        em[2].innerHtml=ary[ary.length-1]
+
+
+
+              
+
+        // }
+         // 在JS 中标签都是对象的数据类型；元素对象
+    var oLis=document.getElementsByTagName("li");// [{}]
+    var info = document.getElementsByClassName("info")[0];
+    var ems = info.getElementsByTagName("em");
+    for(var i=0;i<oLis.length;i++){
+        addClick(oLis[i]);// 把当前li传给addClick
+    }
+    function addClick(curLi){
+        // 给当前li下的第一个i标签和第二个i标签绑定点击事件
+        // console.dir(curLi);
+        var tags = curLi.getElementsByTagName("i");
+        var em = curLi.getElementsByTagName("em")[0];
+        var strongs = curLi.getElementsByTagName("strong");
+        // 给-绑定点击事件
+        tags[0].onclick =function(){
+            var val= Number(em.innerHTML)-1
+            if(val<=0){// 如果小于0；一直让其是0；
+                em.innerHTML =0;
+            }else{
+                em.innerHTML=val; 
+            }
+            strongs[1].innerHTML = parseFloat(strongs[0].innerHTML)*em.innerHTML+"元";
+            computed();
+        }
+        // 给+绑定点击事件
+        tags[1].onclick = function(){
+            em.innerHTML =Number(em.innerHTML)+1;
+            strongs[1].innerHTML = parseFloat(strongs[0].innerHTML)*em.innerHTML+"元";
+            computed()
+        }
+    }
+
+    function computed(){
+        var  val1 =0;
+        var  val2 = 0;
+        var ary =[0];
+        for(var i=0;i<oLis.length;i++){
+            var em = oLis[i].getElementsByTagName("em")[0];
+            var  strong =oLis[i].getElementsByTagName("strong");
+            val1 += Number(em.innerHTML);
+            val2+= parseFloat(strong[1].innerHTML);
+            if(em.innerHTML>0){
+                ary.push(parseFloat(strong[0].innerHTML));
+            }
+        }
+        ary.sort(function(a,b){return a-b});
+        ems[0].innerHTML = val1;
+        ems[1].innerHTML = val2;
+        ems[2].innerHTML = ary[ary.length-1];
+    }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

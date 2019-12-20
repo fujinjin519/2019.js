@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //reverse 倒序
+        let ary = [1, 2, 34, 45, 12]
+
+        // console.log(ary.reverse()); //  [12,45,34,2,1]
+        // console.log(ary); // [12,45,34,2,1]
+
+        Array.prototype.Myreverse = function () {
+                let a=[]
+                for(let i=1;i<this.length+1;i++){
+                    a[a.length]=this[this.length-i]
+                    
+         }
+               for(let i=0;i<this.length;i++){
+                    this[i]=a[i]
+          }
+                
+               return a 
+           
+        }
+
+        console.log(ary.Myreverse()) //[12,45,34,2,1]
+
+        console.log(ary) //[12,45,34,2,1]
+
+
+    </script>
+</body>
+
+</html>

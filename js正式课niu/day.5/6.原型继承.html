@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--1. 原型继承： 既能继承a的私有属性， 也可以继承a的公有属性，(B.prototype=new A)
+        2.中间类的继承：arguments
+        3.call继承  :A.call(this)  私有属性
+        4.寄生组合继承： 公有和私有
+          -->
+    <script>
+     //2.
+        // function sum(){
+        //     console.log(arguments);//类数组，不是一个数组，不是Array的实例。不能使用Array原型上的方法
+        //     arguments__proto__=Array.prototype
+        //     //直接修改arguments__proto__的空间地址，使其指向Array的原型
+        //     //arguments继承了array上的方法
+        //     arguments.pop();
+        //     console.log(arguments);//IE10以下不兼容
+            
+        // }
+        // sum(1,3,4,5,6,7)
+
+
+        //3.
+        function A(){
+            this.a=100
+        }
+        function B(){
+            A.call(this)     //call继承     
+
+        }
+        var b=new B
+        console.log(b); 
+
+        //4.object.keys  object.create
+        A.call(this)
+        B.prototype= Object.create(A.prototype)//为了防止修改b的原型时，修改a的原型，所以使用object.creat方法
+        
+
+
+
+
+        
+    </script>
+    
+</body>
+</html>

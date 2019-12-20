@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>都觉得</li>
+        <li>的度假酒店</li>
+        <li>都觉到家附近</li>
+          <div id="a"></div>
+      
+    </ul>
+    <!-- 数据：从数据库来，数据库从服务器来
+         后台工作：数据的增删改查，结合数据库
+         数据绑定： 将后端返回给前端的数据进行展示
+       --->
+    <script>
+        // 1.document.createElement ("li") //createElement只在document中
+        // console.dir(document); 
+        // console.log(HTMLDocument);
+        // //a-HTMLDocument
+        var ary=["数据：从数据库来，数据库从服务器来",]
+        // var list=document.getElementById('list')
+        // for(let i=0;i<ary.length;i++){ //循环数据  
+        //     var curli=document.reateElement ('li')
+        //     cueli.innerhtml=aty[i] //将数据放入到创建的标签中
+        //     list.appendChild(culi)  
+        // }
+       
+
+
+         //2.document.createDocumentFragment 文档碎片
+
+          
+          //3.字符串拼接：inneerHtml :识别标签
+      
+          var list=document.getElementById('list')
+          var str=''
+          for(let i=0;i<ary.length;i++){
+              
+           }
+          //4.模版字符串:也会引发dom的回流，只不过引发一次
+          //字符串也会引发dom的回流，只不过引发一次 
+          //在框架之前，数据都采用字符串的方式进行绑定
+          var list=document.getElementById('list')
+          var str=``;
+          for(let i=0;i<ary.length;i++){
+                str+=`<li time="abc">${ary[i]}
+                    <button>删除</button>
+                 </li>`
+                 
+
+
+           }
+           list.innerHTML=str    
+
+     
+
+        
+     
+
+        
+        
+        
+          
+             
+            
+    
+    
+    
+    
+    </script>
+</body>
+</html>

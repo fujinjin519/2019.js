@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>打地鼠</title>
+    <style>
+        html {
+            cursor: url('./chuizi.cur'), auto;
+        }
+
+        .countBox {
+            margin-top: 20px;
+            margin-left: 200px;
+            font-size: 40px;
+        }
+
+        .holes {
+            width: 600px;
+            margin: 30px auto;
+        }
+
+        .hole {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-image: url("https://www.17sucai.com/preview/1865821/2019-10-10/%E6%89%93%E5%9C%B0%E9%BC%A0/img/hole.png");
+            background-size: 100%;
+        }
+
+        .mouse {
+            width: 120px;
+            height: 120px;
+            background-image: url("https://www.17sucai.com/preview/1865821/2019-10-10/%E6%89%93%E5%9C%B0%E9%BC%A0/img/mouse.png");
+            background-size: 100%;
+            margin: 40px;
+            display: none;
+        }
+
+        .boom {
+            width: 200px;
+            height: 200px;
+            background-image: url("https://www.17sucai.com/preview/1865821/2019-10-10/%E6%89%93%E5%9C%B0%E9%BC%A0/img/boom.png");
+            background-size: 100%;
+            display: none;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="countBox">
+        积分：<span class="count">0</span>
+    </div>
+    <div class="holes">
+        <div class="hole">
+            <div class="mouse"></div>
+            <div class="boom"></div>
+        </div>
+
+    </div>
+    <div class="holes">
+        <div class="hole">
+            <div class="mouse"></div>
+            <div class="boom"></div>
+        </div>
+
+    </div>
+    <div class="holes">
+        <div class="hole">
+            <div class="mouse"></div>
+            <div class="boom"></div>
+        </div>
+
+    </div>
+    <div class="holes">
+        <div class="hole">
+            <div class="mouse"></div>
+            <div class="boom"></div>
+        </div>
+
+    </div>
+    <div class="holes">
+        <div class="hole">
+            <div class="mouse"></div>
+            <div class="boom"></div>
+        </div>
+
+    </div>
+    <div class="holes">
+        <div class="hole">
+            <div class="mouse"></div>
+            <div class="boom"></div>
+        </div>
+
+    </div>
+    <div class="holes">
+        <div class="hole">
+            <div class="mouse"></div>
+            <div class="boom"></div>
+        </div>
+
+    </div>
+    <div class="holes">
+        <div class="hole">
+            <div class="mouse"></div>
+            <div class="boom"></div>
+        </div>
+
+    </div>
+    <div class="holes">
+        <div class="hole">
+            <div class="mouse"></div>
+            <div class="boom"></div>
+        </div>
+
+    </div>
+    <script>
+           let holes = document.getElementsByClassName('hole');
+    let count = 0;
+
+    // 让其中某一个地鼠洞的老鼠显示出来
+    function mouseShow () {
+      // 写一个随机数，取从 0 - 8 的一个随机数
+      let i = Math.floor(Math.random() * 9);
+
+      // 让第 i 个老鼠展示出来
+      // 从地鼠洞的集合中，取出第 i 个地鼠洞，让里面的老鼠展示出来(display = 'block')
+      holes[i].querySelector('.mouse').style.display = 'block';
+    }
+
+    // 让 boom 消失
+    function boomHidden (i) {
+      setTimeout(() => {
+        // 一秒之后控制 boom 隐藏
+        holes[i].querySelector('.boom').style.display = 'none';
+      }, 1000)
+    }
+
+    // 点击老鼠之后，出现 boom，老鼠消失
+    for (let i = 0; i < holes.length; i++) {
+      // 取出每一个老鼠，绑定点击事件
+      holes[i].querySelector('.mouse').onclick = function () {
+        // 让老鼠消失
+        this.style.display = 'none';
+
+        // 让积分累加
+        document.querySelector('.count').innerHTML = count += 100;
+
+        // 让 boom 展示出来
+        this.nextElementSibling.style.display = 'block';
+
+        // 让 boom 定时消失
+        // 把 i(地鼠洞的索引) 传进去，然后用第 i 个地鼠洞控制里面的 boom 隐藏
+        boomHidden(i)
+      }
+    }
+
+    // 每 1500 毫秒就会随机出一个老鼠展示
+    setInterval(mouseShow, 1500);
+  </script>
+
+
+</body>
+
+</html>

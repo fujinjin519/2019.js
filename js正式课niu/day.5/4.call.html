@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- call。apply bind
+        在Function的原型上的方法
+        所有的函数都可以获取call
+        call是一个函数
+        call可以改变函数体中的this指向 -->
+    <script>
+
+        // fn.call(ary) 
+        //找到原型上的call方法，call运行时，改变了call的this的this指向，fn中的this指向call的第一个参数，并且让call中的this执行 
+
+        //找到原型上的call方法，call运行时，改变了fn的this指向，fn中的this指向call的第一个参数，并且让fn执行 
+         function fn1(){
+             console.log(100);
+             console.log(this);
+        }
+        function fn2(){
+            console.log(200);
+
+        }
+        fn1.call.call(fn2)  //200    函数执行可以   （100）报错
+        //1.先执行后面的call,(这个call方法中的this是fn1.call，点前面是谁，this是谁)，然后改变fn1.call中的this,指向fn2,并且让fn1.call运行
+        //2.  fn1.call运行时，改变了fn1.call中的this的this指向并没改变，继续让fn1.call中的this执行，就是让fn2执行       （fn1.call()执行，但是没传参，所以并没有改变）
+
+        //  1.fn1.call.call .call .call->this->fn2
+        //  2.fn.call.call.call.call()
+
+        //call的参数：
+        // 1.如果没有传参，那么函数中的this指向了window （this都是指针类型的）
+        //   2.如果有一个参数，那么就指向第一个实参，在非严格模式下，如果传null或者undifined,都指向window
+        //   3.在严格模式下（use strict）如果没传或传入undifined,this就是undifined,如果传null,this就是null
+        //4.从第二个参数开始，都会一一传给Fn
+        var obj = {}
+        function fn(a,b) {
+            console.log(this); 
+            // console.log(arguments); //
+            // console.log(a, b); //1，2  
+
+
+        }
+        fn.call(100,2,1)  //
+    </script>
+
+</body>
+</html>

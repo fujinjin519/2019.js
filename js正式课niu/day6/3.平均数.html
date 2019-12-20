@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="4.utils.js"></script>
+    <script>
+        //1。先排序，然后删掉最大值，最小值
+        function average(){
+            var ary=utils.toArray(arguments)//实参集合  函数具有封装的特点（调用封装好的）
+            ary.sort((a,b)=>a-b) //从小到大排序
+            ary.pop()//删除最大值
+            ary.shift()//删除最小值
+            var total=0
+            for(let i=0;i<ary.length;i++){
+                total+=ary[i] // 每一项加上它的总
+                // total=ary[i]+total  //也可以这样写
+                
+
+
+            }
+            // return Number((total/ary.length).toFixed(2))
+
+            //2.eval可以将字符串去掉，让里面的表达式运行
+            return Number ((eval(ary.join("+"))/ary.length).toFixed(2))
+             //用加号替换了逗号，加在一起的和除它的长度，取小数点的后两位
+            
+        
+        }
+        
+       console.log( average(1,2,4,5,6,78));
+
+        
+        
+        </script>
+</body>
+</html>

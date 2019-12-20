@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //slice
+        //   Object.prototype.mySlice = function (one, two) {
+        //     let ww = [];
+        //     if (arguments.length == 2) {
+        //         if (one >= 0 && two > 0) {
+        //             for (var i = 0; i < two - one; i++) {
+        //                 let ee = this[one + i];
+        //                 ww[ww.length] = ee;
+        //             }
+        //         }
+        //         else if (one < 0 && two < 0) {
+        //             for (var i = 0; i < (two + this.length) - (one + this.length); i++) {
+        //                 let ee = this[one + this.length + i];
+        //                 ww[ww.length] = ee;
+        //             }
+        //         }
+        //     }
+        //     else if (arguments.length == 1) {
+        //         for (var i = 0; i < this.length - one; i++) {
+        //             let ee = this[one + i]
+        //             ww[ww.length] = ee;
+        //         }
+        //     }
+        //     else if (arguments.length == 0) {
+        //         for (var i = 0; i < this.length; i++) {
+        //             let ee = this[i]
+        //             ww[ww.length] == ee;
+        //         }
+        //     }
+        //     return ww
+        // }
+
+
+       
+            //push向数组末尾增加  原有数组发生变化
+           let ary=[12,2,3,45,13]
+        //  console.log(ary.push(11));//6
+        //  console.log(ary); //[12,2,3,45,13,11]
+          Array.prototype.Mypush= function (){
+               for(let i=0;i<arguments.length;i++ ){
+                     this[this.length]=arguments[i]
+
+
+               }
+               return  this.length   
+                 
+
+           }
+         
+           console.log( ary.Mypush(11,13,35));
+           console.log(ary);
+           
+           
+           
+
+           
+         
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let ary = [1, 13, 12, 34, 45, 12, 3]
+
+       Array.prototype.MyindexOf = function () {
+
+            if (arguments.length = 1) {
+                for (let i = 0; i < this.length; i++) {
+                    if (arguments[0] == this[i]) {
+                        return i
+                    }
+                }
+                return -1
+            }
+           return -1
+        }
+
+        console.log(ary.MyindexOf(12)); //2
+         console.log(ary.MyindexOf(14)); //-1
+         
+
+
+    </script>
+</body>
+
+</html>

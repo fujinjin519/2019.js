@@ -1,0 +1,11 @@
+.a {
+  width: 100px;
+}
+.a .b {
+  height: 200px;
+  line-height: 100px;
+  color: green;
+}
+.a .b .c {
+  color: red;
+}
