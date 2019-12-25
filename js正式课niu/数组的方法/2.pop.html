@@ -18,8 +18,11 @@
         
          Array.prototype.Mypop=function() {
                  
-                let a=this[this.length-1] 
-                this.length--
+                let a=this[this.length-1] //获取最后一项
+                // this[this.length-1]=null
+
+                this.length--  //删除最后一项
+                // this.lenghth = this.length - 1
                  return a
                   
        }       

@@ -1,36 +1,25 @@
 
-(function () { //避免全局变量污染
-    //1.获取元素
+(function () { 
     let list = document.getElementById('list');
     let navs = document.getElementsByTagName('a');
     let oLis = list.getElementsByTagName('li')
     let data
 
-    //2.获取到product.json文件中的数据 ajax
-    //1创建一个ajax实例
     let xhr = new XMLHttpRequest();
-    //2打开一个路径 fasle同步，直到前端成功接收到所有的数据后，才会继续向下执行。
-    //true异步：当ajax发送请求，浏览器不会在此等候后端返回的数据，而是向下执行js代码
+
     xhr.open('get', './json/product.json', false);
-    //3监听回调函数
+    
     xhr.onreadystatechange = function () {
-        //当xhr实例的readystate的值是4，并且xhr.status的值是2开头的三位数，说明前端成功接收到后段返回的数据
         if (xhr.readyState === 4 && /^2\d{2}/.test(xhr.status)) {
             data = JSON.parse(xhr.responseText)
 
-
-        }
+ }
     }
-    //以上三步是ajax任务的准备，请求并没有发送出去
-    //4.发送请求
+    
     xhr.send();
-    console.log(data);
+  
 
-
-
-    //3.绑定数据
-    function bindHtml() {
-        //循环data数据，拼接字符串，通过innerhtml，放到list
+function bindHtml() {
         let str = "";
         for (let i = 0; i < data.length; i++) {
             let cur = data[i]
@@ -46,7 +35,7 @@
 
     }
     bindHtml();
-    // 4.给每一个a绑定点击事件
+  
     for (let i = 0; i < navs.length; i++) {
         navs[i].index=i
         navs[i].flag=-1
@@ -69,7 +58,7 @@
         
         ary.sort(function (a,b){ 
              
-           let cur=a.getAttribute(newAry[that.index]) //自定义属性的索引
+           let cur=a.getAttribute(newAry[that.index]) 
            let next=b.getAttribute(newAry[that.index]) 
              
           if(that.index===0){
@@ -81,7 +70,7 @@
            
         
         });
-        //文档碎片，减少dom
+      
         let frg=document.createDocumentFragment()
         for(let i=0;i<ary.length;i++){
             frg.appendChild(ary[i])
@@ -90,12 +79,12 @@
         list.appendChild(frg)
         frg=null
     }
-    //实现增加背景颜色
+   
     function addArrow(){
          let up=this.children[0];
          let down=this.children[1];
          if(this.flag>0){
-             //如果flag大于0升序
+            
              up.classList.add('bg')
              down.classList.remove('bg')
              

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 复习：构造函数(自定义类)   类    原型    改变this,指向  继承-->
+    <script>
+        //      function Fn(){
+        //         //  var num=1  跟实例没关系
+
+        //           var obj={}
+        //           this=obj
+        //         //   this.a=100 代码执行   
+        //           return this  //   return 100      //return{}
+        //      }
+        //      var f1=new Fn()
+        //      var f2=new Fn()
+
+        // //   instanceof:              in    typeof    hasownpoperty
+
+        // var obj={} //obj  -Object
+        // var ary=[1,3]  //Array
+        //  var num=1 //Number
+        //  var string='233' //string 内置类            symbool 
+
+        //      function Fn(){
+        //          this.x=1
+        //          this.y=1
+        //          this.getx=function(){
+
+        //          }
+        //      }
+        //     Fn.prototype.getx=function(){
+
+        //     }
+        //      var f1=new Fn
+        //      var f2=new Fn
+        //    console.dir(Fn);
+        //    console.log(f1);  //prototype   对象  constructor     f1  -proto--
+
+
+        //  function Fn(){
+
+        //  }
+        //  var f=new Fn
+
+        //  Fn.prototype.getx=function(){
+
+        //  }
+        //  var f=new Fn
+        //去重 
+
+
+
+
+        //call封装 
+        //    function fn(){
+        //        console.log(this);
+        //  }  
+
+
+
+        // Function.prototype.mycall=function(contex){
+        //         contex=contex||window
+        //         let ary=[]
+        //         let result
+        //         for(let i=0;i<arguments.length;i++){
+        //             arg.push(arguments[i])
+
+        //         }
+        //         contex.fn=this
+        //         result=contex.fn(...args)
+        //         delete context.fn
+        //         return result
+
+
+        //     }
+        //    fn. mycall([12,23])
+
+        //作业数组去重
+
+
+        // function A() {
+        //     this.x = 10
+        // }
+        // function B() {
+        //     A.call(this)// 改变this指向，继承A私有
+        // }
+        // B.prototype = Object.create(A.prototype) //创建一个空对象
+        // var b = new B
+
+        // //ES……
+        // var num = 10
+        // console.log(a); //报错，Uncaught ReferenceError: Cannot access 'a' before 
+        // //不能再初始化之前获取a
+
+        // let a = 10 //
+
+
+        //    let a=10
+        //    if(true){
+        //        let a=1 //块级作用域
+        //    }
+        //     function fn(){
+        //         //代码执行前会进行过略，如果重名会报错
+        //         let a=1
+        //         let a=10
+        //     }
+        //    console.log(a); //  
+
+        // for(var i=0;i<3;i++){
+        //     olist[i].onclick=function(){
+        //         console.log(i);
+
+        //     }
+
+
+        // }
+        //  let c=10
+        // if(true){
+        //     let d=1
+        //     console.log(c); //10.里面可以拿到外面的
+
+        // }
+        // console.log(d); //拿不到d
+
+        // //不管有没有let都是块级作用域，浏览器新的解析机制，支持ES6才可以
+        // let a = 1
+        // if (true) {
+        //     // a = 0
+        //  let  a = 2
+
+
+        // }
+        // console.log(a); //1
+
+
+        // var a=1
+        // if(true){
+        //     let a=2
+        // }
+        // console.log(a);
+
+        //     let a=10
+        //    if(true){
+        //        let a=1 //块级作用域
+        //    }
+        //     function fn(){
+        //         //代码执行前会进行过略，如果重名会报错
+        //         let a=1
+        //         let a=10
+        //     }
+        //    console.log(a); // 
+
+
+        //  let [a,b,c,d]=[100,23,24]
+        //  //把[a,b,c,d]当作一个变量    一一对应
+        //  console.log(a); //100
+        //  console.log(b);  //23
+        //  console.log(c);  //24
+        //  console.log(d);  //undifined
+        //   let [a,b]=[200,[300]]
+        //   let [a,[b]]=[200,[300]]
+        //   console.log(a);
+        //   console.log(b);
+
+
+        //   let [foo]=1
+        //   let [foo]=false
+        //   let [foo]=null 
+        //   console.log(foo);
+
+
+        //  let [a,b] =[1]
+        //  console.log(a);
+        //  console.log(b);
+
+        //  let [a,b='x']=[1]
+        //  console.log(a);
+        // //  console.log(b);
+
+        //    let [a,b,c ,d]=[100,[122,344],300]
+        //    console.log(a,b,c,d);
+
+
+
+        //  let {name='a',age}={age:10,name:null}
+        //  console.log(name); //null
+        //  let {name,age}={age:'20',}
+        //  console.log(name);
+
+
+
+        // let [a,b,c]="hello"
+        // console.log(a);
+        // console.log(b);
+        // console.log(c);
+        // function fn([x,y]){
+        //     console.log(x);1
+        //     console.log(y);2
+        //     console.log(arguments); //[1,2]
+
+
+
+
+        // }
+        // fn([1,2])
+        //扩展运算符
+        //  let arr=[1,2,3,4]
+        //  let arr1=[100,23,34]
+        // console.log(  arr.concat(arr1)); // 拼接到一起
+        // console.log([...ary ,...arr1]);  //
+
+
+
+        // var obj={name:100} //对象合并
+        // var obj1={age:123}
+        // console.log({...obj,...obj1}); //
+        //  console.log(1,2,3,4);//1 2 3 4
+
+        //  console.log(...arr); //1 2 3 4
+
+        // function sum(m,...ary){ //将多余的值收缩成一个数组
+        //     console.log(m);
+        //     console.log(ary); //[2,3,4,5,6,78]
+
+
+
+        // }
+        // sum(1,2,3,4,5,6,78)
+
+
+        //   var a=Array.of(1,2,3) //一组数转成数组
+        //   console.log(a);//[1,2,3]
+
+        //  function s(){
+        //     //  let a=Array.from(arguments)
+        //     //    console.log(a);
+        //        var a = [...arguments];
+        //         console.log(a);
+
+
+        //  }
+        // s(1,2,3,4)
+
+        // function fn([x=0,y=0]){
+        //     console.log(x,y); //0 0
+
+
+        // }
+        // fn([])
+
+
+        // function fn([x=0,y=0]){
+        //     console.log(x,y); //报错，undifinedb不能被解析
+
+
+        // }
+        // fn() //传空 必须传值
+
+
+        // function fn([x=0,y=0]){
+        //     console.log(x,y); //1 0
+
+
+        // }
+        // fn([2])
+
+
+        // function fn(x=0,y=0){
+        //     console.log(x,y); //0 0
+
+
+        // }
+        // fn()
+
+
+
+        //     function fn(x, y = {}) {
+        //         console.log(x, y); //  1,null       1 {}
+
+
+        //     }
+        // fn(1,null) //
+        // fn(1,undefined) 
+
+
+        //  function fn(a){
+        //      return function (b){
+        //            return function(c){
+        //                return a+b+c
+        //            }
+
+        //      }
+        //  }
+        //    let fn=a=>b=>c=>a+b+c
+        //    let fn=a=>b=>c=> a+b+c
+        //    var ary=[{a:2,b:2},{a:2,b:1},{a:2,b:1},{a:2,b:2},{a:2,b:3}]
+        //     //    Array.prototype.unique = function(){
+        //         let obj=[]
+        //         for(let i=0;i<this.length;i++){
+        //              let item=this[i]
+        //              if(obj[{item:item}]){
+        //                  this[i]=this[this.length-1]
+        //                  this.length--
+        //                  i--
+        //                  continue
+
+        //              }
+
+        //                obj[{item:item}]=item
+
+
+        //         }
+
+        //    }
+        //    ary.unique()
+        //    console.log();
+
+        // let ary = [1, 3, 4, 2, 3, 1]
+        // Array.prototype.unique = function () {
+        //     let obj = {}
+        //     for (let i = 0; i < this.length; i++) {
+        //         let item = this[i]
+        //         if (obj[item]) {
+        //            this[i]=this[this.length-1]
+        //            this.length--
+        //             i--
+        //             continue
+
+        //         }
+        //         obj[item] = item
+        //     }
+
+        // }
+        // ary.unique()
+        // console.log(ary);//[1,3,4,2]
+
+
+
+
+        // let [foo] = [1]
+        // console.log(foo);
+        // let a = [1, 2, 3]
+        // let [a, b, c] = [12, 34, 56]
+        // console.log(a);
+    // let [a,b=3]=[2]
+    // console.log(b); 
+    // // console.log(a);
+    // let {name,age}={age:'18'}
+    // console.log(name); //undifined
+
+    // let {name=2,age}={name,age:'10'}
+    // console.log(name);
+    // console.log(age);
+    // function fn([x=0,y=0]){
+    //     console.log(x,y);
+        
+
+    // }
+    // fn(1,2) //1,2
+    // fn()//报错
+    // fn([]) // 0 0
+    
+
+    function fn([x,y=0]){
+        console.log(x,y);
+        
+
+    }
+ 
+    fn([1,undefined])
+    
+    
+    
+    
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

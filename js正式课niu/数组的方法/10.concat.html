@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+       let ary=[12,2,3,45,13]
+       console.log( ary.concat(11,13,35)); 
+
+       Array.prototype.Myconcat= function (){
+           for(let i=0;i<arguments.length;i++){
+               this[this.length]=arguments[i]
+
+           }
+           return this.length
+
+       }
+       console.log( ary.Myconcat(11,13,35)); 
+        console.log(ary);
+        
+        
+        </script>
+</body>
+</html>

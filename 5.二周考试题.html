@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=sc, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //         function A() {
+
+        //         }
+        //         function B() {
+
+        //         }
+        //  A.call.call.call(B) //多个call,让B执行，   并且B的this指向window
+        //最后一个call执行时，把A.call.call中的this.指向B,并且让A.call.call执行，没传参，它的this就成了window。
+
+
+        // var name = '珠峰培训';
+        // function A() {
+        //     console.log(1, this.name);
+        // }
+        // function B() {
+        //     console.log(2, this.name);
+        // }
+        // A.call(B, 10); // 1. ‘B'
+        // A.call.call.call(B); // 2 珠峰培训
+        // Function.prototype.call(B); //在call内置的方法中，会校验call的this是否是一个函数，不是则不会执行 (不会执行)
+        // Function.prototype.call.call.call(B); //2 珠峰培训    
+
+
+        // var name = "WINDOW";
+        // function fn() {
+        //     console.log(this.name);
+        // }
+        // var obj = {
+        //     name: "OBJ",
+        //     fn: () => {
+        //         console.log(this.name);
+        //     }
+        // };
+        // fn(); // "WINDOW"
+        // obj.fn(); //  "WINDOW" 箭头函数的this指向上一级作用域，全局 ，全局的this,window
+        // fn.call(obj);   // OBJ     this指向OBJ
+        // window.onload = function () {
+        //     //页面加载完成，事件就会触发
+        //     fn();      //window     
+        //     obj.fn();   //
+        // };
+        // fn.bind(obj); //不执行     bind只是预处理this,返回一个小函数，小函数运行的时候它才会运行 bind:这个也是改变this指向的，但是它会提前改变实例的this指向，并不会让实例执行，它的返回值，是改变this之后的新函数
+
+        
+        // var print = function () { alert(1); }
+        // function Fn() {
+        //     print = function () { alert(2); }
+        //     return this;
+        // }
+        // function print() { alert(3); }
+        // Foo.prototype.print = function () { alert(4); }
+        // Fn.print = function () { alert(5); }
+        // print(); //1
+        // Fn.print();//5
+        // Fn().print();// 2
+        // new Fn.print(); //5
+        // new Fn().print();//4
+        
+
+    </script>
+</body>
+
+</html>

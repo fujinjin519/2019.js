@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let fn=()=>{
+           console.log(arguments);
+       }
+       fn()
+    let ary=[12,34,45,12,13,23,34]
+    var ary=new Set(ary)
+    console.log([...ary]);
+
+    class Fn{
+        static a=1 //类新增私有属性
+        constructor(){
+            this.a=1 //实例增加私有属性
+            thi.b=2
+
+        }
+        getx(){ //原型新增公有属性
+
+        }
+
+    }
+    let f=new Fn
+
+
+   
+    // class A extends Fn{ //继承
+    //     constructor(){
+    //         super() //给实例增加私有属性
+    //         this.c=1
+
+    //     }
+    //     gety(){
+
+    //     }
+    // }
+    
+    // let reg=/^$/
+    // let reg=new RegExp
+        // let str="zhufeng927xh"
+        //  let str="9"    //true
+        //  let reg=/^\d$/
+        //  console.log(reg.test(str));  //false
+     
+    //  let str='ajsjjsjs'
+
+    //  let reg=/\j/
+    // //  console.log(reg.test(str)); //true
+    // let  reg=/\b/
+    //手机号
+    // var  reg=/^1\d{10}$/
+    // // // console.log(reg.test('12223344556567')); //false
+    // console.log(reg.test('12345678909'));//  true
+
+    // let  reg=/^-?(\d|[1-9]\d+)(\.\d+)?$/
+    // console.log(reg.test('1000000'));   //true
+
+    // let reg=/^(\d{6})(\d{4})(\d{2})(\d{2})(\d{2})(\d)(\d|x)$/
+ //身份证
+    // let reg=/^(\d{6})([12]\d{3})(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])(\d{3})(\d|x)$/
+
+      //18-65 退休年龄
+    //    let reg=/^(1[8 9]|[2-5]\d|6[0-5])$/
+    //     console.log(reg.test('32')); // true
+
+
+    //汉字
+    // let reg=/[\u4E00-\u9FA5]/ 
+    //   console.log(reg.test('迪丽热巴')); //true
+    // //邮箱
+       
+      //正则的[]中括号
+    //   let reg=/[abc]/ 
+    //   let reg=/^[abc]/ //非abc任意一个
+    //   console.log(reg.test('xyz'));  //false
+    //   console.log(reg.test('asu')); //true
+      
+    //   let reg=/^[1-9_]+$/ //1-9或下划线   不加false        加上加号就是都可以
+    //   console.log(reg.test('9_ '))  //true
+
+     //正则的小括号
+     //1.可以改变优先级
+    //  var reg=/^a|food$/    //以a开头。或food结尾的都可以 都返回true,满足一个就可以
+      
+    //  console.log(reg.test('ajdjjdjd')) //true
+    //  console.log(reg.test('ajdjfood'))  //true
+    //  console.log(reg.test('erood')) //false
+
+    //  var reg=/^(a|food)$/   //只能a或food,返回true.反之都错， 
+    //  console.log(reg.test('a')); //true
+    //  console.log(reg.test('afood'));//false  
+    //  console.log(reg.test('food')) // true
+    //  console.log(reg.test('asood')) //false
+
+    //2.分组引用 \代表和第一个分组一样
+    // var reg=/^(zhufeng)(peixun)\2\1$/
+    
+    // // console.log(reg.test('zhufen'));//false
+    // console.log(reg.test('zhufengpeixunpeixunzhufeng')) //true
+    
+    //3.小正则捕获
+  
+    // let  reg=/^-?（\d|[1-9]\d+)\.(\d+)?$/;
+    // console.log(reg.test("00000"))// false
+    // console.log(reg.exec("35.6789"))
+
+    // //正则的预查 (?=) //
+    //zhufeng后面必须跟着peixun,有就行后面再加什么都可以
+    // let reg=/zhufeng(?=peixun)/
+    // console.log(reg.test('zhufengpeixun')); // true
+    // console.log(reg.test('zhufengpeixunssss')) //true
+    // console.log(reg.test('peixun'))  // false 
+    // console.log(reg.test('zhufengperexun'))   //false
+    // console.log(reg.test('zhufengssspeixun')) //false
+    
+    // console.log(reg.exec('zhufengpeixun')); //只能捕获zhufeng， ?=后面捕获不到
+
+    //负向预查 （?!） //zhufeng后面跟着不是JS的都可以匹配到返回true
+    //  var reg=/zhufeng(?!js)/
+    // console.log(reg.test('zhufengjs')); //false
+    // console.log(reg.test('zhufengss')) //true
+    // console.log(reg.test('zhufengjs123'))  //false
+    // console.log(reg.test('zhufengwjwjs')) //true
+
+    //  //正则创建 ：字面量和实例两种
+    //  var name='xiaohua'
+    // //  var reg=/name+/
+    // // //  console.log(reg.test('xiaohua')); //false 不能这样匹配。不行
+    // // //  console.log(reg.text('nameee')); //true
+     
+     
+
+    //   //解决用实例(我向拿到 xiaohua)   1.可以引入变量，2.出现转义字符加\
+    //   var reg=new RegExp(name)  //   /xiaohua/ 拿到xiaohua
+    //   console.log(reg);
+     
+    //   var reg=new RegExp("\d")  //  /d/
+    //   console.log(reg);  //就是字母d  想拿到\d
+
+    //   //遇到转义字符.多加\
+    //   var reg=new RegExp("\\d")   //       拿到\d
+
+    // var reg=new RegExp("\\d"+name) //     /\dxiaohua/
+    // var reg=new RegExp(name) //              /xiaohua/
+    // console.log(reg);     
+    
+
+     //正则的捕获  ：exec, test在内置类RegExp的原型上
+     //exec:捕获   1，返回一个数组，2，数组中第一项是字符串
+    //  let reg=/\d/  //数组的第一项
+    //  console.log(reg.exec('zhufeng2009hsh'));  //2
+     
+     
+    //  let reg=/\d+/  //第一组数
+    // console.log(reg.exec('zhufeng2009hsh')) //2009
+
+
+    //  //正则的懒惰型  .捕获到就不捕获了，解决用g 。捕获不到返回null
+    //  var reg=/\d+/g
+    //  console.log(reg.lastIndex); //索引0  没加g全是0，加上g,下一轮捕获的索引
+     
+    //  console.log(reg.exec('zhufeng2009peixun2018'));   //2009
+    //  console.log(reg.lastIndex); // 11  从p开始
+    //  console.log(reg.exec('zhufeng2009peixun2018'));  //2018  再捕获一次
+    //  console.log(reg.lastIndex); // 21   2018扑火到。下一个索引21
+    //  console.log(reg.exec('zhufeng2009peixun2018'));  //捕获不到null
+
+     //正则贪婪性 有的时候加号有，但是捕获不想用加号 （捕获的一组数）加？可以，也可以直接用\d不加加号。但是有时候也要匹配，所以加号不能去，想拿一个数字就加？
+     //？放在量词的后面。取消捕获的贪婪性
+    //  var reg=/\d/g
+    //  console.log(reg.exec('zhufeng2009peixun2018')); //2
+    //  var reg=/\d+？/g
+    //  console.log(reg.exec('zhufeng2009peixun2018')); //2
+     //这两种一样都是捕获一个个数字
+
+     //小括号进行捕获，从左到右依次进行捕获
+
+      //match:字符串的方法  匹配
+      //  let str='zhufeng123peixun456'
+      // //  let ary=str.match(/\d+/)
+      //  let ary=str.match(/\d+/g)
+      //  console.log(ary); //跟正则的捕获效果一样，返回数组，["123", index: 7, input: "zhufeng123peixun456", groups: undefined]
+      //  console.log(ary);  //加g的效果   ["123", "456"]
+
+       //修饰符：斜杠外面的   g:gloab：全局     i:ignoreCase:忽略大小写  m:mutilinde:多行匹配           
+       // 元字符：斜杠里面的
+      //  var reg=/A/i
+      //  console.log(reg.test('abc')); //true   忽略大小写
+      //  var reg=/A/
+      //  console.log(reg.test('abc')); //false
+
+
+      
+      //replace：1.字符串的替换，每次只能替换一个
+
+      //  let str='truejsjstrue'
+        // let newstr=  str.replace('true','false')
+        // console.log(newstr); //
+        //2.结合正则
+        // let newstr=str.replace(/true/g,'false') //先捕获到true，替换成false,这样也是只替换一个，加上g全局，就可以全部替换了解决了多个替换的问题
+        // console.log(newstr);
+
+        //3.正则和回调函数 :
+        //正则对字符串进行捕获，并且将回调函数的返回值覆盖捕获到的内容
+        //正则捕获几次，回调函数执行几次
+        //形参分别代表不同的值
+        // let newstr=str.replace(/true/g,function(a,b,c){
+        //         // console.log(100); //回调函数没有返回值 捕获到100， undefinedjsjsundefined
+        //         console.log(a);  //如果传参数捕获到内容 true
+        //         console.log(b);  //捕获到的索引  索引0
+        //         console.log(c); //原来的字符串  truejsjstrue
+                
+                
+                
+        //         return 1 //加上return 1      1jsjs1
+     
+        // }) 
+        // console.log(newstr);
+        // let str="my name is niu,i am 28 years old"
+      
+        //  let newstr=str.replace(/\b[a-z]/g,function(a,b,c){
+           
+        //       // console.log(a);
+        //       return a.toUpperCase()
+
+        //  })
+        //  console.log(newstr); //
+     
+
+
+        
+        // var str ="20191224";
+        // var ary = ["零","壹","贰","叁","肆","伍","陆","柒","捌","玖","万","仟"];
+
+        // let newstr=str.replace(/\d/g,function(a){
+        //       // console.log(a);  让捕获到的数字作为数组的索引返回
+        //       return ary[a]
+
+        // })
+        // console.log(newstr); 
+        
+         var str='2019-12-24 16:02:30'
+         var ary=['年','月','日','时','分','秒',]
+        
+       
+        //  let  newstr=str.replace(/\D|\b$/g,function(a,b,c){
+        //   //  console.log(a);
+        //   console.log(b);
+          
+            
+        //      return ary. splice(0, 1)
+        // })
+        //  console.log(newstr);
+        //  var newstr=""
+        //  var i=0
+        //  str.replace(/\d+/g,function(){
+        //      newstr+=a+ary[i++]
+
+
+
+        // })
+        // console.log(newstr);  
+
+        // 加千分符，给下面的数字加','使其成为13,234,567,753,224
+        var str = "13234567753224";
+        var newstr=str.replace(/\d/g,function(a,b){
+          // console.log(a);
+          console.log(b);
+          
+           //如果该字符串后面的字符串的个数是3的倍数，应该给该数字后面加，
+          if((str.length-b-1)%3===0&&str.length-1!==b){
+             return a+","
+
+          }else{
+            return a
+          }
+       
+      })
+      console.log(newstr);
+
+      
+
+
+          
+      
+
+
+
+        
+       
+         
+
+
+         
+        
+         
+
+         
+
+                
+       
+
+   
+        
+
+
+         
+        
+         
+        
+
+        
+        
+
+
+
+
+       
+      
+       
+       
+
+
+       
+     
+
+     
+
+     
+     
+
+
+
+      
+
+
+    
+    
+
+
+    
+
+    
+
+
+    
+    
+
+
+     
+     
+     
+     
+     
+
+
+
+      
+      
+      
+     
+
+     
+
+       
+       
+    
+
+     
+
+
+
+
+    
+    
+     
+     
+
+         
+    
+
+
+    
+
+     
+    
+        
+        
+        </script>
+</body>
+</html>

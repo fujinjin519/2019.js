@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            padding: 25px;
+            border: 10px  solid red;
+            margin: 30px;
+            font-size: 20px;
+          
+        }
+    
+    
+    </style>
+</head>
+<body>
+    <div class="box" id="box">中国人是上赛季结束jdjdjkdjkjkdjfksdjfkdfjkdfjks
+你费迪南德发动机发动机分发动机开发的健康妇女君仙女带你飞的妇女jkdjkjkdjfksdjfkdfjkdfjks
+你费迪南德发动机发动机分发动机开发的健康妇女君仙女带你飞的妇女</div>
+    <script>
+        // 获取盒子的宽度   .style.属性名，只能获取行内样式
+         let box=document.getElementById('box')
+        //  console.log(box.style.width); //拿不到。widt是h 空的 不能这样获取
+        //2.getComputedStyle是window下一个方法。把对应的元素传给这个方法，获取浏览器计算的方式
+       console.log(getComputedStyle(box).width); //200px 获取它的宽度，
+       console.log(getComputedStyle(box).fontSize); //复合属性名，中杠去掉用驼峰命名
+       //该方法在IE8及以下是不兼容的
+       
+       //在ie8,及以下，用这个方法获取元素css中设置样式
+    //    console.log(box.currentStyle.width); //
+    console.log(box.clientHeight); //250
+    
+     console.log(box.scrollHeight); //
+     
+     
+       
+     
+         
+
+        
+        
+        </script>
+</body>
+</html>
