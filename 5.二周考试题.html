@@ -53,7 +53,7 @@
         // };
         // fn.bind(obj); //不执行     bind只是预处理this,返回一个小函数，小函数运行的时候它才会运行 bind:这个也是改变this指向的，但是它会提前改变实例的this指向，并不会让实例执行，它的返回值，是改变this之后的新函数
 
-        
+
         // var print = function () { alert(1); }
         // function Fn() {
         //     print = function () { alert(2); }
@@ -67,7 +67,80 @@
         // Fn().print();// 2
         // new Fn.print(); //5
         // new Fn().print();//4
-        
+
+
+        //去重
+        //     let ary = [12, 23, 12, 13, 13, 12, 23, 14, 8];
+        //     ary.unique().sort((a, b) => a - b);
+
+        //   Array.prototype.unique=function(){
+        //       var obj={}
+        //       for(var i=0;i.this.length;i++){
+        //           var cur=this[i]
+        //           if(obj[cur]===cur){
+        //               this[i]=this[this.length-1]
+        //               this.length--
+        //               i--
+
+        //           }
+        //           obj[cur]=cur
+        //       }
+        //       return this
+        //   }
+
+
+        /*分析下面的changeThis方法该如何实现？*/
+        // Function.prototype.changeThis = function changeThis() {
+        //     //=>实现你的代码
+        //     arguments[0].fn=this
+        //     arguments[0].fn(arguments[1],arguments[2])
+        //     delete arguments[0].fn
+        //     return arguments[0]
+
+
+        // };
+        // let obj = { name: 'Alibaba' };
+        // function fn(x, y) {
+        //     this.total = x + y;
+        //     return this;
+        // }
+        // let res = fn.changeThis(obj, 100, 200);
+        // console.log(res);//
+
+      
+      
+      
+        let utils = (function () {
+            /*
+            * toArray：转换为数组的方法
+            * @params
+            * 不固定数量，不固定类型
+            * @return
+            * [Array] 返回的处理后的新数组
+            * by zhufengpeixun on 2019/08/12
+            */
+            function toArray() {
+                //实现你的代码
+                var ary=[]
+                try{
+              //如果try中的代报错，那么立即执行catch中的代码，不会影响下面的代码运行，一般 情况，代码遇到报错就立即停止
+              //如果不报错，那么就不再走catch
+                ary=Array.prototype.slice.call(likeAry)
+
+            }catch(e){
+                console.dir(e) //代表是try中代码的错误信息
+                for(var i=0;i<likeAry.length;i++){
+                    ary.push(likeAry[i])
+                }
+            }
+            }
+            return {
+                toArray
+            };
+        })();
+        let ary = utils.toArray(10, 20, 30);
+        //ary=[10,20,30]
+        ary = utils.toArray('A',)
 
     </script>
 </body>
