@@ -20,17 +20,19 @@
         //最后一个call执行时，把A.call.call中的this.指向B,并且让A.call.call执行，没传参，它的this就成了window。
 
 
-        // var name = '珠峰培训';
-        // function A() {
-        //     console.log(1, this.name);
-        // }
-        // function B() {
-        //     console.log(2, this.name);
-        // }
-        // A.call(B, 10); // 1. ‘B'
-        // A.call.call.call(B); // 2 珠峰培训
-        // Function.prototype.call(B); //在call内置的方法中，会校验call的this是否是一个函数，不是则不会执行 (不会执行)
-        // Function.prototype.call.call.call(B); //2 珠峰培训    
+        var name = '珠峰培训';
+        function A() {
+            console.log(1, this.name);
+        }
+        function B() {
+            console.log(2, this.name);
+        }
+        console.dir(B);
+        
+        A.call(B, 10); //    1，‘B'  //让A执行，this指向B,浏览器自带name:B
+        A.call.call.call(B); // 2 珠峰培训
+        Function.prototype.call(B);  //在call内置的方法中，会校验call的this是否是一个函数，不是则不会执行 (不会执行)
+        Function.prototype.call.call.call(B); //2 珠峰培训    
 
 
         // var name = "WINDOW";
@@ -110,7 +112,7 @@
       
       
       
-        let utils = (function () {
+        // let utils = (function () {
             /*
             * toArray：转换为数组的方法
             * @params
@@ -119,28 +121,28 @@
             * [Array] 返回的处理后的新数组
             * by zhufengpeixun on 2019/08/12
             */
-            function toArray() {
-                //实现你的代码
-                var ary=[]
-                try{
-              //如果try中的代报错，那么立即执行catch中的代码，不会影响下面的代码运行，一般 情况，代码遇到报错就立即停止
-              //如果不报错，那么就不再走catch
-                ary=Array.prototype.slice.call(likeAry)
+        //     function toArray() {
+        //         //实现你的代码
+        //         var ary=[]
+        //         try{
+        //       //如果try中的代报错，那么立即执行catch中的代码，不会影响下面的代码运行，一般 情况，代码遇到报错就立即停止
+        //       //如果不报错，那么就不再走catch
+        //         ary=Array.prototype.slice.call(likeAry)
 
-            }catch(e){
-                console.dir(e) //代表是try中代码的错误信息
-                for(var i=0;i<likeAry.length;i++){
-                    ary.push(likeAry[i])
-                }
-            }
-            }
-            return {
-                toArray
-            };
-        })();
-        let ary = utils.toArray(10, 20, 30);
-        //ary=[10,20,30]
-        ary = utils.toArray('A',)
+        //     }catch(e){
+        //         console.dir(e) //代表是try中代码的错误信息
+        //         for(var i=0;i<likeAry.length;i++){
+        //             ary.push(likeAry[i])
+        //         }
+        //     }
+        //     }
+        //     return {
+        //         toArray
+        //     };
+        // })();
+        // let ary = utils.toArray(10, 20, 30);
+        // //ary=[10,20,30]
+        // ary = utils.toArray('A',)
 
     </script>
 </body>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* *{
+            margin: 0px;
+            padding: 0px;
+        }
+    
+    #box{
+        width: 200px;
+        height: 200px;
+        margin: 60 auto;
+        background-color: coral;
+
+
+    } */
+    
+    
+    
+    </style>
+</head>
+<body>
+    <!-- <div id="box"></div> -->
+    <script>
+        //封装
+         function win(attr,val){ 
+             if(typeof val==="undefined"){
+                 //获取属性名对应的属性值
+                 return  docunment.docunmentElement[attr]||docunmentElement.body[attr]
+             }
+                 document.documentElement[attr]=val
+                 document.body[attr]=val
+        }
+        win("scrollTop")
+        win("scrollLeft") 
+        win("scrollTop",300)
+
+        
+
+        // docunment.docunmentElement.scrollTop:获取整个页面的滚动条纵向卷起的高度
+    
+    
+    
+    </script>
+</body>
+</html>

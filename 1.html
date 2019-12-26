@@ -7,31 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        //数组去重 对象属性名
-        var ary=[{a:2,b:2},{a:2,b:2},{a:2,b:1},{a:2,b:2},{a:2,b:3}]
-        Array.prototype.unique=function(){
-            let res=[]
-            let obj={}
-            for(let i=0;i<this.length;i++){
-                // console.log(i); //索引
-                let temp = ''
-                for(let j in this[i]){
-                    // console.log(j);/循环每一项  j就是属性名
-                    // console.log(this[i]); // 获取每一项
-                    temp += j + this[i][j]
-                    //  console.log(this[i][j]); //属性
-                 }
-                 if (!obj[temp]) {
-                    res.push(this[i])
-                    obj[temp] = true
-                 }
-            }
-            console.log(res);
-            console.log(obj);
-            return res
-        }
-        ary.unique()
-        </script>
+    
 </body>
 </html>
