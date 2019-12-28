@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin: 200px auto;
+        position: relative;
+        border: 10px solid blue;
+        padding: 20px;
+    }
+    .box div{
+        position: absolute;
+        left: 30px;
+    }
+    
+    </style>
+</head>
+<body>
+    <!-- css：可以获取元素的样式，也可以设置元素的样式， 
+        兼容版本的，
+    实例.css(属性名)-->
+    <div class="box" style="color: salmon;">
+        <div></div>
+    </div>
+    
+    <script src="jquery-1.11.3(2).js"></script>
+    <script>
+        // var val=$(".box").css("width") //获取宽度
+        // console.log(val);
+        // var val=$(".box").css("color")  //获取行内样式
+        // console.log(val);
+        // var val=$(".box").css("width" ,"200px")// 两个值，都是设置
+        // console.log(val);
+        
+
+        
+        //offset :获取当前元素距离body的上或左偏移量
+        // var t=$(".box").offset().left
+        // var t=$(".box").offset().top
+        // console.log(t);
+
+        // var left=$(".box div").position().left //加个行内，左偏移
+        // console.log(left);    //左偏移
+        // //width
+        // console.log( $(".box").width()); // //内容实际高度
+        // // innerWidth:相当于  clientwidth
+        // outerWidth: 相当于offsetwidth
+
+        //  $(".box").innerWidth()
+        //  console.log( $(".box").innerWidth()); //140 内容宽度+左右padding
+        console.log( $(".box").outerWidth());   //160:总宽度，     要加上boder
+        
+       
+         
+
+        
+      
+        
+        
+       
+        
+    
+    
+    </script>
+
+</body>
+</html>

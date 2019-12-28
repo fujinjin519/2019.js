@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <div class="a" trueImg="1.jpg"></div>
+    <span></span>
+    <input type="text">
+
+    <script src="jquery-1.11.3(2).js"></script>
+    <script>
+        // var box=$("#box")
+        // console.log(box); 
+        // // box.pre()
+        jq选择器
+        // console.log(box.addClass("b"));
+        // console.log(  box.addClass("c"));
+        // console.log( $("#box").offset().left);
+        // console.log(  $("box"));  
+        // // var olis=document.getElementById('li')
+
+        // console.log($("#box")); //id选择器
+        // console.log($("li")); //标签选择器
+        // console.log($(".a")); //class名 a
+        // console.log($("*")); //所有的元素
+        // console.log($("box,ul,span")); //获取每一个属性
+        // console.log( $("li:first"));  //第一个li
+        // console.log( $("li:not(.a)"));//li中class名不是a的
+        // console.log( $("li:eq(2)")); //li的第二个索引
+        // console.log( $("input:[name=a]")); //input中name为a的
+
+        jq行间属性
+
+        // console.log($(".a").attr("trueImg")); //获取行间属性
+        // console.log($(".a").attr("b", 100)); //设置行间属性
+        // console.log($("input").prop("checked"));//false  标签的参数是否被选中
+        // console.log($(".a").removeClass("a")); / /删除a标签
+        // console.log($(".a").text("我爱学习")); //  给标签增加文字
+
+        // console.log($("input").val("请输入查询密码") ); //设置标签
+        // console.log( $(".a").html()); //我爱学习     识别标签
+        
+
+        获取css的属性
+        // console.log($(".box").css("width"));//宽度
+        // console.log($(".box").css("color"));//获取颜色属性
+        // console.log($(".box").css("width","200px"));//把这个属性进行修改
+        // console.log($(".box").offset().left());//距离body左偏移
+
+        // var left=$(".box div").position().left //加个position。relat, 获取行内，左偏移
+        // console.log( $(".box").width() );//内容的实际宽度
+        // console.log($(".box").innerWidth());// =clientwidth   要加padding
+        // $(".box").innerHeight // ==clientheight
+        // console.log( $(".box").outerWidth ()) //总宽度，=offsetWidth client+boder
+        // $(".box").outerHeight //总高度=offsetHeight
+
+         筛选
+    //      $(".list l").eq(2).html()//获取索引第二个li 的内容
+    //      $(".list l").eq(2).addClass("a"),html ()//新增一个class名为a
+    //      $(".list l").eq(2).hasClass("a").html()//判断有没有这个类名
+    //     filter： //选中需要的
+    //     has:拥有对应的后代元素 。。没有就是空的
+    //     find:匹配后代元素
+    //     next:jq的实例，下一个弟弟元素
+    //     nextAll：所有的弟弟元素节点
+    //      prev():上一个哥哥元素节点
+    //    prevAll : 所有的哥哥元素节点
+    //    siblings ： 所有兄弟元素节点；
+
+    //      $(".a").next().css("color","red") //下一个弟弟元素的颜色进行修改
+    //      $(".a").nextAll().css("color","red") //所有的弟弟元素进行修改
+
+    //      $("span").parent() // 找到父亲节点 li(li下面包着span)
+    //      $("span").parents() //找父亲节点的父亲节点，一级一级找，找到html
+    //      $("span").offsetParent() //找到ul,li
+    
+    // 事件
+    // // ready：jq的触发           可以有多个回调函数
+    // // window.onload：原生触发
+    // $(document).ready(function(){
+
+    // })
+    // $(document).ready(function(){
+
+    // })
+    // windown.onload=function(){
+
+    // }
+    
+    // box.onclick=function(){
+
+    // }
+    
+    // $(".box").click(function(){
+    //     console.log(this);
+        
+    // })
+    // $(".box").on("click",function(){
+
+    // })
+    // $(".box").off("click") //移除
+
+    // $(".box").on("mousehover",function(){
+    //     console.log(1);
+        
+    // })
+    // box.onclick=function(){
+
+    // }
+    // box.onclick=null//原生的移除
+    
+    // 动画
+    // // hide ,show  toggle
+    // $(".box").click(function(){
+        
+    //     $(".box").toggle()//显示和隐藏都有
+        
+    // })
+    // //slideDown  slidetoggle  
+    // $(".box").click(function(){
+    //     $(".box"). slidetoggle ()//调整高度来回缩放
+    // })
+    // //   fadeIn(淡入) fadeOut(淡出) fadeToggle
+    // $(".box").click(function(){
+    //     $(".box").fadeToggle //只调整元素的不透明度
+    // })
+    // //animate动画
+
+    // $("#btn").click(function(){
+    //     $(".box").animate({
+    //         width:300,
+    //         height:200,
+    //         borderRadius:150
+    //     },function(){
+    //         $(".box").css("backgroud","blue")
+    //         //当动画完成后执行该函数，改变颜色
+
+    //     })
+    // })
+     class B extends A(){
+        constructor(){
+            super()
+
+        }
+
+     }//继承
+     class B extends A(){
+         constructor(){
+             super()
+         }
+     }
+     
+     
+
+    class B extends A(){
+        constructor(){
+            super()
+
+
+        }
+        getx(){
+
+        }
+    }
+    class A{
+        static=1
+        constructor(x,y){
+            this.x=x
+
+        }
+        getx(){
+
+        }
+        
+
+    }
+    new A
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html> 

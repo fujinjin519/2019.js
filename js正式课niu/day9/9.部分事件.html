@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <script src="jquery-1.11.3(2).js"></script>
+    <script>
+        //1. ready：当dom元素准备就绪,就会触发一个函数
+        //widow.onload:原生的触发
+        //以上两个相同点是：一个意思一个是jq的一个是原生的触发，不同点ready,在同一个页面中，可以有多个回调函数，按照顺序依次执行。原生只能写一个
+    //     $(document).ready(function(){
+
+    //           //比如：图片真正加载解析完成后，才会触发
+    //     })
+    //     $(document).ready(function(){
+
+
+    //    })
+    //    window.onload=function(){
+
+    //    }
+    //  //2.
+    //  box.onclick=function(){
+
+    //  }
+    //  jq的方法绑定点击事件的一种方式
+    //  $(".box").click(function(){
+    //     // console.log(this);
+         
+
+    //  })
+
+     //on  用on绑定点击事件
+     $(".box").on("click",function(){console.log(1);})
+     $(".box").off("click")  //移除
+     $(".box").on("moushover",function(){console.log(1);})
+     
+     
+     box.onclick=function(){
+
+     }
+     box.onclick=null //原生的移除
+     //change.改变内容  
+
+
+
+
+
+
+
+        
+        
+        
+        </script>
+</body>
+</html>

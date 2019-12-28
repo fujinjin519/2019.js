@@ -155,7 +155,7 @@
 
      //正则的捕获  ：exec, test在内置类RegExp的原型上
      //exec:捕获   1，返回一个数组，2，数组中第一项是字符串
-    //  let reg=/\d/  //数组的第一项
+    //  let reg=/\d/  //数组的第一项第一个数字
     //  console.log(reg.exec('zhufeng2009hsh'));  //2
      
      
@@ -206,12 +206,13 @@
         // console.log(newstr); //
         //2.结合正则     
         // let newstr=str.replace(/true/g,'false') //先捕获到true，替换成false,这样也是只替换一个，加上g全局，就可以全部替换了解决了多个替换的问题
-        // console.log(newstr);       
+        // console.log(newstr);   
+
 
         //3.正则和回调函数 :
         //正则对字符串进行捕获，并且将回调函数的返回值覆盖捕获到的内容
         //正则捕获几次，回调函数执行几次
-        //形参分别代表不同的值  ,加小括号，b第一次捕获的内容 ， c第二次捕获的内容
+        //形参分别代表不同的值  (加小括号，b第一次捕获的内容 ， c第二次捕获的内容)
         // let newstr=str.replace(/true/g,function(a,b,c){
         //         // console.log(100); //回调函数没有返回值 捕获到100， undefinedjsjsundefined
         //         console.log(a);  //如果传参数捕获到内容 true

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     class B extends A(){
+    //     constructor(){
+    //         super()
+
+    //     }
+
+    //  }//继承
+     
+     
+
+    //  class A{
+    //      static a=1
+    //      constructor(){
+    //          this.x=1
+    //          this.y=2
+
+    //      }
+    //      getx(){
+
+    //      }
+
+    //  }
+    //  new A
+
+
+    //   let reg=/^$/
+    //   let reg =new RegExp   
+    //   let reg=/\d+/g
+
+    //   replace （a,b,c)
+    //js操作页面元素样式   .style.属性
+    // console.log( getComputedStyle(box).width);
+    //            getComputedStyle(box).fontSize
+    //            (box.currentStyle.width)
+        // var box=document.getElementById('box')
+        function getCss(curEle,attr){
+            
+            // try{
+            //     return getComputedStyle(curEle)[attr]
+            // }catch(e){
+            //     return curEle.getComputedStyle[attr]
+            // }
+
+           // return getComputedStyle(curEle)[attr]||curEle.currentStyle[attr]
+
+            if("getcomputedstyle" in window){
+                return getComputedStyle(curEle)[attr]
+            }else{
+                return curEle.currentstyle[attr]
+            }
+        
+          }
+        getCss(box,"width")
+
+        
+
+
+    
+   
+
+
+
+
+
+
+         
+
+
+
+
+  
+
+
+
+
+
+        
+       
+
+
+
+     
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </script>
+</body>
+</html>

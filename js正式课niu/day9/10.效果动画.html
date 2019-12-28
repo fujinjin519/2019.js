@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     .box{
+         width: 100px;
+         height: 100px;
+         background: red;
+       }
+     #btn{
+         font-size: 15px;
+     }
+   
+    </style>
+</head>
+<body>
+    <div class="box"> </div>
+    <button id="btn">点击</button>
+    <script src="jquery-1.11.3(2).js"></script>
+    <script>
+        //1.toggle 显示和隐藏 
+        // $("#btn").click(function(){
+            
+        //     $(".box").toggle()
+        //     // $(".box").show()
+        // })
+
+
+        //2.slideDown   slidetoggle   
+        // $("#btn").click(function(){
+            
+        //         // $(".box").slideDown() //先要设置display none,
+        //         $(".box").slideToggle()  
+
+               
+        //     })
+    //    //3.fadeIn(淡入) fadeOut(淡出) fadeToggle
+    //    $("#btn").click(function(){
+            
+           
+    //         $(".box").fadeToggle(1000)  
+
+           
+    //     })
+           //4.animate 动画
+           $("#btn").click(function(){
+                     
+                 $(".box").animate({
+                        
+                        width:300,
+                        height:200,
+                        borderRadius:150
+                     
+                    },function(){
+                        //当动画完成后执行该函数，改变颜色
+                        $(".box").css("background","blue")
+
+                   })  
+                  })
+    
+             
+
+
+
+        
+    </script>
+</body>
+</html>

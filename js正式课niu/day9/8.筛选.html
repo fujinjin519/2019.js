@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li class="a">3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script src="jquery-1.11.3(2).js"></script>
+    <script>
+        //保证jq实例,去调用原型上的方法
+          var val=$(".list li").eq(2).html()//获取索引第二个li.
+         var val= $(".list li").eq(2).addClass("a").html() //新增
+          console.log(val);
+         var val= $(".list li").eq(2).hasClass("a") //判断是否有某个类名，有true,
+        //  filter： //选中需要的
+        //has:拥有对应的后代元素 。。没有就是空的
+        //find:匹配后代元素
+        //next:jq的实例，下一个弟弟元素
+        //nextAll：所有的弟弟元素节点
+        $(".a").next().css("color","red")  //
+        $(".a").nextAll().css("color","red")  //所有的弟弟元素
+        
+
+      $(".a").nextAll().css("color","red")
+       console.log( $("span").offsetParent())
+       console.log( $("span").parent())
+       console.log( $("span").parents())
+
+       // prev():上一个哥哥元素节点
+       // prevAll : 所有的哥哥元素节点
+       // siblings ： 所有兄弟元素节点；
+
+
+           
+          
+          
+
+
+          
+
+    
+    </script>
+</body>
+</html>

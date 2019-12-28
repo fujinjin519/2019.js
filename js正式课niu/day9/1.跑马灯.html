@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box{
+        width:600px;
+        height:100px;
+        margin: 100px auto;
+        border: 1px solid red;
+        overflow: hidden;
+        position: relative;
+    }
+    #box ul{
+        position: absolute;
+        left:0;
+        width:1500px; 
+    }
+    #box ul li{
+        width:150px;
+        height:100px;
+        float:left;
+        list-style: none;
+    }
+
+    #box ul li img{
+        width:100%;
+        height:100%;
+    }
+  
+    </style>
+
+</head>
+
+<body>
+    <div id="box">
+        <ul id="list" style="left: 0px;">
+            <li>
+                <img src="./img/1.jpg" alt="">
+            </li>
+            <li>
+                <img src="./img/2.jpg" alt="">
+            </li>
+            <li>
+                <img src="./img/3.jpg" alt="">
+            </li>
+            <li>
+                <img src="./img/4.jpg" alt="">
+            </li>
+            <li>
+                <img src="./img/5.jpg" alt="">
+            </li>
+            <li>
+                    <img src="./img/6.jpg" alt="">
+            </li>
+            <li>
+                <img src="./img/1.jpg" alt="">
+            </li>
+            <li>
+                <img src="./img/2.jpg" alt="">
+            </li>
+            <li>
+                <img src="./img/3.jpg" alt="">
+            </li>
+            <li>
+                <img src="./img/4.jpg" alt="">
+            </li>
+        </ul>
+    </div>
+    
+  
+    <script>
+        let list=document.getElementById("list")
+        let box=document.getElementById("box")
+        function move(){
+            //每执行一次move,先获取当前list最新的left的位置
+            let curleft=parseFloat(list.style.left)
+            curleft-=1
+        
+            if(curleft<=-900){
+                //如果盒子的移动超过900，那么说明最后一张已经完全显示出来，让当前的ul瞬间left变为0，从头开始循环
+                curleft=0
+            }
+
+
+            list.style.left=curleft+'px'
+
+        }
+       
+         var timer=setInterval(move,10)
+         box.onmouseover=function(){
+             clearInterval(timer)
+
+             
+         }
+         box.onmouseout=function(){
+                timer= setInterval(move,10)
+             
+         }
+
+    
+    
+    
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

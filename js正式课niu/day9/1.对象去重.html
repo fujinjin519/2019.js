@@ -1,37 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         //数组去重 对象属性名
-        var ary=[{a:2,b:2},{a:2,b:2},{a:2,b:1},{a:2,b:2},{a:2,b:3}]
-        Array.prototype.unique=function(){
-            let res=[]
-            let obj={}
-            for(let i=0;i<this.length;i++){
-                // console.log(i); //索引
-                let temp = ''
-                for(let j in this[i]){
-                    // console.log(j);/循环每一项  j就是属性名
-                    // console.log(this[i]); // 获取每一项
-                    temp += j + this[i][j]
-                    //  console.log(this[i][j]); //属性
-                 }
-                 if (!obj[temp]) {
-                    res.push(this[i])
-                    obj[temp] = true
-                 }
-            }
-            console.log(res);
-            console.log(obj);
-            return res
+        // var ary=[{a:2,b:2},{a:2,b:2},{a:2,b:1},{a:2,b:2},{a:2,b:3}]
+        // Array.prototype.unique=function(){
+        //     let res=[]
+        //     let obj={}
+        //     for(let i=0;i<this.length;i++){
+        //         // console.log(i); //索引
+        //         let temp = ''
+        //         for(let j in this[i]){
+        //             // console.log(j);/循环每一项  j就是属性名
+        //             // console.log(this[i]); // 获取每一项
+        //             temp += j + this[i][j]
+        //             //  console.log(this[i][j]); //属性
+        //          }
+        //          if (!obj[temp]) {
+        //             res.push(this[i])
+        //             obj[temp] = true
+        //          }
+        //     }
+        //     console.log(res);
+        //     console.log(obj);
+        //     return res
+        // }
+        // ary.unique()
+
+    //   乱序//
+        // var ary=[12,2,3,11,23,34]
+        // ary.sort(function(a,b){
+        //     return (a-b)*(Math.random()*2-1)
+        // })
+        // console.log(ary);
+
+        var obj = {
+            a: [{ b: 1, c: { d: 2 } }],
+            e: { f: 1, h: [{ i: 1 }] },
+            x: { y: 2 }
         }
-        ary.unique()
-        </script>
+        
+        let ary=[]
+        function pushAry(obj){
+            
+            if(obj instanceof Array){
+                for(let i=0;i<obj.length;i++){
+                    pushAry(obj[i])
+ 
+                
+                }
+
+            }else{
+                for(let key in obj){
+                    ary.push(key)
+                    pushAry(obj[key])
+               }
+
+            }
+
+
+        }
+        pushAry(obj)
+        console.log(ary);
+        
+
+    </script>
 </body>
+
 </html>
