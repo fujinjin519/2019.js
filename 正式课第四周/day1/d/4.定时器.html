@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- settimeout ：到了一定时间执行一次
+         setinterval ：每隔多长时间执行一次 
+        当代码运行到14行，浏览器会给当前定时器记录一个开始的时间 
+        浏览器的最小识别时间，谷歌5-6ms.火狐10-12ms. iE 13-15ms
+        定时器的返回值,代表页面中第几个定时器-->
+    <script>
+      
+    //   function fn(){
+          
+    //       setTimeout(function(){},1000)
+    //   }
+    //   var timer= setTimeout(function(a){
+    //            console.log(a);
+    //            return 100
+            
+    //    },2000,3) //过了2000ms，会让这个函数执行一次
+    //   fn()
+    //   console.log(timer);
+    //   clearInterval() //可以清除 set的
+    // var cur=Date.now()
+    // for(var i=0;i<1000000;i++){
+
+
+    // }
+    // console.log(Date.now()-cur);
+    //js是单线程，js同一时间只能执行一行代码,浏览器是多线程
+    //for循环是同步，定时器里面的函数是异步，先把同步执行完成，然后再执行异步。
+    //异步：定时器， ajax.  事件（onload,onclick） promis   async   await
+    //事件循环机制
+    //线程是进程的一个单位
+    
+     //1.如果两个定时器都在for循环的上面，谁的时间小，就会先运行谁
+
+    //  调用栈中的同步任务都执行完毕，栈内被清空了，就代表主线程空闲了，这个时候就会去任务队列中按照顺序读取一个任务放入到栈中执行。每次栈内被清空，都会去读取任务队列有没有任务，有就读取执行，一直循环读取-执行的操作，就形成了事件循环。
+   
+    //   setTimeout(function(){
+    //       //这个是异步
+    //       console.log(100);
+          
+
+    //   },20)
+    //   console.log(300);
+
+    //   for(var i=0;i<1000000;i++){ //50ms
+
+    //   }
+    //   console.log(200);
+    //   setTimeout(function(){
+    //       console.log(400); //50ms运行完成就有时间了
+          
+
+    //   },10) //300 200  100  400  改成10ms    300 200 400 100      
+      
+      
+    setTimeout (function(){
+        console.log(100);
+        
+
+    },20)
+    console.log(300);
+    setTimeout(function(){
+        console.log(400);
+        
+
+    },10)
+    for(var i=0;i<100000;i++){  //100000=50ms
+
+    }
+    console.log(200); //300  200  100  400    
+    
+    //先主线程执行，遇到异步放到等待队列，等待队列的定时器的时间，当时间相同，从上往下执行
+    //时间不同先执行时间少的，
+
+    
+    
+    
+      
+
+        
+        
+        
+        </script>
+</body>
+</html>

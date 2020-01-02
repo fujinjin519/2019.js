@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+           margin: 0;
+           padding: 0;
+       }
+       #box{
+           width: 100px;
+           height: 100px;
+           background:red;
+           position: absolute;
+           border-radius: 50%;
+       }
+   
+   
+   
+   
+   </style>
+</head>
+<body>
+    <!--       //t:时间
+            //b:开始的位置
+            //c:要运动的总距离
+            //d:需要的总时间 -->
+    <div id="box"></div>
+    <script>
+      //
+     
+     function liner(t,b,c,d){
+      //匀速
+       
+           return  c/d*t+b
+        }
+        
+        let target={ //目标
+            left:500,
+            top:300,
+            width:200,
+            height:200
+
+        }
+    
+        let begin={
+            left:0,
+            top:0,
+            width:100,
+            height:100
+        }
+       
+        let duration=3000 //3秒内走完
+        
+        let  change={}  //改变的东西
+        
+        for(let key in target){
+            change[key]=target[key]-begin[key]
+        }
+        
+        
+        let box=document.getElementById('box')
+      
+
+        box.onclick=function(){
+         
+            let t=0 //每移动一步的时间
+           let timer= setInterval(() => {
+
+                t+=20
+
+                for(let key in change){
+                    let cur=liner(t,begin[key],change[key],duration)
+                    box.style[key]=cur+"px"
+                  }
+                  if(t>=duration){
+                      clearInterval(timer)
+                  }
+             }, 20);
+             }
+    
+    
+    
+    </script>
+    
+</body>
+</html>

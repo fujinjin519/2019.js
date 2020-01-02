@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            width: 0px;
+            padding: 0px;
+        }
+      #box{
+          width: 100px;
+          height: 100px;
+          background: red;
+          position: absolute;
+          left: 100px;
+
+      }
+    
+    
+    </style>
+</head>
+<body>
+    <!--     //t:时间
+            //b:开始的位置
+            //c:要运动的总距离
+            //d:需要的总时间 -->
+            <div id="box"></div>
+            <!-- <script src="utils(2).js"></script>
+            <script src="animate.js"></script> -->
+    <script>
+        function linear(t,b,c,d){
+            return c/d*t+b
+        }
+        let target={
+            left:500,
+            top:300,
+            width:200,
+            height200
+        }
+        let box=document.getElementById('box')
+ 
+    
+        function animate(curEle,target,duration){
+            let begin={}
+            let change={}
+            for(let key in target){
+                begin[key]=parseFloat(getComputedStyle(curEle)[key])
+                chang[key]=target[key]-begin[key]
+                let t=0
+               let timer= setInterval(() => {
+                   t+=20
+                   for(let key in  change){
+                       let cur=linear(t,begin[key],chang[key],duration)
+                       curEle.style[key]=cur+'px'
+                       if(t>=duration){
+                           clearInterval(timer)
+                       }
+
+                   }
+                 }, 20);
+              }
+              }
+        animate(box,{left:500,top:300,width:200,height:200},3000)
+    //zfAnimate(box,{left:500,top:300,width:200,height:200},2000,["Bounce","easeIn"])
+        
+        
+        
+        </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box" style="width:100px;height:100px;background: red;text-align: center;line-height: 100px;">0</div>
+    <script>
+
+
+        // 防抖非立即执行
+        let box = document.getElementById('box')
+        let num = 1
+
+
+        function add() {
+            box.innerHTML = num++
+        }
+
+
+        //     function debonunce(fn,time){
+        //         let timer
+        //         return function (){
+        //            clearTimeout(timer)
+        //            timer= setTimeout(()=>{
+        //                 fn.app(this)
+
+        //             },time)
+        //         }
+        //    }
+        //     box.onmousemove=debonunce(add,1000)
+
+
+
+        //立即执行
+
+        // function debonunce(fn,time){
+        //     let timer
+        //     return function(){
+        //         clearTimeout(timer)
+        //         let now=!timer
+        //         timer=setTimeout(()=>{
+        //             timer=null
+
+
+        //         },time)
+        //         if(now){
+        //             fn.call (this)
+        //         }
+        //       }
+        //     }
+        // box.onmousemove=debonunce(add,1000)
+
+        // 节流分两种写法不分立即执行不执行  时间戳
+        // function  throttle(fn,time){
+        //     let previous=0;
+        //     return function(){
+        //            let now=Date.now();
+        //            if(now-previous>=time){
+        //                fn.call(this)
+        //                previous=now
+        //           }
+        //     }
+
+        // }
+        // box.onmousemove=throttle(add,2000)
+
+        //定时器版
+        function throttle(fn, time) {
+            let timer
+            return function () {
+                if (!timer) {
+                      timer = setTimeout(() => {
+                      timer = null;
+                      fn.call(this)
+                    }, time)
+
+                }
+             }
+          }
+        box.onmousemove = throttle(add, 2000)
+ 
+
+               
+
+
+
+
+
+    </script>
+</body>
+
+</html>

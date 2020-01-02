@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        #box2 {
+            padding: 150px 0 0 50px;
+
+        }
+
+        #box2 button {
+
+            height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 动画： js动画：1.定时器，2.设置盒子位移和样式 -->
+    <div id="box" style="left:0"></div>
+    <div id="box2">
+        <button id="left">左边</button>
+        <button id="right">右边</button>
+    </div>
+
+    <script>
+        // let box=document.getElementById('box')
+        // let left=getComputedStyle(box).left
+        // left=parseFloat(left)
+        // let timer
+        // box.onclick=function(){
+
+        //   timer= setInterval(()=>{
+        //         if(left>=1200){
+        //            clearInterval(timer)
+
+        //          }
+        //         left+=4
+        //         box.style.left=left+'px'
+        //       },10)
+        // }
+        let box = document.getElementById('box')
+        let right = document.getElementsByTagName("button")[1]
+        let left = document.getElementsByTagName('button')[0]
+
+
+
+
+
+
+
+
+
+
+
+        // 利用定时器不断更改盒子的left值
+        let maxleft = document.documentElement.clientWidth - box.offsetWidth
+
+
+        // box.onclick = function () {
+        //     let timer = setInterval(() => {
+        //         // 获取到此时此刻盒子的left值，让其+=10；
+        //         let curleft = parseFloat(this.style.left)
+        //          curleft += 10
+        //           // 1335  1330
+        //         if (curleft >= maxleft) {
+        //             clearInterval(timer)
+        //             curleft = maxleft
+        //             // 直接将最大值赋值给curLeft
+        //         }
+        //         this.style.left = curleft + "px"
+        //     }, 10)
+        //   }
+       
+       
+      
+        right.onclick = function () {
+            let curleft = parseFloat(box.style.left)
+          
+
+            let timer = setInterval(() => {
+                curleft += 10
+                box.style.left = curleft + 'px'
+                if (curleft >= maxleft) {
+                    clearInterval(timer)
+
+                }
+               
+                left.onclick = function () {
+                    clearInterval(timer)
+                    timer=setInterval(()=>{
+                        curleft-=10
+
+                        box.style.left=curleft+'px'
+
+                        if(curleft<=0){
+                            clearInterval(timer)
+                        }
+                  
+                      
+                 },10)
+              
+            }
+
+          }, 10)
+
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

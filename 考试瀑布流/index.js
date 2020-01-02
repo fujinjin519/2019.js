@@ -10,6 +10,7 @@ xhr.onreadystatechange = function () {
     }
 }
 xhr.send();
+console.log(data);
 
 
 function bindHtml() {
@@ -47,9 +48,7 @@ var imgs = document.getElementsByTagName('img')
 function delay() {
 
     for (var i = 0; i < imgs.length; i++) {
-
-
-        checkImg(imgs[i])
+       checkImg(imgs[i])
 
     }
 
@@ -65,7 +64,7 @@ function checkImg(curImg) {
     var curH = curImg.offsetHeight
     var curT = utils.offset(curImg).t
     var winT = utils.win("scrollTop")
-    console.log(winT);
+   
 
   if (winH + winT > curH + curT) {
         var address = curImg.getAttribute("trueImg")
@@ -81,6 +80,7 @@ function checkImg(curImg) {
 
 }
 delay()
+
 var container = document.getElementsByClassName("container")[0]
 
 window.onscroll = function () {

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div id="box" style="left:0"></div>
+    <script>
+     
+     let box=document.getElementById('box')
+     let maxleft=document.documentElement.clientHeight-box.offsetWidth
+     
+     box.onclick=function(){
+         let timer=setInterval(()=>{
+             let curleft=parseFloat(this.style.left)
+             curleft+=10
+             if(curleft>=maxleft){
+                 clearInterval(timer)
+                 curleft=maxleft
+
+             }
+             this.style.left=curleft+"px"
+
+         },10)
+     }
+    
+     box.onclick=function(){
+         setInterval(()=>{
+             let curleft=parseFloat(this.style.left)
+             curleft+=10
+             if(curleft>=maxleft){
+                 clearInterval(timer)
+                 curleft=maxleft
+             }
+             this.style.left=curleft+"px"
+
+         },10)
+      }
+
+
+
+        
+        
+        
+        
+        
+        </script>
+</body>
+</html>
