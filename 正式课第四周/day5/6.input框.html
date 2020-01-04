@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="btn">
+    <script>
+    let btn=document.getElementById('btn')
+    //onfocue:获取鼠标焦点
+    // btn.onfocus=function(){
+    //     console.log(100);
+        
+    // }
+    // btn.onclick=function(){
+    //     console.log(200);
+        
+    // }
+    //onblur:失去鼠标焦点(点击其他地方)
+    // btn.onblur=function(){
+    //     console.log(300);
+        
+
+    // }
+    //onchang:鼠标离开input框，并且inout框。。。。。
+    // btn.onchange=function(){
+    //     console.log(400);
+        
+    // }
+      //oninput。。。。。
+    // btn.oninput=function(){
+    //     console.log(500);
+    //     // console.log(this.value); //时刻获取最新值
+        
+        
+    // }
+    //onkeydown:按下任意按键
+    // btn.onkeydown=function(){
+    //     console.log(600);
+    //     console.log(this.value);
+        
+        
+    // }
+    //onkeyup:
+    btn.onkeyup=function(e){
+        // console.log(this.value);
+        console.log(e);  //KeyboardEven键盘事件对象
+        //在键盘上，每一个键盘的键都有一个对应的keyCode码,根据
+        
+        
+    }
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 数据类型   操作语句（判断条件） 循环  function 
+    数据类型：基本数据类型 ：number   undifined   null  string  boolean 
+            引用数据类型  :对象 (普通对象   数组  正则  日期  对象)    function  
+            tofixed：保留小数点位数，返回一个字符串
+         -->
+    <script>
+        //  let str='1.23'
+        //  Number(str)
+        //  console.log(str);// '1.23'
+
+        // let str = '1.23px'
+        // console.log( parseFloat(str)); //1.23
+        // console.log( parseInt(str));  //1
+        
+        //  console.log(parseFloat("")); //NaN
+
+        // let num1=12.5777
+        // console.log( Number(num1.toFixed(2))+100);
+
+        // let a=null+10+[]+undefined+"zhufeng"
+         // console.log(a);
+    
+    
+        // ![]==[]  //true
+
+             
+    //    let arr=[12,3,4,5,6,12,34,56]
+
+    //    let a= arr.every(function(item,index){
+    //         console.log(item);
+            
+    //         return item
+
+    //     })
+    //     console.log(a);
+//    let total= arr.reduce(function(prev,next){
+//         //12  3
+      
+//     console.log(prev,next); //第一项和第二项
+//         return prev+next
+//         //prev:代表上一次回调函数的返回值
+      
+//      },0)
+//      console.log(total); //数组的求和
+    
+     let arr = [{price:5,count:3,name:"苹果"},{price:3,count:2,name:"橘子"},{price:2,count:5,name:"香蕉"}]
+
+      let total=arr.reduce(function(prev,next){
+       return prev+next.price*next.count
+     },0)
+     console.log(total);
+     
+
+
+        
+        
+        //filter gugu
+        // map  every  find   reduce  filter
+
+        
+
+        
+    
+        
+       
+     
+
+
+
+
+    </script>
+</body>
+
+</html>

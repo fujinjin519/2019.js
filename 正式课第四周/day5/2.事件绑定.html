@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 事件.当想操作两个事件 ,addEventListener:可以给同一个元素事件行为绑定多个不同的方法-->
+    <div id="box" >123</div>
+    <!-- <div id="box" onclick="fn()"></div> -->
+    <script>
+        let box=document.getElementById('box')
+       // function fn(){}
+        // box.onclick=fn
+        // $('#box').click(function(){})
+        // $("#box").on('click',fn)
+        // box.onclick=fn1;
+        // box.onclick=fn2; //fn2会覆盖上一个
+        // box.onclick=null//清除
+         
+        // addEventListener:监听事件  后面三个参数（事件行为（去掉on).事件回调函数，布尔）
+        //false:冒泡阶段执行，true:捕获阶段执行
+        //removeEventListener：移除事件
+        function fn2(){
+            console.log(2);
+            
+        }
+       
+        function fn1(){
+            console.log(1);
+            
+        }
+     
+        box.addEventListener("click",fn1,false) //去掉on   ,回调函数，   布尔值
+        // box.addEventListener("click",fn1,false) //替换，只能给事件行为绑定同一个方法
+        // box.addEventListener('mouseover',fn1,false) //可以绑定多个方法
+        box.addEventListener('click',fn2,false)
+        box.removeEventListener('click',fn1,false) //移除事件
+        //元素是对象，但是对象不一定是元素
+       
+        // let obj={a:1} 
+        // obj.addEventListener() //原型上没有，不能调用
+       
+        //ie8以下不兼容
+        //   attachEvent('on'+事件，fn)
+          box.attachEvent('onclick', fn1)
+          
+
+           
+     
+    
+    
+    
+    
+    </script>
+</body>
+</html>

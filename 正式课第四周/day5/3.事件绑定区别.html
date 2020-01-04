@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- dom0级事件绑定（只能绑定一个，onclick）   dom2级事件绑定 （绑定多个add....）
+        标准浏览器：ie9以上的，框架项目不考虑ie8以下
+        addEventListener:   
+        1.先绑定谁，执行谁
+        2.this,指向被点击的哪个元素(box)
+        3.给同一个元素同一个事件行为只能绑定一次这个相同的方法，绑定一样的，只会执行一次
+         attachEvent:
+         1.倒序
+         2.this指向window
+         3.可以重复绑定
+
+       -->
+    <div id="box">123</div>
+    <script>
+        
+        function fn1(){
+            console.log(1);
+            // console.log(this);
+            
+            
+            
+        }
+        
+        function fn2(){
+            console.log(2);
+            
+        }
+
+        box.addEventListener('click',fn1,false)
+        box.addEventListener('click',fn2,false)
+      
+
+        //   box.attachEvent('onclick',fn2) //只能在ie中输出
+        //   box.attachEvent('onclicj',fn2) 
+
+        
+
+     
+    
+    
+    
+    
+    </script>
+</body>
+</html>

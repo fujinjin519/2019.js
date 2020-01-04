@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- a标签的点击默认跳转，就是a的默认行为，也执行函数，也跳转 解决用e.preventDefault
+    form：表单，submit,也是默认跳转-->
+    <!-- <form action="">
+        <input type="text" name='user'>
+        <input type="submit"value="提交">
+
+
+    </form> -->
+    <a href="http://www.baidu.com" id="abc">点我</a>
+
+    <script>
+    
+       let abc=document.getElementById('abc')
+       abc.onclick=function(e){
+       
+           e.preventDefault()//阻止事件的默认行为，就不会跳转了
+        //    e.returnValue=false //这两个一个意思
+           console.log(e);
+           
+       }
+    
+    
+    
+    </script>
+</body>
+</html>

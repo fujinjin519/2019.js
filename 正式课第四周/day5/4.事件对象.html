@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 100px auto;
+        }
+        #outer{
+            width: 200px;
+            height: 200px;
+            background:yellowgreen;
+            margin: 100px auto;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="box"></div>
+    </div>
+    <script>
+        let box = document.getElementById('box')
+        let outer=document.getElementById('outer')
+        //事件对象：当点击触发元素的事件行为时，浏览器会默认将一些事件的信息，传递给这个函数的第一个参数   MouseEvent 
+        box.onclick = function (e) { //形参
+            console.log(e);//鼠标事件对象   
+            // e在ie8也不兼容      console.log(window.event);
+           // e=e||window.event 处理兼容
+            //clientX:  鼠标点击的位置，距离可视窗口左边的距离
+            //clientY:   鼠标点击的位置，距离可视窗口上边的距离                     
+            //offsetX:  鼠标点击的位置距离盒子左边框的距离
+            //offsety:  鼠标点击的位置距离盒子上边框的距离                
+            //pagex:  鼠标点击的位置距离页面左边框的距离
+            //pagey:鼠标点击的位置距离页面上边框的距离
+           //target:事件源.
+           //type:事件类型（’clik')
+           //  e.cancelBubble：取消事件默认的冒泡传播
+        //    e.cancelBubble=true  // 不冒泡了 绑定了两个点击事件，就会同时触发，写这个点哪个出哪个
+        // e.stopPropagation()//ie8以下不兼容，两个一个一样都是取消冒泡传播
+ 
+          }
+    
+        
+      outer.onclick=function(){
+          console.log(1);
+          
+
+      }
+
+
+
+    </script>
+</body>
+
+</html>

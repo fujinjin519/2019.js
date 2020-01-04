@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 复习：promise  -->
+    <script>
+        //  let p = new Promise(function(resolve,reject){
+        //     resolve()
+        // });
+        // p.then(function(){
+        //     // 如果这里面return一个promise的实例，下一个then中的回调受这个实例的影响；
+        //     return new Promise(function(resolve,reject){
+        //         setTimeout(function(){
+        //             console.log(1);
+        //             resolve();
+        //         },2000)
+        //     })
+        //     // setTimeout(function(){
+        //     //     console.log(1);
+        //     // },2000)
+        // },function(){
+
+        // }).then(function(){
+        //     console.log(2); 
+        // })
+
+let p=new Promise(function(resolve,reject){
+    setTimeout(function(){
+        console.log('买菜');
+        resolve()
+        
+    },3000)
+         
+ }).then(function(){
+    return new Promise(function(resolve,reject){
+        setTimeout(function(){
+            console.log("洗菜");
+            resolve()
+            
+        },2000)
+
+    }).then(function(){
+        return new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log('做菜');
+                resolve()
+
+            },2000)
+        })
+    })
+})
+
+
+
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #outer {
+            width: 300px;
+            height: 300px;
+            background: red;
+            margin: 100px auto;
+        }
+
+        #inner {
+            width: 200px;
+            height: 200px;
+            background: yellow;
+            margin: auto;
+        }
+
+        #center {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+
+        <div id="inner">
+            <div id="center"></div>
+        </div>
+
+    </div>
+    <script>
+        let outer = document.getElementById('outer')
+        let inner = document.getElementById('inner')
+        let center = document.getElementById('center')
+       //true  :捕获阶段执行，从外向里     false:冒泡阶段执行   从里向外
+       //从外到内，先捕获，再冒泡，里到外，当遇见目标阶段，先绑定谁就先执行谁   
+       //   捕获阶段-目标阶段-冒泡阶段
+
+       
+       // function fn1(e){
+        //     console.log('center');
+            
+        // }
+        // center.addEventListener('click',fn1,false)
+
+
+        // function fn2(e){
+        //     console.log('inner');
+            
+        // }
+        // inner.addEventListener('click',fn2,false)
+
+        // function fn3(e){
+        //     console.log('outer');
+            
+        // }
+        // outer.addEventListener('click',fn3,true) //捕获
+
+
+
+
+        // center.onclick = function (e) {
+        //     // console.log(e.target); //center
+        //     console.log('center');
+
+        // }
+        // inner.onclick = function (e) {
+        //     // console.log(e.target); 
+        //     console.log('inner');
+
+        // }
+
+        // outer.onclick = function (e) {
+        //     // console.log(e.target); center
+        //     console.log('outer');
+
+        // }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

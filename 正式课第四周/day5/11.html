@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function Dog(name) {
+            this.name = name;
+        }
+        Dog.prototype = {
+            bark() {
+                console.log('wangwang');
+            },
+            sayName() {
+                console.log('my name is ' + this.name);
+            }
+        };
+        function _new(Fn, ...arg) {
+            let obj = {};
+            obj.__proto__ = Fn.prototype;
+            Fn.call(obj, ...arg);
+            return obj;
+        }
+        let sanmao = _new(Dog, '三毛');
+        sanmao.bark(); //=>"wangwang"
+        sanmao.sayName(); //=>"my name is 三毛"
+        console.log(sanmao instanceof Dog); //=>true
+
+    </script>
+
+
+</body>
+
+</html>
