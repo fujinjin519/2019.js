@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        new Promise(function (resolve, reject) {
+            resolve(100)
+
+        }).then(function () {
+            console.log(100);
+
+
+        }).then(function () {
+            console.log(a);
+            //只要其中一个then的回调失败，就不再执行下面的回调，直接走catch
+
+
+        }).then(function () {
+            console.log(200);
+
+
+        }).catch(function () {
+            console.log(400);
+
+
+        })   //100     400
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

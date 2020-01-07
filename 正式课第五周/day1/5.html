@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box{
+        width: 400px;
+        height: 400px;
+         background: darkorange;
+        margin: 100px auto;
+        position: relative;
+
+    }
+    #box div{
+        width: 30px;
+        height: 30px;
+        background: red;
+        position: absolute;
+    }
+    
+    
+    
+    
+    </style>
+</head>
+<body>
+   <div id="box"></div>
+</body>
+<script>
+    let box=document.getElementById('box')
+    let mark=null
+ box.onmouseenter=function(){
+   mark=document.createElement('div')
+   box.appendChild(mark)
+}
+ box.onmousemove=function(e){
+      mark.style.left=e.clientX-box.offsetLeft+10+'px'
+      mark.style.top=e.clientY-box.offsetTop+10+'px'
+      
+}
+ box.onmouseleave=function(){
+     box.removeChild(mark)
+}
+
+</script>
+</html>

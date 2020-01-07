@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 发布 订阅 
+     // 发布订阅是一种编程思想；
+        // 先进行订阅，订阅时把事件存储到一个事件池中，然后到了条件成立时，遍历事件池中的方法，把订阅的方法都执行；
+        // 观察者模式  自定义事件模式；-->
+    <div id="box"></div>
+    <script>
+        let box = document.getElementById('box')
+
+        //订阅 封装
+        function on(curEle, type, fn) {
+            if (!curEle[type]) {
+                curEle[type] = [];
+            }
+            let arr = curEle[type]
+            arr.push(fn) //
+            let ishas = arr.find(function (item) { return item === fn })
+            if (!ishas) {
+                arr.push(fn)
+            }
+        }
+
+        //发布
+        function emit(curEle, type) {
+            let arr = curEle[type]
+            for (let i = 0; i < arr.length; i++) {
+                arr[i]()
+
+            }
+
+        }
+
+        //取消订阅
+        function off(curEle, type, fn) {
+            let arr = curEle[type]
+            curEle[type] = arr.filter(function (item) {
+                return item !== fn
+            })
+        }
+
+        on(box, 'boling', fn1)
+        on(box, 'boling', fn2)
+        on(box, 'boling', fn2)
+        on(box, 'boling', fn3) //执行订阅的过程  一个事件池子
+        off(box, 'boling', fn2)
+
+
+
+        function fn1() {
+            console.log('看书');
+
+
+        }
+        function fn2() {
+            console.log('学习');
+
+
+        }
+        function fn3() {
+            console.log('睡觉');
+
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
