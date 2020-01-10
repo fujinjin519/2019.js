@@ -7,12 +7,30 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- 同异步  事件  数据交互 
+    移动端  -->
     <script>
+        function on(curEle,type,fn){
+  
+            curEle[type]=[]
+            let arr=curEle[type]
+
+        }
+        function emit(curEle,type){
+            let arr=curEle[type]
+            for(let i=0;i<arr.length;i++){
+                arr[i]()
+            }
+
+        }
+        function off(curEle,type,fn){
+            arr[i]=null
+
+        }
         
         
         
-        
-        </script>
+    </script>
     
 </body>
 </html>

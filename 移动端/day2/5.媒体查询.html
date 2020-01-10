@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+      @media screen and ( min-width: 800px) {
+          /* 当屏幕宽度超过800px.该处的样式生效 */
+        .box{
+            background-color:blue;
+               
+           }
+
+      }
+      @media screen and ( min-width: 1000px) {
+          /* 当屏幕宽度超过1000px.该处的样式生效,颜色变成黄色 */
+        .box{
+            background-color:chartreuse;
+           }
+
+      }
+      @media screen and ( min-width: 300px) and ( max-width: 600px){
+          /* 当屏幕宽度小于300的时候并且大于600时候显示什么颜色
+           */
+          .box{
+              background-color: cyan;
+          }
+      }
+   
+    
+    
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        
+        </script>
+</body>
+</html>
