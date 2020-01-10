@@ -46,23 +46,26 @@
     <script>
         let box = document.getElementById('box')
         let title = document.getElementById('title')
+        //通过js获取盒子居中的位置
         let left = (document.documentElement.clientWidth - box.offsetWidth) / 2
         let t = (document.documentElement.clientHeight - box.offsetHeight) / 2
         box.style.top = t + 'px'
         box.style.left = left + 'px'
 
         title.onmousedown = function (e) {
-            this.curL = e.clientX
-            this.curT = e.clientY
-            this.titleL = parseFloat(box.style.left);
+            //鼠标点击，盒子里会有其他内容防止误点，所以点击title,
+            this.curL = e.clientX //获取鼠标的位置  
+            this.curT = e.clientY  //
+            this.titleL = parseFloat(box.style.left);// 盒子的位置
             this.titleT = parseFloat(box.style.top);
-            title.onmousemove = move
+            title.onmousemove = move //移动
+            
         }
-        function move(e) {
+        function move(e) { //盒子移动后的位置减去移动前的位置加上盒子初始的位置
             box.style.left = e.clientX - this.curL + this.titleL + 'px'
             box.style.top = e.clientY - this.curT + this.titleT + 'px'
         }
-        function up() {
+        function up() { //鼠标抬起清空onmousemove和onomouseup事件的方法；
             title.onmousemove = null
             title.onmouseup = null
         }

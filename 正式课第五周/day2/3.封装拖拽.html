@@ -47,11 +47,13 @@
             this.startT = parseFloat(getComputedStyle(this.ele).top)
             document.onmousemove = this.move.bind(this)
             document.onmouseup = this.up
+            //防止鼠标丢失
             console.log(e);
         }
         Drag.prototype.move = function (e) {
+            // // 用鼠标变化的距离+ 盒子初始的位置=盒子最新的位置；
             this.ele.style.left = e.clientX - this.x + this.startL + 'px'
-            this.ele.style.top = e.clientY - this.y + this.startT + 'px'
+            this.ele.style.top = e.clientY - thisb.y + this.startT + 'px'
 
         }
         Drag.prototype.up = function () {

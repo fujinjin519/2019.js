@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="box"></div>
+
+</body>
+<script>
+    // 先进行订阅，订阅时把事件存储到一个事件池中，然后到了条件成立时，遍历事件池中的方法，把订阅的方法都执行；
+    let box = document.getElementById('box')
+    //订阅
+    function on(curEle, type, fn) {
+        //元素， 类型 ，fn
+        if (!curEle[type]) {
+            curEle[type] = []
+            // 给元素新增一个键值对；属性名是type的值；属性值[];
+        }
+        let arr = curEle[type]
+        // find ；如果找到满足条件，会立即停止循环
+        // 为了防止重复添加fn;所以先判断；如果不存在，加进去；
+        let ishas = arr.find(function (item) { return item === fn })
+        if (!ishas) {
+            arr.push(fn)
+        }
+
+    }
+    //发布
+    function emit(curEle, type) {
+        let arr = curEle[type]
+        for (let i = 0; i < arr.length; i++) {
+            arr[i]()
+
+        }
+    }
+
+    //第二种
+    // function emit(curEle, type) {
+    //     let arr = curEle[type]
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if(typeof arr[i] ==="funcion"){
+    //                 arr[i]();
+    //             }
+
+    //     }
+    // }
+
+    //取消订阅
+    function off(curEle, type, fn) {
+        let arr = curEle[type]
+        curEle[type] = arr.filter(function (item) {
+            return item !== fn
+        })
+
+
+    }
+    //第二中中对应上面的第二种
+    // function off(curEle,type,fn){
+    //     let arr=curEle[type]
+    //   for(let i=0;i<arr.length;i++){
+    //         if(fn===arr[i]){
+    arr[i] = null
+
+    //}
+    //   }
+
+
+    // }
+
+
+
+    //第三中
+    // function off(curEle,type,fn){
+    //     let arr=curEle[type]
+    //   for(let i=0;i<arr.length;i++){
+    //       if(fn===arr[i]){
+    //           arr.splice(i,1)
+    //           i--
+    //       }
+    //   }
+
+
+    // }
+
+
+    on(box, "boiling", fn1);
+    on(box, "boiling", fn2);
+    on(box, "boiling", fn3);
+    off(box, "boiling", fn2);
+
+
+
+    function fn1() {
+        console.log("泡面")
+    }
+    function fn2() {
+        console.log("泡咖啡")
+    }
+    function fn3() {
+        console.log("泡脚");
+    }
+    setTimeout(() => {
+        emit(box, "boiling")
+    }, 3000)
+
+</script>
+
+</html>

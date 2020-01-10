@@ -29,7 +29,7 @@ let bindHtml = () => {
 bindHtml()
 //轮播
 let step=0
-let autoMove=()=>{
+let autoMove=(i)=>{
     step++
     if(step===5){
         wrapper.style.left='0px'

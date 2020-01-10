@@ -12,66 +12,59 @@
             padding: 0;
         }
 
-        #box,
-        #bigBox {
-            width: 350px;
-            height: 350px;
-            border: 1px solid black;
-            float: left;
-            position: relative;
-            margin-right: 30px;
-            overflow: hidden;
-
-        }
-
-        #bigBox img {
+        #box {
+            width: 300px;
+            height: 300px;
+            background: blueviolet;
             position: absolute;
-            width: 700px;
-            height: 700px;
+            /* top:0;
             left: 0;
-            top: 0;
-
+            bottom: 0;
+            right: 0; */
+            /* left: 50%;
+            top: 50%;
+            margin-left: -150px;
+            margin-top: -150px; */
         }
-        #mark {
-            position: absolute;
-            width: 175px;
-            height: 175px;
-            background: rgba(0, 0, 0, 0.3);
+
+        #box h3 {
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: white;
+            background: crimson;
             cursor: move;
-            left: 0;
-            top: 0;
+
         }
     </style>
 </head>
 
 <body>
     <div id="box">
-        <img src="img/iphone.jpg" alt="">
+        <h3 id="title">珠峰培训welcome you!</h3>
     </div>
-    <div id="bigBox">
-        <img src="img/iphone_big.jpg" alt="">
-    </div>
-
-
     <script>
-let bigBox=document.getElementById('bigbox')
-let img=bigBox.getElementsByTagName('img')[0]
-let box=document.getElementById('box')
-let mark
-box.onmouseenter=function(e){
-    let curLeft=e.clientX-box.offsetLeft-mark.offsetLeft
-    
-    
-    let curTop=e.clientY-box.offsetTop-mark.offsetWidth
-
-    let minL=0
-    let minT=0
-    let maxT=box.offsetHeight-mark.o
-
-}
-
-
-
+        let box = document.getElementById('box')
+        let title = document.getElementById('title')
+        let left = (document.documentElement.clientWidth - box.offsetWidth) / 2
+        let t = (document.documentElement.clientHeight - box.offsetHeight) / 2
+        box.style.left = left + 'px'
+        box.style.top = t + 'px'
+        title.onmousedown = function (e) {
+            this.curL = e.clientX
+            this.curT = e.clientY
+            this.titleL=parseFloat(box.style.left)
+            this.titleT=parseFloat(box.style.top)
+            this.onmousemove=move
+       }
+       function move(e){
+           box.style.left=e.clientX-this.curL+this.titleL+'px'
+           box.style.top=e.clientY-this.curT+this.titleT+'px'
+       }
+       function up(){
+           title.onmousemove=null
+           title.onmouseup=null
+       }
 
 
 
