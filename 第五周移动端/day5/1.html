@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--事件对象及兼容：e
+    事件的传播：捕获-目标-冒泡  -->
+
+    <script>
+        // box.onclick=function(e){
+        //     e=e||window.event
+        //     //在IE9以下不兼容e是undifined，把对象放在widow的event属性
+        //   }
+        // box1.onclick=function(e){
+        //     e=e||window.event
+        //     //client clientY 兼容   pagex pageY不兼容
+            
+        // }
+        // console.log(widown.event);
+        
+        function on(curEle,type,fn){
+            if(!curEle[type]){
+                curEle[type]=[]
+                }
+            let arr=curEle[type]
+            let ishas=arr.find(function(item){return 
+                item===fn});
+                if(!ishas){
+                    arr.push(fn)
+                }
+                
+            }
+
+        function emit(curEle,type){
+            let arr=curEle[type]
+            for(let i=0;i<arr.length;i++){
+                // if(typeof arr[i]==="function")
+                arr[i]()
+            }
+        }
+
+       
+          
+
+
+        
+        
+        
+        
+        </script>
+</body>
+</html>

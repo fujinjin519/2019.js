@@ -1,0 +1,13 @@
+.box {
+  width: 300px;
+}
+.box .box1 {
+  height: 200px;
+  background: url("../img/1.jpg");
+}
+.box .box2 {
+  background: url("../img/2.jpg");
+}
+.box-top {
+  width: 500px;
+}
