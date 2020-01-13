@@ -7,15 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        html{
+        html {
             font-size: 250px;
         }
+
         div {
             float: left;
             width: 1rem;
 
         }
-
     </style>
 </head>
 
@@ -33,10 +33,23 @@
    盒子的宽度=fontsize*rem  比例
     -->
     <script>
+        (function () {
+            //html的字体的大小，就是整个页面rem,这是相对的单位
+            //px：
+            //em:相对于自己的字体大小
+            //rem:相对于html的font-size的属性
+            
+            function computedFontSize() {
+                let winw = document.documentElement.clientWidth;
+                document.documentElement.style.fontSize = winw * 100 / 750 + 'px'
+            }
+            computedFontSize()
+            window.addEventListener('resize', computedFontSize)
+
+        })()
 
 
-
-
+     //当可视窗口发生改变
     </script>
 </body>
 

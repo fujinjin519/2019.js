@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 创建一个数据类型：
+    1.字面量方式， 2.构造函数方式  
+    不伦哪一种方式创建出来的方式都是所属类的实例
+     -->
+
+    <script>
+        //创建方式的两种
+        let x = 10  //基本数据类型的值
+        let y = new Number(10)  //引用数据类型值  都可以调用原型上的方法，所属类的方法
+        console.log(y.valueOf() === x);//对象结果的原始值是基本书库类型数字10
+        //先调用原始值
+
+
+
+
+
+
+        //加减法封装
+        ~function anonymous(proto) {
+            const checkNum = function checkNum(num) {
+                num = Number(num)
+                if (isNaN(num)) {
+                    num = 0
+                }
+                return num
+
+            }
+
+            proto.plus = function plus() {
+                // num = Number(num)
+                // if (isNaN(num)) {
+                //     num = 0
+                // }
+                // return this + num
+                // // console.log(this+num);
+                return this + checkNum(num)
+
+            }
+
+            proto.prototype.minus = function minus() {
+
+                return this - checkNum(num)
+            }
+
+        }(Number.prototype)
+
+        let n = 10
+        let m = n.plus(10).minus(5)
+        console.log(m);
+
+        //重置类的原型的时候  constructor丢失
+        要加constructor: fun
+
+        alert: 输出会变成字符串
+
+        //==相等   ===绝对相等
+        //   1. nan=nan:NaN和谁都不相等（包括它自己）
+        //   2.null=undefined ;null和undifined两个等号比较谁相等的，（三个则不相等）他们和谁都不相等
+        //   3.对象==字符串：把对象
+
+        //   var a={
+        //       i:0,
+        //       toString(){
+        //           return ++this.i
+
+        //       }
+        //   };
+        //   if（a==1&&a==2&&a==3){
+        //       console.log('ok');
+
+        //   }
+       //方案1
+        // var a = [1, 2, 3]
+        // a.toString = a.shift
+        // if (a == 1 && a == 2 && a == 3) {
+        //     console.log('ok');
+
+        // }
+        //方案2，Object.defineProperties劫持对象中某个属性的操作
+        // Object.defineProperties(window,'a',{
+        //     //获取window.a的时候触发
+        //     get(){
+        //         console.log(1); //获取
+                
+        //     },
+        //     set(){
+        //         console.log(2); //赋值
+                
+
+        //     }
+
+        // })
+        // if (a == 1 && a == 2 && a == 3) {
+        //     console.log('ok');
+
+        // }
+
+    //push方法
+
+    // Array.prototype.push=function push(num){
+    //         this[this.length]=num
+    //         //原有的length,作为新增项的索引
+    //         //length的长度会自动跟着新增
+
+    // }
+//    add(1)
+//    add(1)
+//    add(1,2)
+
+   
+   function add(...outerArg){
+       add=function(...innerArg){
+           outerArg.push(...innerArg);
+           return add
+
+
+       };
+       add.toString=function(){
+           return outerArgs.reduce((x,y)=>x+y)
+       };
+       return add
+
+
+   }
+   let res=add(1,2)(3)(4)
+   alert(res)
+
+
+
+
+
+    </script>
+</body>
+
+</html>
