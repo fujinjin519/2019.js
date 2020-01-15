@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        let box = document.querySelector('.box')
+
+        box.onclick = function () {
+            console.log(200);
+
+        }
+
+        box.addEventListener("touchstart", function (e) {
+            console.log(e);
+
+            console.log(300);
+
+
+        })
+        //  box.addEventListener(" touchmove",function(){
+        //      console.log(400);
+
+
+        //  })
+        box.addEventListener("touchend", function () {
+            console.log(600);
+
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

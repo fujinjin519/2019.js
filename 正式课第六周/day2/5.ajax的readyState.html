@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--  -->
+    <script>
+        //script的src   img的src  link    浏览器的url地址栏 这类的都是要向服务器发请求
+       
+        // XMLHttpRequest是一个内置的类  1.创建了一个ajax的实例
+        let xhr=new XMLHttpRequest;
+        // console.log(xhr.readyState);
+        //2.请求方式，请求路径，同步异步
+        xhr.open("get","data.jason",true)
+        // console.log(xhr.readyState);
+       
+        //3.监听readystatechange发生改变的方法
+        xhr.onreadystatechange=function(){
+            //如果是同步只输出4，如果是异步会输出2，3，4 
+            //如果是同步，如果请求不完，不会这行这个回调，但是readyState也会发生2-3-4的变化，只是不能执行而已，等上面执行完readyState已经变成了4，所以只会输出4
+            if(xhr.readyState==4)
+            console.log(xhr.readyState);
+            // if(xhr.readyState===4)
+          
+        }
+
+        //4.发送请求
+        xhr.send()
+        console.log(100);
+        
+       
+       
+        
+        // xhr.readyState//0  1  2   3  4   代表了ajax不同的实例状态
+        //readyState 上面的值不一样说明该请求进入到不同的阶段
+        // 0:创建Ajax实例成功
+        // 1:确定好了请求的方式路径以及同异步；
+        // 2代表：服务器已经接受到客户端的请求，并且把响应头传给了客户端
+        //3代表：服务器正在向客户端发送数据
+        //4代表：客户端全部接收到数据，那么状态变成4
+        
+        
+        </script>
+</body>
+</html>

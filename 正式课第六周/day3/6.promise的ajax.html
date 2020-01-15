@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // Promise:解决异步回调地狱
+        //promise.
+        //    $.ajax({
+        //        url:"q.jason",
+        //        async:false,
+        //        success:function(){
+
+        //     });
+        let getJSON = function (str) {
+            let promise = new promise(function (resolve, reject) {
+                let xhr = new XMLHttpRequest()
+                xhr.open("get", "data.txt", false)
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && /^2\d{2}/.test(xhr.status)) {
+                        let val = JSON.parse(xhr.responseText)
+                        resolve()
+                    } else {
+                        reject()
+                    }
+                }
+                xhr.send()
+            })
+            return promise;
+
+        }
+
+        // getJSON("/userList").then(function (data) {
+
+        // }).then(function () {
+        //     return getJSON("/list")
+        // }).then(function(data){
+        //      return getJSON("/order")
+        // }).catch(function(){
+
+        // })
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Request:请求 报文 Network下 All
+       cookie:  后端生成的，请求头 -->
+    <script>
+        let xhr = new XMLHttpRequest
+        xhr.open("get", "data.json", true)
+        xhr.onreadystatechange = function () {
+            
+                console.log(xhr.readyState);
+
+
+        }
+        xhr.setRequestHeader("Cookie","headertest")
+        xhr.send()
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--  ajax的同异步
+    false:同步
+    true:异步
+     fasle同步，直到前端成功接收到所有的数据后，才会继续向下执行。
+      true异步：当ajax发送请求，浏览器不会在此等候后端返回的数据，而是向下执行js代码-->
+
+    <script>
+     let xhr=new XMLHttpRequest
+     xhr.open("get","data.json",true)
+     xhr.onreadystatechange=function(){
+         if(xhr.readyState===4)
+         console.log(xhr.readyState);
+         
+      
+       }
+     xhr.send()
+     console.log(100);
+     
+        
+        
+        
+        
+        </script>
+</body>
+</html>

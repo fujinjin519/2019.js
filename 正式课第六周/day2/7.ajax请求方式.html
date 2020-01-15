@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 请求方式：
+        get:一般用于向服务器获取数据（获取订单，用户信息
+        post:一般用于向服务器发送数据（登陆注册，提交订单） -->
+    <script>
+       xhr.open("get","") 
+      
+
+
+       $.ajax({
+           url:"",
+           type:'post',//不写默认会走get
+           async:false,//如果不写默认异步
+           cache:false,//默认会走缓存，如果是false,是不走缓存的
+           success:function(data){
+
+           },
+         error:function(){
+             //如果请求失败，会执行这个代码
+
+         }
+           
+       })
+        
+        
+        </script>
+</body>
+</html>

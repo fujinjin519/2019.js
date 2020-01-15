@@ -27,24 +27,24 @@
     <script>
         let box = document.querySelector('.box')
         //移动端一般都用querySelector获取元素，兼容性好,
-        // box.onclick=function(){
-        //     //会延迟所以不用onclick，用touch
+        box.onclick=function(){
+            //会延迟所以不用onclick，用touch
 
-        // }
+        }
 
-        // box.addEventListener('touchstart',function(){
-        //     //ontouchstart是触摸开始执行的方法，只用于移动端
-        //     console.log(100);
+        box.addEventListener('touchstart',function(){
+            //ontouchstart是触摸开始执行的方法，只用于移动端
+            console.log(100);
 
 
         // }) //一般用这种绑，会好些
 
 
         //下面这样写直接写也可以直接.ontouchstart
-        //  box.ontouchstart=function(e){
-        //      //移动端也有事件对象传e. TouchEvent   触摸开始执行的方法 
-        //      //事件对象有mouseEvent，  keyboardEvent   touchevent
-        //      console.log(e);
+         box.ontouchstart=function(e){
+             //移动端也有事件对象传e. TouchEvent   触摸开始执行的方法 
+             //事件对象有mouseEvent，  keyboardEvent   touchevent
+             console.log(e);
 
         //      console.log(200);
         //      //移动端的事件信息存放在事件对象的touches的值中
@@ -55,27 +55,27 @@
 
 
 
-        //    box.onclick=function(){
-        //        console.log(400);
+        // box.onclick = function () {
+        //     console.log(400);
 
-        //    }
-        //      box.addEventListener('touchstart',function(){
-        //       //触摸开始
-        //         console.log(100);
+        // }
+        box.addEventListener('touchstart', function () {
+            //触摸开始
+            console.log(100);
 
-        //      }) 
-        //      box.addEventListener('touchmove',function(e){
-        //          //触摸移动
-        //         console.log(200);
-                    console.log(e);
+        })
+        box.addEventListener('touchmove', function () {
+            //触摸移动
+            console.log(200);
+            // console.log(e);
 
 
-    //      }) 
-        //  box.addEventListener('touchend',function(e){
-        //      console.log(e);
-        //       //touchend中的事件对象信息在changedTouches这个属性上，其他的都在touches可以直接找到clirntx中
+        // })
+        // box.addEventListener('touchend', function () {
+        //     // console.log();
+        //     //touchend中的事件对象信息在changedTouches这个属性上，其他的都在touches可以直接找到clirntx中
 
-        //     //触摸结束
+        //     //     //触摸结束
         //     console.log(300);
 
         //  }) 

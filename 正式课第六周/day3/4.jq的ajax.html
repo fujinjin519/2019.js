@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- jq的ajax -->
+    <script>
+       window. $===jQuery
+       $.ajax({
+           url:"data.txt",
+           type:"get",
+           async:fasle,
+           cache:false,//默认走缓存，true走缓存，false是不走缓存
+           data:{},
+           datatype:"json",//请求来的数据格式，默认json格式
+           success:function(data){
+                //请求成功执行的回调函数，并且把数据传递给这个回调函数的实参
+       },
+           error:function(){
+               //请求失败执行的回调函数
+           },
+           beforeSend:function(xhr){
+               //发送请求之前，执行的回调，一般用于设置请求头；
+               //xhr,就是原生ajax的实例
+               xhr.setRequestHeader()
+           },
+           
+           complete:function(){
+               //不管成功还是失败都要调用这个方法
+
+           },
+           timeout:1000,//设置请求的超时时间
+           username,
+        
+
+           
+           })
+        
+        
+        
+        </script>
+</body>
+</html>
