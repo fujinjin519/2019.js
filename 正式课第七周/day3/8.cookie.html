@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- cookie:登陆注册的网站都会用到
+    cookie:解决登录问题，
+    
+    1.京东：打开网页向服务器发送请求，登陆会自动有账号和密码，
+    出现这个是因为本地存储过，（自动登陆）
+    localStorage 本地存储：setItem   removeItem clear
+    2.加入购物车，登陆状态：每个账户都有一个数据库
+                没登陆加入购物车：把商品信息存储到本地，等登陆后
+                把商品信息发送给服务器，存储到当前用户的购物车里
+    3.本地存储可以页面之间信息的共享：
+     本地存储（localStorage）受浏览器限制。受域名的限制。
+     localStorage，h5新增的属性
+     sessionStorage
+
+     cookie:解决登录问题，也是一种存储
+     1.点击我的订单：前提得是知道有没有登录。网页是怎么知道的
+     2.登录京东页面不动，稍后再点击我的订单，让重新登录，
+      因为刚才的登录已经过期，它怎么知道过期，用cookie
+      
+      京东网页的cookie，检查，登录和不登录，cookie不一样，Appication
+     
+      http 协议：是无状态的，并不知道该用户有没有登录过
+    
+     
+     cookie和  localStorage都是存储但是有区别：
+     1.大小限制，cookie,最多存储8kb,localStorage存储5MB
+     2.cookie,兼容所有的浏览器，localStorage是h5新增的，不兼容低版本（ie6,78,)
+     3.稳定性：cookie有过期时间，可以设置时间（清除浏览器缓存历史信息，清理电脑垃圾都有可能删除cookie，localStorage永久性存储
+     4.浏览器开启无痕模式，访问以后不记录，此时没办法设置cookie.localStorage是可以的
+     5.cookie,有过期时间，localStorage永久性。
+     6.cookie经常和服务器的session有关。cookie信息经常会传给服务器
+     服务器也经常返回cookie,穿梭于客户端和服务端之间。
+     
+     登录过期
+     服务器的session:登录发送请求，服务器验证成功，会生成一个session文件，session服务器存储，相当于前端的localStorage。会生成一个ession-ID:服务器识别的，ession-ID，服务器返回一个成功状态，并且在前端会种一个cookie,并且设置个cookie的过期时间，这个cookie中就包含了一些登录的信息以及session-id;当客户端再次发请求，客户端会默认携带着当前页面的cookie信息，发送给服务器了；
+
+     前后端都有cookie,都可以设置
+
+     前端不安全，后端安全
+     
+     cookie的登录和过期时间用的最多
+
+     登录注册
+     
+
+
+
+
+
+
+
+
+    -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.cookie.js"></script>
+    <script>
+      $.cookie("username","zhufengpeixun",{
+            expires:new Date(new Date().getTime()+30*24*60*60*1000)
+        })
+        //$.removeCookie("username")
+    
+    </script>
+    
+</body>
+</html>

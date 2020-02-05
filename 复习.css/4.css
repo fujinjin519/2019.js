@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+.item{
+    float: left;
+    width: 33.33%;
+    height: 33.33%;
+    background: url(http://www.chcedo.com/img/images/20200115/1579077332321_1.jpg) center no-repeat;
+
+   
+}

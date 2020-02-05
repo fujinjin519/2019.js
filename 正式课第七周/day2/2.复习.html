@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--this指向:
+    call第一个参数.apply数组, bind
+    数据绑定：模版字符串
+    ajax 
+    dom重回
+    dom回流
+    es6新增特性
+    promise:
+    symbol:
+    async:
+    await:
+    事件循环机制：定时器  ajax  事件  promis  异步
+    await f是同步  await下面是异步
+    同步主线程执行完成，再执行等待队列的任务（异步），等待队列（异步）又分为
+    微任务和宏任务.先执行微任务队列中的事件，再执行宏任务队列中的事件
+    promise async await 都是微任务
+    定时器 ajax都是宏任务
+    事件循环的特征
+    正则
+    盒子模型
+    封装      toArray  offset  win 
+    防抖截流
+    发布订阅
+   
+    浏览器向服务器发送请求
+   
+    域名-dns解析-iP地址:
+    tcp连接
+    服务器：
+    url:
+    ajax:0,1,2,3,4    status:状态码
+    get和post   
+    
+         
+
+
+    
+
+
+
+
+
+
+
+
+
+
+      -->
+    <script>
+        // function fn() {
+
+        // }
+        // var f = fn.bind(100, 1, 2)
+        // fn()//预处理this,
+
+        // Function.prototype.myBind=function(...arguments){
+        //        let that=this
+        //        let cur=arguments[0]
+        //        let ary=[].slice.call(arguments,1);
+        //    return function(){
+        //               that.apply(cur,ary.concat)
+        //         }
+        //      }
+        // var f=fn.myBind(100,99)
+        // f();
+
+        // function mycall(context, ...arguments) {
+        //     let res = null
+        //     context = window || context
+        //     context.$fn = this
+        //     res = context.$fn(...arg)
+        //     delete context.$fn
+        //     return res
+        // }
+    //     let {name,age}={name:"zhufeng",age:10}
+       
+    //     let fn=function(){
+
+    //    }
+    //     let fn=(m,n)=>({a:1})
+         
+//   Promise(function(resolve,reject){
+
+//   }).then(function(){
+
+//   }),function(){
+
+//   }
+// function  fn1() {
+//     console.log(111);
+//     return 99
+    
+    
+// }
+
+// function  fn1() {
+//     console.log(111);
+//     return  new Promise(function (resolve,reject) {
+//         setTimeout(function () {
+//    resolve();
+            
+//         },1000)
+        
+//     })
+// }
+    //  async function  fn() {
+    //      var a=await fn1() //fn1是同步的
+    //      //await下面是异步的
+    //      //
+    //      console.log(100);
+    // }
+    // fn()
+    // console.log(200); //111 200  100
+
+
+    //  let res = /^[+-]?(\d|([1-9]\d+))(\.\d+)?$/
+     
+    //  function  offset(curEle) {
+    //      var l=curEle.offsetLeft
+    //      var r=curEle.offsetTop
+    //      var parent=curEle.offsetParent
+    //      while(parent){
+    //        l+=parent.clientLeft+parent.offsetLeft
+    //        t+=parent.clientTop+parent.offsetTop
+    //        parent=parent.offsetParent;
+    //      }
+    //      return {l:l,t:t}
+    //    }
+     
+//      function on(curEle,type,fn){
+//    }
+    let xhr=new XMLHttpRequest
+
+       
+
+    
+    
+    
+        
+       
+
+       
+
+
+
+
+    </script>
+</body>
+
+</html>
