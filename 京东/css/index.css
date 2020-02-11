@@ -1,0 +1,3780 @@
+.context {
+  width: 100%;
+  height: 100%;
+}
+.context .main {
+  margin: 0 auto;
+}
+.context .main .header {
+  width: 100%;
+}
+.context .main .header #advertising {
+  height: 80px;
+  background: rgba(141, 18, 141);
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.context .main .header #advertising .img1 {
+  width: 190px;
+  height: 80px;
+}
+.context .main .header #advertising .img1 img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .header #advertising .img2 {
+  width: 990px;
+  height: 80px;
+}
+.context .main .header #advertising .img2 img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .header #advertising .img3 {
+  width: 116px;
+  height: 46px;
+  position: absolute;
+  top: 16px;
+  left: 1100px;
+}
+.context .main .header #advertising .img3 img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .header #advertising .img4 {
+  width: 116px;
+  height: 46px;
+  position: absolute;
+  top: 16px;
+  left: 1230px;
+}
+.context .main .header #advertising .img4 img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .header #advertising #btnT {
+  width: 20px;
+  height: 20px;
+  background: rgba(60, 21, 138);
+  color: rgba(122, 84, 201);
+  text-align: center;
+  line-height: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.context .main .header .nav {
+  width: 100%;
+  height: 30px;
+  background: rgba(227, 228, 229);
+  text-align: left;
+  line-height: 30px;
+  font-size: 12px;
+  font-weight: 400px;
+}
+.context .main .header .nav .mainNav {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.context .main .header .nav .mainNav .site {
+  width: 70px;
+  height: 28px;
+  padding-bottom: 2px;
+  z-index: 2;
+}
+.context .main .header .nav .mainNav .site .icon-address {
+  font-size: 25px;
+  color: red;
+}
+.context .main .header .nav .mainNav .site a {
+  color: #999;
+  vertical-align: top;
+}
+.context .main .header .nav .mainNav .site:hover {
+  background: #fff;
+}
+.context .main .header .nav .mainNav .site:hover .a {
+  color: red;
+}
+.context .main .header .nav .mainNav .site:hover #ycg {
+  display: block;
+}
+.context .main .header .nav .mainNav .site #ycg {
+  width: 300px;
+  display: none;
+  border: 1px solid #cccccc;
+  border-top-color: #fff;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 30px;
+  background: #fff;
+}
+.context .main .header .nav .mainNav .site #ycg #ge1 {
+  width: 300px;
+  border-bottom: 1px solid rgba(244, 244, 244, 0.8);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+}
+.context .main .header .nav .mainNav .site #ycg #ge1 div {
+  width: 40px;
+  height: 30px;
+  margin: 0 10px;
+  line-height: 32px;
+  text-align: center;
+}
+.context .main .header .nav .mainNav .site #ycg #ge1 div a {
+  color: #999;
+}
+.context .main .header .nav .mainNav .site #ycg #ge1 div:nth-child(1) {
+  background: red;
+}
+.context .main .header .nav .mainNav .site #ycg #ge1 div:nth-child(1) a {
+  color: #fff;
+}
+.context .main .header .nav .mainNav .site #ycg #ge1 div:hover {
+  background: rgba(244, 244, 244);
+}
+.context .main .header .nav .mainNav .site #ycg #ge1 div:hover a {
+  color: red;
+}
+.context .main .header .nav .mainNav .site #ycg .ge2 {
+  width: 300px;
+  height: 80px;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(244, 244, 244, 0.8);
+  color: #999;
+}
+.context .main .header .nav .mainNav .site #ycg .ge2 p {
+  margin: 0 15px;
+  line-height: 40px;
+}
+.context .main .header .nav .mainNav .site #ycg .ge2 div {
+  margin: 0 15px;
+  line-height: 40px;
+}
+.context .main .header .nav .mainNav .site #ycg .ge2 div a {
+  color: #999;
+}
+.context .main .header .nav .mainNav .site #ycg .ge2 div:hover a {
+  color: red;
+}
+.context .main .header .nav .mainNav .site #ycg .ge3 {
+  width: 300px;
+  font-size: 12px;
+  color: #999;
+}
+.context .main .header .nav .mainNav .site #ycg .ge3 p {
+  margin: 10px;
+}
+.context .main .header .nav .mainNav .site #ycg .ge3 .character {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.context .main .header .nav .mainNav .site #ycg .ge3 .character div {
+  font-size: 12px;
+  margin: 0 10px;
+}
+.context .main .header .nav .mainNav .site #ycg .ge3 .character div:nth-child(2) {
+  margin-right: 28px;
+}
+.context .main .header .nav .mainNav .site #ycg .ge3 .character div a {
+  color: #999;
+  padding-left: 5px;
+}
+.context .main .header .nav .mainNav .site #ycg .ge3 .character div:hover a {
+  color: red;
+}
+.context .main .header .nav .mainNav ul {
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+}
+.context .main .header .nav .mainNav ul li {
+  padding: 0 6px;
+  height: 30px;
+}
+.context .main .header .nav .mainNav ul li i {
+  vertical-align: middle;
+  font-size: 12px;
+}
+.context .main .header .nav .mainNav ul li a {
+  vertical-align: middle;
+  color: #999;
+}
+.context .main .header .nav .mainNav ul li a:nth-child(2) {
+  color: red;
+  padding-left: 2px;
+}
+.context .main .header .nav .mainNav ul li:hover .nav-a {
+  color: red;
+}
+.context .main .header .nav .mainNav ul li:nth-child(9) {
+  z-index: 2;
+}
+.context .main .header .nav .mainNav ul li:nth-child(9) .a {
+  color: red;
+}
+.context .main .header .nav .mainNav ul li:nth-child(9):hover {
+  background: #fff;
+}
+.context .main .header .nav .mainNav ul li:nth-child(9):hover .ycg2 {
+  display: block;
+}
+.context .main .header .nav .mainNav ul li:nth-child(9) .ycg2 {
+  width: 170px;
+  border: 1px solid #cccccc;
+  border-top-color: #fff;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 835px;
+  top: 30px;
+  display: none;
+  background: #fff;
+}
+.context .main .header .nav .mainNav ul li:nth-child(9) .ycg2 .ge {
+  display: flex;
+  flex-wrap: wrap;
+}
+.context .main .header .nav .mainNav ul li:nth-child(9) .ycg2 .ge div {
+  width: 60px;
+  margin-left: 15px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(9) .ycg2 .ge div:hover a {
+  color: red;
+}
+.context .main .header .nav .mainNav ul li:nth-child(5) {
+  z-index: 2;
+}
+.context .main .header .nav .mainNav ul li:nth-child(5):hover {
+  background: #fff;
+}
+.context .main .header .nav .mainNav ul li:nth-child(5):hover .ycg1 {
+  display: block;
+}
+.context .main .header .nav .mainNav ul li:nth-child(5) .ycg1 {
+  width: 250px;
+  border: 1px solid #cccccc;
+  border-top-color: #fff;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 647px;
+  top: 30px;
+  display: none;
+  background: #fff;
+}
+.context .main .header .nav .mainNav ul li:nth-child(5) .ycg1 .ge1 {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(244, 244, 244, 0.8);
+  padding: 6px 0;
+}
+.context .main .header .nav .mainNav ul li:nth-child(5) .ycg1 .ge1 div {
+  width: 100px;
+  margin-left: 15px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(5) .ycg1 .ge1 div:hover a {
+  color: red;
+}
+.context .main .header .nav .mainNav ul li:nth-child(5) .ycg1 .ge2 {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 6px 0;
+}
+.context .main .header .nav .mainNav ul li:nth-child(5) .ycg1 .ge2 div {
+  width: 100px;
+  margin-left: 15px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(5) .ycg1 .ge2 div:hover a {
+  color: red;
+}
+.context .main .header .nav .mainNav ul li:nth-child(11) {
+  z-index: 2;
+}
+.context .main .header .nav .mainNav ul li:nth-child(11):hover {
+  background: #fff;
+}
+.context .main .header .nav .mainNav ul li:nth-child(11):hover .ycg3 {
+  display: block;
+}
+.context .main .header .nav .mainNav ul li:nth-child(11) .ycg3 {
+  width: 180px;
+  border: 1px solid #cccccc;
+  border-top-color: #fff;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 832px;
+  top: 30px;
+  display: none;
+  background: #fff;
+}
+.context .main .header .nav .mainNav ul li:nth-child(11) .ycg3 .ge1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(244, 244, 244, 0.8);
+}
+.context .main .header .nav .mainNav ul li:nth-child(11) .ycg3 .ge1 p {
+  width: 160px;
+  font-weight: 600;
+}
+.context .main .header .nav .mainNav ul li:nth-child(11) .ycg3 .ge1 div {
+  width: 70px;
+  height: 25px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(11) .ycg3 .ge1 div:hover a {
+  color: red;
+}
+.context .main .header .nav .mainNav ul li:nth-child(11) .ycg3 .ge2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(11) .ycg3 .ge2 p {
+  width: 160px;
+  font-weight: 600;
+}
+.context .main .header .nav .mainNav ul li:nth-child(11) .ycg3 .ge2 div {
+  width: 70px;
+  height: 25px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(11) .ycg3 .ge2 div:hover a {
+  color: red;
+}
+.context .main .header .nav .mainNav ul li:nth-child(13) {
+  z-index: 2;
+}
+.context .main .header .nav .mainNav ul li:nth-child(13):hover {
+  background: #fff;
+}
+.context .main .header .nav .mainNav ul li:nth-child(13):hover .ycg4 {
+  display: block;
+}
+.context .main .header .nav .mainNav ul li:nth-child(13) .ycg4 {
+  width: 1200px;
+  border: 1px solid #cccccc;
+  border-top-color: #fff;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 0;
+  top: 30px;
+  display: none;
+  background: #fff;
+}
+.context .main .header .nav .mainNav ul li:nth-child(13) .ycg4 .ycg4main {
+  display: flex;
+}
+.context .main .header .nav .mainNav ul li:nth-child(13) .ycg4 .ycg4main .ge1 {
+  width: 380px;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  padding: 10px 0;
+  border-left: 1px solid rgba(244, 244, 244, 0.8);
+}
+.context .main .header .nav .mainNav ul li:nth-child(13) .ycg4 .ycg4main .ge1 p {
+  width: 400px;
+  height: 20px;
+  font-weight: 600;
+  margin-left: 20px;
+  line-height: 20px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(13) .ycg4 .ycg4main .ge1 div {
+  width: 90px;
+  height: 10px;
+  text-align: center;
+  line-height: 10px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(13) .ycg4 .ycg4main .ge1 div:hover a {
+  color: red;
+}
+.context .main .header .nav .mainNav ul li:nth-child(13) .ycg4 .ycg4main .ge2 {
+  width: 280px;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  padding: 10px 0;
+  border-left: 1px solid rgba(244, 244, 244, 0.8);
+}
+.context .main .header .nav .mainNav ul li:nth-child(13) .ycg4 .ycg4main .ge2 p {
+  width: 400px;
+  height: 20px;
+  font-weight: 600;
+  margin-left: 22px;
+  line-height: 20px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(13) .ycg4 .ycg4main .ge2 div {
+  width: 80px;
+  height: 10px;
+  text-align: center;
+  line-height: 10px;
+  padding: 0 6px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(13) .ycg4 .ycg4main .ge2 div:hover a {
+  color: red;
+}
+.context .main .header .nav .mainNav ul li:nth-child(13) .ycg4 .ycg4main .ge3 {
+  width: 280px;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  padding: 10px 0;
+  border-left: 1px solid rgba(244, 244, 244, 0.8);
+}
+.context .main .header .nav .mainNav ul li:nth-child(13) .ycg4 .ycg4main .ge3 p {
+  width: 400px;
+  height: 20px;
+  font-weight: 600;
+  margin-left: 20px;
+  line-height: 20px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(13) .ycg4 .ycg4main .ge3 div {
+  width: 80px;
+  height: 10px;
+  text-align: center;
+  line-height: 10px;
+  padding: 0 6px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(13) .ycg4 .ycg4main .ge3 div:hover a {
+  color: red;
+}
+.context .main .header .nav .mainNav ul li:nth-child(13) .ycg4 .ycg4main .ge4 {
+  width: 280px;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  padding: 10px 0;
+  border-left: 1px solid rgba(244, 244, 244, 0.8);
+}
+.context .main .header .nav .mainNav ul li:nth-child(13) .ycg4 .ycg4main .ge4 p {
+  width: 400px;
+  height: 20px;
+  font-weight: 600;
+  margin-left: 15px;
+  line-height: 20px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(13) .ycg4 .ycg4main .ge4 div {
+  width: 80px;
+  height: 10px;
+  text-align: center;
+  line-height: 10px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(13) .ycg4 .ycg4main .ge4 div:hover a {
+  color: red;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15):hover .ycg5 {
+  display: block;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 {
+  width: 200px;
+  border: 1px solid #cccccc;
+  border-top-color: #fff;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 1000px;
+  top: 30px;
+  display: none;
+  background: #fff;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge1 {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid rgba(205, 205, 244, 0.8);
+  padding: 10px 10px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge1 img {
+  width: 80px;
+  height: 80px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge1 div {
+  width: 90px;
+  height: 80px;
+  padding: 0 8px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge1 div h6 {
+  font-size: 12px;
+  height: 16px;
+  line-height: 10px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge1 div h6 a {
+  color: #666666;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge1 div p {
+  font-size: 12px;
+  color: red;
+  height: 16px;
+  margin-bottom: 10px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge1 div .apple {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url(../img/sprite_mobile@1x.png) no-repeat;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge1 div .And {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url(../img/sprite_mobile@1x.png) no-repeat 100% 50%;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge1 div .ipad {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url(../img/sprite_mobile@1x.png) no-repeat 100% 100%;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge2 {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid rgba(205, 205, 244, 0.8);
+  padding: 10px 10px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge2 img {
+  width: 80px;
+  height: 80px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge2 div {
+  width: 90px;
+  height: 80px;
+  padding: 0 8px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge2 div h6 {
+  font-size: 12px;
+  height: 16px;
+  line-height: 10px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge2 div h6 a {
+  color: #666666;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge2 div p {
+  font-size: 12px;
+  color: red;
+  height: 16px;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge3 {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid rgba(205, 205, 244, 0.8);
+  padding: 10px 10px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge3 img {
+  width: 80px;
+  height: 80px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge3 div {
+  width: 90px;
+  height: 80px;
+  padding: 0 8px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge3 div h6 {
+  font-size: 12px;
+  height: 16px;
+  line-height: 10px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge3 div h6 a {
+  color: #666666;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge3 div p {
+  font-size: 12px;
+  color: red;
+  height: 16px;
+  margin-bottom: 10px;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge3 div .apple {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url(../img/sprite_mobile@1x.png) no-repeat;
+}
+.context .main .header .nav .mainNav ul li:nth-child(15) .ycg5 .ge3 div .And {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url(../img/sprite_mobile@1x.png) no-repeat 100% 50%;
+}
+.context .main .header .nav .mainNav ul .spacer {
+  color: #ccc;
+  width: 1px;
+  height: 10px;
+}
+.context .main .header .mainpart {
+  width: 100%;
+  font-size: 12px;
+  font-weight: 400px;
+  margin-top: 20px;
+}
+.context .main .header .mainpart .partmain {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.context .main .header .mainpart .partmain .logo {
+  width: 190px;
+  height: 120px;
+}
+.context .main .header .mainpart .partmain .logo img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .header .mainpart .partmain .input {
+  width: 550px;
+  height: 68px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  position: relative;
+}
+.context .main .header .mainpart .partmain .input input {
+  width: 426px;
+  height: 28px;
+  border: 2px solid #e1251b;
+  padding: 2px 44px 2px 17px;
+}
+.context .main .header .mainpart .partmain .input .btn {
+  width: 58px;
+  height: 36px;
+  background: #e1251b;
+  border: 1px solid #e1251b;
+  color: #fff;
+}
+.context .main .header .mainpart .partmain .input .btn i {
+  font-size: 20px;
+}
+.context .main .header .mainpart .partmain .input #input-zi {
+  height: 36px;
+  line-height: 36px;
+  z-index: 0;
+  color: #999;
+  position: absolute;
+  left: 19px;
+}
+.context .main .header .mainpart .partmain .input .xbt {
+  width: 550px;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.context .main .header .mainpart .partmain .input .xbt div {
+  font-size: 12px;
+}
+.context .main .header .mainpart .partmain .input .xbt div a {
+  color: #999;
+}
+.context .main .header .mainpart .partmain .input .xbt div:hover a {
+  color: #e1251b;
+}
+.context .main .header .mainpart .partmain .input .xbt div:nth-child(1) a {
+  color: #e1251b;
+}
+.context .main .header .mainpart .partmain .input .dbt {
+  position: absolute;
+  top: 80px;
+  left: -50px;
+  width: 762px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+.context .main .header .mainpart .partmain .input .dbt div {
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+.context .main .header .mainpart .partmain .input .dbt div a {
+  color: #333;
+}
+.context .main .header .mainpart .partmain .input .dbt div:nth-child(1) a,
+.context .main .header .mainpart .partmain .input .dbt div:nth-child(2) a {
+  font-weight: 700;
+  color: #e1251b;
+}
+.context .main .header .mainpart .partmain .input .dbt div:hover a {
+  color: #e1251b;
+}
+.context .main .header .mainpart .partmain .gwc {
+  width: 132px;
+  height: 34px;
+  border: 1px solid #e3e4e5;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+}
+.context .main .header .mainpart .partmain .gwc .amount {
+  width: 12px;
+  height: 12px;
+  background: #e1251b;
+  text-align: center;
+  line-height: 12px;
+  color: #fff;
+  border-radius: 70px;
+  padding: 1px 3px;
+  position: absolute;
+  left: 28px;
+  top: 2px;
+}
+.context .main .header .mainpart .partmain .gwc i {
+  color: #e1251b;
+  font-weight: 900;
+  font-size: 16px;
+}
+.context .main .header .mainpart .partmain .gwc p a {
+  color: #e1251b;
+}
+.context .main .header .mainpart .partmain .gwc .gwc-ycg {
+  position: absolute;
+  top: 35px;
+  right: -1px;
+  color: #999;
+  background: #fff;
+  border: 1px solid #e1251b;
+  display: none;
+}
+.context .main .header .mainpart .partmain .gwc .gwc-ycg div {
+  width: 308px;
+  height: 69px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.context .main .header .mainpart .partmain .gwc .gwc-ycg div i {
+  font-size: 40px;
+  color: #999;
+}
+.context .main .header .mainpart .partmain .gwc:hover {
+  border: 1px solid #e1251b;
+  border-bottom: 1px solid #fff;
+}
+.context .main .header .mainpart .partmain .gwc:hover .gwc-ycg {
+  display: block;
+  z-index: -1;
+}
+.context .main .content {
+  width: 100%;
+  background: url(../img/8fd243dca0a11aa4.png.webp) no-repeat 50% 0% #f4f4f4;
+}
+.context .main .content .banner {
+  width: 100%;
+  padding-top: 25px;
+}
+.context .main .content .banner .banner-main {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+.context .main .content .banner .banner-main .catalog {
+  width: 190px;
+  height: 480px;
+  background: #fff;
+}
+.context .main .content .banner .banner-main .catalog .tou {
+  width: 167px;
+  height: 15px;
+}
+.context .main .content .banner .banner-main .catalog li {
+  width: 167px;
+  height: 25px;
+  padding-left: 18px;
+  padding-right: 5px;
+  line-height: 25px;
+  font-size: 12px;
+  position: relative;
+}
+.context .main .content .banner .banner-main .catalog li a {
+  font-size: 14px;
+  color: #333;
+}
+.context .main .content .banner .banner-main .catalog li a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:hover {
+  background: #d9d9d9;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 {
+  position: absolute;
+  left: 192px;
+  top: -15px;
+  width: 1010px;
+  height: 480px;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 .catalog-ycg1-main {
+  display: flex;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 .catalog-ycg1-main .zi {
+  width: 800px;
+  margin: 15px 0 0 20px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 .catalog-ycg1-main .zi .x-cake a {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 10px;
+  padding: 0 10px;
+  color: #fff;
+  background: #333;
+  display: inline-block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 .catalog-ycg1-main .zi .x-cake a i {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 .catalog-ycg1-main .zi .x-cake a:hover {
+  background: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 .catalog-ycg1-main .zi .main-part dl {
+  display: flex;
+  margin: 10px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 .catalog-ycg1-main .zi .main-part dl dt {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 .catalog-ycg1-main .zi .main-part dl dt a {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 .catalog-ycg1-main .zi .main-part dl dt i {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 .catalog-ycg1-main .zi .main-part dl dt:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 .catalog-ycg1-main .zi .main-part dl dt:hover a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 .catalog-ycg1-main .zi .main-part dl dd {
+  width: 700px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 .catalog-ycg1-main .zi .main-part dl dd a {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 .catalog-ycg1-main .zi .main-part dl dd a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 .catalog-ycg1-main .tu {
+  width: 198px;
+  margin: 15px 10px 0 20px;
+  font-size: 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 .catalog-ycg1-main .tu a {
+  display: inline-block;
+  width: 83px;
+  height: 35px;
+  vertical-align: top;
+  margin: 0 2px 2px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 .catalog-ycg1-main .tu a img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 .catalog-ycg1-main .tu .bigimg {
+  display: block;
+  width: 168px;
+  height: 134px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2) .catalog-ycg1 .catalog-ycg1-main .tu .bigimg1 {
+  margin-top: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(2):hover .catalog-ycg1 {
+  display: block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 {
+  position: absolute;
+  left: 192px;
+  top: -40px;
+  width: 1010px;
+  height: 480px;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 .catalog-ycg2-main {
+  display: flex;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 .catalog-ycg2-main .zi {
+  width: 800px;
+  margin: 15px 0 0 20px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 .catalog-ycg2-main .zi .x-cake a {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 10px;
+  padding: 0 10px;
+  color: #fff;
+  background: #333;
+  display: inline-block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 .catalog-ycg2-main .zi .x-cake a i {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 .catalog-ycg2-main .zi .x-cake a:hover {
+  background: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 .catalog-ycg2-main .zi .main-part dl {
+  display: flex;
+  margin: 10px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 .catalog-ycg2-main .zi .main-part dl dt {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 .catalog-ycg2-main .zi .main-part dl dt a {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 .catalog-ycg2-main .zi .main-part dl dt i {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 .catalog-ycg2-main .zi .main-part dl dt:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 .catalog-ycg2-main .zi .main-part dl dt:hover a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 .catalog-ycg2-main .zi .main-part dl dd {
+  width: 700px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 .catalog-ycg2-main .zi .main-part dl dd a {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 .catalog-ycg2-main .zi .main-part dl dd a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 .catalog-ycg2-main .tu {
+  width: 198px;
+  margin: 15px 10px 0 20px;
+  font-size: 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 .catalog-ycg2-main .tu a {
+  display: inline-block;
+  width: 83px;
+  height: 35px;
+  vertical-align: top;
+  margin: 0 2px 2px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 .catalog-ycg2-main .tu a img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 .catalog-ycg2-main .tu .bigimg {
+  display: block;
+  width: 168px;
+  height: 134px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3) .catalog-ycg2 .catalog-ycg2-main .tu .bigimg1 {
+  margin-top: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(3):hover .catalog-ycg2 {
+  display: block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 {
+  position: absolute;
+  left: 192px;
+  top: -65px;
+  width: 1010px;
+  height: 480px;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 .catalog-ycg3-main {
+  display: flex;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 .catalog-ycg3-main .zi {
+  width: 800px;
+  margin: 15px 0 0 20px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 .catalog-ycg3-main .zi .x-cake a {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 10px;
+  padding: 0 10px;
+  color: #fff;
+  background: #333;
+  display: inline-block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 .catalog-ycg3-main .zi .x-cake a i {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 .catalog-ycg3-main .zi .x-cake a:hover {
+  background: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 .catalog-ycg3-main .zi .main-part dl {
+  display: flex;
+  margin: 10px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 .catalog-ycg3-main .zi .main-part dl dt {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 .catalog-ycg3-main .zi .main-part dl dt a {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 .catalog-ycg3-main .zi .main-part dl dt i {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 .catalog-ycg3-main .zi .main-part dl dt:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 .catalog-ycg3-main .zi .main-part dl dt:hover a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 .catalog-ycg3-main .zi .main-part dl dd {
+  width: 700px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 .catalog-ycg3-main .zi .main-part dl dd a {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 .catalog-ycg3-main .zi .main-part dl dd a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 .catalog-ycg3-main .tu {
+  width: 198px;
+  margin: 15px 10px 0 20px;
+  font-size: 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 .catalog-ycg3-main .tu a {
+  display: inline-block;
+  width: 83px;
+  height: 35px;
+  vertical-align: top;
+  margin: 0 2px 2px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 .catalog-ycg3-main .tu a img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 .catalog-ycg3-main .tu .bigimg {
+  display: block;
+  width: 168px;
+  height: 134px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4) .catalog-ycg3 .catalog-ycg3-main .tu .bigimg1 {
+  margin-top: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(4):hover .catalog-ycg3 {
+  display: block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 {
+  position: absolute;
+  left: 192px;
+  top: -90px;
+  width: 1010px;
+  height: 510px;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 .catalog-ycg4-main {
+  display: flex;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 .catalog-ycg4-main .zi {
+  width: 800px;
+  margin: 15px 0 0 20px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 .catalog-ycg4-main .zi .x-cake a {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 10px;
+  padding: 0 10px;
+  color: #fff;
+  background: #333;
+  display: inline-block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 .catalog-ycg4-main .zi .x-cake a i {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 .catalog-ycg4-main .zi .x-cake a:hover {
+  background: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 .catalog-ycg4-main .zi .main-part dl {
+  display: flex;
+  margin: 10px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 .catalog-ycg4-main .zi .main-part dl dt {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 .catalog-ycg4-main .zi .main-part dl dt a {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 .catalog-ycg4-main .zi .main-part dl dt i {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 .catalog-ycg4-main .zi .main-part dl dt:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 .catalog-ycg4-main .zi .main-part dl dt:hover a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 .catalog-ycg4-main .zi .main-part dl dd {
+  width: 700px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 .catalog-ycg4-main .zi .main-part dl dd a {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 .catalog-ycg4-main .zi .main-part dl dd a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 .catalog-ycg4-main .tu {
+  width: 198px;
+  margin: 15px 10px 0 20px;
+  font-size: 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 .catalog-ycg4-main .tu a {
+  display: inline-block;
+  width: 83px;
+  height: 35px;
+  vertical-align: top;
+  margin: 0 2px 2px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 .catalog-ycg4-main .tu a img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 .catalog-ycg4-main .tu .bigimg {
+  display: block;
+  width: 168px;
+  height: 134px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5) .catalog-ycg4 .catalog-ycg4-main .tu .bigimg1 {
+  margin-top: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(5):hover .catalog-ycg4 {
+  display: block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 {
+  position: absolute;
+  left: 192px;
+  top: -115px;
+  width: 1010px;
+  height: 480px;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 .catalog-ycg5-main {
+  display: flex;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 .catalog-ycg5-main .zi {
+  width: 800px;
+  margin: 15px 0 0 20px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 .catalog-ycg5-main .zi .x-cake a {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 10px;
+  padding: 0 10px;
+  color: #fff;
+  background: #333;
+  display: inline-block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 .catalog-ycg5-main .zi .x-cake a i {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 .catalog-ycg5-main .zi .x-cake a:hover {
+  background: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 .catalog-ycg5-main .zi .main-part dl {
+  display: flex;
+  margin: 10px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 .catalog-ycg5-main .zi .main-part dl dt {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 .catalog-ycg5-main .zi .main-part dl dt a {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 .catalog-ycg5-main .zi .main-part dl dt i {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 .catalog-ycg5-main .zi .main-part dl dt:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 .catalog-ycg5-main .zi .main-part dl dt:hover a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 .catalog-ycg5-main .zi .main-part dl dd {
+  width: 700px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 .catalog-ycg5-main .zi .main-part dl dd a {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 .catalog-ycg5-main .zi .main-part dl dd a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 .catalog-ycg5-main .tu {
+  width: 198px;
+  margin: 15px 10px 0 20px;
+  font-size: 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 .catalog-ycg5-main .tu a {
+  display: inline-block;
+  width: 83px;
+  height: 35px;
+  vertical-align: top;
+  margin: 0 2px 2px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 .catalog-ycg5-main .tu a img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 .catalog-ycg5-main .tu .bigimg {
+  display: block;
+  width: 168px;
+  height: 134px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6) .catalog-ycg5 .catalog-ycg5-main .tu .bigimg1 {
+  margin-top: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(6):hover .catalog-ycg5 {
+  display: block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 {
+  position: absolute;
+  left: 192px;
+  top: -140px;
+  width: 1010px;
+  height: 480px;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 .catalog-ycg6-main {
+  display: flex;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 .catalog-ycg6-main .zi {
+  width: 800px;
+  margin: 15px 0 0 20px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 .catalog-ycg6-main .zi .x-cake a {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 10px;
+  padding: 0 10px;
+  color: #fff;
+  background: #333;
+  display: inline-block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 .catalog-ycg6-main .zi .x-cake a i {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 .catalog-ycg6-main .zi .x-cake a:hover {
+  background: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 .catalog-ycg6-main .zi .main-part dl {
+  display: flex;
+  margin: 10px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 .catalog-ycg6-main .zi .main-part dl dt {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 .catalog-ycg6-main .zi .main-part dl dt a {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 .catalog-ycg6-main .zi .main-part dl dt i {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 .catalog-ycg6-main .zi .main-part dl dt:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 .catalog-ycg6-main .zi .main-part dl dt:hover a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 .catalog-ycg6-main .zi .main-part dl dd {
+  width: 700px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 .catalog-ycg6-main .zi .main-part dl dd a {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 .catalog-ycg6-main .zi .main-part dl dd a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 .catalog-ycg6-main .tu {
+  width: 198px;
+  margin: 15px 10px 0 20px;
+  font-size: 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 .catalog-ycg6-main .tu a {
+  display: inline-block;
+  width: 83px;
+  height: 35px;
+  vertical-align: top;
+  margin: 0 2px 2px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 .catalog-ycg6-main .tu a img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 .catalog-ycg6-main .tu .bigimg {
+  display: block;
+  width: 168px;
+  height: 134px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7) .catalog-ycg6 .catalog-ycg6-main .tu .bigimg1 {
+  margin-top: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(7):hover .catalog-ycg6 {
+  display: block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 {
+  position: absolute;
+  left: 192px;
+  top: -165px;
+  width: 1010px;
+  height: 480px;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 .catalog-ycg7-main {
+  display: flex;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 .catalog-ycg7-main .zi {
+  width: 800px;
+  margin: 15px 0 0 20px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 .catalog-ycg7-main .zi .x-cake a {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 10px;
+  padding: 0 10px;
+  color: #fff;
+  background: #333;
+  display: inline-block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 .catalog-ycg7-main .zi .x-cake a i {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 .catalog-ycg7-main .zi .x-cake a:hover {
+  background: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 .catalog-ycg7-main .zi .main-part dl {
+  display: flex;
+  margin: 10px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 .catalog-ycg7-main .zi .main-part dl dt {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 .catalog-ycg7-main .zi .main-part dl dt a {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 .catalog-ycg7-main .zi .main-part dl dt i {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 .catalog-ycg7-main .zi .main-part dl dt:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 .catalog-ycg7-main .zi .main-part dl dt:hover a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 .catalog-ycg7-main .zi .main-part dl dd {
+  width: 700px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 .catalog-ycg7-main .zi .main-part dl dd a {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 .catalog-ycg7-main .zi .main-part dl dd a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 .catalog-ycg7-main .tu {
+  width: 198px;
+  margin: 15px 10px 0 20px;
+  font-size: 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 .catalog-ycg7-main .tu a {
+  display: inline-block;
+  width: 83px;
+  height: 35px;
+  vertical-align: top;
+  margin: 0 2px 2px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 .catalog-ycg7-main .tu a img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 .catalog-ycg7-main .tu .bigimg {
+  display: block;
+  width: 168px;
+  height: 134px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8) .catalog-ycg7 .catalog-ycg7-main .tu .bigimg1 {
+  margin-top: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(8):hover .catalog-ycg7 {
+  display: block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 {
+  position: absolute;
+  left: 192px;
+  top: -190px;
+  width: 1010px;
+  height: 480px;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 .catalog-ycg8-main {
+  display: flex;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 .catalog-ycg8-main .zi {
+  width: 800px;
+  margin: 15px 0 0 20px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 .catalog-ycg8-main .zi .x-cake a {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 10px;
+  padding: 0 10px;
+  color: #fff;
+  background: #333;
+  display: inline-block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 .catalog-ycg8-main .zi .x-cake a i {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 .catalog-ycg8-main .zi .x-cake a:hover {
+  background: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 .catalog-ycg8-main .zi .main-part dl {
+  display: flex;
+  margin: 10px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 .catalog-ycg8-main .zi .main-part dl dt {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 .catalog-ycg8-main .zi .main-part dl dt a {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 .catalog-ycg8-main .zi .main-part dl dt i {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 .catalog-ycg8-main .zi .main-part dl dt:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 .catalog-ycg8-main .zi .main-part dl dt:hover a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 .catalog-ycg8-main .zi .main-part dl dd {
+  width: 700px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 .catalog-ycg8-main .zi .main-part dl dd a {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 .catalog-ycg8-main .zi .main-part dl dd a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 .catalog-ycg8-main .tu {
+  width: 198px;
+  margin: 15px 10px 0 20px;
+  font-size: 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 .catalog-ycg8-main .tu a {
+  display: inline-block;
+  width: 83px;
+  height: 35px;
+  vertical-align: top;
+  margin: 0 2px 2px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 .catalog-ycg8-main .tu a img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 .catalog-ycg8-main .tu .bigimg {
+  display: block;
+  width: 168px;
+  height: 134px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9) .catalog-ycg8 .catalog-ycg8-main .tu .bigimg1 {
+  margin-top: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(9):hover .catalog-ycg8 {
+  display: block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 {
+  position: absolute;
+  left: 192px;
+  top: -215px;
+  width: 1010px;
+  height: 480px;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 .catalog-ycg9-main {
+  display: flex;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 .catalog-ycg9-main .zi {
+  width: 800px;
+  margin: 15px 0 0 20px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 .catalog-ycg9-main .zi .x-cake a {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 10px;
+  padding: 0 10px;
+  color: #fff;
+  background: #333;
+  display: inline-block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 .catalog-ycg9-main .zi .x-cake a i {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 .catalog-ycg9-main .zi .x-cake a:hover {
+  background: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 .catalog-ycg9-main .zi .main-part dl {
+  display: flex;
+  margin: 10px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 .catalog-ycg9-main .zi .main-part dl dt {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 .catalog-ycg9-main .zi .main-part dl dt a {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 .catalog-ycg9-main .zi .main-part dl dt i {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 .catalog-ycg9-main .zi .main-part dl dt:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 .catalog-ycg9-main .zi .main-part dl dt:hover a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 .catalog-ycg9-main .zi .main-part dl dd {
+  width: 700px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 .catalog-ycg9-main .zi .main-part dl dd a {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 .catalog-ycg9-main .zi .main-part dl dd a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 .catalog-ycg9-main .tu {
+  width: 198px;
+  margin: 15px 10px 0 20px;
+  font-size: 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 .catalog-ycg9-main .tu a {
+  display: inline-block;
+  width: 83px;
+  height: 35px;
+  vertical-align: top;
+  margin: 0 2px 2px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 .catalog-ycg9-main .tu a img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 .catalog-ycg9-main .tu .bigimg {
+  display: block;
+  width: 168px;
+  height: 134px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10) .catalog-ycg9 .catalog-ycg9-main .tu .bigimg1 {
+  margin-top: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(10):hover .catalog-ycg9 {
+  display: block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 {
+  position: absolute;
+  left: 192px;
+  top: -240px;
+  width: 1010px;
+  height: 480px;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 .catalog-ycg10-main {
+  display: flex;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 .catalog-ycg10-main .zi {
+  width: 800px;
+  margin: 15px 0 0 20px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 .catalog-ycg10-main .zi .x-cake a {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 10px;
+  padding: 0 10px;
+  color: #fff;
+  background: #333;
+  display: inline-block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 .catalog-ycg10-main .zi .x-cake a i {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 .catalog-ycg10-main .zi .x-cake a:hover {
+  background: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 .catalog-ycg10-main .zi .main-part dl {
+  display: flex;
+  margin: 10px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 .catalog-ycg10-main .zi .main-part dl dt {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 .catalog-ycg10-main .zi .main-part dl dt a {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 .catalog-ycg10-main .zi .main-part dl dt i {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 .catalog-ycg10-main .zi .main-part dl dt:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 .catalog-ycg10-main .zi .main-part dl dt:hover a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 .catalog-ycg10-main .zi .main-part dl dd {
+  width: 700px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 .catalog-ycg10-main .zi .main-part dl dd a {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 .catalog-ycg10-main .zi .main-part dl dd a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 .catalog-ycg10-main .tu {
+  width: 198px;
+  margin: 15px 10px 0 20px;
+  font-size: 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 .catalog-ycg10-main .tu a {
+  display: inline-block;
+  width: 83px;
+  height: 35px;
+  vertical-align: top;
+  margin: 0 2px 2px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 .catalog-ycg10-main .tu a img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 .catalog-ycg10-main .tu .bigimg {
+  display: block;
+  width: 168px;
+  height: 134px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11) .catalog-ycg10 .catalog-ycg10-main .tu .bigimg1 {
+  margin-top: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(11):hover .catalog-ycg10 {
+  display: block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 {
+  position: absolute;
+  left: 192px;
+  top: -265px;
+  width: 1010px;
+  height: 480px;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 .catalog-ycg11-main {
+  display: flex;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 .catalog-ycg11-main .zi {
+  width: 800px;
+  margin: 15px 0 0 20px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 .catalog-ycg11-main .zi .x-cake a {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 10px;
+  padding: 0 10px;
+  color: #fff;
+  background: #333;
+  display: inline-block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 .catalog-ycg11-main .zi .x-cake a i {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 .catalog-ycg11-main .zi .x-cake a:hover {
+  background: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 .catalog-ycg11-main .zi .main-part dl {
+  display: flex;
+  margin: 10px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 .catalog-ycg11-main .zi .main-part dl dt {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 .catalog-ycg11-main .zi .main-part dl dt a {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 .catalog-ycg11-main .zi .main-part dl dt i {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 .catalog-ycg11-main .zi .main-part dl dt:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 .catalog-ycg11-main .zi .main-part dl dt:hover a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 .catalog-ycg11-main .zi .main-part dl dd {
+  width: 700px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 .catalog-ycg11-main .zi .main-part dl dd a {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 .catalog-ycg11-main .zi .main-part dl dd a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 .catalog-ycg11-main .tu {
+  width: 198px;
+  margin: 15px 10px 0 20px;
+  font-size: 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 .catalog-ycg11-main .tu a {
+  display: inline-block;
+  width: 83px;
+  height: 35px;
+  vertical-align: top;
+  margin: 0 2px 2px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 .catalog-ycg11-main .tu a img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 .catalog-ycg11-main .tu .bigimg {
+  display: block;
+  width: 168px;
+  height: 134px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12) .catalog-ycg11 .catalog-ycg11-main .tu .bigimg1 {
+  margin-top: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(12):hover .catalog-ycg11 {
+  display: block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 {
+  position: absolute;
+  left: 192px;
+  top: -290px;
+  width: 1010px;
+  height: 480px;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 .catalog-ycg12-main {
+  display: flex;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 .catalog-ycg12-main .zi {
+  width: 800px;
+  margin: 15px 0 0 20px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 .catalog-ycg12-main .zi .x-cake a {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 10px;
+  padding: 0 10px;
+  color: #fff;
+  background: #333;
+  display: inline-block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 .catalog-ycg12-main .zi .x-cake a i {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 .catalog-ycg12-main .zi .x-cake a:hover {
+  background: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 .catalog-ycg12-main .zi .main-part dl {
+  display: flex;
+  margin: 10px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 .catalog-ycg12-main .zi .main-part dl dt {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 .catalog-ycg12-main .zi .main-part dl dt a {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 .catalog-ycg12-main .zi .main-part dl dt i {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 .catalog-ycg12-main .zi .main-part dl dt:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 .catalog-ycg12-main .zi .main-part dl dt:hover a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 .catalog-ycg12-main .zi .main-part dl dd {
+  width: 700px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 .catalog-ycg12-main .zi .main-part dl dd a {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 .catalog-ycg12-main .zi .main-part dl dd a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 .catalog-ycg12-main .tu {
+  width: 198px;
+  margin: 15px 10px 0 20px;
+  font-size: 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 .catalog-ycg12-main .tu a {
+  display: inline-block;
+  width: 83px;
+  height: 35px;
+  vertical-align: top;
+  margin: 0 2px 2px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 .catalog-ycg12-main .tu a img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 .catalog-ycg12-main .tu .bigimg {
+  display: block;
+  width: 168px;
+  height: 134px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13) .catalog-ycg12 .catalog-ycg12-main .tu .bigimg1 {
+  margin-top: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(13):hover .catalog-ycg12 {
+  display: block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 {
+  position: absolute;
+  left: 192px;
+  top: -315px;
+  width: 1010px;
+  height: 480px;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 .catalog-ycg13-main {
+  display: flex;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 .catalog-ycg13-main .zi {
+  width: 800px;
+  margin: 15px 0 0 20px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 .catalog-ycg13-main .zi .x-cake a {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 10px;
+  padding: 0 10px;
+  color: #fff;
+  background: #333;
+  display: inline-block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 .catalog-ycg13-main .zi .x-cake a i {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 .catalog-ycg13-main .zi .x-cake a:hover {
+  background: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 .catalog-ycg13-main .zi .main-part dl {
+  display: flex;
+  margin: 10px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 .catalog-ycg13-main .zi .main-part dl dt {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 .catalog-ycg13-main .zi .main-part dl dt a {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 .catalog-ycg13-main .zi .main-part dl dt i {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 .catalog-ycg13-main .zi .main-part dl dt:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 .catalog-ycg13-main .zi .main-part dl dt:hover a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 .catalog-ycg13-main .zi .main-part dl dd {
+  width: 700px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 .catalog-ycg13-main .zi .main-part dl dd a {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 .catalog-ycg13-main .zi .main-part dl dd a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 .catalog-ycg13-main .tu {
+  width: 198px;
+  margin: 15px 10px 0 20px;
+  font-size: 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 .catalog-ycg13-main .tu a {
+  display: inline-block;
+  width: 83px;
+  height: 35px;
+  vertical-align: top;
+  margin: 0 2px 2px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 .catalog-ycg13-main .tu a img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 .catalog-ycg13-main .tu .bigimg {
+  display: block;
+  width: 168px;
+  height: 134px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14) .catalog-ycg13 .catalog-ycg13-main .tu .bigimg1 {
+  margin-top: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(14):hover .catalog-ycg13 {
+  display: block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 {
+  position: absolute;
+  left: 192px;
+  top: -340px;
+  width: 1010px;
+  height: 480px;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 .catalog-ycg14-main {
+  display: flex;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 .catalog-ycg14-main .zi {
+  width: 800px;
+  margin: 15px 0 0 20px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 .catalog-ycg14-main .zi .x-cake a {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 10px;
+  padding: 0 10px;
+  color: #fff;
+  background: #333;
+  display: inline-block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 .catalog-ycg14-main .zi .x-cake a i {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 .catalog-ycg14-main .zi .x-cake a:hover {
+  background: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 .catalog-ycg14-main .zi .main-part dl {
+  display: flex;
+  margin: 10px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 .catalog-ycg14-main .zi .main-part dl dt {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 .catalog-ycg14-main .zi .main-part dl dt a {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 .catalog-ycg14-main .zi .main-part dl dt i {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 .catalog-ycg14-main .zi .main-part dl dt:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 .catalog-ycg14-main .zi .main-part dl dt:hover a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 .catalog-ycg14-main .zi .main-part dl dd {
+  width: 700px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 .catalog-ycg14-main .zi .main-part dl dd a {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 .catalog-ycg14-main .zi .main-part dl dd a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 .catalog-ycg14-main .tu {
+  width: 198px;
+  margin: 15px 10px 0 20px;
+  font-size: 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 .catalog-ycg14-main .tu a {
+  display: inline-block;
+  width: 83px;
+  height: 35px;
+  vertical-align: top;
+  margin: 0 2px 2px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 .catalog-ycg14-main .tu a img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 .catalog-ycg14-main .tu .bigimg {
+  display: block;
+  width: 168px;
+  height: 134px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15) .catalog-ycg14 .catalog-ycg14-main .tu .bigimg1 {
+  margin-top: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(15):hover .catalog-ycg14 {
+  display: block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 {
+  position: absolute;
+  left: 192px;
+  top: -365px;
+  width: 1010px;
+  height: 480px;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 .catalog-ycg15-main {
+  display: flex;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 .catalog-ycg15-main .zi {
+  width: 800px;
+  margin: 15px 0 0 20px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 .catalog-ycg15-main .zi .x-cake a {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 10px;
+  padding: 0 10px;
+  color: #fff;
+  background: #333;
+  display: inline-block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 .catalog-ycg15-main .zi .x-cake a i {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 .catalog-ycg15-main .zi .x-cake a:hover {
+  background: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 .catalog-ycg15-main .zi .main-part dl {
+  display: flex;
+  margin: 10px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 .catalog-ycg15-main .zi .main-part dl dt {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 .catalog-ycg15-main .zi .main-part dl dt a {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 .catalog-ycg15-main .zi .main-part dl dt i {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 .catalog-ycg15-main .zi .main-part dl dt:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 .catalog-ycg15-main .zi .main-part dl dt:hover a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 .catalog-ycg15-main .zi .main-part dl dd {
+  width: 700px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 .catalog-ycg15-main .zi .main-part dl dd a {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 .catalog-ycg15-main .zi .main-part dl dd a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 .catalog-ycg15-main .tu {
+  width: 198px;
+  margin: 15px 10px 0 20px;
+  font-size: 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 .catalog-ycg15-main .tu a {
+  display: inline-block;
+  width: 83px;
+  height: 35px;
+  vertical-align: top;
+  margin: 0 2px 2px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 .catalog-ycg15-main .tu a img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 .catalog-ycg15-main .tu .bigimg {
+  display: block;
+  width: 168px;
+  height: 134px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16) .catalog-ycg15 .catalog-ycg15-main .tu .bigimg1 {
+  margin-top: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(16):hover .catalog-ycg15 {
+  display: block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 {
+  position: absolute;
+  left: 192px;
+  top: -390px;
+  width: 1010px;
+  height: 480px;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 .catalog-ycg16-main {
+  display: flex;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 .catalog-ycg16-main .zi {
+  width: 800px;
+  margin: 15px 0 0 20px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 .catalog-ycg16-main .zi .x-cake a {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 10px;
+  padding: 0 10px;
+  color: #fff;
+  background: #333;
+  display: inline-block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 .catalog-ycg16-main .zi .x-cake a i {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 .catalog-ycg16-main .zi .x-cake a:hover {
+  background: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 .catalog-ycg16-main .zi .main-part dl {
+  display: flex;
+  margin: 10px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 .catalog-ycg16-main .zi .main-part dl dt {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 .catalog-ycg16-main .zi .main-part dl dt a {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 .catalog-ycg16-main .zi .main-part dl dt i {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 .catalog-ycg16-main .zi .main-part dl dt:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 .catalog-ycg16-main .zi .main-part dl dt:hover a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 .catalog-ycg16-main .zi .main-part dl dd {
+  width: 700px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 .catalog-ycg16-main .zi .main-part dl dd a {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 .catalog-ycg16-main .zi .main-part dl dd a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 .catalog-ycg16-main .tu {
+  width: 198px;
+  margin: 15px 10px 0 20px;
+  font-size: 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 .catalog-ycg16-main .tu a {
+  display: inline-block;
+  width: 83px;
+  height: 35px;
+  vertical-align: top;
+  margin: 0 2px 2px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 .catalog-ycg16-main .tu a img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 .catalog-ycg16-main .tu .bigimg {
+  display: block;
+  width: 168px;
+  height: 134px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17) .catalog-ycg16 .catalog-ycg16-main .tu .bigimg1 {
+  margin-top: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(17):hover .catalog-ycg16 {
+  display: block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 {
+  position: absolute;
+  left: 192px;
+  top: -415px;
+  width: 1010px;
+  height: 480px;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 .catalog-ycg17-main {
+  display: flex;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 .catalog-ycg17-main .zi {
+  width: 800px;
+  margin: 15px 0 0 20px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 .catalog-ycg17-main .zi .x-cake a {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 10px;
+  padding: 0 10px;
+  color: #fff;
+  background: #333;
+  display: inline-block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 .catalog-ycg17-main .zi .x-cake a i {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 .catalog-ycg17-main .zi .x-cake a:hover {
+  background: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 .catalog-ycg17-main .zi .main-part dl {
+  display: flex;
+  margin: 10px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 .catalog-ycg17-main .zi .main-part dl dt {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 .catalog-ycg17-main .zi .main-part dl dt a {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 .catalog-ycg17-main .zi .main-part dl dt i {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 .catalog-ycg17-main .zi .main-part dl dt:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 .catalog-ycg17-main .zi .main-part dl dt:hover a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 .catalog-ycg17-main .zi .main-part dl dd {
+  width: 700px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 .catalog-ycg17-main .zi .main-part dl dd a {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 .catalog-ycg17-main .zi .main-part dl dd a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 .catalog-ycg17-main .tu {
+  width: 198px;
+  margin: 15px 10px 0 20px;
+  font-size: 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 .catalog-ycg17-main .tu a {
+  display: inline-block;
+  width: 83px;
+  height: 35px;
+  vertical-align: top;
+  margin: 0 2px 2px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 .catalog-ycg17-main .tu a img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 .catalog-ycg17-main .tu .bigimg {
+  display: block;
+  width: 168px;
+  height: 134px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18) .catalog-ycg17 .catalog-ycg17-main .tu .bigimg1 {
+  margin-top: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(18):hover .catalog-ycg17 {
+  display: block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 {
+  position: absolute;
+  left: 192px;
+  top: -440px;
+  width: 1010px;
+  height: 480px;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 3;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 .catalog-ycg18-main {
+  display: flex;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 .catalog-ycg18-main .zi {
+  width: 800px;
+  margin: 15px 0 0 20px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 .catalog-ycg18-main .zi .x-cake a {
+  font-size: 12px;
+  height: 24px;
+  line-height: 24px;
+  margin-right: 10px;
+  padding: 0 10px;
+  color: #fff;
+  background: #333;
+  display: inline-block;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 .catalog-ycg18-main .zi .x-cake a i {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 .catalog-ycg18-main .zi .x-cake a:hover {
+  background: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 .catalog-ycg18-main .zi .main-part dl {
+  display: flex;
+  margin: 10px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 .catalog-ycg18-main .zi .main-part dl dt {
+  width: 70px;
+  text-align: right;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 .catalog-ycg18-main .zi .main-part dl dt a {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 .catalog-ycg18-main .zi .main-part dl dt i {
+  font-size: 12px;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 .catalog-ycg18-main .zi .main-part dl dt:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 .catalog-ycg18-main .zi .main-part dl dt:hover a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 .catalog-ycg18-main .zi .main-part dl dd {
+  width: 700px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 .catalog-ycg18-main .zi .main-part dl dd a {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 .catalog-ycg18-main .zi .main-part dl dd a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 .catalog-ycg18-main .tu {
+  width: 198px;
+  margin: 15px 10px 0 20px;
+  font-size: 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 .catalog-ycg18-main .tu a {
+  display: inline-block;
+  width: 83px;
+  height: 35px;
+  vertical-align: top;
+  margin: 0 2px 2px 0;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 .catalog-ycg18-main .tu a img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 .catalog-ycg18-main .tu .bigimg {
+  display: block;
+  width: 168px;
+  height: 134px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19) .catalog-ycg18 .catalog-ycg18-main .tu .bigimg1 {
+  margin-top: 10px;
+}
+.context .main .content .banner .banner-main .catalog li:nth-child(19):hover .catalog-ycg18 {
+  display: block;
+}
+.context .main .content .banner .banner-main .bigBanner {
+  width: 600px;
+  height: 480px;
+  margin-left: 10px;
+}
+.context .main .content .banner .banner-main .bigBanner .swiper-container {
+  width: 600px;
+  height: 480px;
+}
+.context .main .content .banner .banner-main .bigBanner .swiper-container img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .bigBanner .swiper-container .swiper-pagination {
+  width: 200px;
+}
+.context .main .content .banner .banner-main .bigBanner .swiper-container .swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+}
+.context .main .content .banner .banner-main .bigBanner .swiper-container .swiper-pagination .swiper-pagination-bullet-active {
+  background: #fff;
+}
+.context .main .content .banner .banner-main .bigBanner .swiper-container .swiper-button-prev,
+.context .main .content .banner .banner-main .bigBanner .swiper-container .swiper-button-next {
+  color: #fff;
+  width: 25px;
+  height: 35px;
+  background: rgba(41, 16, 16, 0.15);
+  border-radius: 50px;
+}
+.context .main .content .banner .banner-main .bigBanner .swiper-container .swiper-button-prev:after,
+.context .main .content .banner .banner-main .bigBanner .swiper-container .swiper-button-next:after {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .bigBanner .swiper-container .swiper-button-prev:hover,
+.context .main .content .banner .banner-main .bigBanner .swiper-container .swiper-button-next:hover {
+  background: rgba(41, 16, 16, 0.5);
+}
+.context .main .content .banner .banner-main .bigBanner .swiper-container .swiper-button-prev {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.context .main .content .banner .banner-main .bigBanner .swiper-container .swiper-button-next {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.context .main .content .banner .banner-main .smallBanner {
+  width: 190px;
+  height: 480px;
+  margin-left: 10px;
+}
+.context .main .content .banner .banner-main .smallBanner .swiper-container {
+  width: 190px;
+  height: 480px;
+}
+.context .main .content .banner .banner-main .smallBanner .swiper-container a img {
+  width: 100%;
+  height: 153px;
+  margin-bottom: 10px;
+}
+.context .main .content .banner .banner-main .smallBanner .swiper-container .swiper-button-prev,
+.context .main .content .banner .banner-main .smallBanner .swiper-container .swiper-button-next {
+  color: #fff;
+  width: 25px;
+  height: 35px;
+  background: rgba(41, 16, 16, 0.15);
+  border-radius: 50px;
+  display: none;
+  text-align: center;
+  line-height: 35px;
+}
+.context .main .content .banner .banner-main .smallBanner .swiper-container .swiper-button-prev:after,
+.context .main .content .banner .banner-main .smallBanner .swiper-container .swiper-button-next:after {
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .smallBanner .swiper-container .swiper-button-prev:hover,
+.context .main .content .banner .banner-main .smallBanner .swiper-container .swiper-button-next:hover {
+  background: rgba(41, 16, 16, 0.5);
+}
+.context .main .content .banner .banner-main .smallBanner .swiper-container .swiper-button-prev {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.context .main .content .banner .banner-main .smallBanner .swiper-container .swiper-button-next {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.context .main .content .banner .banner-main .smallBanner .swiper-container:hover .swiper-button-prev,
+.context .main .content .banner .banner-main .smallBanner .swiper-container:hover .swiper-button-next {
+  display: block;
+}
+.context .main .content .banner .banner-main .logInBar {
+  width: 190px;
+  margin-left: 10px;
+  background: #fff;
+}
+.context .main .content .banner .banner-main .logInBar .information {
+  margin-top: 20px;
+}
+.context .main .content .banner .banner-main .logInBar .information .information1 {
+  display: flex;
+  justify-content: center;
+}
+.context .main .content .banner .banner-main .logInBar .information .information1 .logo {
+  width: 44px;
+  height: 44px;
+  margin-right: 15px;
+}
+.context .main .content .banner .banner-main .logInBar .information .information1 .logo a {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.context .main .content .banner .banner-main .logInBar .information .information1 .logo a img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .banner .banner-main .logInBar .information .information1 .zi a {
+  color: #666;
+  font-weight: 500;
+}
+.context .main .content .banner .banner-main .logInBar .information .information1 .zi a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .logInBar .information .information1 .zi p {
+  margin-top: 5px;
+}
+.context .main .content .banner .banner-main .logInBar .information .information1 .zi p a {
+  color: #333;
+}
+.context .main .content .banner .banner-main .logInBar .information .information2 {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.context .main .content .banner .banner-main .logInBar .information .information2 a {
+  display: inline-block;
+  width: 70px;
+  height: 25px;
+  border-radius: 13px;
+  text-align: center;
+  line-height: 25px;
+  margin: 0 5px;
+}
+.context .main .content .banner .banner-main .logInBar .information .information2 a:nth-child(1) {
+  background: #e1251b;
+  color: #fff;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .logInBar .information .information2 a:nth-child(1):hover {
+  background: #c81623;
+}
+.context .main .content .banner .banner-main .logInBar .information .information2 a:nth-child(2) {
+  background: #363634;
+  color: #e5d790;
+}
+.context .main .content .banner .banner-main .logInBar .information .information2 a:nth-child(2):hover {
+  background: #c81623;
+  color: #fff;
+}
+.context .main .content .banner .banner-main .logInBar .xian {
+  width: 160px;
+  height: 1px;
+  margin: 10px 15px 0 15px;
+  background: linear-gradient(270deg, white, #eeeeee, #eeeeee, white);
+}
+.context .main .content .banner .banner-main .logInBar .kuaibao {
+  margin-top: 5px;
+}
+.context .main .content .banner .banner-main .logInBar .kuaibao .bt {
+  display: flex;
+  justify-content: space-between;
+}
+.context .main .content .banner .banner-main .logInBar .kuaibao .bt h5 {
+  margin-left: 20px;
+  font-size: 14px;
+}
+.context .main .content .banner .banner-main .logInBar .kuaibao .bt a {
+  color: #666;
+  margin-right: 20px;
+  font-size: 11px;
+}
+.context .main .content .banner .banner-main .logInBar .kuaibao .bt a i {
+  font-size: 2px;
+  vertical-align: middle;
+  font-weight: 600;
+}
+.context .main .content .banner .banner-main .logInBar .kuaibao .bt a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .logInBar .kuaibao .newList li {
+  width: 150px;
+  height: 16px;
+  line-height: 16px;
+  margin: 10px 20px 0;
+}
+.context .main .content .banner .banner-main .logInBar .kuaibao .newList li a {
+  width: 150px;
+  height: 16px;
+  display: inline-block;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.context .main .content .banner .banner-main .logInBar .kuaibao .newList li a span {
+  display: inline-block;
+  width: 35px;
+  height: 16px;
+  margin-right: 6px;
+  background: rgba(225, 37, 27, 0.08);
+  color: #e1251b;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+}
+.context .main .content .banner .banner-main .logInBar .kuaibao .newList li a:hover {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon {
+  width: 190px;
+  height: 220px;
+  margin: 10px 0 0 0;
+  overflow: hidden;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon .smallIcon-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon .smallIcon-main li {
+  width: 60px;
+  height: 55px;
+  text-align: center;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon .smallIcon-main li a .tu {
+  width: 60px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon .smallIcon-main li a .tu img {
+  width: 28px;
+  height: 28px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon .smallIcon-main li a .tu .img2 {
+  display: none;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon .smallIcon-main li a .zi {
+  color: #333;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon .smallIcon-main li:hover .zi {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon .smallIcon-main li:hover .tu .img1 {
+  display: none;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon .smallIcon-main li:hover .tu .img2 {
+  display: block;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs {
+  width: 190px;
+  height: 220px;
+  background: #fff;
+  position: relative;
+  top: 0;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs #tabsList {
+  width: 150px;
+  height: 30px;
+  margin: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid transparent;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs #tabsList li {
+  line-height: 30px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs #tabsList li a {
+  color: #666;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs #tabsList li.active {
+  border-bottom: 2px solid #e1251b;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs #tabsList li.active a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg {
+  width: 150px;
+  height: 188px;
+  margin: 0 20px;
+  position: absolute;
+  left: 0;
+  top: 30px;
+  display: none;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg.active {
+  display: block;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main {
+  width: 150px;
+  height: 188px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main #ul1,
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main #ul2 {
+  width: 150px;
+  height: 21px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main #ul1 li a,
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main #ul2 li a {
+  font-size: 11px;
+  color: #666;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main #ul1 li.active a,
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main #ul2 li.active a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main #ul3 {
+  width: 150px;
+  height: 21px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: left;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main #ul3 li {
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main #ul3 li a {
+  font-size: 11px;
+  color: #666;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main #ul3 li.active a {
+  color: #e1251b;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg1,
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg2,
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg3 {
+  width: 150px;
+  height: 127px;
+  position: absolute;
+  display: none;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg1.active,
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg2.active,
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg3.active {
+  display: block;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg1 .smallycg1-main dl {
+  width: 150px;
+  height: 20px;
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 20px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg1 .smallycg1-main dl dt {
+  width: 30px;
+  text-align: left;
+  color: #666;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg1 .smallycg1-main dl dd {
+  color: #e40015;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg1 .smallycg1-main dl dd input {
+  width: 116px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg1 .smallycg1-main dl dd select {
+  width: 116px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg1 .smallycg1-main dl:nth-child(2) {
+  height: 40px;
+  margin-top: 5px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg1 .smallycg1-main .btn {
+  width: 48px;
+  height: 20px;
+  margin-top: 5px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg1 .smallycg1-main .btn input {
+  width: 60px;
+  height: 20px;
+  padding: 1px 6px;
+  background: #e40015;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg1 .smallycg1-main .link {
+  margin-top: 5px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg1 .smallycg1-main .link:hover a {
+  color: #e40015;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg2 .smallycg2-main .select {
+  height: 16px;
+  margin-top: 5px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg2 .smallycg2-main .select label {
+  margin-right: 15px;
+  font-size: 0;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg2 .smallycg2-main .select label span {
+  display: inline-block;
+  margin-left: 8px;
+  color: #666;
+  font-size: 12px;
+  vertical-align: top;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg2 .smallycg2-main .city {
+  width: 150px;
+  height: 20px;
+  display: flex;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg2 .smallycg2-main .city span {
+  display: inline-block;
+  width: 30px;
+  color: #666;
+  vertical-align: middle;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg2 .smallycg2-main .city input {
+  width: 118px;
+  height: 18px;
+  border: 1px solid #e7e7e7;
+  color: #aaaaaa;
+  text-align: center;
+  font-size: 14px;
+  line-height: 18px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg2 .smallycg2-main .city1 {
+  margin-top: 5px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg2 .smallycg2-main .date {
+  width: 150px;
+  height: 20px;
+  display: flex;
+  margin-top: 8px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg2 .smallycg2-main .date span {
+  width: 30px;
+  color: #666;
+  line-height: 20px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg2 .smallycg2-main .date input {
+  width: 118px;
+  height: 18px;
+  border: 1px solid #e7e7e7;
+  color: #aaaaaa;
+  text-align: center;
+  font-size: 14px;
+  line-height: 18px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg2 .smallycg2-main .link {
+  width: 150px;
+  height: 20px;
+  margin-top: 8px;
+  display: flex;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg2 .smallycg2-main .link input {
+  width: 58px;
+  height: 20px;
+  padding: 1px 6px;
+  background: #e40015;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg2 .smallycg2-main .link a {
+  width: 82px;
+  height: 16px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .smallycg2 .smallycg2-main .link:hover a {
+  color: #e40015;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .xycg7 .smallycg3-main .inp {
+  width: 150px;
+  height: 20px;
+  display: flex;
+  margin-top: 5px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .xycg7 .smallycg3-main .inp span {
+  display: block;
+  width: 55px;
+  color: #666;
+  line-height: 20px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .xycg7 .smallycg3-main .inp input {
+  width: 95px;
+  height: 18px;
+  border: 1px solid #e7e7e7;
+  color: #666;
+  line-height: 18px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .xycg7 .smallycg3-main .site {
+  margin-top: 5px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .xycg7 .smallycg3-main .site input {
+  width: 150px;
+  height: 16px;
+  border: 1px solid #e7e7e7;
+  text-align: center;
+  line-height: 16px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .xycg7 .smallycg3-main .link {
+  width: 150px;
+  height: 20px;
+  margin-top: 8px;
+  display: flex;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .xycg7 .smallycg3-main .link input {
+  width: 58px;
+  height: 20px;
+  padding: 1px 6px;
+  background: #e40015;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-right: 10px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .xycg7 .smallycg3-main .link a {
+  width: 82px;
+  height: 16px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .xycg7 .smallycg3-main .link:hover a {
+  color: #e40015;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .xycg6,
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .xycg8 {
+  width: 150px;
+  margin-top: 10px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .xycg6 .smallycg2-main,
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .xycg8 .smallycg2-main {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .xycg6 .smallycg2-main img,
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .xycg8 .smallycg2-main img {
+  width: 70px;
+  height: 96px;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .putAway {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 163px;
+  left: 65px;
+  cursor: pointer;
+  color: #666;
+  line-height: 20px;
+  text-align: center;
+}
+.context .main .content .banner .banner-main .logInBar .smallIcon #tabs .ycg .ycg-main .putAway:hover {
+  background: #e40015;
+  border-radius: 50%;
+  color: #fff;
+}
+.context .main .content .countdown {
+  width: 100%;
+  margin-top: 35px;
+}
+.context .main .content .countdown .countdown-main {
+  width: 1200px;
+  height: 260px;
+  margin: 0 auto;
+  background: #fff;
+  display: flex;
+}
+.context .main .content .countdown .countdown-main .tou {
+  display: inline-block;
+  width: 190px;
+  height: 260px;
+  background: url(../img/djs.png);
+  text-align: center;
+  color: #fff;
+}
+.context .main .content .countdown .countdown-main .tou .jdms {
+  width: 100%;
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 31px;
+}
+.context .main .content .countdown .countdown-main .tou .targetTime {
+  margin-top: 100px;
+  font-size: 14px;
+}
+.context .main .content .countdown .countdown-main .tou .targetTime span {
+  font-size: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -3px;
+  font-weight: 700;
+}
+.context .main .content .countdown .countdown-main .tou .timeDistance {
+  height: 30px;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.context .main .content .countdown .countdown-main .tou .timeDistance span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: #000;
+  line-height: 30px;
+}
+.context .main .content .countdown .countdown-main .banner3 {
+  width: 800px;
+  height: 260px;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container {
+  width: 800px;
+  height: 260px;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-slide {
+  display: flex;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-slide a {
+  width: 200px;
+  height: 260px;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-slide a .img {
+  width: 140px;
+  height: 140px;
+  margin: 30px 30px 0 30px;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-slide a .img img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-slide a h6 {
+  width: 160px;
+  margin: 13px 20px 0 20px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-slide a .price {
+  width: 158px;
+  height: 22px;
+  margin: 7px 20px 0 20px;
+  border: 1px solid #e1251b;
+  display: flex;
+  box-sizing: border-box;
+  background: #e1251b;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-slide a .price .price1 {
+  width: 92px;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 0px;
+  line-height: 22px;
+  font-weight: 600;
+  position: relative;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-slide a .price .price1 div {
+  display: inline-block;
+  font-size: 16px;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-slide a .price .price1 span {
+  font-size: 12px;
+  font-weight: 400;
+  margin-right: 1px;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-slide a .price .price1:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-color: transparent white transparent transparent;
+  border-style: solid;
+  border-width: 21px 8px 0 0;
+  position: absolute;
+  top: -1px;
+  left: 83px;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-slide a .price .price2 {
+  width: 66px;
+  height: 100%;
+  text-align: center;
+  color: #999;
+  font-size: 0px;
+  line-height: 22px;
+  font-weight: 600;
+  background: #fff;
+  text-decoration: line-through;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-slide a .price .price2 div {
+  display: inline-block;
+  font-size: 12px;
+  text-decoration: line-through;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-slide a .price .price2 span {
+  font-size: 12px;
+  font-weight: 400;
+  margin-right: 1px;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-slide a:hover h6 {
+  color: #e1251b;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-slide a:nth-child(1):after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 200px;
+  background: linear-gradient(180deg, white, #ddd, white);
+  position: absolute;
+  top: 0;
+  left: 25%;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-slide a:nth-child(2):after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 200px;
+  background: linear-gradient(180deg, white, #ddd, white);
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-slide a:nth-child(3):after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 200px;
+  background: linear-gradient(180deg, white, #ddd, white);
+  position: absolute;
+  top: 0;
+  left: 75%;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-slide a:nth-child(4):after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 200px;
+  background: linear-gradient(180deg, white, #eee, white);
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-button-prev,
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-button-next {
+  color: #fff;
+  width: 25px;
+  height: 35px;
+  background: rgba(41, 16, 16, 0.15);
+  border-radius: 50px;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-button-prev:after,
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-button-next:after {
+  font-size: 12px;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-button-prev:hover,
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-button-next:hover {
+  background: rgba(41, 16, 16, 0.5);
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-button-prev {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.context .main .content .countdown .countdown-main .banner3 .swiper-container .swiper-button-next {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.context .main .content .countdown .countdown-main .banner4 {
+  width: 180px;
+  height: 240px;
+  padding: 10px;
+}
+.context .main .content .countdown .countdown-main .banner4 .swiper-container {
+  width: 180px;
+  height: 240px;
+}
+.context .main .content .countdown .countdown-main .banner4 .swiper-container .swiper-slide {
+  background: linear-gradient(#fff, #f9fafc, #eef0f6);
+}
+.context .main .content .countdown .countdown-main .banner4 .swiper-container .swiper-slide a {
+  width: 180px;
+  height: 240px;
+}
+.context .main .content .countdown .countdown-main .banner4 .swiper-container .swiper-slide a .tu {
+  width: 120px;
+  height: 120px;
+  margin: 20px auto 0;
+}
+.context .main .content .countdown .countdown-main .banner4 .swiper-container .swiper-slide a .tu img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .countdown .countdown-main .banner4 .swiper-container .swiper-slide a .zi {
+  margin-top: 10px;
+  width: 180px;
+  height: 90px;
+  text-align: center;
+  font-size: 14px;
+}
+.context .main .content .countdown .countdown-main .banner4 .swiper-container .swiper-slide a .zi p {
+  color: #666;
+}
+.context .main .content .countdown .countdown-main .banner4 .swiper-container .swiper-slide a .zi h4 {
+  color: #333;
+  font-weight: 700;
+  margin-top: 5px;
+}
+.context .main .content .countdown .countdown-main .banner4 .swiper-container .swiper-slide a .zi .kuang {
+  color: #e1251b;
+  border-radius: 14px;
+  width: 83px;
+  height: 22px;
+  box-sizing: border-box;
+  font-weight: 700;
+  border: 1px solid #e1251b;
+  text-align: center;
+  font-size: 12px;
+  line-height: 22px;
+  display: inline-block;
+  margin-top: 5px;
+}
+.context .main .content .countdown .countdown-main .banner4 .swiper-container .swiper-slide a .zi .kuang i {
+  font-size: 12px;
+}
+.context .main .content .countdown .countdown-main .banner4 .swiper-container .swiper-slide a .zi .kuang:hover {
+  background: #e1251b;
+  color: #fff;
+}
+.context .main .content .countdown .countdown-main .banner4 .swiper-container .swiper-pagination {
+  bottom: 2px;
+}
+.context .main .content .countdown .countdown-main .banner4 .swiper-container .swiper-pagination .swiper-pagination-bullet {
+  width: 4px;
+  height: 4px;
+  margin: 2px;
+  border-radius: 50%;
+}
+.context .main .content .countdown .countdown-main .banner4 .swiper-container .swiper-pagination .swiper-pagination-bullet-active {
+  background: #e1251b;
+}
+.context .main .content .content3 {
+  width: 100%;
+  margin-top: 20px;
+}
+.context .main .content .content3 .content3-main {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.context .main .content .content3 .content3-main .rankingList {
+  width: 590px;
+  height: 340px;
+  margin-right: 10px;
+  position: relative;
+  background: #fff;
+}
+.context .main .content .content3 .content3-main .rankingList .bt {
+  width: 550px;
+  height: 60px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.context .main .content .content3 .content3-main .rankingList .bt .bt-left {
+  width: 100px;
+}
+.context .main .content .content3 .content3-main .rankingList .bt .bt-left a {
+  display: flex;
+  align-items: center;
+}
+.context .main .content .content3 .content3-main .rankingList .bt .bt-left a h3 {
+  width: 72px;
+  height: 32px;
+  line-height: 32px;
+  color: #333;
+  font-weight: 700;
+  font-size: 24px;
+  margin-right: 10px;
+}
+.context .main .content .content3 .content3-main .rankingList .bt .bt-left a i {
+  width: 16px;
+  height: 16px;
+  background: url(../img/pai-icon.png);
+  background-position: -16px 0;
+}
+.context .main .content .content3 .content3-main .rankingList .bt .bt-left a:hover i {
+  background-position: 0 0;
+}
+.context .main .content .content3 .content3-main .rankingList .bt #bt-right {
+  width: 382px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+.context .main .content .content3 .content3-main .rankingList .bt #bt-right li {
+  width: 82px;
+  height: 40px;
+  padding: 10px 0;
+}
+.context .main .content .content3 .content3-main .rankingList .bt #bt-right li a {
+  font-size: 14px;
+  width: 56px;
+  height: 40px;
+  color: #999;
+  padding: 0 5px;
+  margin: 0 8px;
+  max-width: 70px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.context .main .content .content3 .content3-main .rankingList .bt #bt-right li.active a {
+  font-weight: 700;
+  color: #e1251b;
+}
+.context .main .content .content3 .content3-main .rankingList .rank {
+  width: 590px;
+  height: 210px;
+  padding: 0 20px;
+  position: absolute;
+  display: none;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main {
+  display: flex;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstLeft {
+  width: 270px;
+  height: 250px;
+  position: relative;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstLeft a .hot {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 25px;
+  top: 0;
+  text-align: center;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstLeft a .hot img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstLeft a .img {
+  width: 270px;
+  height: 164px;
+  padding-top: 16px;
+  background: #f8f9fa;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstLeft a .img img {
+  width: 100px;
+  height: 100px;
+  margin: 0 85px;
+  background: #f8f9fa;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstLeft a .img .zi {
+  width: 210px;
+  height: 40px;
+  margin: 8px auto 0;
+  line-height: 20px;
+  font-size: 14px;
+  color: #333333;
+  overflow: hidden;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstLeft a .img:hover .zi {
+  color: #c81623;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstLeft .bang {
+  width: 272px;
+  height: 84px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstLeft .bang li {
+  width: 134px;
+  height: 40px;
+  background: #f8f9fa;
+  margin-bottom: 2px;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstLeft .bang li a div {
+  width: 134px;
+  height: 40px;
+  font-size: 15px;
+  text-align: center;
+  line-height: 40px;
+  color: #333;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstLeft .bang li a div i {
+  font-size: 10px;
+  margin-left: 10px;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstLeft .bang li a:hover div {
+  color: #c81623;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstRight {
+  width: 290px;
+  height: 240px;
+  padding-top: 10px;
+  margin-left: 15px;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstRight li {
+  width: 270px;
+  height: 70px;
+  margin-bottom: 15px;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstRight li a {
+  width: 270px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstRight li a .hot {
+  width: 30px;
+  height: 40px;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstRight li a .hot img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstRight li a .img {
+  width: 70px;
+  height: 70px;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstRight li a .zi {
+  width: 150px;
+  height: 32px;
+  overflow: hidden;
+  line-height: 16px;
+  font-size: 12px;
+  color: #333;
+}
+.context .main .content .content3 .content3-main .rankingList .rank .rank-main .LstRight li a:hover .zi {
+  color: #c81623;
+}
+.context .main .content .content3 .content3-main .rankingList .rank.active {
+  display: block;
+}
+.context .main .content .content3 .content3-main .brand {
+  width: 590px;
+  height: 340px;
+  background: #fff;
+}
+.context .main .content .content3 .content3-main .brand .bt {
+  width: 550px;
+  height: 60px;
+  padding: 0 20px;
+}
+.context .main .content .content3 .content3-main .brand .bt a {
+  display: flex;
+  align-items: center;
+}
+.context .main .content .content3 .content3-main .brand .bt a h3 {
+  width: 100px;
+  height: 32px;
+  line-height: 32px;
+  color: #333;
+  font-weight: 700;
+  font-size: 24px;
+  margin-right: 10px;
+}
+.context .main .content .content3 .content3-main .brand .bt a i {
+  width: 16px;
+  height: 16px;
+  background: url(../img/pai-icon.png);
+  background-position: -16px 0;
+}
+.context .main .content .content3 .content3-main .brand .bt a:hover i {
+  background-position: 0 0;
+}
+.context .main .content .content3 .content3-main .brand .rank {
+  width: 590px;
+  height: 272px;
+}
+.context .main .content .content3 .content3-main .brand .rank .rank-main {
+  display: flex;
+  width: 555px;
+  height: 272px;
+  padding: 0 20px 0 15px;
+}
+.context .main .content .content3 .content3-main .brand .rank .rank-main .LstLeft {
+  width: 270px;
+  height: 265px;
+  margin-right: 15px;
+  background: #fdf9f9;
+}
+.context .main .content .content3 .content3-main .brand .rank .rank-main .LstLeft a {
+  text-align: center;
+}
+.context .main .content .content3 .content3-main .brand .rank .rank-main .LstLeft a .hot {
+  width: 70px;
+  height: 35px;
+  margin: 15px auto 0;
+  display: block;
+}
+.context .main .content .content3 .content3-main .brand .rank .rank-main .LstLeft a h3 {
+  width: 270px;
+  height: 24px;
+  color: #333333;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 6px;
+}
+.context .main .content .content3 .content3-main .brand .rank .rank-main .LstLeft a .zi {
+  font-size: 12px;
+  color: #666666;
+  margin: 1px 0 13px 0;
+}
+.context .main .content .content3 .content3-main .brand .rank .rank-main .LstLeft a .img {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto;
+}
+.context .main .content .content3 .content3-main .brand .rank .rank-main .LstLeft a .img img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .content3 .content3-main .brand .rank .rank-main .LstRight {
+  width: 270px;
+  height: 312px;
+  margin-top: -40px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.context .main .content .content3 .content3-main .brand .rank .rank-main .LstRight li {
+  width: 135px;
+  height: 72px;
+  padding: 14px 0;
+  position: relative;
+}
+.context .main .content .content3 .content3-main .brand .rank .rank-main .LstRight li a {
+  text-align: center;
+}
+.context .main .content .content3 .content3-main .brand .rank .rank-main .LstRight li a .img {
+  width: 100px;
+  height: 50px;
+  margin: 0 auto;
+  display: block;
+}
+.context .main .content .content3 .content3-main .brand .rank .rank-main .LstRight li a .zi {
+  color: #666666;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.context .main .content .content3 .content3-main .brand .rank .rank-main .LstRight li:nth-child(odd):after {
+  content: "";
+  width: 1px;
+  height: 60px;
+  margin-top: -40px;
+  background: linear-gradient(180deg, white, #eeeeee, #eeeeee, white);
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+.context .main .content .PictureScroll {
+  width: 100%;
+  margin-top: 20px;
+}
+.context .main .content .PictureScroll .PictureScroll-main {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+.context .main .content .PictureScroll .PictureScroll-main .tou {
+  width: 190px;
+  height: 260px;
+  background: url(../img/tpgd-tou.png) no-repeat;
+  background-color: #eee;
+  background-size: 100% 100%;
+  margin-right: 10px;
+  display: block;
+}
+.context .main .content .PictureScroll .PictureScroll-main .tou .tou-zi {
+  width: 160px;
+  height: 90px;
+  margin-top: 15px;
+  background: url(../img/tpgd-tou-zi.png) no-repeat;
+  background-size: contain;
+  background-position: 50%;
+  margin: 0 auto;
+}
+.context .main .content .PictureScroll .PictureScroll-main .tou .tou-zi div {
+  width: 140px;
+  height: 24px;
+  padding: 55px 0 10px 20px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  line-height: 24px;
+}
+.context .main .content .PictureScroll .PictureScroll-main .tou .tou-zi div i {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url(../img/pai-icon.png) no-repeat;
+  background-position: 0 -16px;
+  vertical-align: middle;
+  margin-bottom: 1px;
+}
+.context .main .content .PictureScroll .PictureScroll-main .tou:hover .tou-zi div i {
+  background-position: 0 0;
+}
+.context .main .content .PictureScroll .PictureScroll-main .roll {
+  width: 1000px;
+  height: 260px;
+  position: relative;
+  overflow: hidden;
+}
+.context .main .content .PictureScroll .PictureScroll-main .roll .roll-main {
+  height: 260px;
+  position: absolute;
+  top: 0;
+  display: flex;
+  background: #fff;
+}
+.context .main .content .PictureScroll .PictureScroll-main .roll .roll-main li {
+  width: 150px;
+  height: 180px;
+  margin: 35px 50px 0 0;
+}
+.context .main .content .PictureScroll .PictureScroll-main .roll .roll-main li a .img {
+  width: 150px;
+  height: 150px;
+}
+.context .main .content .PictureScroll .PictureScroll-main .roll .roll-main li a .img img {
+  width: 100%;
+  height: 100%;
+}
+.context .main .content .PictureScroll .PictureScroll-main .roll .roll-main li a .zi {
+  margin-top: 10px;
+  color: #333333;
+  font-size: 14px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.context .main .content .PictureScroll .PictureScroll-main .roll .roll-main li a:hover .zi {
+  color: #e1251b;
+}
