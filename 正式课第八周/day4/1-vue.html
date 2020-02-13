@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <script>
+        //把数据绑定在页面中，一秒后让数据更改
+        let msg = "hello world~~"
+        
+        setTimeout(()=>{
+            msg="你好世界～～";
+            app.innerHTML=msg
+
+        },1000)
+        let app=document.getElementById("app")
+        app.innerHTML=msg
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
