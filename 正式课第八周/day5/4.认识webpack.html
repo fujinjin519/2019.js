@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!-- 项目整合，代码的压缩。
+    项目依赖了很多的模块，webpack模块打包机 
+2.编译，浏览器不能识别的文件，编译成能识别的文件
+1。打包：不管文件夹之间多复杂互相包含，都可以成一个模块，把10个文件压缩编译成一个文件，不需要那么多次的请求
+webpack：  
+npm init -y   
+simple文件夹下：安装webpack  npm init -y   npm install   然后建文件夹 app()  public ()
+npm  run build ，在public里多一个bundle.js
+再输入一行代码。可以变成不压缩的 mode:"development"
+
+很多的js打包好了需要调试很麻烦不好找解决问题：  devtool: 'eval-source-map',：
+ npm run server 在端口号8080下
+
+ 相对路径，绝对路径？
+ 多个入口，出口的配置
+  proxy。api.跨域
+
+ 2.编译:可以把ES6编译成ES5.css编译成less, 
+Loaders：css  图片  less 编译下 配置的 
+npm i url-loader --save-dev（ 安装 url-loader ）
+删除public文件，在配置文件里加一行代码
+再配置
+下载一个插件：npm install --save-dev html-webpack-plugin
+webpack.config ：配置文件
+
+
+ 复习：
+ webpack:基于node
+ 浏览器支持 module common.规范
+ 导入require   导出：module.exports
+
+-->
+module.exports={
+    <!-- entry:__dirname+"/app/main.js" -->
+    output:{
+
+    }
+
+}
+</body>
+</html>

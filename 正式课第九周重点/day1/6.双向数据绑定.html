@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--this：问题 
+    函数的问题要return
+    指令：以v-开头，放在行间属性上，有着特殊意义的词，就是指令
+     v-model:会放到input框，表单元素，单选复选框 ，字符串，
+     双向数据绑定，数据会影响
+     -->
+</head>
+
+<body>
+    <div id="app">
+        <!-- {{msg}}
+        {{a}} -->
+        <input type="text" v-model="msg">
+           <!-- msg，会自动找datalimian  -->
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // let a=100; //报错 a {{a}}没起作用，必须在对象里才能显示
+    let vm=new Vue({
+        el:"#app",
+        data:function(){
+            //data的属性值是函数，如果这里是函数记得return 返回一个对象
+           //this指向当前VUE的实列
+           console.log(this);
+           
+            return {
+                msg:"hello",
+                a:100
+           }
+         }
+        //   msg:"word"
+
+
+
+
+
+</script>
+    
+</body>
+</html>

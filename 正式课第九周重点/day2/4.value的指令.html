@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- v指令 ：v-开头，行间属性，特殊意义
+     1.v-model:一般用于表单元素只能放到input中，将data中的数据放到input框中，当input值改变，数据也会改变（双向数据绑定底层运行原理 mvvm原理弄懂）
+     2.v-text:可以将data中的文本放到元素中（文本写什么识别什么）
+     3.v-html:可以识别标签 （只留下文字，标签识别到）
+     4.v-show:用于元素的显示和隐藏（display block，none)，false ,0,隐藏 true,1显示,如果不是一个布尔值比如数字，会默认转布尔。
+     只要是v开头指令都会向数据data里找有没有这个属性名，没有就会报错，不是v开头，r开头就不会报错 ，
+     5.v-if:如果判断，也是fales.true,不是直接转布尔。它和show区别，如果是false,直接删除原有的元素
+    不是隐藏了，可以直接写成表达式，直接不用了用v-if-->
+</head>
+<body>
+    <div id="app">
+     
+        <div v-text="x"></div>
+        <div v-html="x"></div>
+        <div v-show="true">中国加油</div>
+        <div v-show="a" r-yy="cc"></div>
+         <div v-if="1===2">天天向上</div>
+         <!-- <div v-else>北京加油</div> -->
+         <div v-else-if="3===3">我是中国人</div>
+        <!-- if 与 else if区别。当if条件不满足的时，走else if -->
+        <input type="text" v-model="a">
+     
+
+
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:"#app",
+            data:{
+                a:1,
+                x:" <span>好好学习</span>"
+            }
+        })
+        
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- filter: 过滤器，方法
+    -->
+</head>
+<body>
+    <div id="app">
+        {{a|toFixed(2)}}
+        <!-- 参数会传给filter第二个参数a -->
+        {{b|toFixed(3)}}
+        {{8 | addZero}}
+        
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:"#app",
+            data:{
+                a:10.3456,
+                b:1.234,
+                c:8
+           },
+            methods:{//事件的方法
+          },
+            filters:{//过滤器
+                toFixed(val,a){//形参  val形参的值就是管道符|前面的值,a的值
+                    // return val//这个返回什么页面展示什么 ，不写return页面没东西
+                    // return 99  
+                    // return val.toFixed(2) //保留两位
+                     return val.toFixed(a)
+                    // console.log(100);
+                    // console.log(val);
+                 },
+                 addzero(num){ //进行解析编译，就会执行这个方法，方法的返回值最终会放在页面中
+                     return num<10?"0"+num:num;
+                 }
+
+            }
+
+        })
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>

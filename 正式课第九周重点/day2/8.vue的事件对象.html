@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- vue事件对象
+      -->
+</head>
+<body>
+    <div id="app">
+        <button @click="fn()">提交</button>
+        <input type="text" @keyup="fn">
+
+
+
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:"#app",
+            data:{
+               
+             
+              
+            },
+            methods:{
+                //绑定事件可以有小括号，也可以没有 @click="fn", @click="fn()"
+                //1.在绑定事件,没有小括号，第一个参数就是事件对象
+                //2.有小括号，但是我没有传参.那么e默认就是undifined
+                //3.如果需要事件对象，并且需要传参数，那么需要在绑定时使用$event占位
+//
+                fn(e){//e是事件对象，e是一个名字可以改
+                    console.log(e);
+                    
+
+                }
+               
+             }
+        })
+        
+    
+    
+    
+    </script>
+</body>
+</html>

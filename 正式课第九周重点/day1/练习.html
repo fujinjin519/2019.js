@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+        {{person}}
+        {{obj.name}}
+        {{arr}}
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm=new Vue({
+            //这个大对象的属性名el和data是固定的。el: 代表Vue的语法的范围,放视图的范围,data：放数据的，data中的数据都会放到vm的实例上 （用vm.调用）
+            el:"#app",
+            data:{
+                //这几个对象里的属性名不是固定的.这个大对象里面可以放对象，数组，都可以放
+                msg:"hello",
+                person:"12345",
+                obj:{
+                    name:"xiaohua"
+                },
+                arr:[12,34,56]
+              }
+             })
+             
+             //对里面的数据进行更改，因为data中的数据都会放到vm的实例上，vm.进行更改，视图都发生改变了。 
+            //  vm.msg="nihao"
+            //  console.log(vm);
+            //  vm.person="34" 
+               
+           // 这里需要注意数组的两种特殊情况
+           //1. data中的数据,如果数组中某一项发生改变，不能引起视图的更新(直接更改。数据改变不了视图；如果把对象的属性名对应的属性值更新放到数组的下面同时开启显示，会引发视图的更新；因为会随着对象的变化捎带变化。）
+                vm.arr[1]=100 //1是索引，给索引为1改为100，数据已经更新，但是视图不会更新，数组的2中情况注意
+            
+            //  vm.obj.name="小明"
+            //2. 数组内置的方法，能够引发原数组发生变化，可以引发视图的更新（pop push  shift  unshift splice sort  reverse）
+            vm.arr.reverse() //视图会发生变化
+
+            //过滤：
+             vm.arr= vm.arr.filter(item=>item>23) //过滤大于23的
+ 
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>

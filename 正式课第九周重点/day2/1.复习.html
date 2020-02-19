@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- vue的异步渲染
+        视图变了，真实的dom没有更新，原生的js会慢 ,浏览器的元素变化了，真实的dom没变-->
+</head>
+<body>
+    <div></div>
+    <div id="app">
+        <!-- {{val}} -->
+    
+        <input type="text" v-model="val" >
+        <div>
+            <!-- {{a+val}} 1.小胡子语法支持表达式 -->
+            {{a}}
+            <!-- {{val>10?66:800}}  2.小胡子语法支持三元运算符 -->
+      
+        </div>
+       
+    </div>
+
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        // debugger//断点后面代码不运行，
+        //代码运行的顺序从上到下先解析胡子语法，再把值100替换了
+        // let a=document.getElementById("app")
+        let vm=new Vue({ //new vue是同步的
+            el:"#app",
+            data:function(){
+                console.log(123);//123先输出
+                 return{
+                     val:200,
+                     arr:[1,23,35],
+                     a:5//3.null和undifined不能被解析,0和false,true可以解析
+                     
+
+               } 
+
+            }
+
+        });
+        // vm.arr[0]=100
+        vm.arr.pop()
+
+        // vm.obj.name="小花"
+        console.log(a.innerHTML); //{{val}} vue的dom渲染上异步的
+        
+        
+    
+    
+    
+    </script>
+</body>
+</html>

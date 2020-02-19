@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!-- 1.小胡子语法
+     2.数据影响视图，当vue中的data数据发生改变，视图也会发生改变
+     数据是响应式：eactive
+     
+     数据会影响视图，如果向更改视图，只需要更改对应的数据，视图就会自动更新
+     
+     在框架中，框架没有直接操作真正的DOM，而是操作了虚拟的DOM（虚拟的js对象）更改数据以后就会更改虚拟的DOM,然后进行DOM-diff的对比，需要把发生变化的那个地方进行替换，大大的提高页面的性能。
+
+     框架的意义举例：4个div,1，2，3，4.都换成100，一个个换的时候都不动，实际上，真实的dom不变，换的是虚拟DOM的数据，换完后，真实和虚拟进行对比，把节点里面的100换掉，性能会高，
+     按照原先的jq,会进行循环，
+
+     双向数据绑定：
+ -->
+
+<body>
+    {{msg}} 
+    <div id="app">
+        {{msg}}
+        {{person}}
+        {{obj.name}}
+        {{arr}}  
+    </div>
+    <!-- 引入安装vue   npm install vue -save -->
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        //Vue是一个类
+        let vm = new Vue({
+            //这个对象的属性名是固定的
+            el: "#app", //el:代表vue语法的范围，放视图的范围
+            data: { //放数据 data中的数据都会放到vm的实例上  vm.调用
+                //对象里的值的属性名不是固定的
+                msg: "hello",
+                person: "12345",
+                obj: { name: "小花" },
+                arr:[12,23,68] 
+            }
+        })
+        // vm.msg="word"
+        // vm.person="34"
+        // console.log(vm);
+        //  vm.arr[0]=100  //索引，数据已经更新，但是视图没有更改
+        // vm.obj.name="小名"
+        //如果下面这个小名开启，数组就会显示更新，因为会随着对象变化捎带变化了，本身数组变化，视图不会跟着变化。
+        //1.data中的数据，如果数组某一项发生改变，不会引起视图的更新，如果是对象的属性名对应的属性值更新，会引发视图的更新
+
+        //2.数组内置的方法，能够引发原数组发生变化的，可以引发数组的更新
+        // vm.arr.pop() //视图会更改，数组内置方法，引起原数组改变的，视图会变化
+        // vm.arr.reverse() 
+        //vm.arr= vm.arr.filter(item=>item>23) //过滤大于23的留下
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- v-on.事件，
+     1.给元素绑定的事件都要写在methods里面，通过v-on,绑定
+     2.method中的方法名不能和data中属性重名    fn()es6的语法省略了function
+     3.事件中的this,指向当前的vue的实例 
+     4.v-on：可以简写成@-->
+</head>
+<body>
+    <div id="app">
+       <button v-on:click="fn">{{a}}</button>
+       <div v-show="b"></div>
+        
+
+     </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:"#app",
+            data:{
+                b:"false",
+                a:"显示"
+                 
+
+   
+              },
+            methods:{
+                fn(){
+                    this.b=!this.b
+                    if(this.b){
+                        this.a="隐藏"
+                    }else{
+                        this.a="显示"
+                    }
+                //  console.log("显示");
+              },
+              
+               
+             }
+        })
+        
+    
+    
+    
+    </script>
+
+    
+</body>
+</html>

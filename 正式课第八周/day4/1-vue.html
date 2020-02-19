@@ -13,17 +13,34 @@
     <div id="app">
 
     </div>
+    <script src="./node_modules/vue/dist/vue.min.js"></script>
+    <script>
+        let msg = "hello world~~"
+
+        setTimeout(() => {
+            vm1.msg = "你好世界～～";
+
+
+        }, 1000)
+        let vm=new vue({
+            el:"#app",
+            data:{
+               msg:"msg"
+
+            }
+        })
+    </script>
     <script>
         //把数据绑定在页面中，一秒后让数据更改
         let msg = "hello world~~"
-        
-        setTimeout(()=>{
-            msg="你好世界～～";
-            app.innerHTML=msg
 
-        },1000)
-        let app=document.getElementById("app")
-        app.innerHTML=msg
+        setTimeout(() => {
+            msg = "你好世界～～";
+            app.innerHTML = msg
+
+        }, 1000)
+        let app = document.getElementById("app")
+        app.innerHTML = msg
 
 
 

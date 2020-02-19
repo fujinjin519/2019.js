@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- vue中的请求数据，安装axios npm install axios --save -dev
+        axios:一般请求数据vue中都是在created中执行获取数据,请求的数据给了data中的数据，进行数据渲染，更改视图
+        created:钩子函数。当初始化vue,会默认调用一个回调函数，this指向vue的实例
+     1.获取不到
+     2.另一种写法写在methods中-->
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script>
+        let vm=new Vue({
+            el:"#app",
+            data:{
+              
+            },
+            created(){
+                console.log(100);
+                axios.get("./carts.json").then(data=>{
+            })
+           },
+            methods:{
+                getData(){
+                    axios.get("./carts.json").then(data=>{
+
+          }) 
+
+                }
+
+            },
+            filters:{
+
+            }
+        })
+    
+    
+    
+    </script>
+</body>
+</html>

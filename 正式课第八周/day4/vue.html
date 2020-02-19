@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     
+    
+    </style>
+</head>
+<body>
+    <!--node,管理系统？axios等处理数据的问题
+        1.胡子语法，中间放的意义是什么
+        2.数据和视图的操作怎么放的，怎么交互的
+        3.表单元素与非表单元素
+        4.数据 视图  指令 胡子语法 怎么改
+        5.
+        
+    框架：插件 类库 ui组件 
+     命令式：自己写代码 
+      声明式：内置的方法
+     渐进式框架：
+     
+     vue：基础模块
+     vue-router:spa页面应用路由，
+     vuex:公共状态管理
+     vue-cli:vue脚手架
+     compoents:组件库 vue elements,iview,vux...
+     vue全家桶构建一个大型项目，渐进式。默认没有把全部放到里面，用到的才用。
+     dom的回流和重绘
+     
+     mvc:vue mode contole  单向数据更改
+     mvvm模式:vue基于，双向数据绑定
+     m:mode数据层
+     v:view：视图层
+     vm:viewmodel:数据和视图的监听层
+      npm init -y    npm i vue  装vue
+      vue本身数据改变会影响视图，会利用vuemodel
+      监听器可以创建多个 
+      method:放视图中需要使用的方法
+      视图更改，就是表单，元素内容的更改，会影响数据更改
+      
+      
+      
+      小胡子语法：数据   js表达式:有返回结果的  
+
+      vue:语法 视图指定的容器不能是body和html
+      但是有几种情况，数据改变了内容也不会跟着变化,对象的情况，解决办法，对象里有键值对：，数组
+      
+      vue的框架语法:
+         1.常用的指令:都是v-开头的，vue规定的给元素设置的自定义属性
+         v-model：都是自定义属性，
+         v-html。v-text:给非表单元素设置内容
+         v-bind: img动态绑定
+         v-for
+         v-on:
+         
+         2.循环处理:支持continue, breake
+         for ：
+         while：
+         for in ：遍历对象的每一项,优先遍历属性名为数字的
+         
+         let arr=[12,34]
+             obj={
+                 name:"珠峰"
+                 year:"10"
+                 1:100
+
+             }
+         for(let key in obj){
+             if()
+
+            }
+         for of:获取属性值，不会遍历公有属性的方法，只能遍历可迭代的数据类型值symboola
+       
+      3.事件处理：v-on methods：放在这个里面 
+      事件的修饰符号
+
+      4.表单元素处理
+      5.filter:过滤器
+       
+
+    
+      
+      -->
+      <div id="app">{{name}}
+            <!-- //{{obj.name}} -->  
+      </div>
+ 
+      //非压缩版本的js
+      <script src="./node_modules/vue/dist/vue.js"></script>
+      <!-- <script src="./node_modules/vue/dist/vue.min.js"></script> -->
+    <script>
+        let obj={};
+        let arr=[10]
+        let vm=new Vue({
+            el:"#app",
+            data:{
+                // name:"珠峰培训"
+                // obj
+                 arr
+            }
+
+        });
+        setTimeout(() => {
+            vm.arr.push(20)
+
+            // vm.name="微信"
+            // //vm.obj.name="微信2"
+            // vm.$set(vm.obj,"name","珠峰培训")
+            //
+            
+        }, 1000);
+
+
+
+        </script>
+</body>
+</html>

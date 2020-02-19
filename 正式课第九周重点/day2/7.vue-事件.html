@@ -1,0 +1,47 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <!-- v-on.事件，
+         1.给元素绑定的事件都要写在methods里面，通过v-on,绑定
+         2.method中的方法名不能和data中属性重名    fn()es6的语法省略了function
+         3.事件中的this,指向当前的vue的实例 
+         4.v-on：可以简写成@-->
+    </head>
+    <body>
+        <div id="app">
+            <button v-on:click="fn" >提交</button>
+             <!-- <button @click="fn">提交</button> -->
+           
+              {{msg}}
+         </div>
+        <script src="node_modules/vue/dist/vue.js"></script>
+        <script>
+            let vm=new Vue({
+                el:"#app",
+                data:{
+                    msg:"你好"
+                 
+                  
+                },
+                methods:{//这里面的存储的是键值对
+                    fn(){
+                        // console.log(this);
+                        console.log(100);
+                        // this.msg="下课"
+
+                    }
+                 }
+            })
+            
+        
+        
+        
+        </script>
+
+        
+    </body>
+    </html>

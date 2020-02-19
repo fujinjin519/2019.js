@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- v-bind：普通的属性转成动态的属性，可以获取data中的数据
+    1. v-bind:src，不加图片显示不出来,v-bind可以省略，点：不能省
+     2.class的样式 ，style. 对象和数组的不同意思代表的
+     隔行变色-->
+     <style>
+       .x{
+          color: red;
+          font-size: 50px;
+       }
+       .y{
+         color: gold;
+       }
+     
+     
+     </style>
+</head>
+<body>
+    <div id="app">
+        <img v-bind:src=" imgSrc" alt="">
+        <div v-bind:a="imgSrc" ></div> 
+            <!-- 只是给结构中增加一个自定义属性，显示不出图片--> -->
+        <div v-bind:class="{x:flag}">中国</div>
+        <!-- x直接找到的是样式的属性名，flag是data中的是true有效，false 无效-->
+        <div :class="[x,y]">北京</div>
+        <!-- 数组的情况，写，y是获取data中属性名对应的属性值，就是class的名字,这个属性值找class的名字对应的样式 -->
+        <div v-bind:style="{fontSize:num+'px'}">加油</div>
+        <div :style="[z]">666888</div>
+        <!-- style:数组的情况又不一样 .找到data数据中对应的z,里面的对应的样式-->
+    
+
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:"#app",
+            data:{
+                imgSrc:"./3.jpg",
+                flag:true,
+                x:"x",
+                y:"y",
+                arr:[1,2,3,4,5],
+                num:100,
+                z:{color:"red"}
+
+            },
+            methods:{
+
+            },
+            filters:{
+
+            }
+        })
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="app">
+        <input type="text" v-model="word">
+     </div> -->
+    <!-- <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:"#app",
+            data:{
+                word:"下午好"
+             }
+        })
+    
+    
+    
+    </script> -->
+    <div id="app">
+        <input type="text" id="box">
+    </div>
+    <script>
+        //js原生模拟实现v-model.双向绑定影响
+        let box=document.getElementById("box")
+        //1.数据影响视图 订阅者
+
+        let obj={} //用来存储数据的一个对象
+        Object.defineProperty(obj,"val",{
+            get:function(){ 
+                //数据影响视图
+                ////这是一个函数
+                return box.value;
+
+                
+
+            },
+            set(newVal){ //视图变化影响数据变化设置
+               console.log(newVal);
+            
+                box.value=newVal
+
+            }
+
+        })
+        let c=obj.val;
+            //2.视图影响数据 -dom事件
+
+         box.addEventListener("input",function(){
+             obj.val=this.value
+         })
+    
+    </script>
+</body>
+</html>
