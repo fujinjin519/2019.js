@@ -11,17 +11,17 @@
         <div v-for="(a,index) in arr">{{a}}索引{{index}}</div>
         <!-- 变量名a，这个名自己起的可以换。代表数组的每一项，
                arr是data中一个变量
-              index:代表数组的索引
-              v-for:可以循环数字
+               index:代表数组的索引
+               v-for:可以循环数字
                     也可以循环字符串、
                     也可以是对象
                     也可以是复合属性-->
         <ul>
             <!-- <li v-for="a in num">{{a}}</li> -->
-            <!-- <li v-for="(a,index) in str">{{a}}索引{{index}}</li> -->
+            <li v-for="(a,index) in str">{{a}}索引{{index}}</li>
             
-            <!-- <li v-for="(a,b) in obj">{{a}}{{b}}</li>  -->
-            <!-- a是属性值，b是属性名 -->
+            <li v-for="(a,b) in obj">{{a}}{{b}}</li>  -->
+            <!-- a是属性值，b是属性名
             
             <li v-for="a in ary">{{a.fruit}}</li>
             <!-- a是代表每一项，然后a。fruit就能获取每一项 -->

@@ -9,12 +9,21 @@
       -->
 </head>
 <body>
+    // .stop: 阻止事件的冒泡传播；
+    // .prevent: 阻止事件的默认行为
+    // .capture: 控制事件在捕获阶段执行
+    // .once : 只执行一次
+    // .passive: 修饰onscroll事件，不会等到onscroll执行完，就会立即执行下一次，提高代码的性能；
+    // .self:只有点击自己的时候才会执行 
+
+    // 键盘修饰符：
+    // .enter  .tab  .delete  .esc  .space  .up .down  .left .right
     <div id="app">
         <div @click="fn1" style="width: 200px;height: 100px;background-color: red;">
             grandparent
             <div @click="fn2">
                 parent
-                <div @click="fn3">
+                <div @click.self="fn3">
                     child
 
                 </div>

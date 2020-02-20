@@ -10,39 +10,42 @@
 
 <body>
     <div id="app">
-
-        <!-- <div v-for="(a,index) in arr">
-            {{a}}
-            {{index}}
-
-        </div> -->
+      
+        <input type="text" v-model="b">
+         <div v-for="(a,index) in arr">{{a}}索引{{index}}</div>
+         <!--数组 a代表数组里的每一项（这个变量名自己起的可以改），arr是数组的一个变量名 
+         index代表数组的索引-->
         <ul>
-            <li v-for='a in num'>
-              {{a}}
-            </li>
-           <li v-for="a in str">{{}}</li>
-          
-        </ul>
+            <li v-for=" (a,index) in num">{{a}} 索引 {{index}}</li>
+            <!-- 数字 a代表数字里的每一项，->
+            <!-- <li v-for="(a,index) in str">{{a}} 索引{{index}}</li>  -->
+            <!-- 字符串：a代表字符串里的每一项，index索引 -->
+            <li v-for="(a,b,) in obj">{{a}}{{b}}</li>
+            <!-- 对象，a代表属性名，b代表属性值 -->
+           <li v-for="a in ary">{{a.fruit}}</li>
+           <!-- 复合属性：a代表每一项，a.fruit获取属性名对应的属性值 -->
+           
 
+        </ul> 
+     
+      
 
-    </div>
+     </div>
     <script src="node_modules/vue/dist/vue.js"></script>
     <script>
         let vm = new Vue({
             el: "#app",
             data: {
-                num:6,
+                b:"中国",
                 arr: [100, 200, 300, 400],
-                str:'zhonghua'
+                num:6,
+                str:'zhonghua',
+                obj:{name:"小花",age:"18"},
+                ary:[{fruit:"草莓"},{fruit:"香蕉"}]
+              }
+            })
 
-            }
-
-        })
-
-
-
-
-    </script>
+  </script>
 
 </body>
 

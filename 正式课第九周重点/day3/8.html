@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- computed -->
+</head>
+<body>
+    <div id="app">
+        <input type="checkbox">全选<br>
+        <ul>
+            <li>
+                <input type="checkbox" v-model="a.isSelected">{{a.name}}
+            </li>
+        </ul>
+
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:"#app",
+            data:{
+                arr:[{isSelected:false,name:"手机"},{isSelected:true,name:"电脑"}]
+
+            }
+
+        })
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{a|toFixed(1)}}
+        {{b|toFixed(2)}}
+        {{c|addZero}}
+     
+      </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+         new Vue({
+            el: "#app",
+            data: {
+                a:1345.23,
+                b:12.234,
+                c:8
+             },
+           filters:{
+               toFixed(val,a){
+             //  return val  //1345.23  12.234
+          // return val.toFixed(1) //1345.2 12.2
+           return val.toFixed(a)
+              },
+              addZero(num){
+                  return num<10?num+"0":num
+
+              }
+            }
+
+        })
+
+    </script>
+
+</body>
+
+</html>
