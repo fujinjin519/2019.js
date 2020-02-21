@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--  -->
+</head>
+<body>
+    <div id="app">
+  
+        {{b}}
+    
+
+    </div>
+
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:"#app",
+            data:{
+                arr:[1,100]
+
+            },
+            computed:{
+                a(){//computed不支持异步。2秒后不会变成88
+                    let b;
+                    axios.get("carts.json").then((data)=>{
+                        // this.a=data.data;
+                        b=data.data
+                    }) //不能在 computed中发送请求，这行代码运行，但是页面不刷新，vue监听不到它发生变化，遇到异步的代码，异步请求回来覆盖arr,但是监听不到这个值发生变化
+
+                    //如果a的依赖数据是通过异步被更新的，那么a就不能监听到最新的变化。a依赖b,b又通过定时器，异步的,b改了，a没改动,a监听不到，a
+                   // 依赖属性按理说a会依赖b,依赖的属性不能是异步，监听不到，a不会变
+                    // this.arr=[1,23,4]
+                    // let b=10;
+                    // setTimeout(function(){
+                    //     console.log(200); //执行了这行代码
+                    //      b=88  //这行代码2秒后不会变，定时器异步
+
+                    // },2000);
+                    // return b;
+                    return b
+                     
+
+                }
+
+            }
+        })
+    </script>
+
+</body>
+</html>

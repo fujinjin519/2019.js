@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 语法糖：简写
+    vue的属性：el: 视图方法
+              data:数据
+              methods:事件。获取数据等方法
+              filters:过滤   管道符号
+              created:请求数据，在数据在这执行，
+              computed:计算属性 -->
+</head>
+<body>
+    <div id="app">{{s}}
+        <!-- <input type="radio" v-model="sex" value="1">男
+        <input type="radio" v-model="sex" value="2">女
+        <input type="checkbox" v-model="hobby" value="1">爬山
+        <input type="checkbox" v-model="hobby" value="2">爬山
+        <input type="checkbox" v-model="hobby" value="3">爬山
+         -->
+         <!-- <div>{{a}}</div>
+         <div v-for="a in arr">{{a}}</div> -->
+         <!-- 这两个a输出的不一样 -->
+        
+
+
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:"#app",
+            data:{
+                // sex:""
+                //  sex:"男",
+                // // sex:"1"
+                // hobby:["试试"]
+                a:100, 
+                arr:[1,2,3,4],
+                
+             },
+            methods:{
+             },
+             computed:{
+                //  s:{
+                //     get:function(){
+                //         return true
+                //      },
+                //     set(){
+                //      }
+                //      }
+                    s(){
+                        //直接是函数，那这个方法就是get方法
+  
+                     }
+                   }
+                 })
+
+
+
+
+    </script>
+
+</body>
+</html>
