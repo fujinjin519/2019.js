@@ -15,22 +15,21 @@
 
 <body>
     <div id="app">
-      <input type="radio">男
-      <input type="radio">女
-        
-       
 
+      <input type="checkbox" v-model="hobby" value="游泳">游泳
+      <input type="checkbox" v-model="hobby" value="爬山">爬山
+      <input type="checkbox" v-model="hobby" value="打球">打球
     </div>
     <script src="node_modules/vue/dist/vue.js"></script>
     <script>
         let vm = new Vue({
             el: "#app",
             data: {
-             
+               
+                // hobby:["游泳"] 
+                hobby:30
                },
-          
-
-        })
+         })
 
 
 

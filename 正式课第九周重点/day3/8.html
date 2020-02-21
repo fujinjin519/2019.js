@@ -9,9 +9,9 @@
 </head>
 <body>
     <div id="app">
-        <input type="checkbox">全选<br>
+        <input type="checkbox" v-model="val">全选<br>
         <ul>
-            <li>
+            <li v-for="a in arr" >
                 <input type="checkbox" v-model="a.isSelected">{{a.name}}
             </li>
         </ul>
@@ -23,6 +23,28 @@
             el:"#app",
             data:{
                 arr:[{isSelected:false,name:"手机"},{isSelected:true,name:"电脑"}]
+
+            },
+            computed:{
+                val:{
+                    get(){
+                        console.log(100); //默认输出一次
+                        
+                        // return true;
+                        return this.arr.every(item=>item.isSelected) //也是return true,false,用了数组方法every
+
+                    },
+                    set(a){
+                        console.log(a); //当更改val值的时候，就会执行这个方法，v-model="val"全选，选中就是true看控制台,b不选，就false,会变
+                         return this.arr.forEach(item=> {item.isSelected=a
+                             
+                         });
+
+                        
+
+                    }
+               
+                }
 
             }
 
