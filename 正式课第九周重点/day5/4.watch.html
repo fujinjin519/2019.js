@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--  -->
+</head>
+
+<body>
+    <div id="app">
+        {{a}}
+       
+         <!-- <input type="text" v-model="a"> -->
+         <button @click="fn()"> </button>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                a:100
+
+            },
+            computed: {
+            },
+            methods:{
+                fn(){
+                    this.a=1
+               }
+            },
+          
+           
+            watch: { //监听，里面的a是一个函数
+                a(newVal,oldVal){ //监听a的属性，当属性发生改变以后，会做一些事情
+                //    console.log(10);
+                 console.log(newVal,oldVal); //newval最新的值，oldval上一次的值
+                
+                    
+                }
+
+            }
+
+        })
+
+
+
+    </script>
+
+
+</body>
+
+</html>

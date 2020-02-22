@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 可以自定义一些指令：
+     全局指令 -->
+</head>
+<body>
+    <div id="app">
+ 
+        <div v-drag style="width: 100px;height: 100px;background: red;
+        position: absolute;"></div>
+      
+        
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        // Vue.directives("drag",{
+        //     //全局指令
+
+        // })
+        let vm=new Vue({
+            el:"#app",
+            directives:{ //相当于封装
+                //定义局部指令
+                drag(ele){ //这是一个函数 
+                      console.log(ele); //函数执行了，ele:代表 有drag的都执行了，drag用了几次输出几次 ele代表v-drag的元素
+                      ele.onmousedown=function(e){
+                          //this指向ele,  e是事件对象
+                          this.l=
+                     
+
+                      }
+                      
+
+                },
+                
+
+            },
+           
+
+
+        })
+
+
+    </script>
+    
+</body>
+</html>

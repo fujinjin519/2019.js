@@ -64,7 +64,7 @@
             },
             filters:{
                 toFixed(num,val){
-                    // num : 是管道符前面的值;返回值是页面显示的值
+                    // num:是管道符前面的值;返回值是页面显示的值
                     return  num.toFixed(val)
                 }
             },
@@ -74,8 +74,8 @@
                         // 当依赖的属性发生改变以后，会触发get方法；
                         // return 的值就是checkAll的value值
                         return this.products.every(item=>item.isSelected);
-                    },
-                    set(val){
+                    }, 
+                    set(val){ 
                         this.products.forEach(item => 
                         // item : products中的每一项
                         // 让products中的每一项中的isSelected的属性值跟随这个全选框的变化；

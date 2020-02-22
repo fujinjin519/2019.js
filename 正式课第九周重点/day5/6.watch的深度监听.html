@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- computed和watch的区别，能用computed别用wactch,computed有缓存
+     -->
+</head>
+
+<body>
+    <div id="app">
+
+        姓:<input type="text" v-model=" person.firstName">
+        名:<input type="text" v-model="person.lastName">
+        姓名: <input type="text" v-model="person.fullname">
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                person: {
+                    firstName: "我",
+                    lastName: "",
+                    fullname: ""
+
+                }
+
+            },
+            computed: {
+            },
+            methods: {
+            },
+            watch: { //监听的属性一般放到data里面,但是这次不放，放到person监听person
+                //如果监听的是对象，这个对象中属性名对应的键值对发生改变后，并不会触发监听这个对象的函数，因为引用数据类型的地址没发生改变
+                //解决办法：监听的属性可以 写成一个对象，对象里有函数
+            //     person(newVal, oldval) {
+            //         console.log(100); //这个没执行。
+            //    }
+              "person.firstName":{
+                  handler(newVal,oldval){ //这个函数  相当于person写法的函数
+                    // console.log(100); //执行 输出100
+                    // console.log(newVal,oldval); //监听的perason的对象，两个参数分别是person这个对象改变之前和之后的值，只有改变这个值才会执行
+                    console.log(newVal,oldval);
+                    // console.log(1,);
+                    
+                },
+                  deep:true, //深度监听  peroson对象中的每一个属性进行监听，当其中一个属性发生改变，也会触发   handler这个函数
+                  immediate:true // 可以让函数立即执行 ，不改变值它也会执行
+              }
+              //当想监听对象里的一个属性时候，可以写对象.属性名
+
+            }
+
+        })
+
+
+
+    </script>
+</body>
+
+</html>

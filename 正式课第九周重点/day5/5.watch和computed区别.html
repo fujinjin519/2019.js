@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- computed和watch的区别，能用computed别用wactch,computed有缓存
+     -->
+</head>
+<body>
+    <div id="app">
+      
+        姓:<input type="text" v-model=" firstName">
+        名:<input type="text" v-model="lastName">
+        姓名: <input type="text" v-model="fullname">
+    </div>
+  <script src="node_modules/vue/dist/vue.js"></script>
+  <script>
+      let vm=new Vue({
+          el:"#app",
+          data:{
+            firstName:"",
+            lastName:"",
+            fullname:""
+        
+           },
+          computed:{
+              fullname(){ //得到的结果
+         
+                  return this.firstName+this.lastName
+              },
+
+            
+            },
+          methods:{
+
+          },
+          watch:{
+             firstName(newval){
+                 setTimeout(()=>{
+                     //箭头函数的this指向上一级作用域
+                    this.fullName=this.lastName+newval
+                },2000)
+                 },
+             lastName(newval){
+                 //没改变一次值就会出发一次
+                 setTimeout(() => {
+                     console.log(100);
+                     
+                    this.fullName=this.firstName+newval
+                     
+                 }, 2000);
+               
+
+             },
+
+          }
+      })
+
+
+
+  </script>
+</body>
+</html>
