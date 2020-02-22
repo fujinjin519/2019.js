@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div ref="a"></div>
+        <span ref="b"></span>
+        {{msg.a}}
+        <button @click="fn"></button>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:"#app",
+            data:{
+                msg:{
+                    a:100  //如果更改对象中的属性名对象的属性值，视图会进行更新的，数组不可以
+              
+                }
+           },
+           methods:{
+               fn(){
+                    //this.$refs.a  获取元素a
+                    // this.msg.a=200  //这样更改新增视图不变，监听不到解决用下面$set
+                    // this.$set(this.msg,"a",200)//给data中的对象新增键值对，这样可以监听到
+                     // vm.$set(vm.msg,"a",300) //跟上面写法不同
+                    //this.$delete(this.msg,"a")//删除
+
+               }
+           }
+         })
+         console.log(vm);
+     
+        //  console.log(vm.$el); //$el:获取到vue实例挂在元素对象 div。。。
+                                 // $options:当前实例的一些参数。  
+                                 //$refs:用来获取dom元素  a,b
+                                 //$set:向data中的对象新增建键值对
+                                 //$delete:删除属性
+                                 //$destroy:销毁实例
+                                 //$mout:挂载
+                                 //$on:订阅
+                                 //$emit:发布
+                                 //$off:移除
+                                 //$nextlick:用于dom的
+
+   
+         
+         
+
+
+
+    </script>
+</body>
+</html>

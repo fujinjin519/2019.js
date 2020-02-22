@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div id="app">
+       <div>
+           {{msg}}
+       </div>
+       <ul>
+           <li v-for="a in arr"></li>
+       </ul>
+
+
+   </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        // debugger 断点            
+        //每个 Vue 实例在被创建时都要经过一系列的初始化过程
+        //生命周期钩子函数，能够让咋们在初始化实例时，添加自己的代码
+        //生命周期：从开始到结束。钩子函数中的this都指向vue的实例；
+        //钩子函数的名字是固定的不能随便改动
+        let vm=new Vue({
+            el:"#app",
+            data:{
+                msg:"hello",
+                arr:[12,34,23]
+            },
+          
+             //1.在这个钩子函数执行之前初始化一些事件以及生命周期,在new vue的时候做了一些事情
+            beforeCreate(){
+                //2.这个钩子函数不能获取data中的数据
+                // console.log(this.msg); //没有输出hello ，undifined
+  
+               //3.这个函数不能操作dom,
+            //    console.log( document.getElementsByTagName("li") ); //获取一个li
+               
+              
+            },
+            //给vue的实例注入数据，进行数据监听
+              created(){
+                //在created发送请求，
+                // console.log(this); //vue实例
+                // 1. 能拿到data中的数据
+                //2.不能操作dom ，虽然获取数据了但是拿不到元素
+                // console.log(this.msg); //hello  能拿到data中的数据
+            //    console.log( document.getElementsByTagName("li") ); //输出一个li
+             },
+             
+              //执行之前这个钩子函数判断el,template,编译过程
+             beforeMount(){
+                // console.log( document.getElementsByTagName("li") );
+                 // 一个li
+              },
+             //挂载完毕
+              mounted(){
+            //    //挂载：把VUe实例生成虚拟的dom,转成真实的Dom,放在页面上，这就是挂载
+            //     //可以获取最终的dom元素。
+        //    console.log( document.getElementsByTagName("li") );//4个li，获取最终的元素
+            //   console.log("mounted","初始化");
+              
+            },
+           //newvue（）的时候上面的四个钩子函数都执行了，
+          // 下面的
+           //挂载完成后，doms数据都有了，但是要操作数据，当数据更新时候调用 beforeUpdate和Updated,上面的四个不再运行
+           beforeUpdate(){
+               console.log(" beforeUpdate","更新之前");
+               
+               //更新数据之前执行
+             },
+           Updated(){
+               //数据更新，虚拟的dom更新，
+               console.log(" Updated","更新之后")
+
+           }
+            
+           })
+          
+         //vm.$mount("#app") //挂载 在初始化事件的时候就已经放上了，相当于el:"#app" 换种写法
+         //编译：将带v-指令进行解析。
+         //
+         
+
+
+        
+
+
+
+    
+         
+        
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -22,15 +22,15 @@
                   <div class="col-md-8 col-md-offset-2">
                     <div class="panel panel-default">
                         <div class="panel-heading" style="background: pink;">
-                            <h2 class="text-danger">亲～^_^，您有1件事已完成</h2>
-                            <input type="" class="form-control">
+                            <h2 class="text-danger">亲～^_^，您有{{count}}件事已完成</h2>
+                            <input type="" class="form-control" @keyup.13="addTodo" v-model="val">
                         </div>
                         <div class="panel-body">
                            <ul class="list-group">
                                <li class="list-group-item" v-for="item in task">
-                                   <input type="checkbox" v-model="item.isSelected">
+                                   <input type="checkbox" v-model="item.isSelected" >
                                    <span>{{item.title}}</span>
-                                   <button class="btn btn-xs pull-right btn-danger" >&bigotimes;</button>
+                                   <button class="btn btn-xs pull-right btn-danger" @click="removeTodo(item)" >&bigotimes;</button>
                                </li>
                            </ul>
 
