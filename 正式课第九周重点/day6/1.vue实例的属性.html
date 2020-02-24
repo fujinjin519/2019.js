@@ -24,18 +24,18 @@
            },
            methods:{
                fn(){
-                    //this.$refs.a  获取元素a
-                    // this.msg.a=200  //这样更改新增视图不变，监听不到解决用下面$set
-                    // this.$set(this.msg,"a",200)//给data中的对象新增键值对，这样可以监听到
-                     // vm.$set(vm.msg,"a",300) //跟上面写法不同
-                    //this.$delete(this.msg,"a")//删除
+                    //this.$refs.a  获取元素a 给行内的属性名改成ref后会获取带有ref的元素
+                    // this.msg.a=200  //修改属性值，为200，这样更改视图会变，
+                    // this.$set(this.msg,"a",300)//当msg。没有设置a的属性，需要新增，用$set给data中的对象新增键值对，这样可以监听到也可以这样写 vm.$set(vm.msg,"a",300) 
+                    //this.$delete(this.msg,"a")//删除属性值为200的
 
                }
            }
          })
          console.log(vm);
      
-        //  console.log(vm.$el); //$el:获取到vue实例挂在元素对象 div。。。
+        //  console.log(vm.$el); 获取 app名字的div
+                               //$el:获取到vue实例挂在元素对象 div。。。
                                  // $options:当前实例的一些参数。  
                                  //$refs:用来获取dom元素  a,b
                                  //$set:向data中的对象新增建键值对

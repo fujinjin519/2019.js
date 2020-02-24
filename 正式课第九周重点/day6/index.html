@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+    <ul>
+        <li v-for="a in arr">{{a}}</li>
+    </ul>
+
+     
+      </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+     <script>
+         let vm=new Vue({
+             el:"#app",
+             data:{
+                 msg:"hello",
+                 arr:[1,2,3]
+                 },
+            beforeCreate(){
+                // console.log(this.msg); //undifined
+                // console.log( document.getElementsByTagName("li")); //1个li
+             },
+             created(){
+                //  console.log(this.arr);
+                // console.log( document.getElementsByTagName("li"))
+             
+             },
+             beforeMount(){
+                //  console.log(document.getElementsByTagName("li"));
+              },
+             mounted(){
+                //  console.log(this.msg);
+                 console.log(document.getElementsByTagName("li"));
+                 },
+            beforeUpdate(){
+                console.log("beforeUpdate","更新之前");
+                
+
+            },
+            updated(){
+                console.log("beforeUpdate","更新之后");
+                // 数据更新，虚拟的DOM更新，然后更新真实的DOM；最后触发这个函数
+            },
+   
+            
+         
+
+          
+     
+         })
+      
+         
+         
+     
+
+
+
+     </script>
+</body>
+</html>

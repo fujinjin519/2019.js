@@ -51,7 +51,7 @@
              },
              
               //执行之前这个钩子函数判断el,template,编译过程
-             beforeMount(){
+             beforeMount(){ 
                 // console.log( document.getElementsByTagName("li") );
                  // 一个li
               },
@@ -77,7 +77,7 @@
 
            }
             
-           })
+           }).$mount("#app") //一个写法
           
          //vm.$mount("#app") //挂载 在初始化事件的时候就已经放上了，相当于el:"#app" 换种写法
          //编译：将带v-指令进行解析。
