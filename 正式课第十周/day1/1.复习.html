@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--虚拟dOM（内存中）.更新虚拟Dom,=》真实dom
+        mvvm原理
+      -->
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let vm=new Vue({
+            el:"#app",
+            data:{
+
+            },
+            methods:{
+
+            },
+            computed:{ //计算属性 多对一 走缓存 不支持异步 
+                val:{
+                    get(){
+
+                    },
+                    set(){
+
+                    }
+                }
+
+            },
+            watch:{ //data中的属性  一对多 支持异步  不走缓存性能低
+
+            }
+
+        })
+
+
+    </script>
+    
+</body>
+</html>

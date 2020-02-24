@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1.创建组件，2.注册组件3.使用组件写在app结构中的闭合标签
+    想把子组件放到父组件里面嵌套 ：
+     <parent>
+            <child></child>
+        </parent>
+        使用组件结构里不可以写东西，没用，只能识别父组件子组件没了
+    解决办法：子组件需要在父组件 components属性中进行这册，才能在父组件中使用，在html结构中不能直接嵌套在template 嵌套，
+    
+    每个组件都有自己的生命周期
+    -->
+ 
+    <div id="app">
+       
+        <parent></parent>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+
+        let child={
+            data:function(){
+                return{}
+            },
+            methods:{
+
+            },
+            template:"<div> 子组件100</div>"
+        }
+        
+        let parent={ //再创建一个组件，没有用到data可以省略
+            components:{
+                child
+            },
+            template:"<div><child></child>父组件100</div>"
+        }
+         
+        let vm = new Vue({
+            el:"#app",
+            data:{
+            },
+            methods:{
+            },
+            components:{ //注册组件
+                child,
+                parent
+            }
+        });
+        
+    </script>
+    
+</body>
+</html>

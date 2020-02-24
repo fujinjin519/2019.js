@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   
+    <div id="app">
+        <span>{{msg}}</span>
+    </div>
+    <!-- 写法不一样 -->
+     <template id="first">
+        <div>{{msg}}<div @click='fn' v-if='flag'>888</div></div> 
+     </template>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        //1.如果有template属性(模版），当初始化实例时，会把template属性值编译替换APP元素，
+        //2.template只能有一个根元素，如果有两个会默认取第一个作为根元素。
+        //3.template中可以获取data中数据，和methods方法
+        //4.
+         let vm = new Vue({
+            el:"#app",
+            data:{
+                msg:"hello",
+                flag:true
+            },
+            methods:{
+                fn(){
+                    console.log(888);
+               }
+
+            },
+            // template:" <div>666</div> <div>888</div> "
+            template:"first"
+          
+        })
+        
+
+
+    </script>
+</body>
+</html>

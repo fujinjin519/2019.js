@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 组件化思想
+        1.单页面应用开发：整个项目只有一个html页面.其他的页面通过路由方式进行切换
+        2.组件：把相同的代码封装成一个组件，当想再次适用这个结构时，直接调用这个组件就可以了，提现了代码的复用性。
+        3.如何创建组件，
+        全局组件:在vue的属性上有一个component函数
+        局部组件：  
+
+     -->
+</head>
+<body>
+
+    <div id="app">
+        <zfpx-some> </zfpx-some>
+       
+     </div>
+     <div id="app1">
+        <zfpx-some> </zfpx-some>
+     </div>
+
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        // Vue.component('组件名字', '信息对象') //两个参数 信息对象里面的东西就是一些方法
+        // //template：代表组件的结构
+        //vue中每一个组件都是一个小实例
+        //全局组件可以在任何vm实例子中使用，当调用这个组件，就会生成一个vue的生命周期。每使用一次，就会执行一遍生命周期钩子函数
+        //组件名字的首字母可以大写，但是结构中大小写都可以，
+       //组件的名字不支持驼峰,如果是驼峰用—隔开。上面的结构不可以写驼峰用-隔开
+       //标签名不能作为组件的名字
+
+         Vue.component("zfpxSome",{ //注册一个全局组件
+             data:function(){
+                 return {a:"今天有雨"}
+
+             },
+             methods:{
+
+             },
+             created:{
+             },
+             template:"<div>{{a}}</div>"
+
+         }
+
+         )
+
+    
+        let vm=new Vue({
+            el:"#app",
+            data:{
+
+            },
+
+        })
+        let vm1=new Vue({
+            el:"#app1",
+            data:{
+
+            },
+
+        })
+
+
+    </script>
+</body>
+</html>

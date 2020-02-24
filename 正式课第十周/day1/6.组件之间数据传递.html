@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- 组件中的数据传递
+        //1，把return 的数据放到父组件的data中
+         //2.在组件中 props:这个方法
+         //最后在html结构中显示，v-bind:
+     -->
+</head>
+<body>
+   
+    <div id="app">
+        <input type="text" v-model="msg"> // 可以拿到hello
+        <!-- <child :a="msg"  :b="book"></child> 一行拿到数据 -->
+        <child :a="msg"></child>
+        <child :b="book"></child> 
+     
+         
+        <!-- <child></child> -->
+        <!-- <child></child> z再用一次还是hello -->
+     
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        //child是vm这个VUE实例的子组件，判断组件在哪个实例中注册，就是谁的子组件
+        let child={
+            data(){
+                return{
+                }
+            },
+            props:["a","b"],
+            template:"<div>{{a}}{{b}}</div>" //这个位置只能拿到自己msg里的hello,
+            
+        }
+
+        let vm = new Vue({
+            el:"#app",
+            data:{ //把return 的数据放到这里 ，放到它的父组件中
+                msg:"hello",
+                book:"vue.js"
+
+            },
+            methods:{
+            },
+            components:{ //注册组件
+                child //child是在new vue里面注册的，那它就是new vue的子组件
+            }
+        });
+        
+    </script>
+</body>
+</html>

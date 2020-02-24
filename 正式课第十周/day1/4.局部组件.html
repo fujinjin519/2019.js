@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+     <child></child>
+     </div>
+     <div id="app1">
+        <son> </son>
+     </div>
+    <template id="son">
+        <div @click='fn'>{{msg}}</div>
+
+    </template>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        //组件其实就是一个vue的实例
+        // 1.创建组件  创建一个对象
+        //2.局部注册组件     components
+        //3.在组件定义中，data,必须返回一个函数，并且函数返回return一个对象
+        //4.注意template的用法
+        //5.局部组件只能在注册的vue实例中使用该组件，不能跨组件使用，但是可以在另一个vue中再注册一次
+        let son = {
+            data() { //这必须是一个函数，而且return 一个引用数据类型
+                return { msg: "hello" }
+            },
+            methods: {
+                fn() {
+                    console.log(this); //这个this指向当前组件的实例 
+                    
+                    console.log('好好学习');
+
+                }
+            },
+            // template: " <div @click='fn'>{{msg}}</div>"
+              template: "#son"  //这的两种写法，这样写上面结构这样写<template>，注意这只能包一个div,要想再写在外面再包一层
+            //fn 单引号
+
+
+        }
+        let vm = new Vue({
+            el: "#app",
+            data: {
+
+            },
+            methods: {
+
+            },
+            components: { //局部注册组件
+                child:son //这的名字不一定重名  这的属性名和上面结构使用组件的名字必须一样
+                //这的名字一般都写一样  。son是上面的let son
+            }
+        })
+
+        let vm1= new Vue({
+            el: "#app1",
+            data: {
+
+            },
+            methods: {
+
+            },
+            components: {  //局部注册组件 //局部组件不可以跨组件使用，要想复用只能重新创建一个局部注册组件
+                son:son
+            }
+        })
+
+
+    </script>
+
+</body>
+
+</html>
