@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+  <div id="app">
+      <span>{{num}}</span>
+      <button @click="add">赞</button>
+      <child :m="num"></child>
+    
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+
+        let child={
+            data(){
+                return {
+
+                }
+            },
+            methods:{
+                fn(){
+                    this.m--
+               }
+            },
+            props:["m"],
+            template:"<div>{{m}}<button @click='fn'>反对</button></div>"
+         };
+         
+         let vm=new Vue({
+             el:"#app",
+             data:{
+                 num:100
+            },
+           methods:{
+               add(){
+                   this.num++
+
+               }
+           }, 
+           components:{
+                child
+            }
+
+         })
+      
+
+
+
+    </script>
+</body>
+</html>

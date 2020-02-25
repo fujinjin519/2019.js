@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- props：属性 -->
+</head>
+<body>
+    <div id="app">
+       <child :a="msg"></child>
+     </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        
+        let child={
+            data(){
+                return{
+                 
+                }
+            },
+            // props:["a"], //这是一个数组,也可以是对象
+            props:{ //对象的形式，可以进行校验
+                a:{
+                    type:[Number,String], //这会对传递过来的数据进行校验，页面显示没问题，但是控制台会报错 ，100 “100” 必须传数字和字符串
+                    default:200, //这是一个默认值，如果不传值就是200
+                    // required:true,
+                    validator(val){ // val就是传递过来的值 100    验证函数
+                        // validator这个函数返回一个布尔值，如果返回true,如果返回false,那么控制台会抛出异常
+                        console.log(val); //100
+                        return 8 //页面不会展示88 ，展示100
+                        //return NaN //这个就会报错控制台 ，转布尔是false
+                        // return val<100&&val>10
+
+                       }
+                   }
+
+            },
+            template:"<div>{{a}}</div>"
+            
+        }
+
+        let vm = new Vue({
+            el:"#app",
+            data:{ //把return 的数据放到这里 ，放到它的父组件中
+                msg:"100", //会判断这是字符串还是数字
+             
+
+            },
+            methods:{
+            },
+            components:{ //注册组件
+                child //child是在new vue里面注册的，那它就是new vue的子组件
+            }
+        });
+        
+    </script>
+</body>
+</html>

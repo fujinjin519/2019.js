@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1.单向数据流只会父传子，但是这的子传父我们怎么解决呢
+        2.要想改变父亲里的事件里的方法用一个changemoney，自定义事件 再用$emit订阅
+        
+    -->
+</head>
+<body>
+   
+  
+    <div id="app">
+        <son :m="money"@changemoney="fn" :b="fn"></son>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let son={
+            data(){
+                return{}
+            },
+            methods:{
+                add(){
+                    this.$emit("changemoney")
+                }
+
+            },
+            props:["m","b"],
+            template:"<div>儿子：{{m}} <button @click='add'>多要点</button></div>"
+
+        }
+      let vm=new Vue({
+          el:"#app",
+          data:{
+              money:888
+
+          },
+          methods:{
+              fn(){
+                  this.money=999
+              }
+
+          },
+          components:{
+              son
+
+          }
+      })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   
+    <div id="app"> 
+        <!-- <hand></hand>
+        //<div>{{msg}}</div> 相当于这样写 
+        <hand></hand> 全局组件 -->
+        <!-- <son></son> //局部组件 
+        -->
+      <son :m="a"></son>
+
+    </div>
+  <template id="a">
+      <div></div>
+  </template>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+    //     Vue.component("hand",{
+    //         data(){
+    //             return {msg:100}
+
+    //         },
+    //         methods:{
+
+    //         },
+    //         template:"<div>{{msg}}</div>"
+             //全局组件
+    //     })
+    //    let vm=new Vue({
+    //        el:"#app",
+    //        data:{
+    //            a:100
+    //        },
+    //     //    template:"    <span>{{a}}</span>"
+    //     //   1. 只有一个根元素    2.会默认替换掉根元素
+
+    //    })
+      
+    
+    // 局部组件 
+    //let son={
+    //     data(){
+
+    //     },
+    //     template:"#a"
+
+    // }
+    // let vm=new Vue({
+    //     el:"#app",
+    //     data:{
+    //         a:100
+
+    //     },
+    //     component:{
+    //         son
+
+    //     }
+        
+
+    // })
+
+      //组件数据传递
+        let son={
+            data(){
+                return {
+
+                }
+            },
+            props:["m"],
+          
+            template:"<div>{{m}}</div>"
+
+        }
+        let vm=new Vue({
+            el:"#app",
+            data:{
+                a:100
+            },
+            components:{
+                son
+
+            }
+
+        });
+
+
+    </script>
+</body>
+</html>

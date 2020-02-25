@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-     <!-- 组件中的数据传递
+     <!-- 组件中的数据传递 一种情况（父传子过程）
         //1，把return 的数据放到父组件的data中
          //2.在组件中 props:这个方法
          //最后在html结构中显示，v-bind:
@@ -15,7 +15,7 @@
     <div id="app">
         <input type="text" v-model="msg"> // 可以拿到hello
         <!-- <child :a="msg"  :b="book"></child> 一行拿到数据 -->
-        <child :a="msg"></child>
+        <child :a="msg"></child> //在父组件取值的地方
         <child :b="book"></child> 
      
          
@@ -29,6 +29,7 @@
         let child={
             data(){
                 return{
+                    // msg:"abc" //如果给这也写一个msg,html,的：msg输出是hello
                 }
             },
             props:["a","b"],
