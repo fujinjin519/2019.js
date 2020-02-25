@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{count}}
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        // VUEX: 数据共享问题  vue中不一定用到vuex，但是vueX一定在vue中
+        // state: 数据
+        // view : 视图；将state数据展示到视图上；
+        // actions :  动态,更改或者是触发视图的动作（方法）
+        // 数据传递：把各个组件共享的状态抽离出来，并且每个组件都可以使用它，并且还可以更改它；既然是公共状态，当其中组件把这个公共状态更改以后，凡是依赖这个公共状态的组件都要更新；
+
+        // Vuex : 适用中大型单页面应用
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                count:0
+            },
+            methods:{
+                addCount(){
+                    this.count++;
+                }
+            },
+            components:{
+              
+            }
+        })
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- // state: 数据
+        // view : 视图；将state数据展示到视图上；
+        // actions :  动态,更改或者是触发视图的动作（方法）
+        
+        state状态：就是数据
+        vuex的核心   数据更新 视图更新
+        取数据改数据
+    1.Vue的数据存储是响应式，公共位置的数据更改，用了它的数据的组件，也会进行响应的更改
+    2.不能直接修改store中的状态：需要commit 
+   vuex的使用 （数据共享问题放到vue store）
+   
+    1.下载vuex (npm install vuex --save -dev)需要重新下载
+    
+    数据公共位置不涉及到数据传递：放store库公共数据的地方，都可以用
+    1.先创建两个组件，（父子兄弟都可以） 两个组件用到同一个公共的东西
+    2.，let store=new Vuex.store 这时候store和vm,没关系。
+    3.要想有关系，vm里加store,属性名属性值一样 ，store
+    4.html。结构变化取到100这个值 必须通过这个 this.$store.state.count
+ 
+    如果要进行更改的话 点击++数字加 实现了，但是 你不能直接改变 store 中的状态
+ 这样使得我们可以方便地跟踪每一个状态的变化，这样写追踪不到谁改的，通过mutations改变
+    （再次强调，我们通过提交 mutation 的方式，而非直接改变 store.state.count，是因为我们想要更明确地追踪到状态的变化。这个简单的约定能够让你的意图更加明显）
+   1.在store里加一个 mutations，写完没法执行，在methods方法里执行，通过 store.commit 方法触发状态变更。
+
+   2.参数问题，可以传参，   @click='addCount（2）'给了methods的addCount(val),再传给   this.$store.commit("increment"，val)  再传给 increment(state，a) a接收val
+   
+   3.写法问题，在store读取的数据，最好写在compiuted属性中，现在是写在了  
+   template:"<div>{{this.$store.state.count}}<button @click='addCount'>++</button ></div>" shop里的数据 在first里面加一个computed.把shop数据放到computed里面，template结构也变
+   
+    4.辅助函数mapstate 把computed注释掉，这样写 computed:Vue.mapState(["shop","count"])简写
+    Vue.mapState：将  映射，这个时候template的有些写法也可以省略{{this.$store.state.count}}可以省略直接写{{count}}
+    
+    
+   
+
+-->
+
+</head>
+<body>
+    <div id="app">
+        <first></first>
+        <second></second>
+        <div></div>
+    
+ 
+
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="node_modules/vuex/dist/vuex.min.js"></script>
+    <script>
+        //如果这个数据是好几个组件共享的，这个数据需要放到Vuex的state,如果这个数据只有当前这一个组件使用，那么放到对应的组件的data中
+
+        //在vuex中更改公有数据，必须通过commit的一个mutations
+        //共享数据发生改变以后，那么依赖这个数据的组件也会发生该拜年
+        let store=new Vuex.Store({ //大写s  这放的是共享的数据
+            //传一个对象  类
+            state:{
+                count:10, //  count 这就是公共的数据
+                shop:[{name:"奔驰",name:"奥迪"}]
+            },
+            mutations:{ //这的名字可以改，但是一定要根下面methods方法的名字一致
+                increment(state){ //这个state就是上面的state，参数会接收到当前的state
+                       state.count++ //这时候让数字++，会有一个问题怎么执行在下面的methods执行
+                                     // this.$store.commit("increment")
+                },
+                min(){
+                    //mutations这个对象中函数中的第一个参数，实参都是state
+                }
+              }
+          })
+        let first={
+            data(){
+                return{
+                 
+                }
+            },
+            methods:{
+                addCount(){
+                    // this.$store.state.count++ 这是最初的改法，能实现但是追踪不到谁修改的，不好，这写的通过first修改，其实追踪不到的。我们用mutations写在store里面
+                    this.$store.commit("increment") //通过 store.commit 方法触发状态变更 固定写法 ，提交的是mucation里面的函数名，用于修改store
+                 }
+
+            },
+            computed:{
+                shop(){
+                    return this.$store.state.shop
+                }
+
+            },
+            template:"<div>{{this.$store.state.count}}<button @click='addCount'>++</button ></div>"
+        };
+        let second={
+            data(){
+                return{}
+            },
+            template:"<div>{{this.$store.state.count}}</div>"
+        }
+        let vm=new Vue({
+            el:"#app",
+            data:{
+
+            },
+            components:{
+                first,
+                second
+            },
+            store//:store 两个属性名一样可以省略  相当于给vm实例新增一个store属性
+
+        });
+        console.log(vm);
+        
+
+    </script>
+</body>
+</html>

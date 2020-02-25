@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 有时候我们需要从 store 中的 state 中派生出一些状态
+     Vuex 允许我们在 store 中定义“getter”（可以认为是 store 的计算属性） -->
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="node_modules/vuex/dist/vuex.min.js"></script>
+    <script>
+        let state={
+            count:100,
+
+        }
+        let getters={
+            str(state){
+                return state.count%2===0?"偶数":"奇数"
+            }
+
+        }
+        let store=new Vuex.Store({
+            state,
+            getters,
+            mutations:{
+                
+            }
+        
+
+        })
+        let vm=new Vue({
+            el:"#app",
+            data:{
+
+            },
+            
+        })
+
+
+
+    </script>
+</body>
+</html>
