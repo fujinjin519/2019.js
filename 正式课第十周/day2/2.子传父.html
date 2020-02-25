@@ -24,7 +24,7 @@
             },
             methods:{
                 add(){
-                    this.$emit("changemoney")
+                    this.$emit("changemoney") //给这个后面传一个值
                 }
 
             },
@@ -32,15 +32,16 @@
             template:"<div>儿子：{{m}} <button @click='add'>多要点</button></div>"
 
         }
-      let vm=new Vue({
+      new Vue({
           el:"#app",
           data:{
               money:888
 
           },
           methods:{
-              fn(){
+              fn(){ //里面加个参数val 也行
                   this.money=999
+                //   this.money=val
               }
 
           },
