@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+   
+    <div id="app">
+     <bro1></bro1>
+     <bro2></bro2>
+   </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+     <script>
+         let eventBus=new Vue
+        let bro1={
+            data(){
+                return{
+                    color:"红色"
+                }
+            },
+        
+            methods:{
+                fn1(){
+                    eventBus.$emit("changered")
+                }
+            },
+            template:"  <div>{{color}}<button @click='fn1'>变红</button></div>"
+
+        }
+        let bro2={
+            data(){
+                return{
+                    color:"绿色"
+                }
+            },
+            created(){
+                eventBus.$on("changered",this.changered)
+             },
+            methods:{
+                changered(){
+                    this.color="红色"
+                }
+
+
+            },
+            template:"  <div>{{color}}<button>变绿</button></div>"
+
+
+        }
+       let vm=new Vue({
+           el:"#app",
+           data:{
+               money:888,
+               val:20
+           },
+           components:{
+                bro1,
+                bro2
+
+               
+
+           },
+          
+       })
+
+     </script>
+
+</body>
+</html>

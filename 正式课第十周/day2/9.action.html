@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- 在工作，经常发送异步请求，请求回来的数据会赋值给 -->
+</head>
+<body>
+    let store= new Vuex.Store({
+        state,
+        getters,
+        mutations:{
+            increment(state,a){ //vuex更改store中状态的唯一方法就是commit
+                state.count+=a; //在mucations方法中，都是同步事务，不支持异步
+            },
+            min(){
+                
+            }
+        },
+        actions:{ /支持异步  
+            addNum({commit}){
+                //这个commit就是stor上的commit，提交
+                setTimeout(function(){
+                    comit("increment")
+                },2000)
+              
+            }
+        }
+    });
+    
+</body>
+</html>

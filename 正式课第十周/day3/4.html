@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1.引入src的顺序不能颠倒  v-router放在vue.js后面
+         2.斜杠的问题不能都省略   
+         3.显示组件时候，需要再次创建组件实例，调用钩子函数，切换组件时，组件会销毁
+         4.跳转-->
+</head>
+<body>
+
+    <div id="app">
+        <router-link to="/home" tag="button">首页</router-link>
+        <router-link to="/list" tag="button">列表页</router-link>
+        <router-view></router-view>
+
+
+      </div>
+      <script src="node_modules/vue/dist/vue.js"></script>
+     <script src="node_modules/vue-router/dist/vue-router.js"></script>
+    <script>
+        let home={
+            data(){
+                return{
+                
+                }
+            },
+            created(){
+                //显示组件时候，需要再次创建组件实例，调用钩子函数
+                console.log("组件创建");
+             },           
+            beforeDestroy(){
+                console.log("销毁");
+                // 切换组件时，组件会销毁
+                
+
+            },
+            methods:{
+                fn(){
+                    
+                }
+
+            },
+            template:"<div>首页内容<button @click='fn'>去列表页</button></div>"
+        }
+
+        let list={
+            data(){
+                return{
+                
+                }
+            },
+            template:"<div>列表内容</div>"
+        }
+        
+        let routes=[{path:"/home",component:home},{path:"/list",component:list}]
+        let router=new VueRouter({
+            routes
+        });
+        
+        
+        let vm=new Vue({
+            el:"#app",
+            data:{
+
+            },
+            components:{
+                home,
+                list
+             },
+             router
+        })
+
+
+
+    </script>
+</body>
+</html>

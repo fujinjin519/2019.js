@@ -24,7 +24,7 @@
             },
             methods:{
                 add(){
-                    this.$emit("changemoney") //给这个后面传一个值
+                    this.$emit("changemoney",999) //给这个后面传一个值
                 }
 
             },
@@ -39,9 +39,9 @@
 
           },
           methods:{
-              fn(){ //里面加个参数val 也行
-                  this.money=999
-                //   this.money=val
+              fn(val){ //里面加个参数val 也行
+             
+                  this.money=val
               }
 
           },

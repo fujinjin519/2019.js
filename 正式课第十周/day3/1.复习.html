@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+    <div id="app">
+       <first></first>
+       <second></second>
+
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="node_modules/vuex/dist/vuex.min.js"></script>
+    <script>
+        let store=new Vuex.Store({
+            state:{
+                count:0
+            },
+            getters:{ //4.计算属性
+               str(state){
+                   return state.count%2===0?"奇数":"偶数"
+               }
+
+            },
+            mutations:{ //不支持异步，它是同步的 //1.更改数据写在这里  2.也可以传参数 
+               add_count(state,value){
+                state.count+=value
+               },
+
+            },
+            actions:{ //5.支持异步。从后端获取数据赋值给store的state的值
+                 add({commit}){
+                     setTimeout(()=>{
+                         commit("add_count",100)
+                         
+
+                     },1000)
+                 }
+           
+            }
+
+
+        })
+       
+        let first={
+            data(){
+                return{}
+            },
+            methods:{
+                // add(val){
+                //     this.$store.commit("add_count",val)
+
+                // } //3.下面另一种写法
+                ...Vuex.mapMutations(["add_count"]), //下面绑定的也得改
+                ...Vuex.mapActions(["add"])
+      
+            },
+            computed:{ //4.这里也得写
+                ...Vuex.mapGetters(['str'])
+
+            },
+            template:"<div>{{$store.state.count}}<button @click='add_count(3)'>新增</button></div>"
+        }
+        
+        let second={
+            data(){
+                return{}
+            },
+            template:"<div>{{$store.state.count}}</div>"
+        }
+        
+        
+        let vm=new Vue({
+            el:"#app",
+            data:{
+            },
+            components:{
+                first,
+                second
+           },
+           store
+        })
+
+
+    </script>
+    
+</body>
+</html>
