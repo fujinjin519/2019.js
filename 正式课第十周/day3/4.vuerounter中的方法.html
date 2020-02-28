@@ -7,7 +7,7 @@
     <!-- 1.引入src的顺序不能颠倒  v-router放在vue.js后面
          2.斜杠的问题不能都省略   
          3.显示组件时候，需要再次创建组件实例，调用钩子函数，切换组件时，组件会销毁
-         4.跳转问题  push方法  back方法  go方法 敲代码
+         4.跳转问题方法  push方法  back方法  go方法 敲代码
         根据缓存跳转:-->
 </head>
 <body>
@@ -35,8 +35,7 @@
                 console.log("销毁");
                 // 切换组件时，组件会销毁
                 
-
-            },
+              },
             methods:{
                 golist(){
                     console.log(this);

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 路由嵌套
+    1.detail和login都是list的子路由组件
+    2.组件配置时，对象又children属性，属性值是一个数字，里面可以配置子路由，路由中不需要加父路由的路径地址，同时也不需要加/斜杠，二级路由不能直接配置到routes，应该找到它对应的一级路由，配置到children属性上 -->
+</head>
+<body>
+
+    <div id="app">
+        <router-link to="/home" tag="button">首页</router-link>
+        <router-link to="/list" tag="button">列表页</router-link>
+        <router-view></router-view>
+
+    </div>
+   <template id="list">
+       <div>
+          列表页 
+          <router-link to="/list/detail" tag="button">详情页</router-link>
+           <!-- 这要加父亲的地址 -->
+           <router-link to="/list/login" tag="button">登录页</router-link>
+           <router-view></router-view>
+</div>
+
+   </template>
+   <script src="node_modules/vue/dist/vue.js"></script> 
+   <script src="node_modules/vue-router/dist/vue-router.js"></script>
+   <script>
+       let home={
+           template:"<div>首页</div>"
+          
+       }
+       let list={
+           template:"#list"
+       }
+       
+       let detail={
+        template:"<div>详情页</div>"
+
+       }
+       let login={
+        template:"<div>登录注册页</div>"
+
+       }
+       let routes=[ //detail和login都是list的子路由组件
+           {path:"/home",component:home},
+           {path:"/list",component:list,children:[ //二级路由不能直接配置到routes，应该找到它对应的一级路由，配置到children属性上
+               {path:"detail",component:detail},//这会默认加上它的list,这没有写而已
+               {path:"login",component:login}
+            ]}
+        ]
+       let router=new VueRouter({
+           routes
+       })
+       
+       let vm=new Vue({
+           el:"#app",
+           data:{
+
+           },
+           router
+
+       })
+
+
+
+   </script>
+</body>
+</html>

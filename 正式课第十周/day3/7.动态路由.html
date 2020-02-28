@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <!-- 
+     1.动态路由：动态id
+     正常配置路由写路径是一个明确的path 
+
+     $router:push go back
+
+     $route:动态的参数
+     2.路由守卫问题 ：在路由更新之前会默认调用钩子函数。
+     to from 
+
+   -->
+  </head>
+<body>
+    <div id="app">
+        <router-link to="/home">第一本书</router-link>
+        <router-link to="/home">第二本书</router-link>
+        <router-link to="/home">第三本书</router-link>
+
+        <router-view></router-view>
+     </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="node_modules/vue-router/dist/vue-router.js"></script>
+  <script>
+      let home={
+            template:"<div>这是我喜欢的书{{$route.params.id}}本书</div>",
+        created(){
+            console.log(this);
+         },
+       
+      }
+      let routes=[{
+          path:"/home/id",component:home
+        //   动态路由 动态传参
+      }]
+      let router=new VueRouter({
+           routes
+       })
+       let vm=new Vue({
+           el:"#app",
+           data:{
+
+           },
+           router
+
+       })
+
+
+
+
+</script>
+</body>
+</html>
