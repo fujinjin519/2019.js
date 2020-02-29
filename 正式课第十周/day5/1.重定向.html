@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1.可以多配一条路由，默认就让内容显示
+         2.路由重定向问题，在链接上输入其他的网址回车，都会跳转到指定的页面
+         redirect:重定向
+        1. routes:[{path:"/a",redirect:"/home"}]通过直接指定跳转的链接
+        2. routes:[{path:"/a",redirect:{name:"路由名字"}}] 可以重新给路由命名，再新键一个组件的名字-->
+</head>
+<body>
+    <div id="app">
+        <router-link to="/home">首页</router-link>
+        <router-link to="/list">列表</router-link>
+        <router-view></router-view>
+
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="node_modules/vue-router/dist/vue-router.js"></script>
+    <script>
+        let home={
+            template:"<div>首页内容</div>"
+        }
+        let list={
+            template:"<div>列表页内容</div>"
+        }
+        let found={
+            template:"<div>页面404</div>"
+        }
+        let routes=[{path:"/",component:home},{path:"/home",component:home},{path:"/list",component:list},{path:"*",redirect:"/home"},{path:"/a",component:found}]//重定向首页
+                        
+        let router=new VueRouter({
+            routes
+        })
+         
+        let vm=new Vue({
+            el:"#app",
+            data:{
+
+            },
+            components:{
+
+            },
+            router
+        })
+
+
+
+
+
+    </script>
+</body>
+</html>

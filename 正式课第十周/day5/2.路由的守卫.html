@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 导航守卫，切换导航时默认调用钩子函数，这些钩子函数就是导航守卫，可以再进入这个导航，或者离开这个导航时，在钩子函数中做一些事情。
+    生命周期有11个钩子函数,从开始到结束之间执行的一些事情
+    守卫：7个钩子函数，进出的问题，  执行顺序的问题
+    全局守卫
+    1.beforeEach
+    2.afterEach
+    3.beforeResolve:
+
+    路由独享守卫：写在配置里哪个组件后面跟着：4.beforeEnter 
+    组件内的守卫：写在组件里
+    beforeRouteEnter  this问题
+    beforeRouteUpdate  
+    beforeRouteLeave   离开
+
+    先离开-然后在全局前置-路由独享-组件自己的内部守卫-全局-全局最后-vm,最后执行异步
+
+   
+    执行顺序， 1-4-2-3
+      
+    -->
+</head>
+
+<body>
+    <div id="app">
+        <router-link to="/home/1" tag="button">第一本</router-link>
+        <router-link to="/home/2" tag="button">第二本</router-link>
+        <router-link to="/home/3" tag="button">第三本</router-link>
+        <router-link to="/list" tag="button">列表</router-link>
+          <router-view></router-view>
+
+          
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="node_modules/vue-router/dist/vue-router.js"></script>
+    <script>
+        let home = {
+            beforeDestroy(){
+                // console.log(99);
+                
+
+            },
+            template: " <div>这是第{{$route.params.id}}本书</div>"
+        }
+        let list={
+            beforeRouteEnter (to, from, next) {
+               // console.log(this); //widow
+               next(vm=>{
+                   //next执行传入回调函数，回调函数不能立即执行，等组件实例创建之后，才会。。。
+
+               })
+                
+            
+            },
+            beforeRouteUpdate (to, from, next) {
+            },
+            beforeRouteLeave (to, from, next){
+
+            },
+            template:"<div>列表内容</div>"
+
+        }
+        let routes = [{ path: "/home/:id", component: home},{ path: "/list", component: list,beforeEnter:(to,from,next)=>{
+               console.log(678); // 先输出1，
+               next()
+               
+
+        }
+        }]
+        let router = new VueRouter({
+            routes
+        });
+        router.beforeEach((to,from,next)=>{ //全局前置钩子函数
+            // console.log(to);
+            // console.log(from);
+            console.log(1);
+            
+             next()//有它才继续跳转
+        })
+        
+        //组件解析完成解析的这个钩子函数
+        router.beforeResolve((to,from,next)=>{ //全局钩子函数
+        //    console.log(to);
+        //    console.log(from);
+           
+           
+            console.log(2);
+            next()
+         })
+         //路由跳转成功后执行者这个，next不执行
+         router.afterEach((to,from)=>{//全局后置的钩子函数
+            //  console.log(to);
+            //  console.log(from);
+            console.log(3); //这没有next
+
+            
+             
+             
+         })
+
+
+        let vm = new Vue({
+            el: "#app",
+            router
+        });
+     
+        
+
+
+
+    </script>
+
+</body>
+
+</html>

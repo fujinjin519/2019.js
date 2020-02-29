@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 正常的组件，直接创建，使用就有了，
+         component内置组件，虽然没注册组件过， -->
+</head>
+<body>
+    <div id="app">
+         <button @click="fn" >点击</button>
+        <!-- <first></first>
+        <second></second>
+        <third></third> -->
+       
+        <!-- <component is="first"></component> -->
+        <!--component有个is属性.is属性的属性值保持和组件名一致.会显示对应的组件
+     1. first的取值  
+     2.  v-bind：is="one" 动态属性，会去data取值
+       -->
+       <keep-alive>
+            <component v-bind:is="one"></component>
+       </keep-alive>
+       <!-- <keep-alive内置组件，缓存组件，项目优化 -->
+        <!-- errorCaptured三个钩子函数？
+         -->
+
+ 
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="node_modules/vue-router/dist/vue-router.js"></script>
+    <script>
+        let first={
+            destroyed(){
+                console.log("销毁"); //组件切换会销毁
+                
+            },
+            activated(){//生命周期的钩子函数
+                console.log(100); //
+            }, 
+             deactivated (){ //生命周期的钩子函数
+                 console.log(200);
+             },      
+            template:"<div>1</div>"
+        }
+        let second={
+            template:"<div>2</div>"
+        }
+        let third={
+            template:"<div>3</div>"
+        }
+      let vm=new Vue({
+          el:"#app",
+          data:{
+              one:"first"
+              
+          },
+          methods:{
+              fn(){
+                //   console.log(one);
+                  
+                  if(this.one==="first"){
+                      this.one="second"
+                  }else if(this.one==="second"){
+                      this.one="third"
+                  }else if(this.one==="third"){
+                      this.one="first"
+                  }
+                 
+              }
+          },
+          components:{
+              first,
+              second,
+              third
+          }
+      })
+
+
+
+    </script>
+</body>
+</html>

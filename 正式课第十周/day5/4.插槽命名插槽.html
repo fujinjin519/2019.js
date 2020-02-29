@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <!-- 插槽 -->
+</head>
+<body>
+    <div id="app">
+     
+        <h2>父组件</h2>
+        <child :a="msg">
+           
+            <!-- <div slot='first'>菜单一</div>
+            <div>菜单二</div>
+            <div>菜单三</div> -->
+            <div slot-scope="abc">{{abc.user}}</div>
+
+        </child>
+     <template id="child">
+         <div>
+            
+            
+            <slot></slot> 
+            <!-- slot插槽，在父组件写东西显示到子组件中，内置组件 -->
+            <!-- <slot name="first"></slot> -->
+            <!-- 行间属性问题，命名，子组件的。。具名插槽 -->
+            <h2>这是子组件</h2>
+       
+           
+             <!-- {{msg}}显示的是自己的  -->
+             <!-- <slot :user="msg"></slot>  作用域插槽父组件使用子组件的数据 -->
+            
+         </div>
+     </template>
+    
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        let child={
+            data(){
+                return{
+                    msg:"world"
+
+                }
+               
+            },
+
+         template:"#child"
+        }
+        let vm=new Vue({
+            el:"#app",
+            data:{
+                msg:"hello"
+
+            },
+            components:{
+                child
+            
+            
+            }
+        })
+
+
+
+    </script>
+</body>
+</html>
