@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{name}}
+        {{msg}}
+
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="node_modules/vuex/dist/vuex.js"></script>
+   <script>
+       // Vue.mixin全局混入。有了这个以后其他的也会响应增加，放在各个组件上
+          //1.直接取msg根本取不到，因为数据没有，但是有这个mixin代码就可以取到
+          //2.一定得放到vm的前面才可以 ,它也有生命周期
+          //3.vue.mixin:把对象中的data合并到每一个组件的data中，重名的话以data自己的为准
+          //4.它还会把对象中的钩子函数混入到组件中，执行顺序
+          //5.Vue.component里的内容
+       Vue.mixin({
+           data(){
+               return{
+                   msg:"hello",
+                   name:"2019" //如果混入数据和组件中重名，那么以data中为准
+               }
+           },
+           beforeCreate(){
+               console.log("mixin beforeCreate");
+           },
+           mounted(){
+               console.log("mixin mounted");
+              }
+          });
+       Vue.component("my",{
+        //    render(h){
+        //        return h('h1',{class:'bar'},"hello")
+        //    }
+        template:"<div>{{msg}}</div>"
+      
+       })
+
+
+       let vm=new Vue({
+           el:"#app",
+           data(){
+               return{
+                   name:"珠峰"
+               }
+           },
+           beforeCreate(){
+               console.log("vm beforeCreate");
+           },
+       })
+       console.log(vm);
+       
+
+
+
+   </script>
+</body>
+</html>

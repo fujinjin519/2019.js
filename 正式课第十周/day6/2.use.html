@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="app">
+       {{$store.state.count}}
+        
+    </div>
+   <script src="node_modules/vue/dist/vue.js"></script>
+   <script src="node_modules/vuex/dist/vuex.js"></script>
+   <script>
+       //vue.use。use是它的方法
+       let store=new Vuex.Store({
+           state:{
+               count:100
+           },
+           mutations:{
+               add(state){
+                   state.count++
+
+               }
+           },
+           actions:{//支持异步
+            add({commit},payload){
+                commit('add',10)
+            }
+
+           }
+       });
+        //Vue.use(vuex) 第三方插件都要use
+        let obj={
+            install(vm){ //install名字不能更改。默认调用insatall
+                console.log(vm);
+                
+            }
+        }
+
+        Vue.use(obj);
+        //1.如果use传递对象  2.传递函数
+       
+        let vm=new Vue({
+            el:"#app",
+            store
+
+       })
+    //    console.dir(Vue); //vue上有use方法
+
+       
+
+
+
+
+   </script>
+</body>
+</html>

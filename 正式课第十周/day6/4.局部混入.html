@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 不想全局用，只想组件能用，
+    1.其中一个能用，就用mixins。全局和局部
+    2.this问题， 指向了使用了它的实例，谁使用它this,指向它-->
+</head>
+<body>
+    <div id="app">
+     
+        {{msg}}
+    </div>
+
+    <script src="node_modules/vue/dist/vue.js"></script>
+  <script src=""></script>
+  <script>
+      let obj={ //里面放数据
+          data(){
+              return{msg:100}
+          },
+          created(){
+              console.log(this); //
+              
+          }
+      }
+      Vue.component("my",{
+          data(){
+              return{
+                  a:100
+              }
+          },
+          tempalte:"<div>{{msg}}</div>",
+          mixins:[obj]
+      })
+      let vm=new Vue({
+          el:"#app",
+          data:{
+              msg:"hello"
+
+
+          }
+      })
+
+
+  </script>
+</body>
+</html>

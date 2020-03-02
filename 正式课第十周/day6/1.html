@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 复习，
+        1。路由守卫钩子函数 7个 
+       全局守卫，组件切换，切换路由就会触发, each  resolve  afterEach
+       路由独享守卫
+    2.内置组件: component:is   keep-alive有缓存有两个钩子函数
+    3. -->
+</head>
+<body>
+    <div id="app">
+         <router-link to="/home"></router-link>
+         <router-view></router-view>
+     </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <!-- <script src="node_modules/vue-router/dist/vue-router.js"></script> -->
+     <script>
+         let home={
+             tempalte:'div'
+         }
+         let routes=[{path:"home",component:home,}]
+         let vm=new Vue({
+             el:"#app",
+             data:{
+
+             },
+             components:{
+                 home
+             }
+         })
+
+
+
+
+
+     </script>
+</body>
+</html>
