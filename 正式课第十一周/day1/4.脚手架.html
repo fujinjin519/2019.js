@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- 1.vue路由的源码封装 2.webpack和vue的关系， 3.脚手架 -->
+    <!-- 1.vue路由的源码封装 2.webpack和vue的关系， 3.脚手架安装等 -->
     <!-- @vue/cli:脚手架，通过命令的方式自动生成一个vue的架构项目
      
      npm install vue --save-dev:会默认取npm源下载模块
@@ -12,9 +13,9 @@
      sudo npm install @vue/cli 安装脚手架
      npm ls 查看源    npm install nrm --save
      切换源 ...nrm use taobao      npm run serve 项目跑
-    选错重新来 ctrl+c
+     选错重新来 ctrl+c
      在需要的路径下 执行vue create crm(项目名称) 创建一个项目脚手架 回车 回车  网址打开就可以了
-     安装好后。crm文件夹的东西各个资源文件的意思
+     安装好后。跑起来    npm run serve或者是  cd crm 再接着 yarn serve     crm文件夹的东西各个资源文件的意思
      eslit:项目校验
      gitignore:忽律git
      bable.config.js:配置es6
@@ -33,16 +34,36 @@
      
      里面的src文件夹里的文件
 
+    src的结构：大家的代码全部在src里面；
+    assets : 静态资源文件；一般放图片和一些css;
+    components : 组件；页面的一部分
+    router : 配置的路由
+    store : vuex仓库
+    views : 页面级组件
+    App.vue : 只有一个;所有的组件的入口文件
+    main.js : 是webpack 打包的入口文件
+   可以在main.js配置一些全局的组件，filter过滤器，或指令，全局的路由钩子函数；
+    引入第三方组件；elment-Ui;安装下  npm  install  element-ui --save
 
-     yarn add element-ui.    import ele from "element-ui'.     
+    admin 作为后端；启动的端口号3000
+   crm ： 是部署在8080端口；如果需要请求一定会跨域；跨域的配置在vue.config.js
 
+    安装axios npm install axios --save
+
+    跑服务  npm run serve
+    在adimin 启动服务 node server.js
+    在crm文件加下跑服务 
+ 
+·
 
 
 
 
     -->
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
