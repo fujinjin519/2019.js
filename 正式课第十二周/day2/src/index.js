@@ -11,4 +11,6 @@
 // // Learn more about service workers: https://bit.ly/CRA-PWA
 // serviceWorker.unregister();
 //入口
-import "./page/3.组件.js"
+import "./page/8.state.js"
+
+
